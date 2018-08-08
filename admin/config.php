@@ -8,11 +8,11 @@ define('HTTPS_SERVER', 'http://localhost/admin/');
 define('HTTPS_CATALOG', 'http://localhost/');
 
 // DIR
-define('DIR_APPLICATION', 'W:/xampp/htdocs/admin/');
-define('DIR_SYSTEM', 'W:/xampp/htdocs/system/');
-define('DIR_IMAGE', 'W:/xampp/htdocs/image/');
-define('DIR_STORAGE', 'W:/xampp/htdocs/storage/');
-define('DIR_CATALOG', 'W:/xampp/htdocs/catalog/');
+define('DIR_APPLICATION', 'J:/xampp/htdocs/admin/');
+define('DIR_SYSTEM', 'J:/xampp/htdocs/system/');
+define('DIR_IMAGE', 'J:/xampp/htdocs/image/');
+define('DIR_STORAGE', 'J:/xampp/htdocs/storage/');
+define('DIR_CATALOG', 'J:/xampp/htdocs/catalog/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/template/');
 define('DIR_CONFIG', DIR_SYSTEM . 'config/');

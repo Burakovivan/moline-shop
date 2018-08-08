@@ -16,7 +16,7 @@ class ControllerCommonHeader extends Controller {
 		$data['scripts'] = $this->document->getScripts();
 		$data['lang'] = $this->language->get('code');
 		$data['direction'] = $this->language->get('direction');
-
+		$data['cart_count'] = $this->cart->countProducts();
 		$this->load->language('common/header');
 		
 		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->user->getUserName());

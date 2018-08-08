@@ -1,4 +1,44 @@
-{% if categories %}
+		<div class="top_menu">
+			<div class="container">
+				<div class="col-lg-2">
+						<div class="logo">
+							<a href="#">
+								<img src="http://via.placeholder.com/68x34">
+							</a>
+						</div>
+				</div>
+				
+				<div class="col-lg-8">
+					{% if categories %}
+						<nav>
+								<ul>
+								{% for category in categories %}
+									<li><a href="{{ category.href }}">{{ category.name }}</a></li>
+									{% endfor %}
+									{# <li><a href="#">Акции</a></li>
+									<li><a href="#">Новинки</a></li>
+									<li><a href="#">Доставка</a></li>
+									<li><a href="#">Оплата</a></li>
+									<li><a href="#">О нас</a></li>
+									<li><a href="#">Сотрудничество</a></li>
+									<li><a href="#">Вопрос</a></li>
+									<li><a href="#">Контакты</a></li> #}
+								</ul>
+							</nav>
+						{% endif %}
+				</div>
+				<div class="col-lg-2">
+					<div class="r_info">
+							0-800-150-3232
+							<br>
+							ул.Маяковского 132
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		{# {% if categories %}
 <div class="container">
   <nav id="menu" class="navbar">
     <div class="navbar-header"><span id="category" class="visible-xs">{{ text_category }}</span>
@@ -27,4 +67,4 @@
     </div>
   </nav>
 </div>
-{% endif %} 
+{% endif %}  #}

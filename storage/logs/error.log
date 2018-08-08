@@ -1,0 +1,531 @@
+2018-07-31 10:41:04 - PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'moline_db' in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2018-07-31 10:41:04 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2018-07-31 10:41:04 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2018-07-31 10:42:13 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533037333): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 10:42:13 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 10:42:13 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 10:42:13 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 10:42:13 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 10:42:13 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 10:42:13 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533037333): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 10:42:13 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 10:42:13 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 10:42:13 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 10:42:13 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 10:42:13 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 10:42:13 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533037333): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 10:42:13 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 10:42:13 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 10:42:13 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 10:42:13 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 10:42:13 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 10:42:13 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533037333): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 10:42:13 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 10:42:13 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 10:42:13 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 10:42:13 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 10:42:13 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 10:42:42 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533037362): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 10:42:42 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 10:42:42 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 10:42:42 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 10:42:42 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 10:42:42 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 10:42:42 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533037362): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 10:42:42 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 10:42:42 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 10:42:42 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 10:42:42 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 10:42:42 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 10:42:42 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533037362): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 10:42:42 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 10:42:42 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 10:42:42 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 10:42:42 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 10:42:42 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 10:42:42 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533037362): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 10:42:42 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 10:42:42 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 10:42:42 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 10:42:42 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 10:42:42 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 10:42:43 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533037363): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 10:42:43 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 10:42:43 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 10:42:43 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 10:42:43 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 10:42:43 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 10:42:43 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533037363): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 10:42:43 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 10:42:43 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 10:42:43 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 10:42:43 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 10:42:43 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:12:57 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039177): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:12:57 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:12:57 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:12:57 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:12:57 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:12:57 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:12:57 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039177): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:12:57 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:12:57 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:12:57 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:12:57 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:12:57 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:12:57 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039177): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:12:57 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:12:57 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:12:57 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:12:57 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:12:57 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:12:57 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039177): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:12:57 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:12:57 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:12:57 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:12:57 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:12:57 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:03 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039183): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:03 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:03 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:03 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:03 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:03 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:03 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039183): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:03 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:03 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:03 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:03 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:03 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:03 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039183): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:03 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:03 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:03 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:03 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:03 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:03 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039183): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:03 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:03 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:03 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:03 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:03 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:07 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039187): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:07 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:07 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:07 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:07 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:07 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:07 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039187): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:07 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:07 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:07 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:07 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:07 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:07 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039187): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:07 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:07 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:07 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:07 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:07 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:07 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039187): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:07 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:07 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:07 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:07 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:07 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:07 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039187): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:07 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:07 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:07 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:07 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:07 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:07 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039187): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:07 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:07 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:07 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:07 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:07 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:15 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039195): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:15 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:15 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:15 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:15 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:15 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:15 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039195): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:15 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:15 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:15 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:15 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:15 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:15 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039195): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:15 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:15 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:15 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:15 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:15 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:15 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039195): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:15 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:15 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:15 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:15 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:15 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:31 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039211): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:31 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:31 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:31 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:31 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:31 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:31 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039211): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:31 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:31 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:31 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:31 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:31 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:32 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039212): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:32 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:32 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:32 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:32 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:32 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:32 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039212): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:32 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:32 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:32 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:32 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:32 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:45 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039225): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:45 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:45 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:45 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:45 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:45 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:45 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039225): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:45 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:45 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:45 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:45 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:45 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:45 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039225): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:45 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:45 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:45 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:45 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:45 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:45 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039225): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:45 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:45 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:45 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:45 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:45 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:50 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039230): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:50 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:50 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:50 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:50 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:50 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:50 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039230): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:50 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:50 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:50 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:50 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:50 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:50 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039230): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:50 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:50 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:50 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:50 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:50 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:13:50 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039230): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:13:50 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:13:50 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:13:50 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:13:50 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:13:50 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:14:47 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039287): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:14:47 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:14:47 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:14:47 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:14:47 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:14:47 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:14:47 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039287): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:14:47 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:14:47 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:14:47 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:14:47 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:14:47 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:14:47 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039287): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:14:47 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:14:47 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:14:47 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:14:47 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:14:47 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:14:47 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039287): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:14:47 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:14:47 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:14:47 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:14:47 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:14:47 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:14:47 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533039287): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:14:47 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:14:47 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:14:47 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:14:47 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:14:47 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:14:47 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533039287): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:14:47 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:14:47 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:14:47 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:14:47 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:14:47 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:37:12 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040632): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:37:12 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:37:12 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:37:12 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:37:12 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:37:12 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:37:12 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040632): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:37:12 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:37:12 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:37:12 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:37:12 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:37:12 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:37:12 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040632): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:37:12 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:37:12 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:37:12 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:37:12 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:37:12 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:37:12 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040632): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:37:12 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:37:12 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:37:12 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:37:12 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:37:12 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:37:19 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040639): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:37:19 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:37:19 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:37:19 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:37:19 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:37:19 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:37:19 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040639): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:37:19 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:37:19 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:37:19 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:37:19 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:37:19 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:37:19 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040639): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:37:19 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:37:19 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:37:19 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:37:19 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:37:19 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:37:19 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040639): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:37:19 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:37:19 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:37:19 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:37:19 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:37:19 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:37:40 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040660): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:37:40 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:37:40 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:37:40 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:37:40 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:37:40 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:37:40 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040660): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:37:40 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:37:40 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:37:40 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:37:40 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:37:40 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:37:40 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040660): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:37:40 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:37:40 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:37:40 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:37:40 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:37:40 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:37:40 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040660): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:37:40 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:37:40 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:37:40 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:37:40 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:37:40 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:38:39 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040719): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:38:39 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:38:39 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:38:39 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:38:39 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:38:39 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:38:39 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040719): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:38:39 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:38:39 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:38:39 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:38:39 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:38:39 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:38:39 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040719): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:38:39 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:38:39 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:38:39 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:38:39 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:38:39 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:38:39 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040719): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:38:39 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:38:39 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:38:39 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:38:39 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:38:39 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:39:01 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040741): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:39:01 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:39:01 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:39:01 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:39:01 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:39:01 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:39:01 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040741): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:39:01 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:39:01 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:39:01 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:39:01 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:39:01 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:39:01 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040741): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:39:01 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:39:01 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:39:01 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:39:01 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:39:01 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:39:01 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040741): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:39:01 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:39:01 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:39:01 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:39:01 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:39:01 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:39:14 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040754): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:39:14 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:39:14 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:39:14 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:39:14 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:39:14 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:39:14 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040754): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:39:14 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:39:14 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:39:14 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:39:14 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:39:14 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:39:14 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040754): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:39:14 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:39:14 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:39:14 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:39:14 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:39:14 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:39:14 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040754): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:39:14 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:39:14 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:39:14 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:39:14 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:39:14 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:39:18 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040758): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:39:18 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:39:18 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:39:18 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:39:18 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:39:18 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:39:18 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040758): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:39:18 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:39:18 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:39:18 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:39:18 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:39:18 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:39:18 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040758): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:39:18 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:39:18 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:39:18 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:39:18 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:39:18 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:39:18 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040758): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:39:18 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:39:18 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:39:18 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:39:18 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:39:18 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:40:29 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040829): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:40:29 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:40:29 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:40:29 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:40:29 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:40:29 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:40:29 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040829): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:40:29 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:40:29 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:40:29 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:40:29 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:40:29 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:40:29 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1533040829): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:40:29 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:40:29 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:40:29 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:40:29 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:40:29 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:40:29 - PHP Warning:  fopen(J:/XAMPP/htdocs/storage/cache/cache.currency.1533040829): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:40:29 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:40:29 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:40:29 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:40:29 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:40:29 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:44:52 - PHP Warning:  fopen(J:/xampp/htdocs/storage/cache/cache.store.1533041092): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:44:52 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:44:52 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:44:52 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:44:52 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:44:52 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:45:34 - PHP Warning:  fopen(J:/xampp/htdocs/storage/cache/cache.store.1533041134): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:45:34 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:45:34 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:45:34 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:45:34 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:45:34 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:45:57 - PHP Warning:  fopen(J:/xampp/htdocs/storage/cache/cache.store.1533041157): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:45:57 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:45:57 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:45:57 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:45:57 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:45:57 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:47:23 - PHP Warning:  fopen(J:/xampp/htdocs/storage/cache/cache.store.1533041243): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:47:23 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:47:23 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:47:23 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:47:23 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:47:23 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:47:41 - PHP Warning:  fopen(J:/xampp/htdocs/storage/cache/cache.store.1533041261): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:47:41 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:47:41 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:47:41 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:47:41 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:47:41 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:48:07 - PHP Warning:  fopen(J:/xampp/htdocs/storage/cache/cache.store.1533041287): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:48:07 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:48:07 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:48:07 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:48:07 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:48:07 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:50:11 - PHP Warning:  fopen(J:/xampp/htdocs/storage/cache/cache.store.1533041411): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:50:11 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:50:11 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:50:11 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:50:11 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:50:11 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:50:13 - PHP Warning:  fopen(J:/xampp/htdocs/storage/cache/cache.store.1533041413): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:50:13 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:50:13 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:50:13 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:50:13 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:50:13 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:50:39 - PHP Warning:  fopen(J:/xampp/htdocs/storage/cache/cache.store.1533041439): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:50:39 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:50:39 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:50:39 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:50:39 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:50:39 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-07-31 11:53:18 - PHP Warning:  fopen(J:/xampp/htdocs/storage/cache/cache.store.1533041598): failed to open stream: No such file or directory in J:\XAMPP\htdocs\system\library\cache\file.php on line 49
+2018-07-31 11:53:18 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 51
+2018-07-31 11:53:18 - PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 53
+2018-07-31 11:53:18 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
+2018-07-31 11:53:18 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
+2018-07-31 11:53:18 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
