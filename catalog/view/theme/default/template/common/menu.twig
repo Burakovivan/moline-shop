@@ -1,70 +1,50 @@
-		<div class="top_menu">
-			<div class="container">
-				<div class="col-lg-2">
-						<div class="logo">
-							<a href="#">
-								<img src="http://via.placeholder.com/68x34">
-							</a>
-						</div>
+<div class="top_menu">
+	<div class="container">
+		<div class="col-lg-2 col-md-2 col-xs-5 col-sm-3 pl-nl pr-nr">
+				<div class="logo">
+					<a href="#">
+						<img src="img/logo.svg" class="visible-xs" id="xs_logo">
+						<img src="img/LogoMoline.png" alt="" class="large_logo">
+					</a>
 				</div>
-				
-				<div class="col-lg-8">
-					{% if categories %}
-						<nav>
-								<ul>
-								{% for category in categories %}
-									<li><a href="{{ category.href }}">{{ category.name }}</a></li>
-									{% endfor %}
-									{# <li><a href="#">Акции</a></li>
-									<li><a href="#">Новинки</a></li>
-									<li><a href="#">Доставка</a></li>
-									<li><a href="#">Оплата</a></li>
-									<li><a href="#">О нас</a></li>
-									<li><a href="#">Сотрудничество</a></li>
-									<li><a href="#">Вопрос</a></li>
-									<li><a href="#">Контакты</a></li> #}
-								</ul>
-							</nav>
-						{% endif %}
-				</div>
-				<div class="col-lg-2">
+		</div>
+		
+		<div class="col-lg-8 col-sm-6 col-md-7 hidden-xs pn-sm-l pn-sm-r">
+				{# {% if categories %} #}
+				<nav>
+						<ul>
+							{# {% for category in categories %} #}
+							{# <li><a href="{{ category.href }}">{{ category.name }}</a></li> #}
+							{# {% endfor %} #}
+
+							<li><a href="#">Главная</a></li>
+							<li><a href="#">Акции</a></li>
+							<li><a href="#">Новинки</a></li>
+							<li><a href="#">Доставка</a></li>
+							<li><a href="#" class="visible-md visible-lg">Оплата</a></li>
+							<li><a href="#" class="visible-md visible-lg">О нас</a></li>
+							<li><a href="#" class="visible-md visible-lg">Вопрос</a></li>
+							<li class="visible-lg"><a href="#">Сотрудничество</a></li>
+							<li class="visible-lg"><a href="#">Контакты</a></li>
+						</ul>
+					</nav>
+				{# {% endif %} #}
+		</div>
+		<div class="col-lg-2 col-md-3 col-xs-7 col-sm-3 pl-nl pr-nr pn-sm-l pn-sm-r">
+			<div class="r_wrap">
+					<div class="ddb_wrap ">
+							<div class="drop_down_button">
+									<div class="dot"></div>
+									<div class="dot"></div>
+									<div class="dot"></div>
+							</div>
+					</div>
 					<div class="r_info">
 							0-800-150-3232
 							<br>
-							ул.Маяковского 132
+							<span class="street">ул.Маяковского 132</span>
 					</div>
 				</div>
-				
-			</div>
-		</div>
-
-		{# {% if categories %}
-<div class="container">
-  <nav id="menu" class="navbar">
-    <div class="navbar-header"><span id="category" class="visible-xs">{{ text_category }}</span>
-      <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
-    </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav">
-        {% for category in categories %}
-        {% if category.children %}
-        <li class="dropdown"><a href="{{ category.href }}" class="dropdown-toggle" data-toggle="dropdown">{{ category.name }}</a>
-          <div class="dropdown-menu">
-            <div class="dropdown-inner"> {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
-              <ul class="list-unstyled">
-                {% for child in children %}
-                <li><a href="{{ child.href }}">{{ child.name }}</a></li>
-                {% endfor %}
-              </ul>
-              {% endfor %}</div>
-            <a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a> </div>
-        </li>
-        {% else %}
-        <li><a href="{{ category.href }}">{{ category.name }}</a></li>
-        {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
-  </nav>
+			</div>			
+	</div>
 </div>
-{% endif %}  #}

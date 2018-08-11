@@ -49,8 +49,9 @@
 	
 		{{ menu }}
 			<div class="green_menu">
-				<div class="container">
-					<div class="col-lg-3">
+			<div class="container cpn-xs">
+				<div class="col-md-3 col-sm-4 col-xs-3 col-plrn-xs flx-wrap pln prn">
+					<div class="mnu_button_wrap">
 							<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">	
 							<label for="openSidebarMenu" class="sidebarIconToggle">
 									<div class="spinner diagonal part-1"></div>
@@ -64,85 +65,40 @@
 											
 										</ul>
 									</div>
-						<div class="catalog">Каталог</div>
+						<div class="catalog hide_mnu_item_sm">Каталог товаров</div>
 					</div>
-					
-					<div class="col-lg-4">
-							<div class="search-wrap">
-									<div class="search">
-										 <input type="text" class="searchTerm" placeholder="Поиск товара">
-										 <button type="submit" class="searchButton">
-											 <i class="fas fa-search"></i>
-										</button>
-									</div>
-							 </div>
-					</div>
-					<div class="col-lg-3">
-						<div class="auth-block">
-							<a href="#"><i class="fas fa-user-alt"></i>Вход</a>,<a href="#">Регистация</a>	
-						</div>
-					</div>
-					<div class="col-lg-2">
-						<div class="cart-wrap">
-							<a href="{{shopping_cart}}">
-							<div class="icon-wrap">
-								<img src="img/cart.svg" alt="" width="28px">
-								<div class="counter">{{cart_count}}</div>
-							</div>
-							Корзина
-						</a>
-						</div>
-					</div>
-					
 				</div>
+				
+				<div class="col-md-4 col-sm-4 col-xs-3 col-plrn-xs ">
+						<div class="search-wrap flx-wrap">
+								<!-- <div class="search"> -->
+									 <input type="text" class="searchTerm hidden-xs" placeholder="Поиск товара">
+									 <button type="submit" class="searchButton">
+										 <i class="fas fa-search"></i>
+									</button>
+								<!-- </div> -->
+						 </div>
+				</div>
+				<div class="col-md-3 col-sm-2 col-xs-3 col-plrn-xs ">
+					<div class="auth-block flx-wrap">
+						<a href="#"><i class="fas fa-user-alt"></i><span class="hide_mnu_item">Вход</span></a><span class="hide_mnu_item">,</span><a href="#" class="hide_mnu_item">Регистрация</a>	
+					</div>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-3 col-plrn-xs pln prn">
+					<div class="cart-wrap flx-wrap">
+						<a href="{{shopping_cart}}">
+						<div class="icon-wrap">
+							<img src="img/cart.svg" alt="" width="28px">
+							<div class="counter">{{cart_count}}</div>
+						</div>
+						<span class="hide_mnu_item">Корзина</span>
+					</a>
+					</div>
+				</div>
+				
 			</div>
-		{# <div class="green_menu">
-				<div class="container">
-					<div class="col-lg-3">
-							<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">	
-							<label for="openSidebarMenu" class="sidebarIconToggle">
-									<div class="spinner diagonal part-1"></div>
-									<div class="spinner horizontal"></div>
-									<div class="spinner diagonal part-2"></div>
-								</label>
-								<div id="sidebarMenu">
-										<ul class="sidebarMenuInner">
-											<li>Product <span>Sub text</span></li>
-											<li><a href="https://vanila.io" target="_blank">Link</a></li>
-											
-										</ul>
-									</div>
-						<div class="catalog">Каталог</div>
-					</div>
-					
-					<div class="col-lg-4">
-							<div class="search-wrap">
-									<div class="search">
-										 <input type="text" class="searchTerm" placeholder="Поиск товара">
-										 <button type="submit" class="searchButton">
-											 <i class="fas fa-search"></i>
-										</button>
-									</div>
-							 </div>
-					</div>
-					<div class="col-lg-3">
-						<div class="auth-block">
-							<a href="{{ login }}"><i class="fas fa-user-alt"></i>{{ text_login }}</a>, <a href="{{ register }}">{{ text_register }}</a>	
-						</div>
-					</div>
-					<div class="col-lg-2">
-						<div class="cart-wrap">
-							<a href="#">
-							<div class="icon-wrap">
-								<img src="img/cart.svg" alt="" width="28px">
-								<div class="counter">3</div>
-							</div>
-							Корзина
-						</a>
-						</div>
-					</div>
-					
-				</div>
-			</div> #}
+		</div>
+
+	
 
 	</header>

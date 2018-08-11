@@ -1,131 +1,171 @@
-	<footer>
+<footer>
 		<div class="f_subscribe">
 			<div class="container">
 				<div class="row">
-						<form>
-								<div class="input-wrapper">
-										<span>Подпишитесь на скидки:</span>
+						<div class="clump">
+								<div class="card">
+									<div class="section">
+										<!-- open -->
+								
+										<div class="detail closed">
+											<!-- closed_info -->
+											<form>
+												<div class="input-wrapper ">
+													<!-- <div class="header_slide_inside visible-xs">Подпишитесь на скидки:</div> -->
+													<div class="header_slide_inside call_to_action text-left">Подпишитесь на скидки:</div>
+													<!-- <div class="header_slide_inside visible-xs text-left">Moline:</div> -->
+														<input type="text" name="name" placeholder="Email"><input type="text" name="name" placeholder="Имя"><input type="text" name="phone" placeholder="Город">
+														<button class="reverse_button button_form" type="submit">Подписаться</button>
+												</div>
+											</form>
+											<!-- closed_info end-->
+										</div>
+									</div>
+									<div class="footer visible-xs">
+										<div class="header_slide visible-xs">Подпишитесь на скидки:</div>
+										<div class="slider_link less hide_link">Скрыть</div>
+									</div>
+								</div>
+							</div>
+						<!-- <form>
+								<div class="input-wrapper ">
+										<div class="call_to_action">Подпишитесь на скидки:</div>
 										<input type="text" name="name" placeholder="Email"><input type="text" name="name" placeholder="Имя"><input type="text" name="phone" placeholder="Город">
 									<button class="reverse_button button_form" type="submit">Подписаться</button>
 								</div>
-							</form>
+							</form> -->
 				</div>
 			</div>
 		</div>
 		<div class="container">
 			<div class="f_bottom">
 					<div class="row">
-							<div class="col-md-3">
-								<div class="logo_wrap">
-									<img src="img/footer_logo.svg" alt="logo">
+							<div class="clump">
+									<div class="card">
+										<div class="section">
+											<!-- open -->
+									
+											<div class="detail closed">
+												<!-- closed_info -->
+												<div class="header_slide_inside ">Контакты:</div>
+												<div class="col-md-3 col-sm-3">
+														<div class="logo_wrap">
+															<img src="img/footer_logo.svg" alt="logo">
+														</div>
+														
+														<ul class="phone_list">
+															<li>099 100 20 20</li>
+															<li>099 100 20 20</li>
+															<li>099 100 20 20</li>
+															<li>099 100 20 20</li>
+														</ul>
+						
+														<div class="mail">moline@inbox.com</div>
+														<div class="f_info">
+															Мы работаем:<br>с 9:00 до 19:00
+														</div>
+														<div class="f_info">
+																г.Киев, Украина <br>ул. Маяковского 132
+														</div>
+													</div>
+												<!-- closed_info end-->
+											</div>
+										</div>
+										<div class="footer ">
+											<div class="header_slide ">Контакты:</div>
+											<div class="slider_link less hide_link">Скрыть</div>
+										</div>
+									</div>
 								</div>
-								
-								<ul class="phone_list">
-									<li>099 100 20 20</li>
-									<li>099 100 20 20</li>
-									<li>099 100 20 20</li>
-									<li>099 100 20 20</li>
-								</ul>
-
-								<div class="mail">moline@inbox.com</div>
-								<div class="f_info">
-									Мы работаем:<br>с 9:00 до 19:00
+							<div class="clump">
+									<div class="card">
+										<div class="section">
+											<!-- open -->
+									
+											<div class="detail closed">
+												<!-- closed_info -->
+												<div class="header_slide_inside ">Moline:</div>
+												<div class="col-md-3 col-sm-3">
+													{% if informations %}
+														<ul class="f_menu_list">
+															{% for information in informations %}
+																<li><a href="{{ information.href }}">{{ information.title }}</a></li>
+															{% endfor %}
+															{# <li><a href="#">О нас</a></li>
+															<li><a href="#">Статьи</a></li>
+															<li><a href="#">Контакты</a></li>
+															<li class="visible-lg"><a href="#">Отзывы</a></li>
+															<li class="visible-lg"><a href="#">Сотрудничество</a></li> #}
+														</ul>
+													{% endif %}
+														<div class="price_list"><a href="#"><img src="img/file.svg" alt="">Скачать прайс-лист</a></div>
+													</div>
+												<!-- closed_info end-->
+											</div>
+										</div>
+										<div class="footer ">
+											<div class="header_slide ">Moline:</div>
+											<div class="slider_link less hide_link">Скрыть</div>
+										</div>
+									</div>
 								</div>
-								<div class="f_info">
-										г.Киев, Украина <br>ул. Маяковского 132
+							<div class="clump">
+										<div class="card">
+											<div class="section">
+												<!-- open -->
+										
+												<div class="detail closed">
+													<!-- closed_info -->
+													<div class="header_slide_inside ">Услуги:</div>
+													<div class="col-md-3 col-sm-3">
+															<ul class="f_menu_list">
+																<li><a href="{{ contact }}">{{ text_contact }}</a></li>
+																<li><a href="{{ return }}">{{ text_return }}</a></li>
+																<li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+																	{# <li><a href="#">Лидеры продаж</a></li>
+																	<li><a href="#">Акции</a></li>
+																	<li><a href="#">Новинки</a></li> #}
+															</ul>
+													</div>
+													<!-- closed_info end-->
+												</div>
+											</div>
+											<div class="footer ">
+												<div class="header_slide ">Услуги:</div>
+												<div class="slider_link less hide_link">Скрыть</div>
+											</div>
+										</div>
 								</div>
-							</div>
-							<div class="col-md-3">
-							{% if informations %}
-								<ul class="f_menu_list">
-								{% for information in informations %}
-									<li><a href="{{ information.href }}">{{ information.title }}</a></li>
-									{% endfor %}
-									{# <li><a href="#">О нас</a></li> #}
-									{# <li><a href="#">Статьи</a></li>
-									<li><a href="#">Контакты</a></li>
-									<li><a href="#">Отзывы</a></li>
-									<li><a href="#">Сотрудничество</a></li> #}
-								</ul>
-								{% endif %}
-
-								<div class="price_list"><a href="#"><img src="img/file.svg" alt="">Скачать прайс-лист</a></div>
-							</div>
-							<div class="col-md-3">
-									<ul class="f_menu_list">
-											<li><a href="{{ contact }}">{{ text_contact }}</a></li>
-          						<li><a href="{{ return }}">{{ text_return }}</a></li>
-          						<li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
-											{# <li><a href="#">Лидеры продаж</a></li>
-											<li><a href="#">Акции</a></li>
-											<li><a href="#">Новинки</a></li> #}
-									</ul>
-							</div>
-							<div class="col-md-3">
-									<ul class="f_menu_list">
-											{# <li><a href="#">Вопросы</a></li>
-											<li><a href="#">Доставка</a></li>
-											<li><a href="#">Оплата</a></li> #}
-											<li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
-       						   <li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
-     						     <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
-         						 <li><a href="{{ special }}">{{ text_special }}</a></li>
-									</ul>
-							</div>
+							<div class="clump">
+											<div class="card">
+												<div class="section">
+													<!-- open -->
+											
+													<div class="detail closed">
+														<!-- closed_info -->
+													<div class="header_slide_inside ">Помощь:</div>
+														<div class="col-md-3 col-sm-3">
+																<ul class="f_menu_list">
+																		{# <li><a href="#">Вопросы</a></li>
+																		<li><a href="#">Доставка</a></li>
+																		<li><a href="#">Оплата</a></li> #}
+																		<li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
+																		<li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
+																		<li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
+																		<li><a href="{{ special }}">{{ text_special }}</a></li>
+																</ul>
+														</div>
+														<!-- closed_info end-->
+													</div>
+												</div>
+												<div class="footer ">
+													<div class="header_slide ">Помощь:</div>
+													<div class="slider_link less hide_link">Скрыть</div>
+												</div>
+											</div>
+								</div>
+				
 						</div>
 			</div>
 		</div>
 	</footer>
-{# <footer>
-  <div class="container">
-    <div class="row">
-      {% if informations %}
-      <div class="col-sm-3">
-        <h5>{{ text_information }}</h5>
-        <ul class="list-unstyled">
-         {% for information in informations %}
-          <li><a href="{{ information.href }}">{{ information.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endif %}
-			
-      <div class="col-sm-3">
-        <h5>{{ text_service }}</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ contact }}">{{ text_contact }}</a></li>
-          <li><a href="{{ return }}">{{ text_return }}</a></li>
-          <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-3">
-        <h5>{{ text_extra }}</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
-          <li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
-          <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
-          <li><a href="{{ special }}">{{ text_special }}</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-3">
-        <h5>{{ text_account }}</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ account }}">{{ text_account }}</a></li>
-          <li><a href="{{ order }}">{{ text_order }}</a></li>
-          <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
-          <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
-        </ul>
-      </div>
-    </div>
-    <hr>
-    <p>{{ powered }}</p>
-  </div>
-</footer>
-{% for script in scripts %}
-<script src="{{ script }}" type="text/javascript"></script>
-{% endfor %} #}
-<!--
-OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
-Please donate via PayPal to donate@opencart.com
-//-->
-</body></html>
