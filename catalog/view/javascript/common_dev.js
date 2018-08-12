@@ -53,8 +53,8 @@ $(function() {
 		infinite: true,
 		slidesToShow: 4,
 		arrows: true,
-		prevArrow: '<div class="right_arrow arrow"><i class="fas fa-chevron-right"></i></div>',
-		nextArrow: '<div class="left_arrow arrow"><i class="fas fa-chevron-left"></i></div>',
+		nextArrow: '<div class="right_arrow arrow"><i class="fas fa-chevron-right"></i></div>',
+		prevArrow: '<div class="left_arrow arrow"><i class="fas fa-chevron-left"></i></div>',
 		slidesToScroll: 3, 
 		responsive: [
 			{
