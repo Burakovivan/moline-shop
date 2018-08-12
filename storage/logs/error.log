@@ -529,3 +529,7 @@
 2018-07-31 11:53:18 - PHP Warning:  fflush() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 55
 2018-07-31 11:53:18 - PHP Warning:  flock() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 57
 2018-07-31 11:53:18 - PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in J:\XAMPP\htdocs\system\library\cache\file.php on line 59
+2018-08-12 19:15:22 - PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'moline_db' in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2018-08-12 19:15:22 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2018-08-12 19:15:22 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2018-08-12 19:16:07 - PHP Warning:  unlink(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1534104967): Resource temporarily unavailable in J:\XAMPP\htdocs\system\library\cache\file.php on line 68

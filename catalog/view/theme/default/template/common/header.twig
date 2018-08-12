@@ -72,7 +72,7 @@
 				<div class="col-md-4 col-sm-4 col-xs-3 col-plrn-xs ">
 						<div class="search-wrap flx-wrap">
 								<!-- <div class="search"> -->
-									 <input type="text" class="searchTerm hidden-xs" placeholder="Поиск товара">
+									 <input type="text"  name="search" class="searchTerm hidden-xs" placeholder="Поиск товара">
 									 <button type="submit" class="searchButton">
 										 <i class="fas fa-search"></i>
 									</button>
@@ -81,7 +81,7 @@
 				</div>
 				<div class="col-md-3 col-sm-2 col-xs-3 col-plrn-xs ">
 					<div class="auth-block flx-wrap">
-						<a href="#"><i class="fas fa-user-alt"></i><span class="hide_mnu_item">Вход</span></a><span class="hide_mnu_item">,</span><a href="#" class="hide_mnu_item">Регистрация</a>	
+						<a href="{{ login }}" ><i class="fas fa-user-alt"></i><span class="hide_mnu_item">{{ text_login }}</span></a><span class="hide_mnu_item">,</span><a href="{{ register }}" class="hide_mnu_item">{{ text_register }}</a>	
 					</div>
 				</div>
 				<div class="col-md-2 col-sm-2 col-xs-3 col-plrn-xs pln prn">
@@ -89,7 +89,9 @@
 						<a href="{{shopping_cart}}">
 						<div class="icon-wrap">
 							<img src="img/cart.svg" alt="" width="28px">
-							<div class="counter">{{cart_count}}</div>
+							<div class="counter">
+								<span class="cart-total">{{ text_items }}</span>
+							</div>
 						</div>
 						<span class="hide_mnu_item">Корзина</span>
 					</a>
