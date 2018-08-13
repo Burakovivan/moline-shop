@@ -1,11 +1,4 @@
 $(function() {
-	//for replaceing path for big img
-	$(".smol_img").click(function() {
-		var src = $(this).find('img').attr('src');
-		console.log(src);
-		$(".main_img").find('img').attr('src', src);
-		console.log(src);
-	});
 
 	window.inputNumber = function(el) {
 
@@ -46,6 +39,14 @@ $(function() {
 
 	inputNumber($('.input-number'));
 	/* input counter end */
+
+	//for replaceing path for big img
+	$(".small_img").click(function() {
+		var src = $(this).find('img').attr('src');
+		console.log(src);
+		$(".main_img").find('img').attr('src', src);
+		console.log(src);
+	});
 
 	$(".inner_list_img_wrap").slick({
 		// dots: true,
