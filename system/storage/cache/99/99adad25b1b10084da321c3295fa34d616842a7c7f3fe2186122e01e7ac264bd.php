@@ -32,7 +32,7 @@ class __TwigTemplate_1f8bc8fb949fb8af0c3090f2793eb7ba3d14a6b9e9a2829637a1d949a13
 <link href=\"view/javascript/bootstrap/css/bootstrap.css\" rel=\"stylesheet\" media=\"screen\" />
 <script src=\"view/javascript/bootstrap/js/bootstrap.js\" type=\"text/javascript\"></script>
 <link href=\"view/javascript/font-awesome/css/font-awesome.min.css\" type=\"text/css\" rel=\"stylesheet\" />
-<link href=\"//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700\" rel=\"stylesheet\" type=\"text/css\" />
+
 <link rel=\"stylesheet\" type=\"text/css\" href=\"view/stylesheet/stylesheet.css\" />
 </head>
 <body>";

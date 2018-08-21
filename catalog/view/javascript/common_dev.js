@@ -119,9 +119,16 @@ $(function() {
 		$(this).closest(".clump").find(".header_slide").removeClass("hide_link");
 		$(this).closest(".clump").find(".header_slide_inside").addClass("hide_link");
 	});
-	// $('#nav-icon4').click(function(){
-	// 	$(this).toggleClass('open');
-	// 	$('.mobile-mnu').toggleClass('active');
-	// });
+	
+	$('#openSidebarMenu').on('click', function () {
+		$('.overlay').toggleClass('show');
+	});
+
+	$('.sidebarMenuInner .main-item').on('click', function () {
+		if($(window).width() < 768){
+			$('#sidebarMenu').toggleClass('slide-mm');
+			console.log('click main');
+		}
+	});
 	
 });
