@@ -533,3 +533,11 @@
 2018-08-12 19:15:22 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
 2018-08-12 19:15:22 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
 2018-08-12 19:16:07 - PHP Warning:  unlink(J:/XAMPP/htdocs/storage/cache/cache.catalog.language.1534104967): Resource temporarily unavailable in J:\XAMPP\htdocs\system\library\cache\file.php on line 68
+2018-08-25 9:54:17 - PHP Warning:  mysqli::__construct(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in W:\xampp\htdocs\system\library\db\mysqli.php on line 7
+2018-08-25 9:54:17 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in W:\xampp\htdocs\system\library\db\mysqli.php on line 10
+2018-08-25 9:54:17 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in W:\xampp\htdocs\system\library\db\mysqli.php on line 10
+2018-08-25 9:58:03 - PHP Warning:  mysqli::__construct(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in W:\xampp\htdocs\system\library\db\mysqli.php on line 7
+2018-08-25 9:58:03 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in W:\xampp\htdocs\system\library\db\mysqli.php on line 10
+2018-08-25 9:58:03 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in W:\xampp\htdocs\system\library\db\mysqli.php on line 10

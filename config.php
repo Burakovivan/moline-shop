@@ -1,10 +1,12 @@
 <?php
 // HTTP
+// define('HTTP_SERVER', 'http://moline.com.ua/');
 define('HTTP_SERVER', 'http://localhost/');
 
 // HTTPS
+// define('HTTPS_SERVER', 'http://moline.com.ua/');
 define('HTTPS_SERVER', 'http://localhost/');
-
+ 
 // DIR
 define('DIR_APPLICATION', str_replace('\\','/',__DIR__ ). '/catalog/');
 define('DIR_SYSTEM',  str_replace('\\','/',__DIR__ ). '/system/');
@@ -22,9 +24,9 @@ define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
-define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_DATABASE', 'moline_db');
+define('DB_HOSTNAME', 'sql7.freemysqlhosting.net');
+define('DB_USERNAME', 'sql7253608');
+define('DB_PASSWORD', 'kVxZ13dXgr');
+define('DB_DATABASE', 'sql7253608');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
