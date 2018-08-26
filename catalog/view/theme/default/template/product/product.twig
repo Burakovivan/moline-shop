@@ -102,7 +102,7 @@
 						<div id='cart-result'></div>
 						<div class="col-md-7 col-sm-8">
 							<button class="primary_btn btn_buy main_btn_buy" id="button-cart">Купить
-								<div class="massage">Вы купили 1 штуку, спасибо, смотри корзину</div>
+								<div class="massage" id="cart-message">Вы купили 1 штуку, спасибо, смотри корзину</div>
 							</button>
 							{# <button class="primary_btn btn_buy" id="button-cart">Купить</button> #}
               {# <button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn btn-primary btn-lg btn-block">{{ button_cart }}</button> #}
@@ -250,10 +250,10 @@ $('#button-cart').on('click', function() {
 		data: {product_id, quantity},
 		dataType: 'json',
 		beforeSend: function() {
-			$('#button-cart').button('loading');
+			//$('#button-cart').button('loading');
 		},
 		complete: function() {
-			$('#button-cart').button('reset');
+			//$('#button-cart').button('reset');
 		},
 		success: function(json) {
 			$('.alert-dismissible, .text-danger').remove();
@@ -281,7 +281,11 @@ $('#button-cart').on('click', function() {
 			}
 
 			if (json['success']) {
-				$('#button-cart').before('<div class="alert alert-success alert-dismissible">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				$('#cart-message').html(json['success']);
+				$('#cart-message').css('opacity',1);
+				setTimeout(function(){
+					$('#cart-message').css('opacity',0);
+				},3000);
 
 				$('.cart-total').html(json['total']);
 
