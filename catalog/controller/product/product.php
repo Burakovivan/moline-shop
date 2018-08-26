@@ -338,7 +338,7 @@ class ControllerProductProduct extends Controller {
 					'required'             => $option['required']
 				);
 			}
-
+			$data['options_d'] = json_encode($data['options']);
 			if ($product_info['minimum']) {
 				$data['minimum'] = $product_info['minimum'];
 			} else {
@@ -372,7 +372,14 @@ class ControllerProductProduct extends Controller {
 			$data['share'] = $this->url->link('product/product', 'product_id=' . (int)$this->request->get['product_id']);
 
 			$data['attribute_groups'] = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
-
+			$data['attribute_groups_d'] = json_encode($data['attribute_groups']);
+			$data['attributes'] = array();
+			foreach($data['attribute_groups'] as $attribute_grup){
+				foreach($attribute_grup['attribute'] as $attribute){
+					$data['attributes'][] = $attribute;
+				}
+			}
+			$data['attributes_d'] = json_encode($data['attributes']);
 			$data['products'] = array();
 
 			$results = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);
