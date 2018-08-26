@@ -14,7 +14,7 @@
 			</div>
 		</div>
 <div id="product-product" >
-
+	<jsonDebug hidden>{{attributes_d}}</jsonDebug>
 	<section class="s_product">
 		<div class="container">
 			<div class="row">
@@ -96,16 +96,17 @@
 					<div class="row">
 						<div class="col-md-5 col-sm-4">
 							<div class="input_number_wrap">
-								<span class="input-number-decrement">–</span><input class="input-number" type="text" value="{{minimum}}" min="{{minimum}}" max="10"><span class="input-number-increment">+</span>
+								<span class="input-number-decrement">–</span><input class="input-number" name='quantity' type="text" value="{{minimum}}" min="{{minimum}}" max="10"><span class="input-number-increment">+</span>
 							</div>
 						</div>
+						<div id='cart-result'></div>
 						<div class="col-md-7 col-sm-8">
 							<button class="primary_btn btn_buy" id="button-cart">Купить</button>
               {# <button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn btn-primary btn-lg btn-block">{{ button_cart }}</button> #}
 							{# <a href="#" class="btn_buy" id="button-cart">Купить</a> #}
 						</div>
 					</div>
-
+					<input name='product_id' hidden value={{product_id}}></input>
 					<div class="row">
 						<div class="col-md-6 col-xs-12">
 							<div class="articul-wrap">
@@ -161,14 +162,23 @@
 									<!-- open -->
 									<div class="col-md-6 col-sm-6">
 											<ul class="list_prop">
-												<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-												<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-												<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-												<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-												<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
+												{% for attr in attributes %}
+													{% if loop.index is not divisible by(2) %}
+														<li><span class="s_left">{{attr.name}}</span><span class="s_right">{{attr.text}}</span></li>
+													{% endif %}
+												{% endfor %}
 											</ul>
-										</div>
-									<div class="detail closed">
+									</div>
+									<div class="col-md-6 col-sm-6">
+											<ul class="list_prop">
+												{% for attr in attributes %}
+													{% if loop.index is divisible by(2) %}
+														<li><span class="s_left">{{attr.name}}</span><span class="s_right">{{attr.text}}</span></li>
+													{% endif %}
+												{% endfor %}
+											</ul>
+									</div>
+									{# <div  class="detail closed">
 										<!-- closed_info -->
 											<div class="col-md-6 col-sm-6">
 													<ul>
@@ -180,7 +190,7 @@
 														</ul>
 											</div>
 										<!-- closed_info end-->
-									</div>
+									</div> #}
 								</div>
 								<div class="footer visible-xs">
 									<div class="slider_link more">Подробнее</div>
@@ -229,10 +239,12 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 //--></script> 
 <script type="text/javascript"><!--
 $('#button-cart').on('click', function() {
+	var product_id = $('input[name=product_id]').val();
+	var quantity = $('input[name=quantity]').val();
 	$.ajax({
 		url: 'index.php?route=checkout/cart/add',
 		type: 'post',
-		data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
+		data: {product_id, quantity},
 		dataType: 'json',
 		beforeSend: function() {
 			$('#button-cart').button('loading');
@@ -266,9 +278,9 @@ $('#button-cart').on('click', function() {
 			}
 
 			if (json['success']) {
-				$('.breadcrumb').after('<div class="alert alert-success alert-dismissible">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				$('#button-cart').before('<div class="alert alert-success alert-dismissible">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-				$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+				$('.cart-total').html(json['total']);
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 
