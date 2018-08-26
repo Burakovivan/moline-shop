@@ -541,3 +541,18 @@
  in W:\xampp\htdocs\system\library\db\mysqli.php on line 7
 2018-08-25 9:58:03 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in W:\xampp\htdocs\system\library\db\mysqli.php on line 10
 2018-08-25 9:58:03 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in W:\xampp\htdocs\system\library\db\mysqli.php on line 10
+2018-08-25 13:38:46 - PHP Warning:  mysqli::__construct(): (HY000/1040): Too many connections in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2018-08-25 13:38:46 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2018-08-25 13:38:46 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2018-08-25 13:39:30 - PHP Warning:  mysqli::__construct(): (HY000/1040): Too many connections in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2018-08-25 13:39:30 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2018-08-25 13:39:30 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2018-08-25 13:39:59 - PHP Warning:  mysqli::__construct(): (HY000/1040): Too many connections in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2018-08-25 13:39:59 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2018-08-25 13:39:59 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2018-08-25 13:40:54 - PHP Warning:  mysqli::__construct(): (HY000/1040): Too many connections in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2018-08-25 13:40:54 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2018-08-25 13:40:54 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2018-08-25 13:41:28 - PHP Warning:  mysqli::__construct(): (08004/1040): Too many connections in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2018-08-25 13:41:28 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2018-08-25 13:41:28 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
