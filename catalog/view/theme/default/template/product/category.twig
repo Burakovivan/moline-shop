@@ -1,170 +1,360 @@
 {{ header }}
-<div id="product-category" class="container">
-  <ul class="breadcrumb">
-    {% for breadcrumb in breadcrumbs %}
-    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
-    {% endfor %}
-  </ul>
-  <div class="row">{{ column_left }}
-    {% if column_left and column_right %}
-    {% set class = 'col-sm-6' %}
-    {% elseif column_left or column_right %}
-    {% set class = 'col-sm-9' %}
-    {% else %}
-    {% set class = 'col-sm-12' %}
-    {% endif %}
-    <div id="content" class="{{ class }}">{{ content_top }}
-      <h2>{{ heading_title }}</h2>
-      {% if thumb or description %}
-      <div class="row"> {% if thumb %}
-        <div class="col-sm-2"><img src="{{ thumb }}" alt="{{ heading_title }}" title="{{ heading_title }}" class="img-thumbnail" /></div>
-        {% endif %}
-        {% if description %}
-        <div class="col-sm-10">{{ description }}</div>
-        {% endif %}</div>
-      <hr>
-      {% endif %}
-      {% if categories %}
-      <h3>{{ text_refine }}</h3>
-      {% if categories|length <= 5 %}
-      <div class="row">
-        <div class="col-sm-3">
-          <ul>
-            {% for category in categories %}
-            <li><a href="{{ category.href }}">{{ category.name }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
-      {% else %}
-      <div class="row">{% for category in categories|batch((categories|length / 4)|round(1, 'ceil')) %}
-        <div class="col-sm-3">
-          <ul>
-            {% for child in category %}
-            <li><a href="{{ child.href }}">{{ child.name }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-        {% endfor %}</div>
-      <br />
-      {% endif %}
-      {% endif %}
-      {% if products %}
-      <div class="row">
-        <div class="col-md-2 col-sm-6 hidden-xs">
-          <div class="btn-group btn-group-sm">
-            <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="{{ button_list }}"><i class="fa fa-th-list"></i></button>
-            <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="{{ button_grid }}"><i class="fa fa-th"></i></button>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="form-group"><a href="{{ compare }}" id="compare-total" class="btn btn-link">{{ text_compare }}</a></div>
-        </div>
-        <div class="col-md-4 col-xs-6">
-          <div class="form-group input-group input-group-sm">
-            <label class="input-group-addon" for="input-sort">{{ text_sort }}</label>
-            <select id="input-sort" class="form-control" onchange="location = this.value;">
-              
-              
-              
-              {% for sorts in sorts %}
-              {% if sorts.value == '%s-%s'|format(sort, order) %}
-              
-              
-              
-              <option value="{{ sorts.href }}" selected="selected">{{ sorts.text }}</option>
-              
-              
-              
-              {% else %}
-              
-              
-              
-              <option value="{{ sorts.href }}">{{ sorts.text }}</option>
-              
-              
-              
-              {% endif %}
-              {% endfor %}
-            
-            
-            
-            </select>
-          </div>
-        </div>
-        <div class="col-md-3 col-xs-6">
-          <div class="form-group input-group input-group-sm">
-            <label class="input-group-addon" for="input-limit">{{ text_limit }}</label>
-            <select id="input-limit" class="form-control" onchange="location = this.value;">
-              
-              
-              
-              {% for limits in limits %}
-              {% if limits.value == limit %}
-              
-              
-              
-              <option value="{{ limits.href }}" selected="selected">{{ limits.text }}</option>
-              
-              
-              
-              {% else %}
-              
-              
-              
-              <option value="{{ limits.href }}">{{ limits.text }}</option>
-              
-              
-              
-              {% endif %}
-              {% endfor %}
-            
-            
-            
-            </select>
-          </div>
-        </div>
-      </div>
-      <div class="row"> {% for product in products %}
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
-            <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
-            <div>
-              <div class="caption">
-                <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
-                <p>{{ product.description }}</p>
-                {% if product.price %}
-                <p class="price"> {% if not product.special %}
-                  {{ product.price }}
-                  {% else %} <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span> {% endif %}
-                  {% if product.tax %} <span class="price-tax">{{ text_tax }} {{ product.tax }}</span> {% endif %} </p>
-                {% endif %}
-                {% if product.rating %}
-                <div class="rating"> {% for i in 1..5 %}
-                  {% if product.rating < i %} <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> {% else %} <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>{% endif %}
-                  {% endfor %} </div>
-                {% endif %} </div>
-              <div class="button-group">
-                <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
-                <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><i class="fa fa-heart"></i></button>
-                <button type="button" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><i class="fa fa-exchange"></i></button>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endfor %} </div>
-      <div class="row">
-        <div class="col-sm-6 text-left">{{ pagination }}</div>
-        <div class="col-sm-6 text-right">{{ results }}</div>
-      </div>
-      {% endif %}
-      {% if not categories and not products %}
-      <p>{{ text_empty }}</p>
-      <div class="buttons">
-        <div class="pull-right"><a href="{{ continue }}" class="btn btn-primary">{{ button_continue }}</a></div>
-      </div>
-      {% endif %}
-      {{ content_bottom }}</div>
-    {{ column_right }}</div>
+<div id="product-category">
+  <div class="bred_crambs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						
+								<ul class="bred_crambs_list">
+										{% for breadcrumb in breadcrumbs %}
+											<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><img src="img/arrow.svg" alt=""></li>
+    								{% endfor %}
+								</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="overlay"></div>
+	
+	{% if categories %}
+		<section class="type_select">
+		<div class="container">
+			<div class="row">
+				<h3>Выберите тип товара:</h3>
+			</div>
+			<div class="row">
+
+				<ul class="top_cat_list">
+					 {% for category in categories %}
+					<li>
+							<a href="{{ category.href }}">
+								<div class="type-item">
+									<div class="img_wrap"><img src="http://via.placeholder.com/88x72" alt=""></div>
+									<p>{{ category.name }}</p>
+								</div>
+							</a>
+					</li>
+					 {% endfor %}
+					
+				</ul>
+				
+			</div>
+		</div>
+	</section>
+	{% endif %}
+
+	<section class="s_white s_catalog">
+		<!-- <div class="container pnl-sm pnr-sm"> -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 pn-lg-left pnl-sm">
+					<h1 class="cat_name">{{ heading_title }}</h1>
+					<div class="cat_info">
+						<div class="all">Всего: 37 видов товара</div>
+						<div class="page">
+							{# страница 1 #}
+							{{ results }}
+						</div>
+					</div>
+				</div>
+				<!-- <div class="col-xs-12 col-sm-4 pln-sm prn-xs hidden-md hidden-lg"> -->
+				<!-- <div class="col-xs-12 col-sm-4 pnl-sm pnr-sm pln-before992 hidden-md hidden-lg"> -->
+				<div class="col-xs-12 col-sm-4 pnl-sm pnr-sm pln-before992 visible-xs visible-sm">
+					<div class="filter_btn_wrap">
+						<div class="filter_btn"><img src="img/cat_icon/page-1.svg" alt="">Фильтры</div>
+					</div>
+				</div>
+				
+				<div class="col-md-5 col-xs-8 col-sm-6">
+		
+					<div class="sort_wrap">
+						<div class="s_action">
+							{{ text_sort }}
+						</div>
+						<div class="select">
+							<select name="slct" id="slct" onchange="location = this.value;">
+									{% for sorts in sorts %}
+             			{% if sorts.value == '%s-%s'|format(sort, order) %}
+                    <option value="{{ sorts.href }}" selected="selected">{{ sorts.text }}</option>
+        					{% else %}         
+              			<option value="{{ sorts.href }}">{{ sorts.text }}</option>
+									{% endif %}
+              		{% endfor %}
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-xs-4  col-sm-2 pr-lg-right">
+					
+					<div class="grid_type_select">
+						
+						<svg id="type_grid" width="29px" height="21px" viewBox="0 0 29 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<title>AD118840-605A-4994-99AB-7CE599791E00</title>
+							<defs></defs>
+							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+									<g id="1.Catalog-categories---Large-desktop" transform="translate(-1286.000000, -561.000000)" fill="#D8D8DA">
+											<path d="M1306.45134,582 L1315,582 L1315,572.295749 L1306.45134,572.295749 L1306.45134,582 Z M1306.45134,570.704251 L1315,570.704251 L1315,561 L1306.45134,561 L1306.45134,570.704251 Z M1296.22567,582 L1304.77433,582 L1304.77433,572.295749 L1296.22567,572.295749 L1296.22567,582 Z M1296.22567,570.704251 L1304.77433,570.704251 L1304.77433,561 L1296.22567,561 L1296.22567,570.704251 Z M1286,582 L1294.54866,582 L1294.54866,572.295749 L1286,572.295749 L1286,582 Z M1286,570.704251 L1294.54866,570.704251 L1294.54866,561 L1286,561 L1286,570.704251 Z" id="Fill-6"></path>
+									</g>
+							</g>
+						</svg>
+						<svg id="type_list" width="26px" height="21px" viewBox="0 0 26 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<title>F32A416C-6471-4738-9CEC-FFB5CE06620C</title>
+							<defs></defs>
+							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+									<g id="1.Catalog-categories---Large-desktop" transform="translate(-1334.000000, -561.000000)" fill="#D8D8DA">
+											<path d="M1341.66432,582 L1360,582 L1360,576.010309 L1341.66432,576.010309 L1341.66432,582 Z M1341.66432,574.530928 L1360,574.530928 L1360,568.469072 L1341.66432,568.469072 L1341.66432,574.530928 Z M1341.66432,566.989691 L1360,566.989691 L1360,561 L1341.66432,561 L1341.66432,566.989691 Z M1334,582 L1340.16079,582 L1340.16079,576.010309 L1334,576.010309 L1334,582 Z M1334,574.530928 L1340.16079,574.530928 L1340.16079,568.469072 L1334,568.469072 L1334,574.530928 Z M1334,566.989691 L1340.16079,566.989691 L1340.16079,561 L1334,561 L1334,566.989691 Z" id="Fill-4"></path>
+									</g>
+							</g>
+					</svg>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<!-- <div class="slide_mobile_filters col-md-3 pr-lg-right pn-lg-left prn-md pln-md visible-md visible-lg"> -->
+				<div class="s_cont  col-md-3 pr-lg-right pn-lg-left prn-md pln-md  slide_mobile_filters f_position ">
+				<aside class="sidebar ">
+						
+						<svg class="exit_filter_btn" width="22px" height="22px" viewBox="0 0 22 22" version="1.1" >
+								
+								<title>114ABD1B-E5AF-4E56-A79F-CE16CEF6C394</title>
+								<defs></defs>
+								<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+										<g id="5.Filters---Mobile" transform="translate(-255.000000, -24.000000)" fill="#94949F">
+												<path d="M276.483036,42.9641825 L273.964564,45.4802061 C273.630058,45.8147543 273.168384,46 272.703946,46 C272.242272,46 271.777834,45.8147543 271.446092,45.4802061 L266,40.0361945 L260.556673,45.4802061 C260.224931,45.8147543 259.760493,46 259.298819,46 C258.83438,46 258.372707,45.8147543 258.038201,45.4802061 L255.519729,42.9641825 C255.185222,42.6296343 255,42.1679025 255,41.7034058 C255,41.241674 255.185222,40.7771773 255.519729,40.445394 L260.965821,34.9986176 L255.519729,29.5518411 C255.185222,29.2200578 255,28.7555611 255,28.2938293 C255,27.8293327 255.185222,27.3676009 255.519729,27.0330527 L258.038201,24.517029 C258.372707,24.1824808 258.83438,24 259.298819,24 C259.760493,24 260.224931,24.1824808 260.556673,24.517029 L266,29.9610406 L271.446092,24.517029 C271.777834,24.1824808 272.242272,24 272.703946,24 C273.168384,24 273.630058,24.1824808 273.964564,24.517029 L276.483036,27.0330527 C276.817542,27.3676009 277,27.8293327 277,28.2938293 C277,28.7555611 276.817542,29.2200578 276.483036,29.5518411 L271.036944,34.9986176 L276.483036,40.445394 C276.817542,40.7771773 277,41.241674 277,41.7034058 C277,42.1679025 276.817542,42.6296343 276.483036,42.9641825" id="Fill-1"></path>
+										</g>
+								</g>
+						</svg>
+
+						<div class="sb_block sb_price">
+							<div class="sb_block_name">Цена</div>
+							<input type="text" name="price_from" class="input_price">
+							<input type="text" name="price_to" class="input_price">
+							<div class="range_wrap">
+								<input type="range" min="0" max="100" value="70" class="slider" />
+								<!-- <input type="range" min="0" max="100" multiple value="10,70" class="slider" /> -->
+							</div>
+							<!-- <input type="range" min="0" max="100" multiple value="10,70" class="slider" /> -->
+							<!-- <input type="range" multiple value="10,80" /> -->
+						</div>
+						
+						<div class="sb_block ">
+							
+							<div class="clump">
+									<div class="card">
+										<div class="section">
+											<!-- open -->
+											<!-- <div class="sb_block_name">Тест</div> -->
+
+											<div class="sb_detail closed">
+												<!-- closed_info -->
+												<!-- <div class="sb_block_name">Тест</div> -->
+												<div class="sb_block_name sb_header_slide_inside">Тест</div>
+
+												<ul class="unstyled centered cat_list_sb">
+														<li>
+															<input class="styled-checkbox" id="styled-checkbox-1" type="checkbox" value="value1">
+															<label for="styled-checkbox-1">Checkbox</label>
+															<div class="amount">8</div>
+															<div class="show_cat">
+																	<p>(67) Показать</p>
+																	<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+																		<title>1C1380D6-125C-4506-BD6F-B50847476D47</title>
+																		<defs></defs>
+																		<g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+																				<g id="show-filter" transform="translate(-175.000000, -14.000000)" fill="#FFFFFF">
+																						<path d="M190.024038,27.6057692 L186.418269,24 L190.024038,20.3942308 L188.605769,18.9759615 L185,22.5817308 L181.394231,18.9759615 L179.975962,20.3942308 L183.581731,24 L179.975962,27.6057692 L181.394231,29.0240385 L185,25.4182692 L188.605769,29.0240385 L190.024038,27.6057692 Z M185,14 C186.826923,14 188.517628,14.458734 190.072115,15.3721955 C191.578526,16.2355769 192.764423,17.4234776 193.629808,18.9278846 C194.543269,20.4823718 195,22.1730769 195,24 C195,25.8269231 194.543269,27.5176282 193.629808,29.0721154 C192.764423,30.5785256 191.578526,31.7644231 190.072115,32.6318109 C188.517628,33.5452724 186.826923,34 185,34 C183.173077,34 181.482372,33.5452724 179.927885,32.6318109 C178.421474,31.7483974 177.235577,30.5564904 176.370192,29.0500801 C175.456731,27.4935897 175,25.8108974 175,24 C175,22.1911058 175.456731,20.5064103 176.370192,18.9539263 C177.251603,17.447516 178.445513,16.2516026 179.951923,15.3721955 C181.50641,14.458734 183.189103,14 185,14 L185,14 Z" id="Fill-1"></path>
+																				</g>
+																		</g>
+																</svg>
+															</div>
+														</li>
+														<li>
+															<input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2" checked>
+															<label for="styled-checkbox-2">CSS Only</label>
+															<div class="amount">8</div>
+														</li>
+														<li>
+															<input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3" disabled>
+															<label for="styled-checkbox-3">A disabled checkbox</label>
+															<div class="amount">8</div>
+														</li>
+														<li>
+															<input class="styled-checkbox" id="styled-checkbox-4" type="checkbox" value="value4">
+															<label for="styled-checkbox-4">Fourth option</label>
+															
+														</li>
+													</ul>
+												<!-- closed_info end-->
+											</div>
+										</div>
+										<div class="footer ">
+											<!-- <div class="header_slide ">Заголово закріто</div> -->
+											<div class="sb_block_name sb_header_slide">Тестовый блок</div>
+
+											<div class="slider_link less hide_link">Скрыть</div>
+										</div>
+									</div>
+								</div>
+
+						</div>
+
+						<div class="sb_block ">
+							<div class="sb_block_name">Цвет</div>
+						</div>
+					</aside>
+				</div>
+
+				<!-- <div class="col-md-9 pr-lg-right pn-lg-left prn-md pln-md"> -->
+				<div class="block_products grid col-md-9 pr-lg-right pn-lg-left prn-md pln-md">
+					{% for product in products %}
+						<div class="item_wrap col-md-4 col-xs-6 col-sm-3">
+	<div class=" top_info">
+	<div class="pln col-md-6 col-xs-5">
+								<div class="bage_blue bage">Хит</div>
+							</div>
+							<div class="prn col-md-6 col-xs-7">
+								<div class="itm_artic_wrap">
+									Арт.3334156
+								</div>
+							</div>
+	</div>
+
+	<div class="row">
+	
+		<div class="col-md-12 itm_img_wrap">
+			<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}">
+		</div>
+
+	
+	
+		<div class="col-md-12 h_wrap">
+			<h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
+		</div>
+	
+	
+		<div class="col-md-12 p_wrap">
+		{% if product.price %}
+		{% if not product.special %}
+		<div class="price">{{ product.price }}</div>
+		{% else %}
+		<div class="price">{{ product.special }}
+		<div class="old_price visible-sm">{{ product.price }}</div>
+		</div>
+		{% endif %}
+		{% endif %}
+		</div>
+	
+	
+		<div class="col-md-6 col-sm-12  pr-lg-right cw_wrp">
+			<div class="counter_wrap">
+				<div class="cw_inner">
+					<span class="input-number-decrement">–</span><input class="input-number" type="text" value="1" min="0" max="10"><span
+					 class="input-number-increment">+</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-md-6 col-sm-12 btn_buy_wrap btn_buy_wrap_link"><button onclick="cart.add('{{ product.product_id }}');" class="btn_buy primary_btn">{{ button_cart }}</button></div>
+
+		</div>
+</div>
+					{% endfor %}
+					
+				</div>
+			</div>
+			
+			<div class="pagination_wrap text-center">
+				<button class="secondary_btn">Еще 12 товаров</button>
+				<div class="с_pagination">
+					<ul>
+						<li class="active">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li class="dots">...</li>
+						<li>55</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="s_gray s_seo">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-5 col-sm-4 col-lg-offset-1 hidden-xs text-right seo_img_wrap">
+					<img src="http://via.placeholder.com/207x137" alt="" class="img-responsive">
+				</div>
+				<div class="col-lg-6 col-md-7 col-sm-8">
+					<div class="seo_text_wrap">
+							<h2>Текст для SEO</h2>
+							<p>Предназначен для склеивания резины, кожи, металлов, полистирола, оргстекла и других пластиков, пробки, стекла, керамики,
+								бетона. Не подходит для склеивания посуды, контактирующей с пищей, стиропора, полиэтилена и полипропилена. Разделы
+								в подвале сайта «Возврат товара без проблем», вносим: отгрузка в день заказа, наличие собственного склада, только оригинальная
+								продукция. Под каждое данное преимущество необходима своя иконка в стиле компании.
+							</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="s_white">
+		<div class="container">
+			<div class="row">
+				<div class="advantages">
+
+					<div class="col-md-4 col-sm-4">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2">
+								<div class="img_wrap">
+									<img src="img/package.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10">
+								<div class="text-wrap">
+									<h3>Отгрузка в день заказа</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2">
+								<div class="img_wrap">
+									<img src="img/sklad.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10">
+								<div class="text-wrap">
+									<h3>Наличие собственного склада</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2">
+								<div class="img_wrap">
+									<img src="img/steaker.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10">
+								<div class="text-wrap">
+									<h3>Только оригинальная продукция</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+  
 </div>
 {{ footer }} 
