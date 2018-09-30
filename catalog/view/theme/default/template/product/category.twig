@@ -209,56 +209,60 @@
 				<div class="block_products grid col-md-9 pr-lg-right pn-lg-left prn-md pln-md">
 					{% for product in products %}
 						<div class="item_wrap col-md-4 col-xs-6 col-sm-3">
-	<div class=" top_info">
-	<div class="pln col-md-6 col-xs-5">
-								<div class="bage_blue bage">Хит</div>
-							</div>
-							<div class="prn col-md-6 col-xs-7">
-								<div class="itm_artic_wrap">
-									Арт.3334156
+							<div class=" top_info">
+								<div class="pln col-md-6 col-xs-5">
+									<div class="bage_blue bage">Хит</div>
+								</div>
+								<div class="prn col-md-6 col-xs-7">
+									<div class="itm_artic_wrap">
+										Арт.3334156
+									</div>
 								</div>
 							</div>
-	</div>
 
-	<div class="row">
-	
-		<div class="col-md-12 itm_img_wrap">
-			<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}">
-		</div>
+							<div class="row">
+								<div class="col-md-12 itm_img_wrap">
+									<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}">
+								</div>
 
-	
-	
-		<div class="col-md-12 h_wrap">
-			<h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
-		</div>
-	
-	
-		<div class="col-md-12 p_wrap">
-		{% if product.price %}
-		{% if not product.special %}
-		<div class="price">{{ product.price }}</div>
-		{% else %}
-		<div class="price">{{ product.special }}
-		<div class="old_price visible-sm">{{ product.price }}</div>
-		</div>
-		{% endif %}
-		{% endif %}
-		</div>
-	
-	
-		<div class="col-md-6 col-sm-12  pr-lg-right cw_wrp">
-			<div class="counter_wrap">
-				<div class="cw_inner">
-					<span class="input-number-decrement">–</span><input class="input-number" type="text" value="1" min="0" max="10"><span
-					 class="input-number-increment">+</span>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col-md-6 col-sm-12 btn_buy_wrap btn_buy_wrap_link"><button onclick="cart.add('{{ product.product_id }}');" class="btn_buy primary_btn">{{ button_cart }}</button></div>
+								<div class="col-md-12 h_wrap">
+									<h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
+								</div>
 
-		</div>
-</div>
+								<div class="col-md-12 p_wrap">
+									{% if product.price %}
+									{% if not product.special %}
+									<div class="price">{{ product.price }}</div>
+									{% else %}
+									<div class="price">{{ product.special }}
+									<div class="old_price visible-sm">{{ product.price }}</div>
+								</div>
+								{% endif %}
+								{% endif %}
+								</div>
+
+								<div class="col-md-6 col-sm-12  pr-lg-right cw_wrp">
+									<div class="counter_wrap">
+										<div class="cw_inner">
+											<span class="input-number-decrement">–</span><input class="input-number" type="text" value="1" min="0" max="10"><span
+											 class="input-number-increment">+</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-6 col-sm-12 btn_buy_wrap btn_buy_wrap_link">
+									<button onclick="cart.add('{{ product.product_id }}');" class="btn_buy primary_btn">{{ button_cart }}</button>
+								</div>
+								
+								<div class="ost col-sm-12 pln ct_hide">115 ед. остаток на складе</div>
+								<div class="limit ct_hide">от <span class="amount_lim">5 ед.</span><span class="hidd_mobile">минимальный заказ</span></div>
+								<div class="retail_price ct_hide">Рекомендуемая розничная цена
+									<div class="price">12000,99 
+										<span class="currency">грн</span>
+									</div>
+								</div>
+								</div>
+						</div>
 					{% endfor %}
 					
 				</div>
