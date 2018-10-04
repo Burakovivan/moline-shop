@@ -564,3 +564,7 @@
 2018-08-25 13:41:28 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
 2018-08-25 13:41:28 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
 >>>>>>> eaf7eb40fc82c6429dbf42236df33f7abf242318
+2018-10-04 7:38:10 - PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo failed: No such host is known.  in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2018-10-04 7:38:10 - PHP Warning:  mysqli::__construct(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: No such host is known.  in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2018-10-04 7:38:10 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2018-10-04 7:38:10 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10

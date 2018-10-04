@@ -161,6 +161,34 @@ $(function () {
 		$('.overlay').toggleClass('show');
 	});
 
+	$('.cart-wrap').on('click', function () {
+		// $('.cart').toggleClass('show_cart');
+		$('.cart').fadeIn("slow");
+		$('.wrap_cart').fadeIn("slow");
+
+		console.log('click +');
+	});
+
+	$('.cart').on('click', function () {
+		$('.cart').fadeOut("slow");
+		$('.wrap_cart').fadeOut("slow");
+
+		console.log('click -- ');
+	});
+	$('#exit_cart').on('click', function () {
+		$('.cart').fadeOut("slow");
+		$('.wrap_cart').fadeOut("slow");
+		
+		console.log('click - ');
+	});
+
+	$('.lets_buy').on('click', function () {
+		$('.cart').fadeOut("slow");
+		$('.wrap_cart').fadeOut("slow");
+		
+		console.log('click - ');
+	});
+
 	var i_type_trig = 1;
 	var tree_modif = 0;
 	var tree_moove = 0;
