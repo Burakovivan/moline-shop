@@ -1,21 +1,21 @@
 $(function () {
 
-	window.inputNumber = function (el) {
+	$.fn.inputNumber = function () {
 
-		var min = el.attr('min') || false;
-		var max = el.attr('max') || false;
+		var min = this.attr('min') || false;
+		var max = this.attr('max') || false;
 
-		var els = {};
 
-		els.dec = el.prev();
-		els.inc = el.next();
 
-		el.each(function () {
+		this.each(function () {
 			init($(this));
 		});
 
 		function init(el) {
+			var els = {};
 
+			els.dec = el.parent().find('.input-number-decrement');
+			els.inc = el.parent().find('.input-number-increment');
 			els.dec.on('click', decrement);
 			els.inc.on('click', increment);
 
@@ -37,7 +37,7 @@ $(function () {
 		}
 	}
 
-	inputNumber($('.input-number'));
+	$('.input-number').inputNumber();
 	/* input counter end */
 
 	//for replaceing path for big img
@@ -144,6 +144,9 @@ $(function () {
 	$('#openSidebarMenu').on('click', function () {
 		$('.overlay').toggleClass('show');
 	});
+	$('#openSidebarMenu').parent(".mnu_button_wrap").parent().on('click', function () {
+		$('#openSidebarMenu').click();
+	});
 
 	$('.filter_btn').on('click', function () {
 		// $('.s_cont').toggleClass('slide_mobile_filters');
@@ -158,7 +161,7 @@ $(function () {
 	});
 	$('.overlay').on('click', function () {
 		$('.slide_mobile_filters').toggleClass('f_active_pos');
-		$('.overlay').toggleClass('show');
+		$('#openSidebarMenu').click();
 	});
 
 	$('.cart-wrap').on('click', function () {
