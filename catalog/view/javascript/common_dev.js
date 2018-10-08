@@ -141,6 +141,13 @@ $(function () {
 		$(this).closest(".clump").find(".sb_header_slide_inside").addClass("hide_link");
 	});
 
+	$(".more_seo").click(function () {
+		console.log('click more');
+		$(this).closest(".clump").find(".detail_seo").toggleClass("closed");
+		$(this).closest(".clump").find(".slider_link_seo").toggleClass("less_seo");
+		$(this).closest(".clump").find(".slider_link_seo").toggleClass("more_seo");
+	});
+
 	$('#openSidebarMenu').on('click', function () {
 		$('.overlay').toggleClass('show');
 	});
