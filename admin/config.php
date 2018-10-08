@@ -1,31 +1,25 @@
 <?php
-// //HTTP
-// define('HTTP_SERVER', 'http://moline.com.ua/admin/');
-// define('HTTP_CATALOG', 'http://moline.com.ua/');
-
-// // HTTPS
-// define('HTTPS_SERVER', 'http://moline.com.ua/admin/');
-// define('HTTPS_CATALOG', 'http://moline.com.ua/');
-
 //HTTP
-define('HTTP_SERVER', 'http://localhost/admin/');
-define('HTTP_CATALOG', 'http://localhost');
+define('HTTP_SERVER', 'http://moline.com.ua/admin/');
+define('HTTP_CATALOG', 'http://moline.com.ua/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost/admin/');
-define('HTTPS_CATALOG', 'http://localhost/');
+define('HTTPS_SERVER', 'http://moline.com.ua/admin/');
+define('HTTPS_CATALOG', 'http://moline.com.ua/');
+
+// oone('HTTPS_CATALOG', 'http://localhost/');
 
 // DIR
-// define('DIR_APPLICATION', str_replace('\\','/',__DIR__ ). '/');
-// define('DIR_CATALOG', str_replace('\\','/',__DIR__ ). '/../catalog/');
-// define('DIR_SYSTEM',  str_replace('\\','/',__DIR__ ). '/../system/');
-// define('DIR_IMAGE',  str_replace('\\','/',__DIR__ ). '/../image/');
-// define('DIR_STORAGE',  str_replace('\\','/',__DIR__ ). '/../storage/');
-define('DIR_APPLICATION', 'J:/xampp/htdocs/admin/');
-define('DIR_SYSTEM', 'J:/xampp/htdocs/system/');
-define('DIR_IMAGE', 'J:/xampp/htdocs/image/');
-define('DIR_STORAGE', 'J:/xampp/htdocs/storage/');
-define('DIR_CATALOG', 'J:/xampp/htdocs/catalog/');
+define('DIR_APPLICATION', str_replace('\\','/',__DIR__ ). '/');
+define('DIR_CATALOG',  str_replace('admin','catalog/',str_replace('\\','/',__DIR__ )));
+define('DIR_SYSTEM',  str_replace('admin','system/',str_replace('\\','/',__DIR__ )));
+define('DIR_IMAGE',  str_replace('admin','image/',str_replace('\\','/',__DIR__ )));
+define('DIR_STORAGE',  str_replace('admin','storage/',str_replace('\\','/',__DIR__ )));
+// define('DIR_APPLICATION', 'J:/xampp/htdocs/admin/');
+// define('DIR_SYSTEM', 'J:/xampp/htdocs/system/');
+// define('DIR_IMAGE', 'J:/xampp/htdocs/image/');
+// define('DIR_STORAGE', 'J:/xampp/htdocs/storage/');
+// define('DIR_CATALOG', 'J:/xampp/htdocs/catalog/');
 
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/template/');
@@ -39,10 +33,13 @@ define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
 
 // DB
 // define('DB_DRIVER', 'mysqli');
-// define('DB_HOSTNAME', 'sql7.freemysqlhosting.net');
-// define('DB_USERNAME', 'sql7253608');
-// define('DB_PASSWORD', 'kVxZ13dXgr');
-// define('DB_DATABASE', 'sql7253608');
+// define('DB_HOSTNAME', 'mysql.ukrdomen.com');
+// define('DB_USERNAME', 'uh1090933_root');
+// define('DB_PASSWORD', 'yWO2u0yK4');
+// define('DB_DATABASE', 'uh1090933_molineDb');
+// define('DB_PORT', '3306');
+// define('DB_PREFIX', 'oc_');
+
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
