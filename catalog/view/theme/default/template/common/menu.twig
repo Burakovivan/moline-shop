@@ -68,7 +68,11 @@
 													<ul class="inner-list">
 														<li class="sub-item back_btn_mnu" ><a href="#" class="back_b"><p>Назад</p></a></li>
 														{% for child in children %}
-															<li class="sub-item"><a href="{{ child.href }}"><div class="img_wrap"><img src="http://via.placeholder.com/88x72" alt=""></div><p>{{ child.name }}</p></a></li>
+															{% if child.image %}
+																<li class="sub-item"><a href="{{ child.href }}"><div class="img_wrap"><img src="image/{{ child.image }}" alt=""></div><p>{{ child.name }}</p></a></li>
+															{% else %}
+																<li class="sub-item"><a href="{{ child.href }}"><div class="img_wrap"><img alt=""></div><p>{{ child.name }}</p></a></li>
+															{% endif %}
 														{% endfor %}
 													</ul>
 													{% endfor %}

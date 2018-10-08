@@ -2,11 +2,6 @@ $(function () {
 
 	$.fn.inputNumber = function () {
 
-		var min = this.attr('min') || false;
-		var max = this.attr('max') || false;
-
-
-
 		this.each(function () {
 			init($(this));
 		});
@@ -20,6 +15,7 @@ $(function () {
 			els.inc.on('click', increment);
 
 			function decrement() {
+				var min = el.attr('min') || false;
 				var value = el[0].value;
 				value--;
 				if (!min || value >= min) {
@@ -28,6 +24,7 @@ $(function () {
 			}
 
 			function increment() {
+				var max = el.attr('max') || false;
 				var value = el[0].value;
 				value++;
 				if (!max || value <= max) {
@@ -449,6 +446,5 @@ $(function () {
 		// $('#sidebarMenu').toggleClass('slide-mm');
 		// console.log('click back');
 	});
-
-
+	
 });
