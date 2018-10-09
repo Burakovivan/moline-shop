@@ -1,11 +1,15 @@
 <?php
 //HTTP
-define('HTTP_SERVER', 'http://moline.com.ua/admin/');
-define('HTTP_CATALOG', 'http://moline.com.ua/');
+// define('HTTP_SERVER', 'http://moline.com.ua/admin/');
+define('HTTP_SERVER', 'http://localhost/admin/');
+// define('HTTP_CATALOG', 'http://moline.com.ua/');
+define('HTTP_CATALOG', 'http://localhost/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://moline.com.ua/admin/');
-define('HTTPS_CATALOG', 'http://moline.com.ua/');
+// define('HTTPS_SERVER', 'http://moline.com.ua/admin/');
+define('HTTPS_SERVER', 'http://localhost/admin/');
+// define('HTTPS_CATALOG', 'http://moline.com.ua/');
+define('HTTPS_CATALOG', 'http:/localhost/');
 
 // oone('HTTPS_CATALOG', 'http://localhost/');
 

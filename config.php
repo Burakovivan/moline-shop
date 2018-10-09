@@ -1,11 +1,11 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://moline.com.ua/');
-// define('HTTP_SERVER', 'http://localhost/');
+// define('HTTP_SERVER', 'http://moline.com.ua/');
+define('HTTP_SERVER', 'http://localhost/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://moline.com.ua/');
-// define('HTTPS_SERVER', 'http://localhost/');
+// define('HTTPS_SERVER', 'http://moline.com.ua/');
+define('HTTPS_SERVER', 'http://localhost/');
  
 // DIR
 define('DIR_APPLICATION', str_replace('\\','/',__DIR__ ). '/catalog/');
