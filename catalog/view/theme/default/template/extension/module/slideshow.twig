@@ -3,24 +3,29 @@
 
 			<div class="row">
 				<div class="col-lg-4 visible-lg pr-lg-left">
+
 					<div id="sidebarMenu_dock">
 						{% if categories %} 
 						<ul class="sidebarMenuInner">
-							{% for category in categories %}
-								<li class ="main-item"><a href="{{ category.href }}"><div class="icon_mnu_wrap"><img src="image/{{ category.image }}" alt=""></div><p>{{ category.name }}</p><i class="fas fa-angle-right"></i></a>
-									{% if category.children %}
-										{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
-											<ul class="inner-list">
-												<li class="sub-item back_btn_mnu" ><a href="#" class="back_b"><p>Назад</p></a></li>
-												{% for child in children %}
-													<li class="sub-item"><a href="{{ child.href }}"><div class="img_wrap"><img src="http://via.placeholder.com/88x72" alt=""></div><p>{{ child.name }}</p></a></li>
-												{% endfor %}
-											</ul>
-											{% endfor %}
-									{% endif %}
-								</li>
-							{% endfor %}
-						</ul>
+									{% for category in categories %}
+										<li class ="main-item"><a href="{{ category.href }}"><div class="icon_mnu_wrap"><img src="image/{{ category.image }}" alt=""></div><p>{{ category.name }}</p><i class="fas fa-angle-right"></i></a>
+											{% if category.children %}
+												{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+													<ul class="inner-list">
+														<li class="sub-item back_btn_mnu" ><a href="#" class="back_b"><p>Назад</p></a></li>
+														{% for child in children %}
+															{% if child.image %}
+																<li class="sub-item"><a href="{{ child.href }}"><div class="img_wrap"><img src="image/{{ child.image }}" alt=""></div><p>{{ child.name }}</p></a></li>
+															{% else %}
+																<li class="sub-item"><a href="{{ child.href }}"><div class="img_wrap"><img alt=""></div><p>{{ child.name }}</p></a></li>
+															{% endif %}
+														{% endfor %}
+													</ul>
+													{% endfor %}
+											{% endif %}
+										</li>
+									{% endfor %}
+								</ul>
 							
 						<div class="bottom_link">
 							<a href="#" ><img src="img/cat_icon/file.svg" alt="">Скачать прайс-лист</a>
