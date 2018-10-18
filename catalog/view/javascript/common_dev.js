@@ -455,7 +455,9 @@ $(function () {
 
 var lowerSlider = document.querySelector('#range-lower');
 var upperSlider = document.querySelector('#range-upper');
-
+if(!(lowerSlider && upperSlider)){
+	return;
+}
 document.querySelector('#two').value=upperSlider.value;
 document.querySelector('#one').value=lowerSlider.value;
 
@@ -500,6 +502,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	var rangeLower = document.querySelector('input[name="range-lower"]');
 	var rangeUpper = document.querySelector('input[name="range-upper"]');
 	var trackerBetween = document.querySelector('.input-range-tracker-between');
+	if(!(rangeLower && rangeUpper)){
+		return;
+	}
 	var minValue = 0;
 	var maxValue = Number(rangeUpper.getAttribute('max'));
 

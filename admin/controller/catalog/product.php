@@ -699,6 +699,14 @@ class ControllerCatalogProduct extends Controller {
 			$data['price'] = '';
 		}
 
+		if (isset($this->request->post['recommended_wholesale_price'])) {
+			$data['recommended_wholesale_price'] = $this->request->post['recommended_wholesale_price'];
+		} elseif (!empty($product_info)) {
+			$data['recommended_wholesale_price'] = $product_info['recommended_wholesale_price'];
+		} else {
+			$data['recommended_wholesale_price'] = 0.0;
+		}
+
 		$this->load->model('catalog/recurring');
 
 		$data['recurrings'] = $this->model_catalog_recurring->getRecurrings();
