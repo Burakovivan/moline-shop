@@ -241,7 +241,7 @@ class ControllerProductProduct extends Controller {
 			$data['reward'] = $product_info['reward'];
 			$data['points'] = $product_info['points'];
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
-
+			$data['product_sku'] = $product_info['sku'];
 			if ($product_info['quantity'] <= 0) {
 				$data['stock'] = $product_info['stock_status'];
 			} elseif ($this->config->get('config_stock_display')) {
@@ -279,6 +279,12 @@ class ControllerProductProduct extends Controller {
 				$data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
 			} else {
 				$data['price'] = false;
+			}
+			$data['product_info'] = $product_info;
+			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+				$data['recommended_wholesale_price'] = $this->currency->format($product_info['recommended_wholesale_price'], $this->session->data['currency']);
+			} else {
+				$data['recommended_wholesale_price'] = false;
 			}
 
 			if ((float)$product_info['special']) {
@@ -452,7 +458,6 @@ class ControllerProductProduct extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
-
 			$this->response->setOutput($this->load->view('product/product', $data));
 		} else {
 			$url = '';
@@ -522,7 +527,6 @@ class ControllerProductProduct extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
-			$data['debugData'] = $data;
 			$this->response->setOutput($this->load->view('error/not_found', $data));
 		}
 	}

@@ -1,20 +1,19 @@
 {{ header }}
-  	<div class="bred_crambs">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						
-								<ul class="bred_crambs_list">
-										{% for breadcrumb in breadcrumbs %}
-											<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><img src="img/arrow.svg" alt=""></li>
-    								{% endfor %}
-								</ul>
-					</div>
-				</div>
+<div class="bred_crambs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="bred_crambs_list">
+						{% for breadcrumb in breadcrumbs %}
+							<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><img src="img/arrow.svg" alt=""></li>
+					{% endfor %}
+				</ul>
 			</div>
 		</div>
+	</div>
+</div>
 <div id="product-product" >
-	<jsonDebug hidden>{{options|json_encode()}}</jsonDebug>
+	<jsonDebug hidden>{{product_info|json_encode()}}</jsonDebug>
 	<section class="s_product">
 		<div class="container">
 			<div class="row">
@@ -33,15 +32,12 @@
 								<div class="inner_list_img_wrap">
 									<div class="col-md-3">
 										<div class=" video_p">
-											
 													<img src="img/video_prew.svg" alt="">
 													<div class="call_to">
 														Смотреть обзор
 													</div>
-											
 										</div>
 									</div>
-
 									{% if images %}
 									{% for image in images %}
 									<div class="col-md-3">
@@ -51,29 +47,11 @@
 									</div>
 									{% endfor %}
 									{% endif %}
-
-									{# <div class="col-md-3">
-											<div class="small_img">
-												<img src="http://via.placeholder.com/35x52" alt="">
-											</div>
-									</div>
-									<div class="col-md-3">
-											<div class="small_img">
-												<img src="http://via.placeholder.com/32x62" alt="">
-											</div>
-									</div>
-									<div class="col-md-3">
-											<div class="small_img">
-												<img src="http://via.placeholder.com/32x50" alt="">
-											</div>
-									</div> #}
-
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
 				<div class="col-md-6">
 					<h1 class="hidden-xs hidden-sm">{{ heading_title }}</h1>
 					<div class="ml_center">
@@ -81,11 +59,10 @@
 						<div class="col-md-6 col-sm-6">
 							<div class="row">
 									<div class="simp_price"><strong>{{ price }}<span class="currency"></span></strong></div></div>
-									{# <div class="limit">от <span class="amount_lim">5 ед.</span>минимальный заказ</div> #}
 									<div class="limit">{{ text_minimum }}</div>
 							</div>
 							<div class="col-md-6 col-sm-6">
-									<div class="retail_price">Рекомендуемая розничная цена<div class="price">{{ price }}<span class="currency"></span></div></div>
+									<div class="retail_price">Рекомендуемая розничная цена<div class="price">{{ recommended_wholesale_price }}<span class="currency"></span></div></div>
 								</div>
 					</div>			
 					<div class="row">
@@ -96,7 +73,7 @@
 					<div class="row">
 						<div class="col-md-5 col-sm-4">
 							<div class="input_number_wrap">
-								<span class="input-number-decrement">–</span><input class="input-number" name='quantity' type="text" value="{{minimum}}" min="{{minimum}}" max="10"><span class="input-number-increment">+</span>
+								<span class="input-number-decrement">–</span><input class="input-number" name='quantity' type="text" value="{{minimum}}" min="{{minimum}}"><span class="input-number-increment">+</span>
 							</div>
 						</div>
 						<div id='cart-result'></div>
@@ -104,20 +81,17 @@
 							<button class="primary_btn btn_buy main_btn_buy" id="button-cart">Купить
 								<div class="massage" id="cart-message">Вы купили 1 штуку, спасибо, смотри корзину</div>
 							</button>
-							{# <button class="primary_btn btn_buy" id="button-cart">Купить</button> #}
-              {# <button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn btn-primary btn-lg btn-block">{{ button_cart }}</button> #}
-							{# <a href="#" class="btn_buy" id="button-cart">Купить</a> #}
 						</div>
 					</div>
 					<input name='product_id' hidden value={{product_id}}></input>
 					<div class="row">
 						<div class="col-md-6 col-xs-12">
 							<div class="articul-wrap">
-								Артикул: {{ product_id }}
-								{# Артикул: 334156 #}
+								Артикул: {{ product_sku }}
 							</div>
 						</div>
 					</div>
+					<div> Выберите опцию
 				</div>
 						<div class="row">
 								<div class="servise_wrap">
@@ -181,19 +155,7 @@
 												{% endfor %}
 											</ul>
 									</div>
-									{# <div  class="detail closed">
-										<!-- closed_info -->
-											<div class="col-md-6 col-sm-6">
-													<ul>
-															<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-															<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-															<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-															<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-															<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-														</ul>
-											</div>
-										<!-- closed_info end-->
-									</div> #}
+								
 								</div>
 								<div class="footer visible-xs">
 									<div class="slider_link more">Подробнее</div>
@@ -206,10 +168,7 @@
 				<div class="col-md-6 hidden-xs">
 					<div class="full_descr">
 							<h3>Подробное описание:</h3>
-					<p>
-						Предназначен для склеивания резины, кожи, металлов, полистирола, оргстекла и других пластиков, пробки, стекла, керамики, бетона. Не подходит для склеивания посуды, контактирующей с пищей, стиропора, полиэтилена и полипропилена.
-						Разделы в подвале сайта «Возврат товара без проблем», вносим: отгрузка в день заказа, наличие собственного склада, только оригинальная продукция. Под каждое данное преимущество необходима своя иконка в стиле компании.
-					</p>
+					{{description}}
 					</div>
 				</div>
 				
