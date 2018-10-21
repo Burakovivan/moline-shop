@@ -223,6 +223,14 @@ class ModelCatalogProduct extends Model {
 			}
 		}
 
+		$this->db->query("DELETE FROM " . DB_PREFIX . "product_video WHERE product_id = '" . (int)$product_id . "'");
+
+		if (isset($data['product_video'])) {
+			foreach ($data['product_video'] as $product_video) {
+				$this->db->query("INSERT INTO " . DB_PREFIX . "product_video SET product_id = '" . (int)$product_id . "', video = '" . $this->db->escape($product_video['video']) . "', sort_order = '" . (int)$product_video['sort_order'] . "'");
+			}
+		}
+
 		$this->db->query("DELETE FROM " . DB_PREFIX . "product_to_download WHERE product_id = '" . (int)$product_id . "'");
 
 		if (isset($data['product_download'])) {

@@ -13,7 +13,7 @@ class ControllerCommonMenu extends Controller {
 		$categories = $this->model_catalog_category->getCategories(0);
 
 		foreach ($categories as $category) {
-			if ($category['top']) {
+			// if ($category['top']) {
 				// Level 2
 				$children_data = array();
 
@@ -40,7 +40,7 @@ class ControllerCommonMenu extends Controller {
 					'href'     => $this->url->link('product/category', 'path=' . $category['category_id']),
 					'image'	   => $category['image'],
 				);
-			}
+			// }
 		}
 
 		$data['shopping_cart'] = $this->url->link('checkout/cart');

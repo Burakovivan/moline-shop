@@ -30,14 +30,16 @@
 						<div class="list_img">
 							<div class="row">
 								<div class="inner_list_img_wrap">
-									<div class="col-md-3">
-										<div class=" video_p">
-													<img src="img/video_prew.svg" alt="">
-													<div class="call_to">
-														Смотреть обзор
-													</div>
+									{% if video %}
+										<div class="col-md-3">
+											<div class="video_p">
+												<img src="img/video_prew.svg" alt="">
+												<div class="call_to">
+													Смотреть обзор
+												</div>
+											</div>
 										</div>
-									</div>
+									{% endif %}
 									{% if images %}
 									{% for image in images %}
 									<div class="col-md-3">
