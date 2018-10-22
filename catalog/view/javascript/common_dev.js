@@ -201,6 +201,9 @@ $(function () {
 
 		console.log('START type grid');
 		if (i_type_trig == 0) {
+			$(this).toggleClass('active');
+			$('#type_list').toggleClass('active');
+
 			$('.block_products').toggleClass('cat_row');
 			$('.block_products').toggleClass('grid');
 
@@ -297,6 +300,9 @@ $(function () {
 	$('#type_list').on('click', function () {
 
 		if (i_type_trig == 1) {
+			$(this).toggleClass('active');
+			$('#type_grid').toggleClass('active');
+
 			$('.block_products').toggleClass('cat_row');
 			$('.block_products').toggleClass('grid');
 
