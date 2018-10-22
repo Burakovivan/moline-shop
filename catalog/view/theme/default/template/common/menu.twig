@@ -1,6 +1,6 @@
 <div class="top_menu">
 	<div class="container">
-		<div class="col-lg-3 col-md-3 col-xs-5 col-sm-3 pl-nl pr-nr">
+		<div class="col-lg-4 col-md-3 col-xs-5 col-sm-3 pl-nl pr-nr">
 				<div class="logo test">
 					<a href="#">
 						<img src="img/logo.svg" class="visible-xs" id="xs_logo">
@@ -9,7 +9,7 @@
 				</div>
 		</div>
 		
-		<div class="col-lg-7 col-sm-6 col-md-6 hidden-xs pn-sm-l pn-sm-r pln prn">
+		<div class="col-lg-6 col-sm-6 col-md-6 hidden-xs pn-sm-l pn-sm-r pln prn">
 				{# {% if categories %} #}
 				<nav>
 						<ul>
@@ -25,7 +25,7 @@
 							<li><a href="#" class="visible-md visible-lg">О нас</a></li>
 							<li><a href="#" class="visible-md visible-lg">Вопрос</a></li>
 							<li class="visible-lg"><a href="#">Сотрудничество</a></li>
-							<li class="visible-lg"><a href="#">Контакты</a></li>
+							{# <li class="visible-lg"><a href="#">Контакты</a></li> #}
 						</ul>
 					</nav>
 				{# {% endif %} #}
@@ -50,7 +50,7 @@
 </div>
 			<div class="green_menu">
 			<div class="container cpn-xs">
-				<div class="col-md-3 col-sm-4 col-xs-3 col-plrn-xs flex-wrap pln prn">
+				<div class="col-lg-4 col-md-3 col-sm-4 col-xs-3 col-plrn-xs flex-wrap pln prn">
 					<div class="mnu_button_wrap">
 						<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
 						<label for="openSidebarMenu" class="sidebarIconToggle">
@@ -90,7 +90,7 @@
 					</div>
 				</div>
 				
-				<div class="col-md-4 col-sm-4 col-xs-3 col-plrn-xs ">
+				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-3 col-plrn-xs ">
 						<div class="search-wrap flx-wrap">
 								<!-- <div class="search"> -->
 									 <input type="text"  name="search" class="searchTerm hidden-xs" placeholder="Поиск товара">
@@ -100,12 +100,12 @@
 								<!-- </div> -->
 						 </div>
 				</div>
-				<div class="col-md-3 col-sm-2 col-xs-3 col-plrn-xs ">
+				<div class="col-lg-3 col-md-3 col-sm-2 col-xs-3 col-plrn-xs ">
 					<div class="auth-block flx-wrap">
 						<a href="{{ login }}" ><i class="fas fa-user-alt"></i><span class="hide_mnu_item">{{ text_login }}</span></a><span class="hide_mnu_item">,</span><a href="{{ register }}" class="hide_mnu_item">{{ text_register }}</a>	
 					</div>
 				</div>
-				<div class="col-md-2 col-sm-2 col-xs-3 col-plrn-xs pln prn">
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 col-plrn-xs pln prn">
 					<div class="cart-wrap flx-wrap">
 						<a href="{{shopping_cart}}">
 						<div class="icon-wrap">
