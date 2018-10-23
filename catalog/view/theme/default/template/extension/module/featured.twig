@@ -1,61 +1,73 @@
-<section class="s_white">
+<section class="s_white b_plugin">
 
 		<div class="container">
 			<div class="row">
 				<div class="s_header_wrap ">
-					<h2>{{ heading_title }}</h2>
+					<h2>{{ heading_title }} </h2>
 				</div>
 			</div>
-			<div class="row"> {% for product in products %}
-				<div class="item_wrap col-md-3 col-xs-6 col-sm-3">
-					<div class="row top_info">
-						<div class="col-md-6 col-xs-5">
-							<div class="bage_blue bage">Хит</div>
-						</div>
-						<div class="col-md-6 col-xs-7">
-							<div class="itm_artic_wrap">
-								{{ product.sku }}
+			<div class="row grid"> 
+			{% for product in products %}
+						
+						<div class="item_wrap product col-md-3 col-xs-6 col-sm-3" id='product_{{ product.product_id }}' data-product-id="{{ product.product_id }}">
+							<div class=" top_info clearfix">
+
+								<div class="pln col-md-6 col-xs-5">
+									<div class="bage_blue bage">Хит</div>
+								</div>
+								<div class="prn col-md-6 col-xs-7">
+									<div class="itm_artic_wrap">
+										{{ product.sku }}
+									</div>
+								</div>
+															
+							</div>
+							
+
+							<div class="row">
+								<a href="{{product.href}}">
+									<div class="col-md-12 itm_img_wrap">
+										<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}">
+									</div>
+								</a>
+
+								<div class="col-md-12 h_wrap">
+									<h4><a href="{{product.href}}">{{ product.name }}	</a></h4>
+								</div>
+
+								<div class="col-md-12 p_wrap">
+									{% if product.price %}
+										{% if not product.special %}
+										<div class="price">{{ product.price }}</div>
+										{% else %}
+										<div class="price">{{ product.special }}
+											<div class="old_price visible-sm">{{ product.price }}</div>
+										</div>
+										{% endif %}
+									{% endif %}
+								</div>
+
+								<div class="col-md-6 col-sm-12  col-sm-12   pr-lg-right cw_wrp">
+									<div class="counter_wrap">
+										<div class="cw_inner">
+											{# counter #}
+											<span class="input-number-decrement">–</span><input class="input-number" readonly type="text" value="{{ product.minimum }}" min="{{ product.minimum }}" ><span class="input-number-increment">+</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-6 col-sm-12 btn_buy_wrap btn_buy_wrap_link">
+									{# button #}
+									<button onclick="cart.add('{{ product.product_id }}', $(this).parent().parent().find('.input-number').val());" class="btn_buy primary_btn">{{ button_cart }}</button>
+								</div>
+								
+					
+								
 								
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<a href="{{product.href}}">
-							<div class="col-md-12 itm_img_wrap">
-								<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}">
-							</div>
-						</a>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							{% if product.price %}
-							{% if not product.special %}
-							<div class="price">{{ product.price }}</div>
-							{% else %}
-							<div class="price">{{ product.special }}</div>
-							<div class="old_price visible-xs">{{ product.price }}</div>
-							{% endif %}
-							{% endif %}
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 col-sm-12  col-sm-12 prn-md">
-							<div class="counter_wrap">
-								<div class="cw_inner" data-product-id='{{ product.product_id }}'>
-									<span class="input-number-decrement">–</span><input class="input-number" type="text" value="1" min="{{product.minimum}}" max="{{product.maximum}}"><span
-									 class="input-number-increment">+</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-12 btn_buy_wrap "><button onclick="cart.add('{{ product.product_id }}');" class="btn_buy primary_btn">{{ button_cart }}</button></div>
-					</div>
-				</div>
-				{% endfor %}
+
+					{% endfor %}
 			</div>
 			<div class="row">
 				<div class="s_bottom text-center">
