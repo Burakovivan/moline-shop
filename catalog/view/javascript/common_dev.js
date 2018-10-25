@@ -45,6 +45,20 @@ $(function () {
 		console.log(src);
 	});
 
+	
+	$('.items_img').magnificPopup({
+		type:'image',
+		gallery:{
+			enabled: true
+		},
+		removalDelay: 300,
+		mainClass: 'mfp-fade'
+	});
+
+	$('.main_img').click(function(){
+		console.log('test img click');
+	});
+	
 	$(".inner_list_img_wrap").slick({
 		// dots: true,
 		infinite: true,

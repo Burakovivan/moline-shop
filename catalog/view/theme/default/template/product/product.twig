@@ -23,7 +23,7 @@
 				<div class="col-md-6">
 					<div class="preview_wrap">
 						<div class="main_img">
-							<a src="{{popup}}"title="{{ heading_title }}">
+							<a href="{{popup}}"title="{{ heading_title }}" class="items_img">
 								<img src="{{popup}}" title="{{ heading_title }}" alt="{{ heading_title }} "  class="img-responsive"/>
 							</a>
 						</div>
@@ -43,9 +43,11 @@
 									{% if images %}
 									{% for image in images %}
 									<div class="col-md-3">
+											<a href="{{ image.popup }}" class="items_img">
 											<div class="small_img">
 												<img src="{{ image.popup }}" title="{{ heading_title }}" alt="{{ heading_title }}" >
 											</div>
+											</a>
 									</div>
 									{% endfor %}
 									{% endif %}
