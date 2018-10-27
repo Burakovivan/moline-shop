@@ -172,7 +172,7 @@ button::-moz-focus-inner {
   padding: 0;
   width: 90px;
   height: 110px;
-  -webkit-tap-highlight-color: transparent; }
+	}
   .mfp-arrow:active {
     margin-top: -54px; }
   .mfp-arrow:hover,
@@ -189,7 +189,7 @@ button::-moz-focus-inner {
     top: 0;
     margin-top: 35px;
     margin-left: 35px;
-    border: medium inset transparent; }
+	}
   .mfp-arrow:after {
     border-top-width: 13px;
     border-bottom-width: 13px;
@@ -202,11 +202,13 @@ button::-moz-focus-inner {
 .mfp-arrow-left {
   left: 0; }
   .mfp-arrow-left:after {
-    border-right: 17px solid #FFF;
-    margin-left: 31px; }
+    /* border-right: 17px solid #FFF; */
+		margin-left: 31px; 
+	}
   .mfp-arrow-left:before {
     margin-left: 25px;
-    border-right: 27px solid #3F3F3F; }
+		/* border-right: 27px solid #3F3F3F;  */
+	}
 
 .mfp-arrow-right {
   right: 0; }
@@ -382,4 +384,53 @@ img.mfp-img {
 /* content animate out */
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
   opacity: 0;
+}
+/*----------0000----------*/
+.mfp-arrow {
+  font-family: FontAwesome;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  border: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: visible;
+  cursor: pointer;
+  background: transparent;
+  -webkit-appearance: none;
+  display: block;
+  outline: none;
+  padding: 0;
+  z-index: 1046;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-size: 50px;
+  color: white;
+}
+.mfp-arrow::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+.mfp-arrow.mfp-arrow-right:before, .mfp-arrow.mfp-arrow-left:before {
+  display: block;
+  position: absolute;
+  /* top: 40%; */
+  /* margin-top: 35px; */
+}
+.mfp-arrow.mfp-arrow-right:before {
+	content: "\f105";
+	font-family: FontAwesome;	
+  right: 0;
+	margin-right: 35px;
+	background: #5acf3c;
+}
+.mfp-arrow.mfp-arrow-left:before {
+	content: "\f104";
+	font-family: FontAwesome;	
+  left: 0;
+	/* margin-left: 35px; */
+	background: #5acf3c;
 }
