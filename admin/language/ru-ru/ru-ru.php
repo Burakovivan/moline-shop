@@ -120,6 +120,7 @@ $_['tab_ip']                        = 'IP адрес';
 $_['tab_links']                     = 'Связи';
 $_['tab_log']                       = 'Лог';
 $_['tab_image']                     = 'Изображения';
+$_['tab_video']                     = 'Видео';
 $_['tab_option']                    = 'Опции';
 $_['tab_server']                    = 'Сервер';
 $_['tab_seo']                       = 'SEO';

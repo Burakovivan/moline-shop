@@ -58,61 +58,6 @@
 	
 </file>
 
-<!-- Скрываем поля в форме товара -->
-<file path="admin/view/template/catalog/product_form.twig">
-	<operation>
-		<search><![CDATA[
-			<label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="{{ help_sku }}">{{ entry_sku }}</span></label>
-		]]></search>
-		<add position="replace" offset="-2"><![CDATA[
-			   <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="{{ help_sku }}">{{ entry_sku }}</span></label>
-		]]></add>
-	</operation>
-	
-	<operation>
-		<search><![CDATA[
-        <label class="col-sm-2 control-label" for="input-sku">
-		]]></search>
-		<add position="before"><![CDATA[
- 				<div class="col-sm-1 text-right">
-					<a type="button"  title="Показать/Скрыть - Дополнительные поля " class="btn btn-info " data-toggle="collapse" data-parent="#accordion" href="#pcollapse"><i class="fa fa-arrows-v"></i></a>
-				</div>
-			 </div>
-			  
-              <div class="collapse" id="pcollapse">
-			  <div class="form-group">
-		]]></add>
-	</operation>
-	
-	<operation>
-		<search><![CDATA[
-		<label class="col-sm-2 control-label" for="input-location">{{ entry_location }}</label>
-		]]></search>
-		<add position="before" offset="1"><![CDATA[
-			  </div>
-		]]></add>
-	</operation>
-	
-	<operation>
-		<search><![CDATA[
-		<input type="text" name="model" value="{{ model }}" placeholder="{{ entry_model }}" id="input-model" class="form-control" />
-		]]></search>
-		<add position="replace" offset="-1"><![CDATA[
-                <div class="col-sm-9">
-                  <input type="text" name="model" value="{{ model }}" placeholder="{{ entry_model }}" id="input-model" class="form-control" />
-		]]></add>
-	</operation>
-	
-	<operation> <!-- Попутно удаляем вкладку "Периодичность", почему то она всем мешает. -->
-		<search><![CDATA[
-		<li><a href="#tab-recurring" data-toggle="tab">{{ tab_recurring }}</a></li>
-		]]></search>
-		<add position="replace"><![CDATA[ ]]></add>
-	</operation>
-	
-</file>
-
-
 
 <!-- Делаем в файловом менеджере сохранение последней открытой директории и крошки -->
 <file path="admin/controller/common/filemanager.php">
@@ -289,112 +234,7 @@
 
 
 <!-- Приводим немного сайт к 152 ФЗ	 -->   
-<file path="catalog/controller/information/contact.php">
 
-	<operation>
-		<search><![CDATA[
-			if (isset($this->error['name'])) {
-		]]></search>
-		<add position="before"><![CDATA[
-		if (isset($this->error['warning'])) {
-			$data['error_warning'] = $this->error['warning'];
-		} else {
-			$data['error_warning'] = '';
-		}
-		]]></add>
-	</operation>
-
-	<operation>
-		<search><![CDATA[
-			$data['comment'] = $this->config->get('config_comment');
-		]]></search>
-		<add position="after"><![CDATA[
-		if ($this->config->get('config_account_id')) {
-			$this->load->model('catalog/information');
-
-			$information_info = $this->model_catalog_information->getInformation($this->config->get('config_account_id'));
-
-			if ($information_info) {
-				$data['text_agree'] = sprintf($this->language->get('text_agree'), $this->url->link('information/information/agree', 'information_id=' . $this->config->get('config_account_id'), true), $information_info['title'], $information_info['title']);
-			} else {
-				$data['text_agree'] = '';
-			}
-		} else {
-			$data['text_agree'] = '';
-		}
-
-		if (isset($this->request->post['agree'])) {
-			$data['agree'] = $this->request->post['agree'];
-		} else {
-			$data['agree'] = false;
-		}
-		]]></add>
-	</operation>
-
-	<operation>
-		<search><![CDATA[
-			return !$this->error;
-		]]></search>
-		<add position="before"><![CDATA[
-		// Agree to terms
-		if ($this->config->get('config_account_id')) {
-			$this->load->model('catalog/information');
-
-			$information_info = $this->model_catalog_information->getInformation($this->config->get('config_account_id'));
-
-			if ($information_info && !isset($this->request->post['agree'])) {
-				$this->error['warning'] = sprintf($this->language->get('error_agree'), $information_info['title']);
-			}
-		}
-		]]></add>
-	</operation>
-
-</file>
-
-<file path="catalog/view/theme/default/template/information/contact.twig">
-
-	<operation>
-		<search><![CDATA[
-			<div class="row">{{ column_left }}
-		]]></search>
-		<add position="before"><![CDATA[
-		{% if error_warning %}
-		<div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}</div>
-		{% endif %}
-		]]></add>
-	</operation>
-
-	<operation>
-		<search><![CDATA[
-			<div class="buttons">
-		]]></search>
-		<add position="before"><![CDATA[
-		{% if text_agree %}
-		<div class="buttons">
-		  <div class="pull-right">{{ text_agree }}
-			{% if agree %}
-			<input type="checkbox" name="agree" value="1" checked="checked" />
-			{% else %}
-			<input type="checkbox" name="agree" value="1" />
-			{% endif %}
-			&nbsp;
-			<input type="submit" value="{{ button_submit }}" class="btn btn-primary" />
-		  </div>
-		</div>
-		{% else %}
-		]]></add>
-	</operation>
-
-	<operation>
-		<search><![CDATA[
-			</form>
-		]]></search>
-		<add position="before"><![CDATA[
-		{% endif %}
-		]]></add>
-	</operation>
-
-</file>
 
 
 <!-- Курсы валют с ЦБРФ -->
@@ -467,21 +307,6 @@
 
 </file>
 
-
-<!-- Мелкие ошибки мешающие работать и временные меры-->
-
-<file path="catalog/controller/information/contact.php">
-
-	<operation>
-		<search><![CDATA[
-			$data['button_submit'] = $this->language->get('button_submit');
-		]]></search>
-		<add position="before"><![CDATA[
-			$data['text_contact'] = $this->language->get('text_contact'); 
-		]]></add>
-	</operation>
-
-</file>
 
 <file path="catalog/controller/checkout/cart.php">
 

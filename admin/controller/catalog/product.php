@@ -1075,6 +1075,7 @@ class ControllerCatalogProduct extends Controller {
 
 		$data['product_images'] = array();
 
+
 		foreach ($product_images as $product_image) {
 			if (is_file(DIR_IMAGE . $product_image['image'])) {
 				$image = $product_image['image'];
@@ -1088,6 +1089,26 @@ class ControllerCatalogProduct extends Controller {
 				'image'      => $image,
 				'thumb'      => $this->model_tool_image->resize($thumb, 100, 100),
 				'sort_order' => $product_image['sort_order']
+			);
+		}
+
+		// Videos
+		if (isset($this->request->post['product_video'])) {
+			$product_videos = $this->request->post['product_video'];
+		} elseif (isset($this->request->get['product_id'])) {
+			
+				$product_videos = $this->model_catalog_product->getProductVideos($this->request->get['product_id']);
+			
+		} else {
+			$product_videos = array();
+		}
+
+		$data['product_videos'] = array();
+		
+		foreach ($product_videos as $product_video) {
+			$data['product_videos'][] = array(
+				'video'      => $product_video['video'],
+				'sort_order' => $product_video['sort_order']
 			);
 		}
 
