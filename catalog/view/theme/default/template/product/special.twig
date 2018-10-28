@@ -1,5 +1,178 @@
 {{ header }}
-<div id="product-search" class="container">
+<div class="bred_crambs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="bred_crambs_list">
+						{% for breadcrumb in breadcrumbs %}
+							<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><img src="img/arrow.svg" alt=""></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+{# <div class="container">
+		<div class="row">
+			<div class="col-lg-10 col-lg-offset-1 pn-lg-left col-md-12 pn-md prn">
+					<div class="banner_wrap">
+
+					<div id="slideshow{{ module }}" class="swiper-container">
+					
+   					<div class="swiper-wrapper"> {% for banner in banners %}
+     				<div class="swiper-slide text-center">{% if banner.link %}<a href="{{ banner.link }}"><img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" /></a>{% else %}<img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" />{% endif %}</div>
+    					{% endfor %} </div>
+  					</div>
+  					<div class="swiper-pagination slideshow{{ module }}"></div>
+  					
+				</div>
+		</div>
+	</div> #}
+<section class="s_white b_plugin">
+
+		<div class="container">
+			<div class="row">
+				<div class="s_header_wrap ">
+					<h2>{{ heading_title }} </h2>
+				</div>
+			</div>
+			<div class="row grid"> 
+			{% for product in products %}
+						
+						<div class="item_wrap product col-md-3 col-xs-6 col-sm-3" id='product_{{ product.product_id }}' data-product-id="{{ product.product_id }}">
+							<div class=" top_info clearfix">
+
+								<div class="pln col-md-6 col-xs-5">
+									<div class="bage_blue bage">Хит</div>
+								</div>
+								<div class="prn col-md-6 col-xs-7">
+									<div class="itm_artic_wrap">
+										{{ product.sku }}
+									</div>
+								</div>
+															
+							</div>
+							
+
+							<div class="row">
+								<a href="{{product.href}}">
+									<div class="col-md-12 itm_img_wrap">
+										<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}">
+									</div>
+								</a>
+
+								<div class="col-md-12 h_wrap">
+									<h4><a href="{{product.href}}">{{ product.name }}	</a></h4>
+								</div>
+
+								<div class="col-md-12 p_wrap">
+									{% if product.price %}
+										{% if not product.special %}
+										<div class="price">{{ product.price }}</div>
+										{% else %}
+										<div class="price">{{ product.special }}
+											<div class="old_price visible-sm">{{ product.price }}</div>
+										</div>
+										{% endif %}
+									{% endif %}
+								</div>
+
+								<div class="col-md-6 col-sm-12  col-sm-12   pr-lg-right cw_wrp">
+									<div class="counter_wrap">
+										<div class="cw_inner">
+											{# counter #}
+											<span class="input-number-decrement">–</span><input class="input-number" readonly type="text" value="{{ product.minimum }}" min="{{ product.minimum }}" ><span class="input-number-increment">+</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-6 col-sm-12 btn_buy_wrap btn_buy_wrap_link">
+									{# button #}
+									<button onclick="cart.add('{{ product.product_id }}', $(this).parent().parent().find('.input-number').val());" class="btn_buy primary_btn">{{ button_cart }}</button>
+								</div>
+								
+					
+								
+								
+							</div>
+						</div>
+
+					{% endfor %}
+			</div>
+		</div>
+
+		<div class="pagination_wrap text-center">
+				<button class="secondary_btn">Еще 12 акций</button>
+				<div class="с_pagination">
+					<ul>
+						<li class="active">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li class="dots">...</li>
+						<li>55</li>
+					</ul>
+				</div>
+			</div>
+
+	</section>
+
+	<section class="s_white">
+		<div class="container pln prn">
+			<div class="row">
+				<div class="advantages">
+
+					<div class="col-md-4 col-sm-4 pln prn">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2 pln prn">
+								<div class="img_wrap">
+									<img src="img/package.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10 pln">
+								<div class="text-wrap">
+									<h3>Отгрузка в день заказа</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 pln prn">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2 prn pln">
+								<div class="img_wrap">
+									<img src="img/sklad.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10 pln">
+								<div class="text-wrap">
+									<h3>Наличие собственного склада</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 pln prn">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2 prn pln">
+								<div class="img_wrap">
+									<img src="img/steaker.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10 pln">
+								<div class="text-wrap">
+									<h3>Только оригинальная продукция</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+{# <div id="product-search" class="container">
   <ul class="breadcrumb">
     {% for breadcrumb in breadcrumbs %}
     <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
@@ -109,5 +282,5 @@
       {% endif %}
       {{ content_bottom }}</div>
     {{ column_right }}</div>
-</div>
+</div> #}
 {{ footer }}
