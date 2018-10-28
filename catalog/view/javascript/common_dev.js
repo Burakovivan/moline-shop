@@ -38,12 +38,20 @@ $(function () {
 	/* input counter end */
 
 	//for replaceing path for big img
-	$(".small_img").click(function () {
+	// $(".small_img").click(function () {
+	// 	var src = $(this).find('img').attr('src');
+	// 	console.log(src);
+	// 	$(".main_img").find('img').attr('src', src);
+	// 	console.log(src);
+	// });
+	$(".outwrap").click(function () {
 		var src = $(this).find('img').attr('src');
 		console.log(src);
 		$(".main_img").find('img').attr('src', src);
 		console.log(src);
 	});
+
+	// $('#small_link_img').on('click', function(e) { e.preventDefault(); });
 
 	
 	$('.items_img').magnificPopup({
@@ -65,7 +73,20 @@ $(function () {
 		
 	});
 
+	// $(".pin").click(function(){
+	// 	console.log('click pin');
+	// 	$(this).attr("disabled", "disabled");
+	// });
 
+	// $(".pin").on("click", function(event){
+  //   if ($(this).is("[disabled]")) {
+  //       event.preventDefault();
+  //   }
+	// });
+
+	// $( "body" ).off( "click", ".pin");
+		
+		
 	
 	$(".inner_list_img_wrap").slick({
 		// dots: true,
