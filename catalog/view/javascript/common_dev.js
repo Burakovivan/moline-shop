@@ -38,6 +38,7 @@ $(function () {
 	/* input counter end */
 
 	//for replaceing path for big img
+
 	$(".small_img").click(function (e) {
 		e.preventDefault();
 		var src = $(this).find('img').attr('src');
@@ -46,9 +47,14 @@ $(function () {
 		console.log(src);
 	});
 
-	
+	// $('#small_link_img').on('click', function(e) { e.preventDefault(); });
+
+
 	
 
+	// $( "body" ).off( "click", ".pin");
+		
+		
 	
 	$(".inner_list_img_wrap").slick({
 		// dots: true,
