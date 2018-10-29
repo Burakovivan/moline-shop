@@ -266,12 +266,22 @@ class ControllerProductProduct extends Controller {
 
 			$data['images'] = array();
 
-			$results = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
+			$results_image = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
 
-			foreach ($results as $result) {
+			foreach ($results_image as $result) {
 				$data['images'][] = array(
 					'popup' => $this->model_tool_image->resize($result['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_popup_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_popup_height')),
 					'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_additional_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_additional_height'))
+				);
+			}
+
+			$data['videos'] = array();
+
+			$results_video = $this->model_catalog_product->getProductVideos($this->request->get['product_id']);
+
+			foreach ($results_video as $result) {
+				$data['videos'][] = array(
+					'url' => $result['video'],
 				);
 			}
 

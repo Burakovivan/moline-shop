@@ -30,26 +30,37 @@
 						<div class="list_img">
 							<div class="row">
 								<div class="inner_list_img_wrap">
-									{% if video %}
-										<div class="col-md-3">
-											<div class="video_p">
-												<img src="img/video_prew.svg" alt="">
-												<div class="call_to">
-													Смотреть обзор
+									{% if videos %}
+										{% for video in videos %}
+											<div class="col-md-3">
+												<div class="video_p">
+													<img src="img/video_prew.svg" alt="">
+													<div class="call_to">
+														Смотреть обзор
+													</div>
 												</div>
 											</div>
+										{% endfor %}
+									{% endif %}
+									{% if popup %}
+									<div class="col-md-3">
+										<a href="{{ popup }}" class="items_img">
+										<div class="small_img">
+											<img src="{{ popup }}" title="{{ heading_title }}" alt="{{ heading_title }}" >
 										</div>
+										</a>
+									</div>
 									{% endif %}
 									{% if images %}
-									{% for image in images %}
-									<div class="col-md-3">
-											<a href="{{ image.popup }}" class="items_img">
-											<div class="small_img">
-												<img src="{{ image.popup }}" title="{{ heading_title }}" alt="{{ heading_title }}" >
+										{% for image in images %}
+											<div class="col-md-3">
+													<a href="{{ image.popup }}" class="items_img">
+													<div class="small_img">
+														<img src="{{ image.popup }}" title="{{ heading_title }}" alt="{{ heading_title }}" >
+													</div>
+													</a>
 											</div>
-											</a>
-									</div>
-									{% endfor %}
+										{% endfor %}
 									{% endif %}
 								</div>
 							</div>
@@ -497,13 +508,52 @@ $('#button-review').on('click', function() {
 });
 
 $(document).ready(function() {
-	$('.thumbnails').magnificPopup({
-		type:'image',
-		delegate: 'a',
-		gallery: {
-			enabled: true
-		}
-	});
+	if($.fn.magnificPopup){
+		$('.main_img, .video_p').magnificPopup({
+			type:'image',
+			gallery:{
+				enabled: true
+			},
+			items:[
+				{% if videos %}
+					{% for video in videos %}
+						{
+						type:'iframe',
+						title:'{{ heading_title }}',
+						src: '{{ video.url }}',
+						},
+					{% endfor %}
+				{% endif %}
+				{% if popup %}
+					{
+						title:'{{ heading_title }}',
+						src: '{{ popup }}',
+					},
+				{% endif %}
+				{% if images %}
+					{% for image in images %}
+						{
+						title:'{{ heading_title }}',
+						src: '{{ image.popup }}',
+						},
+					{% endfor %}
+				{% endif %}
+			],
+			type: 'image',
+			removalDelay: 300,
+			mainClass: 'mfp-fade',
+		navigateByImgClick: true,
+	
+ 		// arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+		 
+		
+		//  closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close" id="mfp_btn_exit">×</button>'
+		// closeMarkup: '<svg id="exit_popup"  width="33px" height="33px" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="2.Cart---Desktop" transform="translate(-938.000000, -60.000000)" fill="#C4C0C0"><g id="Group-3-Copy" transform="translate(32.000000, 30.000000)"><path d="M938.224554,58.4462737 L934.446846,62.2203092 C933.945087,62.7221315 933.252576,63 932.555919,63 C931.863408,63 931.16675,62.7221315 930.669138,62.2203092 L922.5,54.0542918 L914.335009,62.2203092 C913.837396,62.7221315 913.140739,63 912.448228,63 C911.751571,63 911.05906,62.7221315 910.557301,62.2203092 L906.779593,58.4462737 C906.277834,57.9444514 906,57.2518537 906,56.5551087 C906,55.862511 906.277834,55.165766 906.779593,54.668091 L914.948731,46.4979264 L906.779593,38.3277617 C906.277834,37.8300867 906,37.1333417 906,36.440744 C906,35.743999 906.277834,35.0514013 906.779593,34.549579 L910.557301,30.7755435 C911.05906,30.2737213 911.751571,30 912.448228,30 C913.140739,30 913.837396,30.2737213 914.335009,30.7755435 L922.5,38.9415609 L930.669138,30.7755435 C931.16675,30.2737213 931.863408,30 932.555919,30 C933.252576,30 933.945087,30.2737213 934.446846,30.7755435 L938.224554,34.549579 C938.726313,35.0514013 939,35.743999 939,36.440744 C939,37.1333417 938.726313,37.8300867 938.224554,38.3277617 L930.055416,46.4979264 L938.224554,54.668091 C938.726313,55.165766 939,55.862511 939,56.5551087 C939,57.2518537 938.726313,57.9444514 938.224554,58.4462737" id="Fill-1"></path></g></g>	</g></svg>'
+		// closeMarkup:'<div class="wrap_exit mfp-close"><img src="img/cat_icon/exit_filters.svg" alt="" class="mfp-close"></div>'
+		closeMarkup:'<div class="wrap_exit mfp-close" id="mfp_btn_exit"><div class="inner_wrap_ex"><img id="mfp_exit_img" src="img/cat_icon/mfpexit.svg" alt="" class="mfp-close"></div></div>'
+		
+		});
+	}
 });
 //--></script> 
 {{ footer }} 

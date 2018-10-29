@@ -42,6 +42,17 @@ class ControllerCommonMenu extends Controller {
 				);
 			// }
 		}
+		
+		if ($this->request->server['HTTPS']) {
+			$server = $this->config->get('config_ssl');
+		} else {
+			$server = $this->config->get('config_url');
+		}
+		if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
+			$data['logo'] = $server . 'image/' . $this->config->get('config_logo');
+		} else {
+			$data['logo'] = '';
+		}
 
 		$data['shopping_cart'] = $this->url->link('checkout/cart');
 		$data['text_items'] = $this->cart->countProducts();
