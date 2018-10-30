@@ -321,18 +321,6 @@
 
 </file>
 
-<file path="catalog/controller/product/category.php">
-
-	<operation>
-		<search><![CDATA[
-			$this->document->setKeywords($category_info['meta_keyword']);
-		]]></search>
-		<add position="after"><![CDATA[
-			$data['text_empty'] = $this->language->get('text_empty');
-		]]></add>
-	</operation>
-
-</file>
 
 <file path="catalog/controller/account/order.php">
 

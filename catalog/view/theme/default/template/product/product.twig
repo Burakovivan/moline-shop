@@ -23,7 +23,7 @@
 				<div class="col-md-6">
 					<div class="preview_wrap">
 						<div class="main_img">
-							<a href="{{popup}}"title="{{ heading_title }}" class="items_img"  >
+							<a href="{{popup}}"title="{{ heading_title }}" class="items_img">
 								<img src="{{popup}}" title="{{ heading_title }}" alt="{{ heading_title }} "  class="img-responsive"/>
 							</a>
 						</div>
@@ -52,7 +52,6 @@
 									</div>
 									{% endif %}
 									{% if images %}
-<<<<<<< HEAD
 										{% for image in images %}
 											<div class="col-md-3">
 													<a href="{{ image.popup }}" class="items_img">
@@ -62,20 +61,6 @@
 													</a>
 											</div>
 										{% endfor %}
-=======
-									{% for image in images %}
-
-									<div class="outwrap">
-									<div class="col-md-12 pin">
-											<a href="{{ image.popup }}" class="items_img pin " >
-											<div class="small_img">
-												<img src="{{ image.popup }}" title="{{ heading_title }}" alt="{{ heading_title }}" >
-											</div>
-											</a>
-									</div>
-									</div>
-									{% endfor %}
->>>>>>> ff938a5dbb30594bcd69aae2f614f8567594930f
 									{% endif %}
 								</div>
 							</div>
@@ -256,7 +241,7 @@
 									<button onclick="cart.add('{{ product.product_id }}', $(this).parent().parent().find('.input-number').val());" class="btn_buy primary_btn">{{ button_cart }}</button>
 								</div>
 								
-								<div class="ost col-sm-12 pln ct_hide">115 ед. остаток на складе</div>
+								<div class="ost col-sm-12 pln ct_hide">{{ product.maximum }}  ед. остаток на складе</div>
 								<div class="limit ct_hide">от <span class="amount_lim">{{ product.minimum }} ед.</span><span class="hidd_mobile">минимальный заказ</span></div>
 								<div class="retail_price ct_hide">Рекомендуемая розничная цена
 									<div class="price">12000,99 

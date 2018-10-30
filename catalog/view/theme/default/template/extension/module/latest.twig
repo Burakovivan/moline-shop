@@ -47,8 +47,7 @@
 						<div class="col-md-6 col-sm-12  col-sm-12 prn-md">
 							<div class="counter_wrap">
 								<div class="cw_inner">
-									<span class="input-number-decrement">–</span><input class="input-number" type="text" value="1" min="0" max="10"><span
-									 class="input-number-increment">+</span>
+									<span class="input-number-decrement">–</span><input class="input-number" readonly type="text" value="{{ product.minimum }}" min="{{ product.minimum }}" {{ (product.maximum) ? ('max=' . product.maximum) : ''}}><span class="input-number-increment">+</span>
 								</div>
 							</div>
 						</div>

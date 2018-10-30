@@ -188,8 +188,10 @@
 
 				<!-- <div class="col-md-9 pr-lg-right pn-lg-left prn-md pln-md"> -->
 				<div class="block_products grid col-md-9 pr-lg-right pn-lg-left prn-md pln-md">
+						<div hidden> {{limit}}</div>
+						<div hidden> {{products_count}}</div>
+						<div hidden> {{page}}</div>
 					{% for product in products %}
-						
 						<div class="item_wrap product col-md-4 col-xs-6 col-sm-3" id='product_{{ product.product_id }}' data-product-id="{{ product.product_id }}">
 							<div class=" top_info">
 								<div class="pln col-md-6 col-xs-5">
@@ -237,11 +239,11 @@
 									<button onclick="cart.add('{{ product.product_id }}', $(this).parent().parent().find('.input-number').val());" class="btn_buy primary_btn">{{ button_cart }}</button>
 								</div>
 								
-								<div class="ost col-sm-12 pln ct_hide">115 ед. остаток на складе</div>
+								<div class="ost col-sm-12 pln ct_hide">{{ product.maximum }} ед. остаток на складе</div>
 								<div class="limit ct_hide">от <span class="amount_lim">{{ product.minimum }} ед.</span><span class="hidd_mobile">минимальный заказ</span></div>
 								<div class="retail_price ct_hide">Рекомендуемая розничная цена
-									<div class="price">12000,99 
-										<span class="currency">грн</span>
+									<div class="price">{{product.retail_price}}
+										{# <span class="currency">грн</span> #}
 									</div>
 								</div>
 
@@ -251,17 +253,10 @@
 					{% endfor %}
 				</div>
 			</div>
-			
 			<div class="pagination_wrap text-center">
 				<button class="secondary_btn">Еще 12 товаров</button>
 				<div class="c_pagination">
-					<ul>
-						<li class="active">1</li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li class="dots">...</li>
-						<li><a href="#">55</a></li>
-					</ul>
+					{{pagination}}
 				</div>
 			</div>
 		</div>

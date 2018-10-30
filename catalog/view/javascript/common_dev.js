@@ -426,7 +426,7 @@ $(function () {
 				}
 				else {
 					// $(value).find('.ost').toggleClass('ct_hide');
-					console.log('tree modif else toggle');
+					console.log('tree modif else toggle 22');
 
 				}
 				if (index === total_items - 1) {
