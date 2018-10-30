@@ -99,8 +99,8 @@ class Pagination {
 			}
 		}
 
-		if ($page < $num_pages) {
-			if(!($num_pages - $page >= 2)){
+		if ($page < ($num_pages-1)) {
+			if($num_pages - $page > 2){
 				$output .= '<li class="dots">...</li>';
 			}
 			$output .= '<li><a href="' . str_replace('{page}', $num_pages, $this->url) . '">' . $this->text_last . '</a></li>';
