@@ -163,6 +163,7 @@ $(function () {
 		location = action + (filter.length ? ('&filter=' + filter.join(',')) : '');
 	});
 	$('.styled-checkbox').click(function(){
+		$('.show_cat').hide();
 		$(this).parent().find('.show_cat').show().css('left','0');
 	});
 
