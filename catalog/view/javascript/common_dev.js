@@ -212,8 +212,10 @@ $(function () {
 
 		console.log('START type grid');
 		if (i_type_trig == 0) {
-			$(this).toggleClass('active');
-			$('#type_list').toggleClass('active');
+			// $(this).toggleClass('active');
+			// $('#type_list').toggleClass('active');
+			$(this).attr("class", "active");
+			$("#type_list").attr("class", "");
 
 			$('.block_products').toggleClass('cat_row');
 			$('.block_products').toggleClass('grid');
@@ -311,8 +313,16 @@ $(function () {
 	$('#type_list').on('click', function () {
 
 		if (i_type_trig == 1) {
-			$(this).toggleClass('active');
-			$('#type_grid').toggleClass('active');
+
+			// $(this).toggleClass('active');
+			// $('#type_grid').toggleClass('active');
+			$(this).attr("class", "active");
+			$("#type_grid").attr("class", "");
+
+			// Instead of .addClass("newclass")
+			// $("#item").attr("class", "oldclass newclass");
+			// Instead of .removeClass("newclass")
+			// $("#item").attr("class", "oldclass");
 
 			$('.block_products').toggleClass('cat_row');
 			$('.block_products').toggleClass('grid');
