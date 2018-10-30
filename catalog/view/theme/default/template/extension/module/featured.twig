@@ -8,7 +8,6 @@
 			</div>
 			<div class="row grid"> 
 			{% for product in products %}
-						
 						<div class="item_wrap product col-md-3 col-xs-6 col-sm-3" id='product_{{ product.product_id }}' data-product-id="{{ product.product_id }}">
 							<div class=" top_info clearfix">
 
@@ -51,7 +50,7 @@
 									<div class="counter_wrap">
 										<div class="cw_inner">
 											{# counter #}
-											<span class="input-number-decrement">–</span><input class="input-number" readonly type="text" value="{{ product.minimum }}" min="{{ product.minimum }}" ><span class="input-number-increment">+</span>
+											<span class="input-number-decrement">–</span><input class="input-number" readonly type="text" value="{{ product.minimum }}" min="{{ product.minimum }}" {{ (product.maximum) ? ('max=' . product.maximum) : ''}}><span class="input-number-increment">+</span>
 										</div>
 									</div>
 								</div>

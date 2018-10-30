@@ -241,7 +241,7 @@
 									<button onclick="cart.add('{{ product.product_id }}', $(this).parent().parent().find('.input-number').val());" class="btn_buy primary_btn">{{ button_cart }}</button>
 								</div>
 								
-								<div class="ost col-sm-12 pln ct_hide">115 ед. остаток на складе</div>
+								<div class="ost col-sm-12 pln ct_hide">{{ product.maximum }}  ед. остаток на складе</div>
 								<div class="limit ct_hide">от <span class="amount_lim">{{ product.minimum }} ед.</span><span class="hidd_mobile">минимальный заказ</span></div>
 								<div class="retail_price ct_hide">Рекомендуемая розничная цена
 									<div class="price">12000,99 

@@ -38,6 +38,9 @@ class ControllerProductCategory extends Controller {
 		} else {
 			$limit = $this->config->get('theme_' . $this->config->get('config_theme') . '_product_limit');
 		}
+		
+		//pagination test
+		$limit = 3;
 
 		$data['breadcrumbs'] = array();
 
@@ -94,6 +97,9 @@ class ControllerProductCategory extends Controller {
 			$this->document->setDescription($category_info['meta_description']);
 			$this->document->setKeywords($category_info['meta_keyword']);
 
+			$data['text_empty'] = $this->language->get('text_empty');
+		
+
 			$data['heading_title'] = $category_info['name'];
 
 			$data['text_compare'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
@@ -149,7 +155,7 @@ class ControllerProductCategory extends Controller {
 			}
 
 			$data['products'] = array();
-
+			
 			$filter_data = array(
 				'filter_category_id' => $category_id,
 				'filter_filter'      => $filter,
@@ -176,6 +182,8 @@ class ControllerProductCategory extends Controller {
 					$price = false;
 				}
 
+				$retail_price =  $this->currency->format($result['recommended_wholesale_price'], $this->session->data['currency']);
+
 				if ((float)$result['special']) {
 					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
 				} else {
@@ -200,11 +208,14 @@ class ControllerProductCategory extends Controller {
 					'name'        => $result['name'],
 					'description' => utf8_substr(trim(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'))), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
 					'price'       => $price,
+					'retail_price' => $retail_price,
 					'special'     => $special,
 					'tax'         => $tax,
+					'sku'		  => $result['sku'],
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
+					'maximum'     => $result['quantity'],
 					'rating'      => $result['rating'],
-					'prod'		  => '1'. json_encode($result),
+					'prod'		  => json_encode($result),
 					'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
 				);
 			}
@@ -291,8 +302,9 @@ class ControllerProductCategory extends Controller {
 				$url .= '&order=' . $this->request->get['order'];
 			}
 
+			$data['limit'] = $limit;
 			$data['limits'] = array();
-
+			
 			$limits = array_unique(array($this->config->get('theme_' . $this->config->get('config_theme') . '_product_limit'), 25, 50, 75, 100));
 
 			sort($limits);
@@ -327,6 +339,7 @@ class ControllerProductCategory extends Controller {
 			$pagination->total = $product_total;
 			$pagination->page = $page;
 			$pagination->limit = $limit;
+
 			$pagination->url = $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url . '&page={page}');
 
 			$data['pagination'] = $pagination->render();
