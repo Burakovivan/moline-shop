@@ -192,6 +192,8 @@
 						<div hidden> {{products_count}}</div>
 						<div hidden> {{page}}</div>
 					{% for product in products %}
+						<div hidden> {{product.prod}}</div>
+
 						<div class="item_wrap product col-md-4 col-xs-6 col-sm-3" id='product_{{ product.product_id }}' data-product-id="{{ product.product_id }}">
 							<div class=" top_info">
 								<div class="pln col-md-6 col-xs-5">
@@ -221,7 +223,7 @@
 										<div class="price">{{ product.price }}</div>
 										{% else %}
 										<div class="price">{{ product.special }}
-											<div class="old_price visible-sm">{{ product.price }}</div>
+											<div class="old_price">{{ product.price }}</div>
 										</div>
 										{% endif %}
 									{% endif %}
@@ -254,7 +256,9 @@
 				</div>
 			</div>
 			<div class="pagination_wrap text-center">
-				<button class="secondary_btn">Еще 12 товаров</button>
+			{% if least %}
+				<button class="secondary_btn"><a href='{{next_page_link}}'>Еще {{least}} товаров</a></button>
+			{% endif %}
 				<div class="c_pagination">
 					{{pagination}}
 				</div>

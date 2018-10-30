@@ -297,14 +297,14 @@ class ControllerProductProduct extends Controller {
 				$data['recommended_wholesale_price'] = false;
 			}
 
-			if ((float)$product_info['special']) {
+			if (is_numeric($product_info['special'])) {
 				$data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
 			} else {
 				$data['special'] = false;
 			}
 
 			if ($this->config->get('config_tax')) {
-				$data['tax'] = $this->currency->format((float)$product_info['special'] ? $product_info['special'] : $product_info['price'], $this->session->data['currency']);
+				$data['tax'] = $this->currency->format(is_numeric($product_info['special']) ? $product_info['special'] : $product_info['price'], $this->session->data['currency']);
 			} else {
 				$data['tax'] = false;
 			}
@@ -413,14 +413,14 @@ class ControllerProductProduct extends Controller {
 					$price = false;
 				}
 
-				if ((float)$result['special']) {
+				if (is_numeric($result['special'])) {
 					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
 				} else {
 					$special = false;
 				}
 
 				if ($this->config->get('config_tax')) {
-					$tax = $this->currency->format((float)$result['special'] ? $result['special'] : $result['price'], $this->session->data['currency']);
+					$tax = $this->currency->format(is_numeric($result['special']) ? $result['special'] : $result['price'], $this->session->data['currency']);
 				} else {
 					$tax = false;
 				}
