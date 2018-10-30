@@ -40,7 +40,7 @@ class ControllerProductCategory extends Controller {
 		}
 		
 		//pagination test
-		$limit = 3;
+		$limit = 12;
 
 		$data['breadcrumbs'] = array();
 
@@ -166,6 +166,13 @@ class ControllerProductCategory extends Controller {
 			);
 
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+			$product_total_entire = $this->model_catalog_product->getTotalProducts();
+			$least = $product_total_entire - ($limit * $page);
+			$least = $least > $limit ? $limit: $least;
+			if($least > 0)
+			{
+				$data['least'] = $least;
+			}
 
 			$results = $this->model_catalog_product->getProducts($filter_data);
 
@@ -184,14 +191,14 @@ class ControllerProductCategory extends Controller {
 
 				$retail_price =  $this->currency->format($result['recommended_wholesale_price'], $this->session->data['currency']);
 
-				if ((float)$result['special']) {
+				if (is_numeric($result['special'])) {
 					$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
 				} else {
 					$special = false;
 				}
 
 				if ($this->config->get('config_tax')) {
-					$tax = $this->currency->format((float)$result['special'] ? $result['special'] : $result['price'], $this->session->data['currency']);
+					$tax = $this->currency->format(is_numeric($result['special']) ? $result['special'] : $result['price'], $this->session->data['currency']);
 				} else {
 					$tax = false;
 				}
@@ -343,6 +350,7 @@ class ControllerProductCategory extends Controller {
 			$pagination->url = $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url . '&page={page}');
 
 			$data['pagination'] = $pagination->render();
+			$data['next_page_link'] = $pagination->renderNextPageLink();
 
 			$data['results'] = sprintf($this->language->get('text_pagination'), ($product_total) ? (($page - 1) * $limit) + 1 : 0, ((($page - 1) * $limit) > ($product_total - $limit)) ? $product_total : ((($page - 1) * $limit) + $limit), $product_total, ceil($product_total / $limit));
 
@@ -364,8 +372,12 @@ class ControllerProductCategory extends Controller {
 			$data['sort'] = $sort;
 			$data['order'] = $order;
 			$data['limit'] = $limit;
-
+			
 			$data['continue'] = $this->url->link('common/home');
+			
+			if(isset($this->request->get['partial'])){
+				$this->response->setOutput($this->load->view('product/category_partial', $data));
+			}
 
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
@@ -373,7 +385,7 @@ class ControllerProductCategory extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
-
+			
 			$this->response->setOutput($this->load->view('product/category', $data));
 		} else {
 			$url = '';

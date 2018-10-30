@@ -21,6 +21,18 @@ class Pagination {
 	// public $text_next = '&gt;';
 	public $text_next = '...';
 	public $text_prev = '...';
+	
+	/**
+	 * 
+     * @return	text
+	 */
+    public function renderNextPageLink() {
+		$this->url = str_replace('%7Bpage%7D', '{page}', $this->url);
+		$num_pages = ceil($this->total / $this->limit);
+		return str_replace('{page}', $num_pages, $this->url);
+    }
+
+
 
 	/**
      * 
@@ -99,8 +111,8 @@ class Pagination {
 			}
 		}
 
-		if ($page < $num_pages) {
-			if(!($num_pages - $page >= 2)){
+		if ($page < ($num_pages-1)) {
+			if($num_pages - $page > 2){
 				$output .= '<li class="dots">...</li>';
 			}
 			$output .= '<li><a href="' . str_replace('{page}', $num_pages, $this->url) . '">' . $this->text_last . '</a></li>';

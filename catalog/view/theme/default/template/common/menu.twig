@@ -62,7 +62,11 @@
 								{% if categories %} 
 								<ul class="sidebarMenuInner">
 									{% for category in categories %}
-										<li class ="main-item"><a href="{{ category.href }}"><div class="icon_mnu_wrap"><img src="image/{{ category.image }}" alt=""></div><p>{{ category.name }}</p><i class="fas fa-angle-right"></i></a>
+										<li class ="main-item"><a href="{{ category.href }}"><div class="icon_mnu_wrap">
+										{% if category.image %}
+										 <img src="image/{{category.image}}" alt="">
+										 {% endif %}
+										 </div><p>{{ category.name }}</p><i class="fas fa-angle-right"></i></a>
 											{% if category.children %}
 												{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
 													<ul class="inner-list">
