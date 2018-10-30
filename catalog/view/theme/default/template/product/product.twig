@@ -542,6 +542,16 @@ $(document).ready(function() {
 			type: 'image',
 			removalDelay: 300,
 			mainClass: 'mfp-fade',
+		  callbacks: {
+    		buildControls: function() {
+    		  // re-appends controls inside the main container
+					if ($(window).width() > 768) {
+    		  	this.contentContainer.append(this.arrowLeft.add(this.arrowRight));						
+					}
+    		  //this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+    		}
+    
+  		},
 		navigateByImgClick: true,
 	
  		// arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
