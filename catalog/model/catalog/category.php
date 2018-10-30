@@ -29,12 +29,13 @@ class ModelCatalogCategory extends Model {
 			foreach ($filter_group_query->rows as $filter_group) {
 				$filter_data = array();
 
-				$filter_query = $this->db->query("SELECT DISTINCT f.filter_id, fd.name FROM " . DB_PREFIX . "filter f LEFT JOIN " . DB_PREFIX . "filter_description fd ON (f.filter_id = fd.filter_id) WHERE f.filter_id IN (" . implode(',', $implode) . ") AND f.filter_group_id = '" . (int)$filter_group['filter_group_id'] . "' AND fd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY f.sort_order, LCASE(fd.name)");
+				$filter_query = $this->db->query("SELECT DISTINCT f.filter_id, fd.name, count(pf.filter_id) as products_count FROM " . DB_PREFIX . "filter f LEFT JOIN " . DB_PREFIX . "filter_description fd ON (f.filter_id = fd.filter_id) LEFT JOIN  " . DB_PREFIX . "product_filter pf ON (f.filter_id = pf.filter_id) WHERE f.filter_id IN (" . implode(',', $implode) . ") AND f.filter_group_id = '" . (int)$filter_group['filter_group_id'] . "' AND fd.language_id = '" . (int)$this->config->get('config_language_id') . "' GROUP BY f.filter_id, fd.name ORDER BY f.sort_order, LCASE(fd.name) ");
 
 				foreach ($filter_query->rows as $filter) {
 					$filter_data[] = array(
-						'filter_id' => $filter['filter_id'],
-						'name'      => $filter['name']
+						'filter_id' 	 => $filter['filter_id'],
+						'name'      	 => $filter['name'],
+						'products_count' => $filter['products_count']
 					);
 				}
 
