@@ -236,9 +236,9 @@ class ControllerProductCategory extends Controller {
 					'rating'      	=> $result['rating'],
 					'prod'		  	=> json_encode($result),
 					'href'        	=> $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url),
-					'bestseller'	=> $result['bestseller'],
-					'featured'		=> $result['featured'],
-					'latest'		=> $result['latest'],
+					'bestseller'	=> isset($result['bestseller']) ? $result['bestseller'] : null,
+					'featured'		=> isset($result['featured'])? $result['featured'] : null,
+					'latest'		=> isset($result['latest'])? $result['latest'] : null,
 				);
 			}
 

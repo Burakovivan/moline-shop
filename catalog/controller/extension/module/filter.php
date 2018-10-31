@@ -87,14 +87,14 @@ class ControllerExtensionModuleFilter extends Controller {
 			}
 			$filter_data = array(
 				'filter_category_id' => $category_id,
-				'filter_filter'      => $filter,
-				'sort'               => $sort,
-				'order'              => $order,
-				'start'              => ($page - 1) * $limit,
-				'limit'              => $limit,
+				// 'filter_filter'      => $filter,
+				// 'sort'               => $sort,
+				// 'order'              => $order,
+				// 'start'              => ($page - 1) * $limit,
+				// 'limit'              => $limit,
 			);
 			$data['price_range'] = $this->model_catalog_product->getProductsPriceRange($filter_data);
-			$data['real_price_range'] = $filter_price ? $filter_price: $data['price_range'] ;
+			$data['real_price_range'] = $filter_price != null ? $filter_price: $data['price_range'] ;
 
 			if ($filter_groups) {
 				foreach ($filter_groups as $filter_group) {

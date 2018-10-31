@@ -152,7 +152,7 @@ $(function () {
 		$(this).closest(".clump").find(".slider_link_seo").toggleClass("less_seo");
 		$(this).closest(".clump").find(".slider_link_seo").toggleClass("more_seo");
 	});
-	$('#button-filter').on('click', function() {
+	$('.show_cat').on('click', function() {
 		filter = [];
 		$('input[name^=\'filter\']').each(function(idx,element) {
 			if($(element).prop('checked')){
@@ -163,24 +163,28 @@ $(function () {
 		var price_range = {
 			price_from : $('input[name=price_from]').val(),
 			price_to : $('input[name=price_to]').val(),
-				};
+		};
 		var url = action;
 		url += (filter.length ? ('&filter=' + filter.join(',')) : '');
-		url += "&price_from=" + price_range.price_from + "&price_to=" + price_range.price_to;
+		if(!(parseFloat(price_range.price_from) == parseFloat($('input[name=range-lower]').attr('min')) && parseFloat(price_range.price_to) == parseFloat($('input[name=range-upper]').attr('max')))){
+			url += "&price_from=" + price_range.price_from + "&price_to=" + price_range.price_to;
+		}
 		location = url;
 	});
 	$('.styled-checkbox').click(function(){
-		if($(this).prop('checked')){
+		// if($(this).prop('checked')){
 			$('.show_cat').hide();
 			$(this).parent().find('.show_cat').show().css('right','-222px');
 			// $(this).parent().find('.show_cat').find('svg').show().hide();
 			$(this).parent().find('.show_cat').find('svg').show();
-
+			setTimeout(function(){
+				$(this).parent().find('.show_cat').find('svg').hide();
+			}, 3000);
 			// Instead of .addClass("newclass")
 			// $("#item").attr("class", "oldclass newclass");
 			// Instead of .removeClass("newclass")
 			// $("#item").attr("class", "oldclass");
-		}
+		// }
 
 	});
 
