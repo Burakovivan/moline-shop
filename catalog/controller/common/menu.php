@@ -55,7 +55,16 @@ class ControllerCommonMenu extends Controller {
 		}
 
 		$data['shopping_cart'] = $this->url->link('checkout/cart');
+		
 		$data['special'] =  $this->url->link('product/special');
+		$data['latest'] =  $this->url->link('product/latest');
+		$data['partnership'] =  $this->url->link('affiliate/login');
+		
+		$data['delivery'] =  $this->url->link('information/information','information_id=6');
+		$data['payment'] =  $this->url->link('information/information','information_id=8');
+		$data['about_us'] =  $this->url->link('information/information','information_id=4');
+
+
 		$data['text_items'] = $this->cart->countProducts();
 
 		return $this->load->view('common/menu', $data);
