@@ -1,18 +1,18 @@
 <?php
-class ControllerProductSpecial extends Controller {
+class ControllerProductLatest extends Controller {
 	public function index() {
-		$this->load->language('product/special');
+		$this->load->language('product/latest');
 
 		$this->load->model('catalog/product');
-
+		$this->load->model('setting/module');
 		$this->load->model('tool/image');
+		$LatestModuleId = 37;
 
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
 			$sort = 'p.sort_order';
 		}
-
 		if (isset($this->request->get['order'])) {
 			$order = $this->request->get['order'];
 		} else {
@@ -61,7 +61,7 @@ class ControllerProductSpecial extends Controller {
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('product/special', $url)
+			'href' => $this->url->link('product/latest', $url)
 		);
 
 		$data['text_compare'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
@@ -70,14 +70,9 @@ class ControllerProductSpecial extends Controller {
 
 		$data['products'] = array();
 
-		$filter_data = array(
-			'sort'  => $sort,
-			'order' => $order,
-			'start' => ($page - 1) * $limit,
-			'limit' => $limit
-		);
+		$setting = $this->model_setting_module->getModule($LatestModuleId);
 
-		$product_total = $this->model_catalog_product->getTotalProductSpecials();
+		$product_total = count($setting['product']);
 		$least = $product_total - ($limit * $page);
 		$least = $least > $limit ? $limit: $least;
 		if($least > 0)
@@ -85,51 +80,60 @@ class ControllerProductSpecial extends Controller {
 			$data['least'] = $least;
 		}
 		
-		$results = $this->model_catalog_product->getProductSpecials($filter_data);
 
-		foreach ($results as $result) {
-			if ($result['image']) {
-				$image = $this->model_tool_image->resize($result['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_height'));
-			} else {
-				$image = $this->model_tool_image->resize('placeholder.png', $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_height'));
+		if (!empty($setting['product'])) {
+			$products = array_slice($setting['product'], 0, (int)$setting['limit']);
+
+			foreach ($products as $product_id) {
+				$product_info = $this->model_catalog_product->getProduct($product_id);
+
+				if ($product_info) {
+					if ($product_info['image']) {
+						$image = $this->model_tool_image->resize($product_info['image'], $setting['width'], $setting['height']);
+					} else {
+						$image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
+					}
+
+					if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+						$price = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					} else {
+						$price = false;
+					}
+
+					if (is_numeric($product_info['special'])) {
+						$special = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					} else {
+						$special = false;
+					}
+
+					if ($this->config->get('config_tax')) {
+						$tax = $this->currency->format(is_numeric($product_info['special']) ? $product_info['special'] : $product_info['price'], $this->session->data['currency']);
+					} else {
+						$tax = false;
+					}
+
+					if ($this->config->get('config_review_status')) {
+						$rating = $product_info['rating'];
+					} else {
+						$rating = false;
+					}
+
+					$data['products'][] = array(
+						'product_id'  => $product_info['product_id'],
+						'thumb'       => $image,
+						'name'        => $product_info['name'],
+						'description' => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
+						'price'       => $price,
+						'special'     => $special,
+						'tax'         => $tax,
+						'rating'      => $rating,
+						'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id']),
+						'sku'		  => $product_info['sku'],
+						'minimum'     => $product_info['minimum'],
+						'maximum'     => $product_info['quantity'],
+					);
+				}
 			}
-
-			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-				$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-			} else {
-				$price = false;
-			}
-
-			if (is_numeric($result['special'])) {
-				$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-			} else {
-				$special = false;
-			}
-
-			if ($this->config->get('config_tax')) {
-				$tax = $this->currency->format(is_numeric($result['special']) ? $result['special'] : $result['price'], $this->session->data['currency']);
-			} else {
-				$tax = false;
-			}
-
-			if ($this->config->get('config_review_status')) {
-				$rating = (int)$result['rating'];
-			} else {
-				$rating = false;
-			}
-
-			$data['products'][] = array(
-				'product_id'  => $result['product_id'],
-				'thumb'       => $image,
-				'name'        => $result['name'],
-				'description' => utf8_substr(trim(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'))), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
-				'price'       => $price,
-				'special'     => $special,
-				'tax'         => $tax,
-				'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
-				'rating'      => $result['rating'],
-				'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
-			);
 		}
 
 		$url = '';
@@ -143,57 +147,57 @@ class ControllerProductSpecial extends Controller {
 		$data['sorts'][] = array(
 			'text'  => $this->language->get('text_default'),
 			'value' => 'p.sort_order-ASC',
-			'href'  => $this->url->link('product/special', 'sort=p.sort_order&order=ASC' . $url)
+			'href'  => $this->url->link('product/latest', 'sort=p.sort_order&order=ASC' . $url)
 		);
 
 		$data['sorts'][] = array(
 			'text'  => $this->language->get('text_name_asc'),
 			'value' => 'pd.name-ASC',
-			'href'  => $this->url->link('product/special', 'sort=pd.name&order=ASC' . $url)
+			'href'  => $this->url->link('product/latest', 'sort=pd.name&order=ASC' . $url)
 		);
 
 		$data['sorts'][] = array(
 			'text'  => $this->language->get('text_name_desc'),
 			'value' => 'pd.name-DESC',
-			'href'  => $this->url->link('product/special', 'sort=pd.name&order=DESC' . $url)
+			'href'  => $this->url->link('product/latest', 'sort=pd.name&order=DESC' . $url)
 		);
 
 		$data['sorts'][] = array(
 			'text'  => $this->language->get('text_price_asc'),
 			'value' => 'ps.price-ASC',
-			'href'  => $this->url->link('product/special', 'sort=ps.price&order=ASC' . $url)
+			'href'  => $this->url->link('product/latest', 'sort=ps.price&order=ASC' . $url)
 		);
 
 		$data['sorts'][] = array(
 			'text'  => $this->language->get('text_price_desc'),
 			'value' => 'ps.price-DESC',
-			'href'  => $this->url->link('product/special', 'sort=ps.price&order=DESC' . $url)
+			'href'  => $this->url->link('product/latest', 'sort=ps.price&order=DESC' . $url)
 		);
 
 		if ($this->config->get('config_review_status')) {
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_rating_desc'),
 				'value' => 'rating-DESC',
-				'href'  => $this->url->link('product/special', 'sort=rating&order=DESC' . $url)
+				'href'  => $this->url->link('product/latest', 'sort=rating&order=DESC' . $url)
 			);
 
 			$data['sorts'][] = array(
 				'text'  => $this->language->get('text_rating_asc'),
 				'value' => 'rating-ASC',
-				'href'  => $this->url->link('product/special', 'sort=rating&order=ASC' . $url)
+				'href'  => $this->url->link('product/latest', 'sort=rating&order=ASC' . $url)
 			);
 		}
 
 		$data['sorts'][] = array(
 				'text'  => $this->language->get('text_model_asc'),
 				'value' => 'p.model-ASC',
-				'href'  => $this->url->link('product/special', 'sort=p.model&order=ASC' . $url)
+				'href'  => $this->url->link('product/latest', 'sort=p.model&order=ASC' . $url)
 		);
 
 		$data['sorts'][] = array(
 			'text'  => $this->language->get('text_model_desc'),
 			'value' => 'p.model-DESC',
-			'href'  => $this->url->link('product/special', 'sort=p.model&order=DESC' . $url)
+			'href'  => $this->url->link('product/latest', 'sort=p.model&order=DESC' . $url)
 		);
 
 		$url = '';
@@ -216,7 +220,7 @@ class ControllerProductSpecial extends Controller {
 			$data['limits'][] = array(
 				'text'  => $value,
 				'value' => $value,
-				'href'  => $this->url->link('product/special', $url . '&limit=' . $value)
+				'href'  => $this->url->link('product/latest', $url . '&limit=' . $value)
 			);
 		}
 
@@ -238,7 +242,7 @@ class ControllerProductSpecial extends Controller {
 		$pagination->total = $product_total;
 		$pagination->page = $page;
 		$pagination->limit = $limit;
-		$pagination->url = $this->url->link('product/special', $url . '&page={page}');
+		$pagination->url = $this->url->link('product/latest', $url . '&page={page}');
 
 		$data['pagination'] = $pagination->render();
 		$data['next_page_link'] = $pagination->renderNextPageLink();
@@ -247,17 +251,17 @@ class ControllerProductSpecial extends Controller {
 
 		// http://googlewebmastercentral.blogspot.com/2011/09/pagination-with-relnext-and-relprev.html
 		if ($page == 1) {
-		    $this->document->addLink($this->url->link('product/special', '', true), 'canonical');
+		    $this->document->addLink($this->url->link('product/latest', '', true), 'canonical');
 		} else {
-		    $this->document->addLink($this->url->link('product/special', 'page='. $page , true), 'canonical');
+		    $this->document->addLink($this->url->link('product/latest', 'page='. $page , true), 'canonical');
 		}		
 		
 		if ($page > 1) {
-			$this->document->addLink($this->url->link('product/special', (($page - 2) ? '&page='. ($page - 1) : ''), true), 'prev');
+			$this->document->addLink($this->url->link('product/latest', (($page - 2) ? '&page='. ($page - 1) : ''), true), 'prev');
 		}
 
 		if ($limit && ceil($product_total / $limit) > $page) {
-		    $this->document->addLink($this->url->link('product/special', 'page='. ($page + 1), true), 'next');
+		    $this->document->addLink($this->url->link('product/latest', 'page='. ($page + 1), true), 'next');
 		}
 
 		$data['sort'] = $sort;
@@ -273,6 +277,6 @@ class ControllerProductSpecial extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
-		$this->response->setOutput($this->load->view('product/special', $data));
+		$this->response->setOutput($this->load->view('product/latest', $data));
 	}
 }

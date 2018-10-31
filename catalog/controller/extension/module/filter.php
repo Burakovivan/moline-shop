@@ -10,6 +10,7 @@ class ControllerExtensionModuleFilter extends Controller {
 		$category_id = end($parts);
 
 		$this->load->model('catalog/category');
+		$this->load->model('catalog/product');
 
 		$category_info = $this->model_catalog_category->getCategory($category_id);
 
@@ -44,6 +45,57 @@ class ControllerExtensionModuleFilter extends Controller {
 
 			$filter_groups = $this->model_catalog_category->getCategoryFilters($category_id);
 
+			if (isset($this->request->get['filter'])) {
+				$filter = $this->request->get['filter'];
+			} else {
+				$filter = '';
+			}
+	
+			if (isset($this->request->get['sort'])) {
+				$sort = $this->request->get['sort'];
+			} else {
+				$sort = 'p.sort_order';
+			}
+	
+			if (isset($this->request->get['order'])) {
+				$order = $this->request->get['order'];
+			} else {
+				$order = 'ASC';
+			}
+	
+			if (isset($this->request->get['page'])) {
+				$page = $this->request->get['page'];
+			} else {
+				$page = 1;
+			}
+	
+			if (isset($this->request->get['limit'])) {
+				$limit = (int)$this->request->get['limit'];
+			} else {
+				$limit = $this->config->get('theme_' . $this->config->get('config_theme') . '_product_limit');
+			}
+			$parts = explode('_', (string)$this->request->get['path']);
+
+			$category_id = (int)array_pop($parts);
+			if (isset($this->request->get['price_from']) && isset($this->request->get['price_to'])) {
+				$filter_price = array(
+					'min'=>$this->request->get['price_from'],
+					'max'=>$this->request->get['price_to'],
+				);
+			}else{
+				$filter_price = null;
+			}
+			$filter_data = array(
+				'filter_category_id' => $category_id,
+				'filter_filter'      => $filter,
+				'sort'               => $sort,
+				'order'              => $order,
+				'start'              => ($page - 1) * $limit,
+				'limit'              => $limit,
+			);
+			$data['price_range'] = $this->model_catalog_product->getProductsPriceRange($filter_data);
+			$data['real_price_range'] = $filter_price ? $filter_price: $data['price_range'] ;
+
 			if ($filter_groups) {
 				foreach ($filter_groups as $filter_group) {
 					$childen_data = array();
@@ -68,8 +120,8 @@ class ControllerExtensionModuleFilter extends Controller {
 					);
 				}
 
-				return $this->load->view('extension/module/filter', $data);
 			}
+			return $this->load->view('extension/module/filter', $data);
 		}
 	}
 }

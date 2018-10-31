@@ -184,7 +184,7 @@
 			</div>
 			<div class="pagination_wrap text-center">
 			{% if least %}
-				<button class="secondary_btn"><a href='{{next_page_link}}'>Еще {{least}} товаров</a></button>
+				<button class="secondary_btn category-more-btn" data-page="{{page}}">Еще <span id="least">{{least}}</span> товаров</button>
 			{% endif %}
 				<div class="c_pagination">
 					{{pagination}}

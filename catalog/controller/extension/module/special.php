@@ -17,6 +17,7 @@ class ControllerExtensionModuleSpecial extends Controller {
 		);
 
 		$results = $this->model_catalog_product->getProductSpecials($filter_data);
+		$data['special'] =  $this->url->link('product/special');
 
 		if ($results) {
 			foreach ($results as $result) {

@@ -55,6 +55,7 @@ class ControllerCommonMenu extends Controller {
 		}
 
 		$data['shopping_cart'] = $this->url->link('checkout/cart');
+		$data['special'] =  $this->url->link('product/special');
 		$data['text_items'] = $this->cart->countProducts();
 
 		return $this->load->view('common/menu', $data);

@@ -38,6 +38,15 @@ class ControllerProductCategory extends Controller {
 		} else {
 			$limit = $this->config->get('theme_' . $this->config->get('config_theme') . '_product_limit');
 		}
+
+		if (isset($this->request->get['price_from']) && isset($this->request->get['price_to'])) {
+			$filter_price = array(
+				'from'=>$this->request->get['price_from'],
+				'to'=>$this->request->get['price_to'],
+			);
+		}else{
+			$filter_price = null;
+		}
 		
 		//pagination test
 		$limit = 12;
@@ -136,6 +145,7 @@ class ControllerProductCategory extends Controller {
 			if (isset($this->request->get['limit'])) {
 				$url .= '&limit=' . $this->request->get['limit'];
 			}
+			
 
 			$data['categories'] = array();
 
@@ -155,27 +165,28 @@ class ControllerProductCategory extends Controller {
 			}
 
 			$data['products'] = array();
-			
+			 
 			$filter_data = array(
 				'filter_category_id' => $category_id,
 				'filter_filter'      => $filter,
 				'sort'               => $sort,
 				'order'              => $order,
 				'start'              => ($page - 1) * $limit,
-				'limit'              => $limit
+				'limit'              => $limit,
+				'filter_price'		 => $filter_price
 			);
 
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
-			$product_total_entire = $this->model_catalog_product->getTotalProducts();
-			$least = $product_total_entire - ($limit * $page);
+			// $product_total_entiere = $this->model_catalog_product->getTotalProducts();
+			$least = $product_total - ($limit * $page);
 			$least = $least > $limit ? $limit: $least;
 			if($least > 0)
 			{
 				$data['least'] = $least;
 			}
-
+			$data['page'] = $page;
 			$results = $this->model_catalog_product->getProducts($filter_data);
-
+			
 			foreach ($results as $result) {
 				if ($result['image']) {
 					$image = $this->model_tool_image->resize($result['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_height'));
@@ -385,8 +396,18 @@ class ControllerProductCategory extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
-			
-			$this->response->setOutput($this->load->view('product/category', $data));
+
+			 if(isset($this->request->get['partial'])){
+				$json = array(
+					'html' => $this->load->view('product/category_partial', $data),
+					'current_page' => $page,
+					'least' => $least,
+				);
+				$this->response->setOutput(json_encode($json));
+			} else {
+				$this->response->setOutput($this->load->view('product/category', $data));
+			 }
+
 		} else {
 			$url = '';
 
