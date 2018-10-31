@@ -344,9 +344,20 @@ class ModelCatalogProduct extends Model {
 		$product_data = array();
 
 		$query = $this->db->query($sql);
-
+		$this->load->model('setting/module');
+		$LatestModuleId = 37;
+		// $FeaturedModuleId = 28;
+		$BestsellerModuleId = 36;
+		$LatestProducts = $this->model_setting_module->getModule($LatestModuleId)['product'];
+		// $FeaturedProducts = $this->model_setting_module->getModule($FeaturedModuleId)['product'];
+		$BestsellerProducts = $this->model_setting_module->getModule($BestsellerModuleId)['product'];
 		foreach ($query->rows as $result) {
+
 			$product_data[$result['product_id']] = $this->getProduct($result['product_id']);
+			
+			$product_data[$result['product_id']]['latest']		= in_array($result['product_id'],$LatestProducts)		? 'Y' : null;
+			// $product_data[$result['product_id']]['featured']	= in_array($result['product_id'],$FeaturedProducts)		? 'Y' : null;
+			$product_data[$result['product_id']]['bestseller']	= in_array($result['product_id'],$BestsellerProducts)	? 'Y' : null;
 		}
 
 		return $product_data;
