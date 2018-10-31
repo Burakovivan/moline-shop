@@ -1431,3 +1431,126 @@
 2018-10-31 16:26:25 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
 2018-10-31 16:26:25 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
 2018-10-31 16:26:25 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  Undefined index: product in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 351
+2018-10-31 16:27:16 - PHP Notice:  Undefined index: product in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 353
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:27:16 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:27:16 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  Undefined index: product in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 351
+2018-10-31 16:34:47 - PHP Notice:  Undefined index: product in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 353
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:34:47 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:34:47 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  Undefined index: product in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 351
+2018-10-31 16:35:56 - PHP Notice:  Undefined index: product in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 353
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 358
+2018-10-31 16:35:56 - PHP Warning:  in_array() expects parameter 2 to be array, null given in J:\XAMPP\htdocs\catalog\model\catalog\product.php on line 360
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
+2018-10-31 16:35:56 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 231
