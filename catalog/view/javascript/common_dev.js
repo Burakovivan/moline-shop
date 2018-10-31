@@ -186,22 +186,26 @@ $(function () {
 
 	$('.category-more-btn').click(function(){
 		const urlParams = new URLSearchParams(window.location.search);
-		var page = $(this).data('page');
-		urlParams.set('page',page+1);
+		var button = $(this);
+		var page = button.data('page');
+		urlParams.set('page',(parseInt(page)||0)+1);
 		urlParams.set('partial','Y');
 		var url = window.location.href.replace(/.*(\?.*)/,"?"+ urlParams.toString())
 		$.get(url, function(data){
 			data = JSON.parse(data);
-			$(this).data('page',data.page);
+			button.data('page',data.current_page);
 			if(data.least > 0){
 				$("#least").html(data.least)
 			} else {
 				$(".category-more-btn").remove();
 			}
+			var nextPageNavElement = $('.c_pagination ul li[data-page='+data.current_page+']');
+			nextPageNavElement.addClass('active');
+			// var content = nextPageNavElement.find('a').text();
+			// nextPageNavElement.find('a').remove();
+			// nextPageNavElement.html('<span>' +content +'</span>');
 			$(".block_products").append(data.html);
-
 		});
-
 	});
 	$('#openSidebarMenu').on('click', function () {
 		$('.overlay').toggleClass('show');
