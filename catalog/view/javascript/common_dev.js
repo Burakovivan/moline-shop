@@ -172,7 +172,14 @@ $(function () {
 	$('.styled-checkbox').click(function(){
 		if($(this).prop('checked')){
 			$('.show_cat').hide();
-			$(this).parent().find('.show_cat').show().css('left','0');
+			$(this).parent().find('.show_cat').show().css('right','-222px');
+			// $(this).parent().find('.show_cat').find('svg').show().hide();
+			$(this).parent().find('.show_cat').find('svg').show();
+
+			// Instead of .addClass("newclass")
+			// $("#item").attr("class", "oldclass newclass");
+			// Instead of .removeClass("newclass")
+			// $("#item").attr("class", "oldclass");
 		}
 
 	});
