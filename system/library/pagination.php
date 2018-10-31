@@ -21,6 +21,7 @@ class Pagination {
 	// public $text_next = '&gt;';
 	public $text_next = '...';
 	public $text_prev = '...';
+	public $isRange;
 	
 	/**
 	 * 
@@ -63,7 +64,7 @@ class Pagination {
 		$output = '<ul>';
 
 		if ($page > 2) {
-			$output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+			$output .= '<li data-page=1 <a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
 			
 			// if ($page - 1 === 1) {
 			// 	$output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
@@ -99,13 +100,13 @@ class Pagination {
 			}
 
 			for ($i = $start; $i <= $end; $i++) {
-				if ($page == $i) {
-					$output .= '<li class="active"><span>' . $i . '</span></li>';
+				if ( $page == $i) {
+					$output .= '<li class="active" data-page="'.$i.'" ><span>' . $i . '</span></li>';
 				} else {
 					if ($i === 1) {
-						$output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
+						$output .= '<li data-page="'.$i.'" ><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}'), '', $this->url) . '">' . $i . '</a></li>';
 					} else {
-						$output .= '<li><a href="' . str_replace('{page}', $i, $this->url) . '">' . $i . '</a></li>';
+						$output .= '<li data-page="'.$i.'" ><a href="' . str_replace('{page}', $i, $this->url) . '">' . $i . '</a></li>';
 					}
 				}
 			}
@@ -115,7 +116,7 @@ class Pagination {
 			if($num_pages - $page > 2){
 				$output .= '<li class="dots">...</li>';
 			}
-			$output .= '<li><a href="' . str_replace('{page}', $num_pages, $this->url) . '">' . $this->text_last . '</a></li>';
+			$output .= '<li data-page="' . $this->text_last . '"><a href="' . str_replace('{page}', $num_pages, $this->url) . '">' . $this->text_last . '</a></li>';
 		}
 
 		$output .= '</ul>';
