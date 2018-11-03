@@ -207,7 +207,11 @@ class ControllerProductCategory extends Controller {
 				} else {
 					$special = false;
 				}
-
+				if(is_numeric($special)){
+					$discount = ceil((1 - $special/$price)*100);
+				}else{
+					$discount = false;
+				}
 				if ($this->config->get('config_tax')) {
 					$tax = $this->currency->format(is_numeric($result['special']) ? $result['special'] : $result['price'], $this->session->data['currency']);
 				} else {
@@ -228,7 +232,7 @@ class ControllerProductCategory extends Controller {
 					'price'       	=> $price,
 					'retail_price'	=> $retail_price,
 					'special'     	=> $special,
-					'discount'		=> ceil((1 - $special/$price)*100),
+					'discount'		=> $discount,
 					'tax'         	=> $tax,
 					'sku'		  	=> $result['sku'],
 					'minimum'     	=> $result['minimum'] > 0 ? $result['minimum'] : 1,
