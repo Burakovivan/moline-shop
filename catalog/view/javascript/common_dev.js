@@ -108,6 +108,20 @@ $(function () {
 		slidesToScroll: 6
 	});
 
+	/*FAQ*/
+	$('dd').hide();
+    
+	$('dl').on("click", 'dt', function() {
+			$(this)
+					.next()
+						.slideDown(300)
+						.siblings('dd')
+							.slideUp(300);
+	});    
+	$('.close_faq_btn_wrap').on("click", function() {
+			$(this).parent().slideUp(300);
+	});    
+	/*end FAQ */
 	/*Slide down*/
 	$(".sb_block_name").click(function () {
 		$(this).parent().find('.block_info').toggleClass('closed');

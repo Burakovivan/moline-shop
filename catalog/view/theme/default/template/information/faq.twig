@@ -1,0 +1,134 @@
+{{ header }}
+<div class="">
+	<div class="bred_crambs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						
+								<ul class="bred_crambs_list">
+										{% for breadcrumb in breadcrumbs %}
+											<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><img src="img/arrow.svg" alt=""></li>
+    								{% endfor %}
+								</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<div id="information-information" class="container">
+  {# <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+      <h1>{{ heading_title }}</h1>
+      {{ description }}{{ content_bottom }}</div>
+    {{ column_right }}</div> #}
+		<section class="faq_wrap">
+		<div class="container">
+			
+				<div class="col-md-12">
+					<h2>Вопросы</h2>
+				</div>
+				<div class="col-md-6">
+						<dl class="faq_list">
+								<dt class="faq_header">
+										<div class="faq_flx_inner_wrap">
+												<div class="icon_wrap">
+													<img src="img/question-circle-o-anticon.svg" alt="" class="faq_img">
+												</div>
+												<div class="text_wrap">
+														Some qqqqqqqqq
+												</div>
+											</div>
+								</dt>
+								<dd>
+									Yada Yada Such and Such ывалдлдвалпд влпдладл джвапл ждвлп джлапджлп джвлапдладжл вжадплдлд жвлвждлпджв лпada Yada Such жлп джвлапдладжл вжадплдлд жвлвждлпджв лпada Yada Such and Such ывалдлдвалпд влпдладл джвапл ждвлп джлапджлп джвлапдладжл вжадплдлд жвлвждлпджв лпada Yada Such and Such ывалдлдвалпд влпдладл джвапл ждвлп джлапджлп джвлапдладжл вжадплдлд жвлвждлпджв лп
+									<div class="close_faq_btn_wrap text-right">Скрыть <i class="fas fa-angle-up"></i></div>
+								</dd>
+								<dt class="faq_header">
+										<div class="faq_flx_inner_wrap">
+												<div class="icon_wrap">
+													<img src="img/question-circle-o-anticon.svg" alt="" class="faq_img">
+												</div>
+												<div class="text_wrap">
+														Some text text text text text text text text text text text text 
+												</div>
+											</div>
+								</dt>
+								<dd>
+									Yada Yada Such and Such ывалдлдвалпд влпдладл джвапл ждвлп джлапджлп джвлапдладжл вжадплдлд жвлвждлпджв лпada Yada Such жлп джвлапдладжл вжадплдлд жвлвждлпджв лпada Yada Such and Such ывалдлдвалпд влпдладл джвапл ждвлп джлапджлп джвлапдладжл вжадплдлд жвлвждлпджв лпada Yada Such and Such ывалдлдвалпд влпдладл джвапл ждвлп джлапджлп джвлапдладжл вжадплдлд жвлвждлпджв лп
+									<div class="close_faq_btn_wrap text-right">Скрыть <i class="fas fa-angle-up"></i></div>
+								</dd>
+								
+								
+							</dl>
+				
+				</div>
+			
+
+		
+		</div>
+	</section>
+	<section class="s_white">
+		<div class="container">
+			<div class="row">
+				<div class="advantages">
+
+					<div class="col-md-4 col-sm-4 pln prn">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2 pln prn">
+								<div class="img_wrap">
+									<img src="img/package.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10 pln">
+								<div class="text-wrap">
+									<h3>Отгрузка в день заказа</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 pln prn">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2 prn pln">
+								<div class="img_wrap">
+									<img src="img/sklad.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10 pln">
+								<div class="text-wrap">
+									<h3>Наличие собственного склада</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 pln prn">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2 prn pln">
+								<div class="img_wrap">
+									<img src="img/steaker.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10 pln">
+								<div class="text-wrap">
+									<h3>Только оригинальная продукция</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+{{ footer }}
