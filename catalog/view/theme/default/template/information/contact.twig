@@ -20,30 +20,31 @@
 						<div class="contact-group-head">{{ text_telephone }}</div>
 						{# <div class="contact-group-head">Консльтация и заказ по телефону</div> #}
 						<ul class="phones">
-							<li><img src="img/contacts_icon/vodafone.svg" alt="">{{ telephone }}</li>
-							<li><img src="img/contacts_icon/kvstr.svg" alt="">+38 (097) 100 20 20</li>
-							<li><img src="img/contacts_icon/life.svg" alt="">+38 (063) 100 20 20</li>
-							<li><i class="fas fa-envelope"></i>sales@moline.com</li>
+							<li><img src="img/contacts_icon/vodafone.svg" alt="">{{ telephone_vodafone }}</li>
+							<li><img src="img/contacts_icon/kvstr.svg" alt="">{{ telephone_kyivstar }}</li>
+							<li><img src="img/contacts_icon/life.svg" alt="">{{ telephone_lifecell }}</li>
+							<li><i class="fas fa-envelope"></i>{{shop_email}}</li>
 						</ul>		
 				</div>
-				<div class="contact-group">
-					{# <div class="contact-group-head">Склад (Самовывоз)</div> #}
+				{# <div class="contact-group">
 					<div class="contact-group-head">{{ store }}</div>
 					<p><address>{{ address }}</address></p>
-					{# <p>ул. Маяковского, 132</p> #}
-				</div>
-				
+				</div> #}
+				{% for location in locations %}
 				<div class="contact-group">
-						<div class="contact-group-head">Выстовочный зал</div>
-						<p>ул. Черкесская, 55</p>
+						<div class="contact-group-head">{{location.name}}</div>
+						<p>{{location.address}}</p>
 
+				</div>
+        {% endfor %}
+        
 						<div class="list_name">График работы:</div>
-						<ul class="schedule">
+           <div class=schedule></div> {{open}}
+						{# <ul class="schedule">
 							<li>Пн-Пт: с 9:00 до 12:00</li>
 							<li>Сб: с 9:00 до 12:00</li>
 							<li>Вс: Выходной</li>
-						</ul>
-				</div>
+						</ul> #}
 			</div>
 
 			<div class="col-md-6">

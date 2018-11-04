@@ -1,6 +1,7 @@
 <?php // ==========================================  seo_url.php v.140618 opencart-russia.ru ===============================
 class ControllerStartupSeoUrl extends Controller {
 	public function index() {
+		return;
 		// Add rewrite to url class
 		if ($this->config->get('config_seo_url')) {
 			$this->url->addRewrite($this);
@@ -107,6 +108,7 @@ class ControllerStartupSeoUrl extends Controller {
 	}
 
 	public function rewrite($link) {
+		return;
 		$url_info = parse_url(str_replace('&amp;', '&', $link));
 
 		$url = '';

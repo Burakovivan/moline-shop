@@ -83,11 +83,14 @@ class ControllerInformationContact extends Controller {
 		$data['address'] = nl2br($this->config->get('config_address'));
 		$data['geocode'] = $this->config->get('config_geocode');
 		$data['geocode_hl'] = $this->config->get('config_language');
-		$data['telephone'] = $this->config->get('config_telephone');
+		$data['telephone_vodafone'] = $this->config->get('config_telephone_vodafone');
+		$data['telephone_kyivstar'] = $this->config->get('config_telephone_kyivstar');
+		$data['telephone_lifecell'] = $this->config->get('config_telephone_lifecell');
 		$data['fax'] = $this->config->get('config_fax');
 		$data['open'] = nl2br($this->config->get('config_open'));
 		$data['comment'] = $this->config->get('config_comment');
-
+		$data['shop_email'] = $this->config->get('config_email');
+		
 		if ($this->config->get('config_account_id')) {
 			$this->load->model('catalog/information');
 
