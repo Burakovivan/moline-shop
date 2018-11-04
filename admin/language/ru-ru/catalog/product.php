@@ -46,6 +46,7 @@ $_['entry_shipping']         = 'Необходима доставка';
 $_['entry_manufacturer']     = 'Производитель';
 $_['entry_date_available']   = 'Дата поступления';
 $_['entry_quantity']         = 'Количество';
+$_['entry_quantity_in_pack'] = 'Количество в упаковке';
 $_['entry_minimum']          = 'Минимальное количество';
 $_['entry_stock_status']     = 'Отсутствие на складе';
 $_['entry_price']            = 'Цена';

@@ -13,11 +13,23 @@ $(function () {
 			els.inc = el.parent().find('.input-number-increment');
 			els.dec.on('click', decrement);
 			els.inc.on('click', increment);
+			el.blur(function(){
+				var value = parseInt(el[0].value) || 0;
+				var min = el.attr('min') || false;
+				var max = el.attr('max') || false;
+				if (value < min && min) {
+					el[0].value = min;
+				}
+				if(value > max && max){
+					el[0].value = max;
+				}
+			});
 
 			function decrement() {
 				var min = el.attr('min') || false;
-				var value = el[0].value;
-				value--;
+				var value = parseInt(el[0].value) || 0;
+				var quantityInPack = parseInt(el.parents('.item_wrap').find('.quantitiy_in_pack').val()) ||	parseInt($('.input_number_wrap').find('.quantitiy_in_pack').val()) || 0;
+				value -= quantityInPack;
 				if (!min || value >= min) {
 					el[0].value = value;
 				}
@@ -25,10 +37,11 @@ $(function () {
 
 			function increment() {
 				var max = el.attr('max') || false;
-				var value = el[0].value;
-				value++;
+				var value = parseInt(el[0].value) || 0;
+				var quantityInPack = parseInt(el.parents('.item_wrap').find('.quantitiy_in_pack').val()) ||	parseInt($('.input_number_wrap').find('.quantitiy_in_pack').val()) || 0;
+				value += quantityInPack;
 				if (!max || value <= max) {
-					el[0].value = value++;
+					el[0].value = value;
 				}
 			}
 		}
@@ -228,8 +241,10 @@ $(function () {
 	$('#openSidebarMenu').on('click', function () {
 		$('.overlay').toggleClass('show');
 	});
+	
 	$('#openSidebarMenu').parent(".mnu_button_wrap").parent().on('click', function () {
-		$('#openSidebarMenu').click();
+			$('#openSidebarMenu')[0].checked =  !$('#openSidebarMenu')[0].checked ;
+		$('.overlay').toggleClass('show');
 	});
 
 	$('.filter_btn').on('click', function () {

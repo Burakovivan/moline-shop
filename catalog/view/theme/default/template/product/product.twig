@@ -88,7 +88,8 @@
 					<div class="row">
 						<div class="col-md-5 col-sm-4">
 							<div class="input_number_wrap">
-								<span class="input-number-decrement">–</span><input class="input-number" name='quantity' type="text" value="{{minimum}}" min="{{minimum}}"><span class="input-number-increment">+</span>
+											<input hidden class="quantitiy_in_pack" value = "{{quantity_in_pack}}" >	
+								<span class="input-number-decrement">–</span><input class="input-number" name='quantity' type="text" value="{{minimum > quantity_in_pack ? minimum : quantity_in_pack  }}" min="{{minimum}}" max="{{maximum}}"><span class="input-number-increment">+</span>
 							</div>
 						</div>
 						<div id='cart-result'></div>
@@ -106,8 +107,6 @@
 							</div>
 						</div>
 					</div>
-					<div> Выберите опцию
-				</div>
 						<div class="row">
 								<div class="servise_wrap">
 										<div class="col-md-2 col-xs-3">

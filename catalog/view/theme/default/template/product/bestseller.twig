@@ -44,7 +44,15 @@
 							<div class=" top_info clearfix">
 
 								<div class="pln col-md-6 col-xs-5">
-									<div class="bage_blue bage">Хит</div>
+									{% if product.discount %}
+										<div class="bage_green bage">-{{product.discount}}%</div>
+									{% elseif product.bestseller %}
+										<div class="bage_blue bage">Хит</div>
+									{% elseif  product.latest %}
+										<div class="bage_blue_new bage">New</div>
+									{% else %}
+										<div class="bage"></div>
+									{% endif %}
 								</div>
 								<div class="prn col-md-6 col-xs-7">
 									<div class="itm_artic_wrap">
@@ -72,7 +80,7 @@
 										<div class="price">{{ product.price }}</div>
 										{% else %}
 										<div class="price">{{ product.special }}
-											<div class="old_price visible-sm">{{ product.price }}</div>
+											<div class="old_price ">{{ product.price }}</div>
 										</div>
 										{% endif %}
 									{% endif %}
