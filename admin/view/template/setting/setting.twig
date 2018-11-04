@@ -142,9 +142,25 @@
                   {% endif %} </div>
               </div>
               <div class="form-group required">
-                <label class="col-sm-2 control-label" for="input-telephone">{{ entry_telephone }}</label>
+                <label class="col-sm-2 control-label" for="input-telephone">{{ entry_telephone_vodafone }}</label>
                 <div class="col-sm-10">
-                  <input type="text" name="config_telephone" value="{{ config_telephone }}" placeholder="{{ entry_telephone }}" id="input-telephone" class="form-control" />
+                  <input type="text" name="config_telephone_vodafone" value="{{ config_telephone_vodafone }}" placeholder="{{ entry_telephone }}" id="input-telephone" class="form-control" />
+                  {% if error_telephone %}
+                  <div class="text-danger">{{ error_telephone }}</div>
+                  {% endif %} </div>
+              </div>
+              <div class="form-group required">
+                <label class="col-sm-2 control-label" for="input-telephone">{{ entry_telephone_kyivstar }}</label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_telephone_kyivstar" value="{{ config_telephone_kyivstar }}" placeholder="{{ entry_telephone }}" id="input-telephone" class="form-control" />
+                  {% if error_telephone %}
+                  <div class="text-danger">{{ error_telephone }}</div>
+                  {% endif %} </div>
+              </div>
+              <div class="form-group required">
+                <label class="col-sm-2 control-label" for="input-telephone">{{ entry_telephone_lifecell }}</label>
+                <div class="col-sm-10">
+                  <input type="text" name="config_telephone_lifecell" value="{{ config_telephone_lifecell }}" placeholder="{{ entry_telephone }}" id="input-telephone" class="form-control" />
                   {% if error_telephone %}
                   <div class="text-danger">{{ error_telephone }}</div>
                   {% endif %} </div>

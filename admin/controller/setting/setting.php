@@ -206,7 +206,6 @@ class ControllerSettingSetting extends Controller {
 				'value' => $code
 			);
 		}
-			
 		if (isset($this->request->post['config_layout_id'])) {
 			$data['config_layout_id'] = $this->request->post['config_layout_id'];
 		} else {
@@ -247,10 +246,20 @@ class ControllerSettingSetting extends Controller {
 			$data['config_email'] = $this->config->get('config_email');
 		}
 
-		if (isset($this->request->post['config_telephone'])) {
-			$data['config_telephone'] = $this->request->post['config_telephone'];
+		if (isset($this->request->post['config_telephone_vodafone'])) {
+			$data['config_telephone_vodafone'] = $this->request->post['config_telephone_vodafone'];
 		} else {
-			$data['config_telephone'] = $this->config->get('config_telephone');
+			$data['config_telephone_vodafone'] = $this->config->get('config_telephone_vodafone');
+		}
+		if (isset($this->request->post['config_telephone_kyivstar'])) {
+			$data['config_telephone_kyivstar'] = $this->request->post['config_telephone_kyivstar'];
+		} else {
+			$data['config_telephone_kyivstar'] = $this->config->get('config_telephone_kyivstar');
+		}
+		if (isset($this->request->post['config_telephone_lifecell'])) {
+			$data['config_telephone_lifecell'] = $this->request->post['config_telephone_lifecell'];
+		} else {
+			$data['config_telephone_lifecell'] = $this->config->get('config_telephone_lifecell');
 		}
 		
 		if (isset($this->request->post['config_fax'])) {
@@ -908,7 +917,13 @@ class ControllerSettingSetting extends Controller {
 			$this->error['email'] = $this->language->get('error_email');
 		}
 
-		if ((utf8_strlen($this->request->post['config_telephone']) < 3) || (utf8_strlen($this->request->post['config_telephone']) > 32)) {
+		if ((utf8_strlen($this->request->post['config_telephone_vodafone']) < 3) || (utf8_strlen($this->request->post['config_telephone_vodafone']) > 32)) {
+			$this->error['telephone'] = $this->language->get('error_telephone');
+		}
+		if ((utf8_strlen($this->request->post['config_telephone_kyivstar']) < 3) || (utf8_strlen($this->request->post['config_telephone_kyivstar']) > 32)) {
+			$this->error['telephone'] = $this->language->get('error_telephone');
+		}
+		if ((utf8_strlen($this->request->post['config_telephone_lifecell']) < 3) || (utf8_strlen($this->request->post['config_telephone_lifecell']) > 32)) {
 			$this->error['telephone'] = $this->language->get('error_telephone');
 		}
 

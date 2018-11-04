@@ -207,8 +207,8 @@ class ControllerProductCategory extends Controller {
 				} else {
 					$special = false;
 				}
-				if(is_numeric($special)){
-					$discount = ceil((1 - $special/$price)*100);
+				if(is_numeric($result['special'])){
+					$discount = $price > 0 ? ceil((1 - $special/$price)*100) : 100;
 				}else{
 					$discount = false;
 				}
