@@ -12,7 +12,7 @@
 								<span>Проверьте ваш заказ:</span>
 							</div>
 						</div>
-	
+		<div hidden >{{products|json_encode()}}</div>
 						<div class="cart_list_wrap">
 							
             {% for product in products %}
@@ -33,14 +33,14 @@
                 			{% if product.recurring %} <br />
                 			<span class="label label-info">{{ text_recurring_item }}</span> <small>{{ product.recurring }}</small> {% endif %}
 											
-											<div class="articul hidden-xs">Арт.23456</div>
+											<div class="articul hidden-xs">{{ product.sku }}</div>
 											{# <a href="#" class="name_item">Момент Универсальный Особопрочный… и запас под очень длинный заголовок</a>
 											<div class="articul hidden-xs">Арт.23456</div> #}
 									</div>
 								</div>
 								<div class="wrap_counter">
 									<div class="cw_inner">
-										<span class="input-number-decrement">–</span><input class="input-number" type="text" value="1" min="0" max="10"><span
+										<span class="input-number-decrement">–</span><input class="input-number" type="text" value="{{product.quantity}}" min="{{product.minimum}}" max="{{product.maximum}}"><span
 										 class="input-number-increment">+</span>
 										 <div class="limit">это минимальное кол-во товара</div>
 									</div>
@@ -55,7 +55,7 @@
 								</div>
 								<div class="wrap_total">
 										<div class="total_price_wrap">
-												<div class="total_by_item">{{ product.total }}<span>грн</span></div>
+												<div class="total_by_item">{{ product.total }}{#<span>грн</span>#}</div>
 										</div>
 								</div>
 								</div>

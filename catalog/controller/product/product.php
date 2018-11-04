@@ -354,11 +354,23 @@ class ControllerProductProduct extends Controller {
 					'required'             => $option['required']
 				);
 			}
-			$data['options_d'] = json_encode($data['options']);
+
 			if ($product_info['minimum']) {
 				$data['minimum'] = $product_info['minimum'];
 			} else {
 				$data['minimum'] = 1;
+			}
+
+			if ($product_info['quantity']) {
+				$data['maximum'] = $product_info['quantity'];
+			} else {
+				$data['maximum'] = "";
+			}
+
+			if ($product_info['quantity_in_pack']) {
+				$data['quantity_in_pack'] = $product_info['quantity_in_pack'];
+			} else {
+				$data['quantity_in_pack'] = 1;
 			}
 
 			$data['review_status'] = $this->config->get('config_review_status');
@@ -440,6 +452,8 @@ class ControllerProductProduct extends Controller {
 					'special'     => $special,
 					'tax'         => $tax,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
+					'maximum'     => $result['quantity'],
+					'quantity_in_pack'=> $result['quantity_in_pack'],
 					'rating'      => $rating,
 					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
 				);

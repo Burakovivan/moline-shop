@@ -18,6 +18,9 @@ class ControllerCheckoutCart extends Controller {
 		);
 
 		if ($this->cart->hasProducts() || !empty($this->session->data['vouchers'])) {
+
+			$data['heading_title'] = $this->language->get('heading_title');
+		
 			if (!$this->cart->hasStock() && (!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning'))) {
 				$data['error_warning'] = $this->language->get('error_stock');
 			} elseif (isset($this->session->data['error'])) {
@@ -131,18 +134,19 @@ class ControllerCheckoutCart extends Controller {
 				}
 
 				$data['products'][] = array(
-					'cart_id'   => $product['cart_id'],
-					'thumb'     => $image,
-					'name'      => $product['name'],
-					'model'     => $product['model'],
-					'option'    => $option_data,
-					'recurring' => $recurring,
-					'quantity'  => $product['quantity'],
-					'stock'     => $product['stock'] ? true : !(!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning')),
-					'reward'    => ($product['reward'] ? sprintf($this->language->get('text_points'), $product['reward']) : ''),
-					'price'     => $price,
-					'total'     => $total,
-					'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id'])
+					'cart_id'   			=> $product['cart_id'],
+					'sku'   				=> $product['sku'],
+					'thumb'     			=> $image,
+					'name'      			=> $product['name'],
+					'model'     			=> $product['model'],
+					'option'    			=> $option_data,
+					'recurring' 			=> $recurring,
+					'quantity'  			=> $product['quantity'],
+					'stock'     			=> $product['stock'] ? true : !(!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning')),
+					'reward'    			=> ($product['reward'] ? sprintf($this->language->get('text_points'), $product['reward']) : ''),
+					'price'     			=> $price,
+					'total'     			=> $total,
+					'href'      			=> $this->url->link('product/product', 'product_id=' . $product['product_id'])
 				);
 			}
 

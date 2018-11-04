@@ -266,7 +266,7 @@ $(document).ready(function() {
 					}
 				}
 
-				if (html) {
+				if (html && this == document.activeElement) {
 					this.show();
 				} else {
 					this.hide();

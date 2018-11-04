@@ -367,7 +367,8 @@
 								<div class="col-md-6 col-sm-12  pr-lg-right cw_wrp">
 									<div class="counter_wrap">
 										<div class="cw_inner">
-											<span class="input-number-decrement">–</span><input class="input-number" readonly type="text" value="{{ product.minimum }}" min="{{ product.minimum }}" ><span class="input-number-increment">+</span>
+											<input hidden class="quantitiy_in_pack" value = "{{product.quantity_in_pack}}" >	
+											<span class="input-number-decrement">–</span><input class="input-number" type="text" value="{{ product.minimum > product.quantity_in_pack ? product.minimum : product.quantity_in_pack   }}" min="{{ product.minimum }}" max="{{ product.maximum }}" ><span class="input-number-increment">+</span>
 										</div>
 									</div>
 								</div>
