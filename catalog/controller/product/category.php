@@ -223,6 +223,14 @@ class ControllerProductCategory extends Controller {
 				} else {
 					$rating = false;
 				}
+				// if($result['stock_status_id'] == 5 && isset($image)){
+				// 	$imSect = explode('.',$image);
+				// 	$grayscaleImagePath = $imSect[0] . '_grayscale' . $imSect[1];
+				// 	if(file_exists($image .'grayscale'))
+				// 	$im = ImageCreateFromJpeg(DIR_IMAGE . $image);
+				// 	$im = imagefilter($im, IMG_FILTER_GRAYSCALE); 
+				// 	imagejpeg($im, $image.'grayscale');
+				// }
 
 				$data['products'][] = array(
 					'product_id'  	=> $result['product_id'],
@@ -243,6 +251,8 @@ class ControllerProductCategory extends Controller {
 					'bestseller'	=> isset($result['bestseller']) ? $result['bestseller'] : null,
 					'featured'		=> isset($result['featured'])? $result['featured'] : null,
 					'latest'		=> isset($result['latest'])? $result['latest'] : null,
+					'stock_status'	=> $result['stock_status'],
+					'stock_status_id'	=> $result['stock_status_id']
 				);
 			}
 

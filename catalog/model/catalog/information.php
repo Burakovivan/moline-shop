@@ -21,4 +21,8 @@ class ModelCatalogInformation extends Model {
 			return 0;
 		}
 	}
+	public function getQuestions(){
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "question");
+		return $query->rows;
+	}
 }

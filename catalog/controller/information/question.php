@@ -43,13 +43,9 @@ class ControllerInformationQuestion extends Controller {
 		} else {
 			$data['error_enquiry'] = '';
 		}
-
-
-			$data['text_contact'] = $this->language->get('text_contact'); 
 		
 		$data['button_submit'] = $this->language->get('button_submit');
 
-		$data['action'] = $this->url->link('information/contact', '', true);
 
 		$this->load->model('tool/image');
 
@@ -152,7 +148,7 @@ class ControllerInformationQuestion extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
-		$this->response->setOutput($this->load->view('information/contact', $data));
+		$this->response->setOutput($this->load->view('information/question', $data));
 	}
 
 	protected function validate() {

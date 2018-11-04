@@ -63,7 +63,7 @@ class ControllerCommonMenu extends Controller {
 		$data['delivery'] =  $this->url->link('information/information','information_id=6');
 		$data['payment'] =  $this->url->link('information/information','information_id=8');
 		$data['about_us'] =  $this->url->link('information/information','information_id=4');
-
+		$data['questoin'] = $this->url->link('information/question');
 
 		$data['text_items'] = $this->cart->countProducts();
 

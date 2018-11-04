@@ -26,6 +26,7 @@ class ModelCatalogProduct extends Model {
 				'location'         => $query->row['location'],
 				'quantity'         => $query->row['quantity'],
 				'stock_status'     => $query->row['stock_status'],
+				'stock_status_id'     => $query->row['stock_status_id'],
 				'image'            => $query->row['image'],
 				'manufacturer_id'  => $query->row['manufacturer_id'],
 				'manufacturer'     => $query->row['manufacturer'],
@@ -355,7 +356,7 @@ class ModelCatalogProduct extends Model {
 
 			$product_data[$result['product_id']] = $this->getProduct($result['product_id']);
 			
-			$product_data[$result['product_id']]['latest']		= in_array($result['product_id'],$LatestProducts)		? 'Y' : null;
+			$product_data[$result['product_id']]['latest']		= in_array($result['product_id'],$LatestProducts)		? 'Y' : null;;
 			// $product_data[$result['product_id']]['featured']	= in_array($result['product_id'],$FeaturedProducts)		? 'Y' : null;
 			$product_data[$result['product_id']]['bestseller']	= in_array($result['product_id'],$BestsellerProducts)	? 'Y' : null;
 		}

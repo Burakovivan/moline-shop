@@ -123,6 +123,8 @@
 
 						<div class="item_wrap product col-md-4 col-xs-6 col-sm-3" id='product_{{ product.product_id }}' data-product-id="{{ product.product_id }}">
 							<div class=" top_info">
+								{# <div>{{product.stock_status}}</div>
+								<div>{{product.stock_status_id}}</div> #}
 								<div class="pln col-md-6 col-xs-5">
 									{% if product.discount %}
 										<div class="bage_green bage">-{{product.discount}}%</div>
@@ -163,7 +165,17 @@
 										{% endif %}
 									{% endif %}
 								</div>
-
+								{#pod zakaz#}
+								{% if product.stock_status_id == 8 %}
+								{% endif %}
+								{#skoro v prodaze#}
+								{% if product.stock_status_id == 6 %}
+								{% endif %}
+								{#net v nalichii#}
+								{% if product.stock_status_id == 5 %}
+								{% endif %}
+								{#est v nalichii#}
+								{% if product.stock_status_id == 7 %}
 								<div class="col-md-6 col-sm-12  pr-lg-right cw_wrp">
 									<div class="counter_wrap">
 										<div class="cw_inner">
@@ -175,6 +187,7 @@
 								<div class="col-md-6 col-sm-12 btn_buy_wrap btn_buy_wrap_link">
 									<button onclick="cart.add('{{ product.product_id }}', $(this).parent().parent().find('.input-number').val());" class="btn_buy primary_btn">{{ button_cart }}</button>
 								</div>
+								{% endif %}
 								
 								<div class="ost col-sm-12 pln ct_hide">{{ product.maximum }} ед. остаток на складе</div>
 								<div class="limit ct_hide">от <span class="amount_lim">{{ product.minimum }} ед.</span><span class="hidd_mobile">минимальный заказ</span></div>
@@ -183,7 +196,6 @@
 										{# <span class="currency">грн</span> #}
 									</div>
 								</div>
-
 							</div>
 						</div>
 
