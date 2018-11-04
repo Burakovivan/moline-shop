@@ -121,9 +121,7 @@
 					{% for product in products %}
 						<div hidden> {{product.prod}}</div>
 
-						{#pod zakaz#}
-						{% if product.stock_status_id == 8 %}
-							<div class="item_wrap under_the_order product col-md-4 col-xs-6 col-sm-3" id='product_{{ product.product_id }}' data-product-id="{{ product.product_id }}">
+						<div class="item_wrap product col-md-4 col-xs-6 col-sm-3" id='product_{{ product.product_id }}' data-product-id="{{ product.product_id }}">
 							<div class=" top_info">
 								{# <div>{{product.stock_status}}</div>
 								<div>{{product.stock_status_id}}</div> #}
@@ -167,203 +165,17 @@
 										{% endif %}
 									{% endif %}
 								</div>
-
-								<div class="col-xs-12 message_wrap">
-								<img src="img/cat_icon/order.png" alt="">
-							</div>
-							
-								<div class="col-xs-12">
-								<div class="btn_order_wrap">
-									<button class="btn_buy primary_btn order_btn">Заказать</button>
-								</div>
-							</div>
-								
-								
-								<div class="ost col-sm-12 pln ct_hide">{{ product.maximum }} ед. остаток на складе</div>
-								<div class="limit ct_hide">от <span class="amount_lim">{{ product.minimum }} ед.</span><span class="hidd_mobile">минимальный заказ</span></div>
-								<div class="retail_price ct_hide">Рекомендуемая розничная цена
-									<div class="price">{{product.retail_price}}
-										{# <span class="currency">грн</span> #}
-									</div>
-								</div>
-							</div>
-						</div>
-						{% endif %}
-
-						{#skoro v prodaze#}
-						{% if product.stock_status_id == 6 %}
-							<div class="item_wrap coming_soon product col-md-4 col-xs-6 col-sm-3" id='product_{{ product.product_id }}' data-product-id="{{ product.product_id }}">
-							<div class=" top_info">
-								{# <div>{{product.stock_status}}</div>
-								<div>{{product.stock_status_id}}</div> #}
-								<div class="pln col-md-6 col-xs-5">
-									{% if product.discount %}
-										<div class="bage_green bage">-{{product.discount}}%</div>
-									{% elseif product.bestseller %}
-										<div class="bage_blue bage">Хит</div>
-									{% elseif  product.latest %}
-										<div class="bage_blue_new bage">New</div>
-									{% else %}
-										<div class="bage"></div>
-									{% endif %}
-								</div>
-								<div class="prn col-md-6 col-xs-7">
-									<div class="itm_artic_wrap">
-								{{ product.sku }}
-										
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<a href="{{product.href}}">
-									<div class="col-md-12 itm_img_wrap">
-										<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}">
-									</div>
-								</a>
-
-								<div class="col-md-12 h_wrap">
-									<h4><a href="{{product.href}}">{{ product.name }}	</a></h4>
-								</div>
-
-								<div class="col-md-12 p_wrap">
-									{% if product.price %}
-										{% if not product.special %}
-										<div class="price">{{ product.price }}</div>
-										{% else %}
-										<div class="price">{{ product.special }}
-											<div class="old_price">{{ product.price }}</div>
-										</div>
-										{% endif %}
-									{% endif %}
-								</div>
-
-								<div class="col-xs-12 message_wrap">
-
-								<img src="img/cat_icon/soon.png" alt="" >
-
-								<a href="#" class="message">Сообщить когда появится</a>
-							</div>
-														
-								
-								<div class="ost col-sm-12 pln ct_hide">{{ product.maximum }} ед. остаток на складе</div>
-								<div class="limit ct_hide">от <span class="amount_lim">{{ product.minimum }} ед.</span><span class="hidd_mobile">минимальный заказ</span></div>
-								<div class="retail_price ct_hide">Рекомендуемая розничная цена
-									<div class="price">{{product.retail_price}}
-										{# <span class="currency">грн</span> #}
-									</div>
-								</div>
-							</div>
-						</div>
-						{% endif %}
-						{#net v nalichii#}
-						{% if product.stock_status_id == 5 %}
-							<div class="item_wrap absent product col-md-4 col-xs-6 col-sm-3" id='product_{{ product.product_id }}' data-product-id="{{ product.product_id }}">
-							<div class=" top_info">
-								{# <div>{{product.stock_status}}</div>
-								<div>{{product.stock_status_id}}</div> #}
-								<div class="pln col-md-6 col-xs-5">
-									{% if product.discount %}
-										<div class="bage_green bage">-{{product.discount}}%</div>
-									{% elseif product.bestseller %}
-										<div class="bage_blue bage">Хит</div>
-									{% elseif  product.latest %}
-										<div class="bage_blue_new bage">New</div>
-									{% else %}
-										<div class="bage"></div>
-									{% endif %}
-								</div>
-								<div class="prn col-md-6 col-xs-7">
-									<div class="itm_artic_wrap">
-								{{ product.sku }}
-										
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<a href="{{product.href}}">
-									<div class="col-md-12 itm_img_wrap">
-										<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}">
-									</div>
-								</a>
-
-								<div class="col-md-12 h_wrap">
-									<h4><a href="{{product.href}}">{{ product.name }}	</a></h4>
-								</div>
-
-								<div class="col-md-12 p_wrap">
-									{% if product.price %}
-										{% if not product.special %}
-										<div class="price">{{ product.price }}</div>
-										{% else %}
-										<div class="price">{{ product.special }}
-											<div class="old_price">{{ product.price }}</div>
-										</div>
-										{% endif %}
-									{% endif %}
-								</div>
-
-								<div class="col-xs-12 message_wrap">
-								<img src="img/cat_icon/tovarZak.png" alt="">
-								<a href="#" class="message">Сообщить когда появится</a>
-							</div>
-								
-								<div class="ost col-sm-12 pln ct_hide">{{ product.maximum }} ед. остаток на складе</div>
-								<div class="limit ct_hide">от <span class="amount_lim">{{ product.minimum }} ед.</span><span class="hidd_mobile">минимальный заказ</span></div>
-								<div class="retail_price ct_hide">Рекомендуемая розничная цена
-									<div class="price">{{product.retail_price}}
-										{# <span class="currency">грн</span> #}
-									</div>
-								</div>
-							</div>
-						</div>
-						{% endif %}
-						{#est v nalichii#}
-						{% if product.stock_status_id == 7 %}
-							<div class="item_wrap product testtt col-md-4 col-xs-6 col-sm-3" id='product_{{ product.product_id }}' data-product-id="{{ product.product_id }}">
-							<div class=" top_info">
-								{# <div>{{product.stock_status}}</div>
-								<div>{{product.stock_status_id}}</div> #}
-								<div class="pln col-md-6 col-xs-5">
-									{% if product.discount %}
-										<div class="bage_green bage">-{{product.discount}}%</div>
-									{% elseif product.bestseller %}
-										<div class="bage_blue bage">Хит</div>
-									{% elseif  product.latest %}
-										<div class="bage_blue_new bage">New</div>
-									{% else %}
-										<div class="bage"></div>
-									{% endif %}
-								</div>
-								<div class="prn col-md-6 col-xs-7">
-									<div class="itm_artic_wrap">
-								{{ product.sku }}
-										
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<a href="{{product.href}}">
-									<div class="col-md-12 itm_img_wrap">
-										<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}">
-									</div>
-								</a>
-
-								<div class="col-md-12 h_wrap">
-									<h4><a href="{{product.href}}">{{ product.name }}	</a></h4>
-								</div>
-
-								<div class="col-md-12 p_wrap">
-									{% if product.price %}
-										{% if not product.special %}
-										<div class="price">{{ product.price }}</div>
-										{% else %}
-										<div class="price">{{ product.special }}
-											<div class="old_price">{{ product.price }}</div>
-										</div>
-										{% endif %}
-									{% endif %}
-								</div>
-								
+								{#pod zakaz#}
+								{% if product.stock_status_id == 8 %}
+								{% endif %}
+								{#skoro v prodaze#}
+								{% if product.stock_status_id == 6 %}
+								{% endif %}
+								{#net v nalichii#}
+								{% if product.stock_status_id == 5 %}
+								{% endif %}
+								{#est v nalichii#}
+								{% if product.stock_status_id == 7 %}
 								<div class="col-md-6 col-sm-12  pr-lg-right cw_wrp">
 									<div class="counter_wrap">
 										<div class="cw_inner">
@@ -375,7 +187,7 @@
 								<div class="col-md-6 col-sm-12 btn_buy_wrap btn_buy_wrap_link">
 									<button onclick="cart.add('{{ product.product_id }}', $(this).parent().parent().find('.input-number').val());" class="btn_buy primary_btn">{{ button_cart }}</button>
 								</div>
-								
+								{% endif %}
 								
 								<div class="ost col-sm-12 pln ct_hide">{{ product.maximum }} ед. остаток на складе</div>
 								<div class="limit ct_hide">от <span class="amount_lim">{{ product.minimum }} ед.</span><span class="hidd_mobile">минимальный заказ</span></div>
@@ -386,8 +198,6 @@
 								</div>
 							</div>
 						</div>
-						{% endif %}
-					
 
 					{% endfor %}
 				</div>
