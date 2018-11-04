@@ -13,6 +13,7 @@ class ControllerExtensionModuleFeatured extends Controller {
 			$setting['limit'] = 4;
 		}
 		$data['featured'] =  $this->url->link('product/featured');
+		$data['heading_title_name'] = $setting['name']; 
 		if (!empty($setting['product'])) {
 			$products = array_slice($setting['product'], 0, (int)$setting['limit']);
 
