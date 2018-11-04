@@ -135,6 +135,39 @@ $(function () {
 			$(this).parent().slideUp(300);
 	});    
 	/*end FAQ */
+
+	/*Cart*/
+	$('.cart-wrap').on('click', function () {
+		// $('.cart').toggleClass('show_cart');
+		$('.cart').fadeIn("slow");
+		$('.wrap_cart').fadeIn("slow");
+
+		console.log('click +');
+	});
+
+	$('.cart').on('click', function () {
+		// $('.cart').fadeOut("slow");
+		// $('.wrap_cart').fadeOut("slow");
+
+		console.log('click -- ');
+	});
+	$('#exit_cart').on('click', function () {
+		$('.cart').fadeOut("slow");
+		$('.wrap_cart').fadeOut("slow");
+		
+		console.log('click - ');
+	});
+
+	$('.lets_buy').on('click', function () {
+		$('.cart').fadeOut("slow");
+		$('.wrap_cart').fadeOut("slow");
+		
+		console.log('click - ');
+	});
+	
+	
+	
+	/*end Cart*/
 	/*Slide down*/
 	$(".sb_block_name").click(function () {
 		$(this).parent().find('.block_info').toggleClass('closed');
@@ -263,33 +296,7 @@ $(function () {
 		$('#openSidebarMenu').click();
 	});
 
-	$('.cart-wrap').on('click', function () {
-		// $('.cart').toggleClass('show_cart');
-		$('.cart').fadeIn("slow");
-		$('.wrap_cart').fadeIn("slow");
-
-		console.log('click +');
-	});
-
-	$('.cart').on('click', function () {
-		$('.cart').fadeOut("slow");
-		$('.wrap_cart').fadeOut("slow");
-
-		console.log('click -- ');
-	});
-	$('#exit_cart').on('click', function () {
-		$('.cart').fadeOut("slow");
-		$('.wrap_cart').fadeOut("slow");
-		
-		console.log('click - ');
-	});
-
-	$('.lets_buy').on('click', function () {
-		$('.cart').fadeOut("slow");
-		$('.wrap_cart').fadeOut("slow");
-		
-		console.log('click - ');
-	});
+	
 
 	var i_type_trig = 1;
 	var tree_modif = 0;

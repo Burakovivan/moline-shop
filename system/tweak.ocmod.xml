@@ -308,20 +308,6 @@
 </file>
 
 
-<file path="catalog/controller/checkout/cart.php">
-
-	<operation>
-		<search><![CDATA[
-			if ($this->cart->hasProducts() || !empty($this->session->data['vouchers'])) {
-		]]></search>
-		<add position="after"><![CDATA[
-			$data['heading_title'] = $this->language->get('heading_title');
-		]]></add>
-	</operation>
-
-</file>
-
-
 <file path="catalog/controller/account/order.php">
 
 	<operation>
