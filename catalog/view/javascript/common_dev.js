@@ -359,6 +359,11 @@ $(function () {
 		$('.item_wrap').each(function (index, value) {
 			console.log('Begin of ' + index + 'item');
 			console.log('index = ' + index + value);
+
+			//for other item status
+			$(value).find('.message_wrap').toggleClass('col-xs-12 col-sm-5');
+			//end of changing other item status
+
 			if (i_type_trig == 0) {
 
 				var artcl_tmp = $(value).find('.itm_artic_wrap');
@@ -401,6 +406,25 @@ $(function () {
 				}
 			}
 
+			//for other item status
+			if( $(value).hasClass('absent')){
+				// $(value).find('.message_wrap').toggleClass('col-xs-12 col-sm-5');
+			}
+			if( $(value).hasClass('coming_soon')){
+				// $(value).toggleClass('border-test');		
+				$(value).find('.message_wrap').attr("class", "message_wrap");
+
+			}
+			if( $(value).hasClass('under_the_order')){
+
+				$(value).find('.message_wrap').attr("class", "message_wrap");
+				// $(value).find('.btn_order_wrap').parent().toggleClass('border-test');
+				var btn_ord_tmp = $(value).find('.btn_order_wrap');
+				$(value).find('.btn_order_wrap').parent().toggleClass('col-xs-12 col-sm-4 col-md-3 col-sm-offset-1 col-md-offset-1 pln-md prn-md');
+
+				// $(btn_tmp).insertAfter($(value).find(".counter_wrap"));					
+			}
+			//end of changing other item status
 		});
 	});
 
@@ -547,6 +571,35 @@ $(function () {
 					// console.log('It is not last item');
 					// console.log('Current item = ' + index);
 				}
+
+				//for other item status
+				if( $(value).hasClass('absent')){
+					$(value).find('.message_wrap').toggleClass('col-xs-12 col-sm-5');
+				}
+				if( $(value).hasClass('coming_soon')){
+					// $(value).toggleClass('border-test');		
+					$(value).find('.message_wrap').attr("class", "message_wrap col-sm-5");
+				}
+				if( $(value).hasClass('under_the_order')){
+
+					// $(value).toggleClass('border-test');
+					
+					// $(value).find('.message_wrap').toggleClass('');
+					$(value).find('.message_wrap').attr("class", "message_wrap");
+					
+					var tmp_massege = $(value).find('.message_wrap');
+					$(value).find('.message_wrap').remove();
+					$(tmp_massege).appendTo($(value).find('.col-xs-7.col-sm-4'));
+					// $(value).find('.message_wrap').remove();
+					
+
+					// $(value).find('.btn_order_wrap').parent().toggleClass('border-test');
+					var btn_ord_tmp = $(value).find('.btn_order_wrap');
+					$(value).find('.btn_order_wrap').parent().toggleClass('col-xs-12 col-sm-4 col-md-3 col-sm-offset-1 col-md-offset-1 pln-md prn-md');
+
+					// $(btn_tmp).insertAfter($(value).find(".counter_wrap"));					
+				}
+				//end of changing other item status
 			}
 
 			// console.log('i_type_trig outside loop =' + i_type_trig);
