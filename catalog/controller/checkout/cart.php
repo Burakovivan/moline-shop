@@ -59,7 +59,7 @@ class ControllerCheckoutCart extends Controller {
 			$data['products'] = array();
 
 			$products = $this->cart->getProducts();
-
+			$data['cart_ids'] = array_map(function($e){return $e['cart_id'];}, $products);
 			foreach ($products as $product) {
 				$product_total = 0;
 
@@ -391,7 +391,14 @@ class ControllerCheckoutCart extends Controller {
 
 		// Update
 		if (!empty($this->request->post['quantity'])) {
-			foreach ($this->request->post['quantity'] as $key => $value) {
+			if(is_array( $this->request->post['quantity'])){
+
+				foreach ($this->request->post['quantity'] as $key => $value) {
+					$this->cart->update($key, $value);
+				}
+			}else{
+				$key = $this->request->post['key'];
+				$value = $this->request->post['quantity'];
 				$this->cart->update($key, $value);
 			}
 
@@ -402,13 +409,20 @@ class ControllerCheckoutCart extends Controller {
 			unset($this->session->data['payment_method']);
 			unset($this->session->data['payment_methods']);
 			unset($this->session->data['reward']);
-
-			$this->response->redirect($this->url->link('checkout/cart'));
+			if(empty(($this->request->post['disable_redirect']))){
+				$this->response->redirect($this->url->link('checkout/cart'));
+			}else{
+				$json['total'] = $this->cart->countProducts();
+				$this->response->setOutput(json_encode($json));
+			}
 		}
+
+		
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+
 
 	public function remove() {
 		$this->load->language('checkout/cart');
@@ -479,4 +493,28 @@ class ControllerCheckoutCart extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+
+	public function index_partial(){
+		$this->load->language('checkout/cart');
+		
+		$cart_products = $this->cart->getProducts();
+		foreach($cart_products as &$product){
+			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+				$unit_price = $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax'));
+				$product['price'] = $this->currency->format($unit_price, $this->session->data['currency']);
+				$product['total'] = $this->currency->format($unit_price * $product_total, $this->session->data['currency']);
+			} else {
+				$price = false;
+				$total = false;
+			}
+		}
+		$data['cart_products'] = $cart_products;
+		$data['cart_ids'] = array_map(function($e){return $e['cart_id'];}, $cart_products);
+		$data['cart_total'] = $this->currency->format($this->cart->getTotal(), $this->session->data['currency']);
+	
+		$data['shopping_cart'] = $this->url->link('checkout/cart');
+		
+		$this->response->setOutput($this->load->view('checkout/cart_partial', $data));
+	}
+
 }

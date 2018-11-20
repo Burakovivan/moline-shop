@@ -139,4 +139,8 @@ class ControllerCommonCart extends Controller {
 	public function info() {
 		$this->response->setOutput($this->index());
 	}
+
+
+	
+
 }

@@ -16,7 +16,7 @@
 						<div class="cart_list_wrap">
 							
             {% for product in products %}
-							<div class="item-test">
+							<div class="item-test"  data-cart-id="{{product.cart_id}}">
 								<div class="wrap_mob">
 								<div class="wrap_img">
 									{% if product.thumb %} <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail" /></a> {% endif %}
@@ -274,5 +274,12 @@
 		</div>
 	</section>
 	<script>
+var cart_checkout_idList = {{cart_ids|json_encode()}};
+		$(".cart_checkout .input-number").on('change paste',function(){
+			updateCheckoutCart(cart_checkout_idList);
+		});
+		$(".input-number-decrement, .input-number-increment").click(function(){
+			updateCheckoutCart(cart_checkout_idList);
+		});
 		</script>
 {{ footer }} 

@@ -173,8 +173,9 @@ var cart = {
 					setTimeout(function () {
 						$('.cart-total').html(json['total']);
 					}, 100);
-
-					$('html, body').animate({ scrollTop: $(".s_catalog").position().top }, 'slow');
+					if($(".s_catalog").length){
+						$('html, body').animate({ scrollTop: $(".s_catalog").position().top }, 'slow');
+					}
 
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
 				}
@@ -184,11 +185,11 @@ var cart = {
 			}
 		});
 	},
-	'update': function(key, quantity) {
+	'update': function(key, quantity, disableReirect = false, callback = false) {
 		$.ajax({
 			url: 'index.php?route=checkout/cart/edit',
-			type: 'post',
-			data: 'key=' + key + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
+			type: "post",
+			data: 'key=' + key + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1) + (disableReirect?"&disable_redirect=true":""),
 			dataType: 'json',
 			beforeSend: function() {
 				$('#cart > button').button('loading');
@@ -198,6 +199,10 @@ var cart = {
 			},
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
+				if(callback)
+				{
+					callback();
+				}
 				setTimeout(function () {
 					$('.cart-total').html(json['total']);
 				}, 100);
