@@ -627,6 +627,36 @@ $(function () {
 
 	// 	/*Inmut multirange*/
 
+	//delivery start
+	$(".new_post_details #delivery_city").change(function(){
+
+		getNPDeptList();
+	});
+	$(".delivAuto_details #delivery_city").change(function(){
+		getDADeptList();
+	});
+	
+
+	$('input[type=radio][name=delivery]').change(function(){
+		$("[class$=_details]").hide();
+		var deliveryType = $('input[type=radio][name=delivery]:checked').val();
+		$("."+deliveryType+"_details").show();
+		if(deliveryType == "new_post"){
+			if($(".new_post_details #delivery_city").length? !$(".new_post_details #delivery_city")[0].options.length:false)
+			{
+				getNPCityList();
+			}
+		}
+		if(deliveryType == "delivAuto"){
+			if($(".delivAuto_details #delivery_city").length? !$(".delivAuto_details #delivery_city")[0].options.length:false)
+			{
+				getDACityList();
+			}
+		}
+	});
+	//delivery end
+
+
 var lowerSlider = document.querySelector('#range-lower');
 var upperSlider = document.querySelector('#range-upper');
 if(!lowerSlider || !upperSlider){
@@ -667,12 +697,106 @@ lowerSlider.oninput = function () {
 	// var upperSlider = document.querySelector('#range-upper').value;
 	// document.querySelector('#one').value= lowerSlider;
 	// document.querySelector('#two').value= upperSlider;
-
+	
 
 });
 function getButtonById(product_id){
 	return $('.item_wrap.product[data-product-id='+product_id+'] .btn_buy');
 }
+function getNPCityList(city){
+	var request = {
+		apiKey : '4ce2347821d2e9e93c08b5683631764e',
+		modelName: "Address",
+		calledMethod: "getCities",
+	}
+	$.ajax({
+		url:'https://api.novaposhta.ua/v2.0/json/',
+		data:JSON.stringify(request),
+		method:"POST",
+		success:function(response){
+			if($(".new_post_details #delivery_city").length){
+				$(".new_post_details #delivery_city").empty();
+				response.data.forEach(function(city){
+					$(".new_post_details #delivery_city").append(new Option(city.DescriptionRu, city.Ref, false,false));
+				});
+				$(".new_post_details #delivery_city").change();
+			}
+		}
+	})
+}
+function getNPDeptList(city){
+	var request = {
+		apiKey : '4ce2347821d2e9e93c08b5683631764e',
+		modelName: "Address",
+		calledMethod: "getWarehouses",
+		methodProperties: {
+			Language: "ru",
+			CityRef:$(".new_post_details #delivery_city").val()
+	   },
+	}
+	$.ajax({
+		url:'https://api.novaposhta.ua/v2.0/json/',
+		data:JSON.stringify(request),
+		method:"POST",
+		success:function(response){
+			if($(".new_post_details #delivery_dept").length){
+				$(".new_post_details #delivery_dept").empty();
+					response.data.forEach(function(city){
+					$(".new_post_details #delivery_dept").append(new Option(city.DescriptionRu, city.Ref, false,false));
+					});
+				if(!$(".new_post_details #delivery_dept")[0].options.length)
+				{
+					$(".new_post_details #delivery_dept").append(new Option("Нет отделений","", true,true));
+				}
+				$(".new_post_details #delivery_dept")[0].options[0].selected = true;
+			}
+		}
+	})
+}
+function getDACityList(city){
+	var request = {
+		apiKey : '4ce2347821d2e9e93c08b5683631764e',
+		modelName: "Address",
+		calledMethod: "getCities",
+	}
+	$.ajax({
+		url:'https://www.delivery-auto.com/api/v4/Public/GetAreasList?culture=ru-RU&fl_all=true&country=1',//&regionId={regionId}',
+		method:"Get",
+		success:function(response){
+			if($(".delivAuto_details #delivery_city").length){
+				$(".delivAuto_details #delivery_city").empty();
+				response.data = response.data.filter(function(x){return x.IsWarehouse;});
+				response.data.forEach(function(city){
+					$(".delivAuto_details #delivery_city").append(new Option(city.name, city.id, false,false));
+				});
+				$(".delivAuto_details #delivery_city").change();
+			}
+		}
+	})
+}
+function getDADeptList(city){
+
+	$.ajax({
+		url:'https://www.delivery-auto.com/api/v4/Public/GetWarehousesListInDetail?culture=ru-RU&CityId='+$(".delivAuto_details #delivery_city").val()+'&country=1',
+		method:"Get",
+		success:function(response){
+			if($(".delivAuto_details #delivery_dept").length){
+				$(".delivAuto_details #delivery_dept").empty();
+				response.data.sort(function(a,b){return a >b});
+					response.data.forEach(function(city){
+						var type = city.WarehouseType == 2 ?"Почтомат":city.WarehouseType == 3 ?"Склад с наложеным платежом":city.WarehouseType ==0 ?"Склад":"";
+					$(".delivAuto_details #delivery_dept").append(new Option(city.name + ", " +type + ", "  + city.address, city.id, false,false));
+					});
+				if(!$(".delivAuto_details #delivery_dept")[0].options.length)
+				{
+					$(".delivAuto_details #delivery_dept").append(new Option("Нет отделений","", true,true));
+				}
+				$(".delivAuto_details #delivery_dept")[0].options[0].selected = true;
+			}
+		}
+	})
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 	var container = document.querySelector('.input-range-container');
 	var rangeLower = document.querySelector('input[name="range-lower"]');

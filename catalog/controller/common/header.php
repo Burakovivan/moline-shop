@@ -5,7 +5,21 @@ class ControllerCommonHeader extends Controller {
 		$this->load->model('setting/extension');
 
 		$data['analytics'] = array();
-
+		$cart_products = $this->cart->getProducts();
+		
+		foreach($cart_products as &$product){
+			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+				$unit_price = $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax'));
+				$product['asdasd'] = "asdasd";
+				$product['price'] = $this->currency->format($unit_price, $this->session->data['currency']);
+				$product['total'] = $this->currency->format($unit_price * $product['quantity'], $this->session->data['currency']);
+			} else {
+				$price = false;
+				$total = false;
+			}
+		}
+		$data['cart_products'] = $cart_products;
+		$data['cart_total'] = $this->currency->format($this->cart->getTotal(), $this->session->data['currency']);
 		$analytics = $this->model_setting_extension->getExtensions('analytics');
 
 		foreach ($analytics as $analytic) {

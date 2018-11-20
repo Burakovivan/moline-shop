@@ -39,3 +39,5 @@ define('DB_PASSWORD', '');
 define('DB_DATABASE', 'moline_db');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
+
+define('NP_API_KEY','4ce2347821d2e9e93c08b5683631764e');

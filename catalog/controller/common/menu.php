@@ -59,6 +59,7 @@ class ControllerCommonMenu extends Controller {
 		$data['special'] =  $this->url->link('product/special');
 		$data['latest'] =  $this->url->link('product/latest');
 		$data['partnership'] =  $this->url->link('affiliate/login');
+		$data['login'] = $this->url->link('account/login', '', true);
 		
 		$data['delivery'] =  $this->url->link('information/information','information_id=6');
 		$data['payment'] =  $this->url->link('information/information','information_id=8');

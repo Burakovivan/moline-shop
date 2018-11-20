@@ -127,7 +127,7 @@
 							<div class="element_wrap">
 							<div class="elment">
 								<label for="cash">
-									<input type="radio" value="cash" name="pay" id="cash"> <div class="name">Наличные</div>
+									<input type="radio" value="cash" name="pay" id="cash" checked> <div class="name">Наличные</div>
 								</label>
 							</div>
 							<div class="elment">
@@ -150,8 +150,8 @@
 							<!-- <div class="col-md-4 col-sm-6"> -->
 							<div class="element">
 								<label for="self">
-									<input type="radio" value="self" name="delivery" id="self">
-									<div class="name">Самовывоз</div>
+									<input type="radio" value="self" name="delivery" id="self" checked>
+									<div class="name" >Самовывоз</div>
 									<div class="sub_info">по адресу ул. Черксская 13, г.Киев</div>
 								</label>
 							</div>
@@ -204,17 +204,13 @@
 							</div>
 						</fieldset>
 
-						<div class="row">
+					<div class="row delivAuto_details" style="display:none;">
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="input_wrap select_wrap">
 								<label for="city">Город</label>
 								<!-- <input type="text" name="IF" id="IF"> -->
 								<div class="select city">
-									<select name="slct" id="slct">
-										<option>Выберите город</option>
-										<option value="1">Pure CSS</option>
-										<option value="2">No JS</option>
-										<option value="3">Nice!</option>
+									<select name="delivery_city" id="delivery_city" placeholder="Выберите город">
 									</select>
 								</div>
 							</div>
@@ -225,11 +221,31 @@
 								<label for="city">Отделение</label>
 								<!-- <input type="text" name="IF" id="IF"> -->
 								<div class="select city">
-									<select name="slct" id="slct">
-										<option>Выберите отделение</option>
-										<option value="1">Pure CSS</option>
-										<option value="2">No JS</option>
-										<option value="3">Nice!</option>
+									<select name="delivery_dept" id="delivery_dept">
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row new_post_details" style="display:none;">
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="input_wrap select_wrap">
+								<label for="city">Город</label>
+								<!-- <input type="text" name="IF" id="IF"> -->
+								<div class="select city">
+									<select name="delivery_city" id="delivery_city" placeholder="Выберите город">
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="input_wrap select_wrap">
+								<label for="city">Отделение</label>
+								<!-- <input type="text" name="IF" id="IF"> -->
+								<div class="select city">
+									<select name="delivery_dept" id="delivery_dept">
 									</select>
 								</div>
 							</div>
@@ -257,4 +273,6 @@
 			<!-- </div> -->
 		</div>
 	</section>
+	<script>
+		</script>
 {{ footer }} 

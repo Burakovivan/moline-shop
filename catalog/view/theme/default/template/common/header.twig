@@ -55,6 +55,7 @@
 
 	</header>
 	<div class="overlay"></div>
+	<div hidden>{{cart_products|json_encode()}}</div>
 	<div class="cart">
 		<!-- <div class="container pn-xs"> -->
 		<div class="">
@@ -83,49 +84,60 @@
 
 					<div class="cart_list_wrap">
 						
-						<div class="item-test">
-							<div class="wrap_mob">
+						 {% for product in cart_products %}
+							<div class="item-test">
+								<div class="wrap_mob">
 								<div class="wrap_img">
-								<img src="http://via.placeholder.com/44x44" alt="">
+									{% if product.image %} <a href="{{ product.href }}"><img src="image/{{ product.image }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail" /></a> {% endif %}
 								</div>
 								<div class="wrap_name">
-								<div class="inner_wrap_name">
-										<a href="#" class="name_item">Момент Универсальный Особопрочный… и запас под очень длинный заголовок</a>
-										<div class="articul hidden-xs">Арт.23456</div>
-								</div>
-								</div>
-								<div class="wrap_counter">
-								<div class="cw_inner">
-									<span class="input-number-decrement">–</span><input class="input-number" type="text" value="1" min="0" max="10"><span
-									 class="input-number-increment">+</span>
-									 <div class="limit">это минимальное кол-во товара</div>
-								</div>
-								</div>
-								<div class="wrap_price_pi">
-								<div class="wrap_price_pi_inner_wrap">
-										<div class="price_per_item">
-												912 000,99 грн
-										</div>
-										<div class="legend">за еденицу</div>
-								</div>
-								</div>
-								<div class="wrap_total">
-									<div class="total_price_wrap">
-											<div class="total_by_item">999 912 000,99 <span>грн</span></div>
+									<div class="inner_wrap_name">
+											<a href="{{ product.href }}" class="name_item">{{ product.name }}</a> {% if not product.stock %} <span class="text-danger">***</span> {% endif %}
+                			{% if product.option %}
+                			{% for option in product.option %} <br />
+                			<small>{{ option.name }}: {{ option.value }}</small> {% endfor %}
+                			{% endif %}
+                			{% if product.reward %} <br />
+                			<small>{{ product.reward }}</small> {% endif %}
+                			{% if product.recurring %} <br />
+                			<span class="label label-info">{{ text_recurring_item }}</span> <small>{{ product.recurring }}</small> {% endif %}
+											<div class="articul hidden-xs">{{ product.sku }}</div>
 									</div>
 								</div>
+								<div class="wrap_counter">
+									<div class="cw_inner">
+										<span class="input-number-decrement">–</span><input class="input-number" type="text" value="{{product.quantity}}" min="{{product.minimum}}" max="{{product.maximum}}"><span
+										 class="input-number-increment">+</span>
+										 <div class="limit">это минимальное кол-во товара</div>
+									</div>
+								</div>
+								<div class="wrap_price_pi">
+									<div class="wrap_price_pi_inner_wrap">
+											<div class="price_per_item">
+													{{ product.price }}
+											</div>
+											<div class="legend">за еденицу</div>
+									</div>
+								</div>
+								<div class="wrap_total">
+										<div class="total_price_wrap">
+												<div class="total_by_item">{{ product.total }}</div>
+										</div>
+								</div>
+								</div>
+								<div class="wrap_delete">
+										<div class="delete" onclick="cart.remove('{{ product.cart_id }}');" >Удалить</div>
+								</div>
+	
 							</div>
-							<div class="wrap_delete">
-									<div class="delete">Удалить</div>
-							</div>
-						</div>									
+						{% endfor %}							
 					</div>
 					<div class="order_info text-right">
 						<div class="row m-none">
 								<div class="line"></div>		
 								<div class="clearfix"></div>
 								<div class="total">
-									<span class="t_word">Итого:</span> <span class="cost">999 999 999 912 000,99 грн</span>
+									<span class="t_word">Итого:</span> <span class="cost">{{cart_total}}</span>
 								</div>
 								<div class="minimum">
 										Минимальный заказ от 500 грн
@@ -135,7 +147,7 @@
 					<div class="cart_btn_wrap">
 							<div class="row m-none">
 								<div class="col-sm-6"><button class="secondary_btn lets_buy">Продолжить покупки</button></div>
-								<div class="col-sm-6"><button class="primary_btn make_order">Оформить заказ</button></div>
+								<div class="col-sm-6"><button class="primary_btn make_order"><a href="{{shopping_cart}}">Оформить заказ</a></button></div>
 							</div>
 						</div>
 				</div>
