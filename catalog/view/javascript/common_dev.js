@@ -142,7 +142,7 @@ $(".tab").click(function() {
 //--btn-buy-absent--//
 $('.popup-window').hide();
 
-$('.btn_buy').click(function(){
+$('.btn_absent').click(function(){
 	$('.popup-window').fadeIn("slow");
 });
 $('#modal_exit').click(function(){
