@@ -29,12 +29,12 @@
 					</g>
 			</svg>
 			<div class="top_line">
-				<div class="modal_name">Введите телефон</div>
-				{# <div class="modal_message">Ваша заявка принята. Мы свяжемся с Вами как только этот товар появится на складе.</div> #}
+				<div class="modal_name ">Введите телефон</div>
+				<div class="modal_message hidden">Ваша заявка принята. Мы свяжемся с Вами как только этот товар появится на складе.</div>
 			</div>
-				<input type="text" name="phone" placeholder="Телефон">
-				<button class="primary_btn">Оформить</button>
-				{# <button class="primary_btn">Ок</button> #}
+				<input type="text" name="phone" placeholder="Телефон" class="" id="mod_phone">
+				<button class="primary_btn" id="m_ord_btn">Оформить</button>
+				<button class="primary_btn hidden" id="m_ok_btn">Ок</button>
 		</div>
 	</div>
 	
@@ -112,7 +112,7 @@
 						</div>
 					<div class="row">
 					
-						<div class="col-md-5 col-sm-4">
+						{# <div class="col-md-5 col-sm-4">
 							<div class="input_number_wrap">
 											<input hidden class="quantitiy_in_pack" value = "{{quantity_in_pack}}" >	
 								<span class="input-number-decrement">–</span><input class="input-number" name='quantity' type="text" value="{{minimum > quantity_in_pack ? minimum : quantity_in_pack  }}" min="{{minimum}}" max="{{maximum}}"><span class="input-number-increment">+</span>
@@ -123,12 +123,12 @@
 							<button class="primary_btn btn_buy main_btn_buy" id="button-cart">Купить
 								<div class="massage" id="cart-message">Вы купили 1 штуку, спасибо, смотри корзину</div>
 							</button>
-						</div>
+						</div> #}
 
-						{# <div class="col-md-10 col-sm-8">
+						<div class="col-md-10 col-sm-8">
 							<button class="primary_btn btn_buy main_btn_buy btn_absent">Сообщить когда появится
 							</button>
-						</div> #}
+						</div>
 
 					</div>
 					<input name='product_id' hidden value={{product_id}}></input>

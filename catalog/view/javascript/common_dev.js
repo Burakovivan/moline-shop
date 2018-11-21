@@ -148,6 +148,17 @@ $('.btn_absent').click(function(){
 $('#modal_exit').click(function(){
 	$('.popup-window').fadeOut("slow");
 });
+$('#m_ok_btn').click(function(){
+	$('.popup-window').fadeOut("slow");
+});
+$('#m_ord_btn').click(function(){
+	$('#mod_phone').toggleClass("hidden");
+	$('.modal_name').toggleClass("hidden");
+	$('.modal_message').toggleClass("hidden");
+	$('#m_ok_btn').toggleClass("hidden");
+	$(this).toggleClass("hidden");
+});
+
 //--btn-buy-absent-end-//
 
 	/*FAQ*/
