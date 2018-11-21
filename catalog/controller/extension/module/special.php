@@ -39,7 +39,7 @@ class ControllerExtensionModuleSpecial extends Controller {
 					$special = false;
 				}
 				if(is_numeric($result['special'])){
-					$discount = $product_info['price'] > 0 ? ceil((1 - $special/$product_info['price'])*100) : 100;
+					$discount = $result['price'] > 0 ? ceil((1 - $special/$result['price'])*100) : 100;
 				}else{
 					$discount = false;
 				}
