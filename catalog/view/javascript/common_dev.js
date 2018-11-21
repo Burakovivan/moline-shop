@@ -121,6 +121,24 @@ $(function () {
 		slidesToScroll: 6
 	});
 
+	// product tabs
+
+$(".tab-content").hide();
+$(".tab-content:first").show();
+
+  
+$(".tab").click(function() {
+
+  $(".tab-content").hide();
+  var activeTab = $(this).attr("rel"); 
+  $("#"+activeTab).fadeIn();		
+
+  $(".tab").removeClass("active");
+  $(this).addClass("active");
+
+});
+//end of tabs
+
 	/*FAQ*/
 	$('dd').hide();
     
