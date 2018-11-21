@@ -154,11 +154,17 @@ $('#modal_exit').click(function(){
 	$('dd').hide();
     
 	$('dl').on("click", 'dt', function() {
+		if($(this).next().css("display")!="none"){
+			$(this).next().slideUp(300);
+		}else{
+			$('dd')
+			.slideUp(300);
+
 			$(this)
-					.next()
-						.slideDown(300)
-						.siblings('dd')
-							.slideUp(300);
+			.next()
+			.slideDown(300);
+
+		}
 	});    
 	$('.close_faq_btn_wrap').on("click", function() {
 			$(this).parent().slideUp(300);
