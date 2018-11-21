@@ -139,6 +139,17 @@ $(".tab").click(function() {
 });
 //end of tabs
 
+//--btn-buy-absent--//
+$('.popup-window').hide();
+
+$('.btn_buy').click(function(){
+	$('.popup-window').fadeIn("slow");
+});
+$('#modal_exit').click(function(){
+	$('.popup-window').fadeOut("slow");
+});
+//--btn-buy-absent-end-//
+
 	/*FAQ*/
 	$('dd').hide();
     

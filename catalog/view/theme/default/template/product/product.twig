@@ -15,6 +15,29 @@
 <div id="product-product" >
 	<jsonDebug hidden>{{categories|json_encode()}}</jsonDebug>
 	<jsonDebug hidden>{{product_info|json_encode()}}</jsonDebug>
+	
+	<div class="popup-window">
+		<div class="window-container">
+				<svg id="modal_exit" width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<title>EBA93EB7-E714-432B-AF2F-5DA3BB321A8D</title>
+					<desc>Created with sketchtool.</desc>
+					<defs></defs>
+					<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g id="1.1.Produkt-ended---Large-desktop" transform="translate(-875.000000, -499.000000)" fill="#9E9E9E">
+									<path d="M895.506534,517.102174 L893.102538,519.503833 C892.783237,519.823175 892.342548,520 891.899221,520 C891.458532,520 891.015205,519.823175 890.698542,519.503833 L885.5,514.307277 L880.304097,519.503833 C879.987434,519.823175 879.544107,520 879.103418,520 C878.66009,520 878.219402,519.823175 877.900101,519.503833 L875.496105,517.102174 C875.176803,516.782833 875,516.342089 875,515.898706 C875,515.457962 875.176803,515.014578 875.496105,514.697876 L880.694647,509.49868 L875.496105,504.299485 C875.176803,503.982782 875,503.539399 875,503.098655 C875,502.655272 875.176803,502.214528 875.496105,501.895187 L877.900101,499.493528 C878.219402,499.174186 878.66009,499 879.103418,499 C879.544107,499 879.987434,499.174186 880.304097,499.493528 L885.5,504.690084 L890.698542,499.493528 C891.015205,499.174186 891.458532,499 891.899221,499 C892.342548,499 892.783237,499.174186 893.102538,499.493528 L895.506534,501.895187 C895.825836,502.214528 896,502.655272 896,503.098655 C896,503.539399 895.825836,503.982782 895.506534,504.299485 L890.307992,509.49868 L895.506534,514.697876 C895.825836,515.014578 896,515.457962 896,515.898706 C896,516.342089 895.825836,516.782833 895.506534,517.102174" id="Fill-1"></path>
+							</g>
+					</g>
+			</svg>
+			<div class="top_line">
+				<div class="modal_name">Введите телефон</div>
+				{# <div class="modal_message">Ваша заявка принята. Мы свяжемся с Вами как только этот товар появится на складе.</div> #}
+			</div>
+				<input type="text" name="phone" placeholder="Телефон">
+				<button class="primary_btn">Оформить</button>
+				{# <button class="primary_btn">Ок</button> #}
+		</div>
+	</div>
+	
 	<section class="s_product">
 		<div class="container">
 			<div class="row">
@@ -84,9 +107,11 @@
 					<div class="row">
 							<div class="col-md-6">
 								<div class="legend">Выберите количество товара </div>
+								{# <div class="legend product_message">Товар закончился </div> #}
 							</div>
 						</div>
 					<div class="row">
+					
 						<div class="col-md-5 col-sm-4">
 							<div class="input_number_wrap">
 											<input hidden class="quantitiy_in_pack" value = "{{quantity_in_pack}}" >	
@@ -99,6 +124,12 @@
 								<div class="massage" id="cart-message">Вы купили 1 штуку, спасибо, смотри корзину</div>
 							</button>
 						</div>
+
+						{# <div class="col-md-10 col-sm-8">
+							<button class="primary_btn btn_buy main_btn_buy absent">Сообщить когда появится
+							</button>
+						</div> #}
+
 					</div>
 					<input name='product_id' hidden value={{product_id}}></input>
 					<div class="row">
