@@ -597,7 +597,14 @@ $(function () {
 			console.log('click main');
 		}
 	});
-
+	$(".comment_ord").click(function(){
+		if($("#comment-order:visible").length){
+			$("#comment-order").hide();
+		}
+		else{
+			$("#comment-order").show();
+		}
+	});
 
 	$('#back_btn_mnu').on('click', function () {
 		// if ( $("#sidebarMenu").hasClass("slide-mm") ) {
