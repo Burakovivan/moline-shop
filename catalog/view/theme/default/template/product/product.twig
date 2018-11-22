@@ -95,7 +95,7 @@
 					<h1 class="hidden-xs hidden-sm">{{ heading_title }}</h1>
 					<div class="ml_center">
 					<div class="row">
-						{% set stock_status_id = 8 %}
+						{# {% set stock_status_id = 8 %} #}
 						{#pod zakaz#}
 							{% if stock_status_id == 8 %}
 								<div class="col-xs-12">
@@ -171,7 +171,7 @@
 							{#pod zakaz#}
 							{% if stock_status_id == 8 %}
 								<div class="col-md-10 col-sm-8">
-									<button class="primary_btn btn_buy main_btn_buy ">Заказать
+									<button class="primary_btn btn_buy main_btn_buy btn_order_prod">Заказать
 										<div class="massage" id="cart-message">Вы заказали 1 штуку, спасибо, смотри корзину</div>
 									</button>
 									<div class="prod_ost">115 ед. остаток на складе</div>
@@ -180,14 +180,14 @@
 							{#net v nalichii#}
 							{% if stock_status_id == 5 %}
 								<div class="col-md-10 col-sm-8">
-									<button class="primary_btn btn_buy main_btn_buy btn_absent">Сообщить когда появится</button>
+									<button class="primary_btn btn_buy main_btn_buy btn_absent btn_order_prod">Сообщить когда появится</button>
 								</div> 
 							{% endif %}
 
 							{#skoro v prodazhe#}
 							{% if stock_status_id == 6 %}
 								<div class="col-md-10 col-sm-8">
-									<button class="primary_btn btn_buy main_btn_buy btn_absent">Сообщить когда появится</button>
+									<button class="primary_btn btn_buy main_btn_buy btn_absent btn_order_prod">Сообщить когда появится</button>
 								</div> 
 							{% endif %}
 					</div>
