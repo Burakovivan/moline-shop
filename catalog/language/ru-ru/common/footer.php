@@ -1,5 +1,10 @@
 <?php
 // Text
+$_['text_bestseller']      = 'Лидеры продаж';
+$_['text_special']      = 'Акции';
+$_['text_latest']      = 'Новинки';
+$_['text_question']      = 'Вопросы';
+
 $_['text_information']  = 'Информация';
 $_['text_service']      = 'Служба поддержки';
 $_['text_extra']        = 'Дополнительно';

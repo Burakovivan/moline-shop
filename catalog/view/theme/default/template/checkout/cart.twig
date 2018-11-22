@@ -277,10 +277,10 @@
 	<script>
 var cart_checkout_idList = {{cart_ids|json_encode()}};
 		$(".cart_checkout .input-number").on('change paste',function(){
-			updateCheckoutCart(cart_checkout_idList);
+			setTimeout(function(){updateCheckoutCart(cart_checkout_idList);},100);
 		});
 		$(".input-number-decrement, .input-number-increment").click(function(){
-			updateCheckoutCart(cart_checkout_idList);
+			setTimeout(function(){updateCheckoutCart(cart_checkout_idList);},100);
 		});
 		</script>
 {{ footer }} 

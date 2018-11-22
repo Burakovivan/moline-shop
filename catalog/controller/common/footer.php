@@ -10,15 +10,52 @@ class ControllerCommonFooter extends Controller {
 		foreach ($this->model_catalog_information->getInformations() as $result) {
 			if ($result['bottom']) {
 				$data['informations'][] = array(
+					'left' => $result['left'],
+					'right' => $result['right'],
+					'center' => $result['center'],
+					'id' => $result['information_id'],
 					'title' => $result['title'],
 					'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
 				);
 			}
 		}
+		$staiy = array(
+			'left' => 1,
+			'right' => 0,
+			'center' => 0,
+			'id' => 0,
+			'title' => "Статьи",
+			'href'  => $this->url->link('information/information', 'statiy')
+		);
+		$contactAndReviews = array(
+			array(
+				'left' => 1,
+				'right' => 0,
+				'center' => 0,
+				'id' => 0,
+				'title' => "Контакты",
+				'href'  => $this->url->link('information/contact')
+			),
+			array(
+				'left' => 1,
+				'right' => 0,
+				'center' => 0,
+				'id' => 0,
+				'title' => "Отзывы",
+				'href'  => $this->url->link('information/otzivy')
+			)
+		);
 
-		$data['contact'] = $this->url->link('information/contact');
-		$data['return'] = $this->url->link('account/return/add', '', true);
-		$data['sitemap'] = $this->url->link('information/sitemap');
+		$inmformations = array_filter($data['informations'] , function($e){return $e['left']==1;});
+		$data['informations'] = array_filter($data['informations'] , function($e){return $e['left']!=1;});
+		array_splice( $inmformations, 1, 0, array($staiy) );
+
+		$data['informations'] = array_merge($inmformations,$data['informations'],$contactAndReviews);
+		
+		$data['question'] = $this->url->link('information/question');
+		$data['bestseller'] = $this->url->link('product/bestseller');
+		$data['special'] = $this->url->link('product/special');
+		$data['latest'] = $this->url->link('product/latest');
 		$data['tracking'] = $this->url->link('information/tracking');
 		$data['manufacturer'] = $this->url->link('product/manufacturer');
 		$data['voucher'] = $this->url->link('account/voucher', '', true);

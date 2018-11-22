@@ -89,8 +89,11 @@
 												<div class="col-md-3 col-sm-3">
 													{% if informations %}
 														<ul class="f_menu_list">
+														<div hidden>{{informations|json_encode()}}</div>
 															{% for information in informations %}
-																<li><a href="{{ information.href }}">{{ information.title }}</a></li>
+																{% if information.left == 1 %}
+																	<li><a href="{{ information.href }}">{{ information.title }}</a></li>
+																{% endif %}
 															{% endfor %}
 															{# <li><a href="#">О нас</a></li>
 															<li><a href="#">Статьи</a></li>
@@ -120,9 +123,9 @@
 													<div class="header_slide_inside ">Услуги:</div>
 													<div class="col-md-3 col-sm-3">
 															<ul class="f_menu_list">
-																<li><a href="{{ contact }}">{{ text_contact }}</a></li>
-																<li><a href="{{ return }}">{{ text_return }}</a></li>
-																<li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+																<li><a href="{{ bestseller }}">{{ text_bestseller }}</a></li>
+																<li><a href="{{ special }}">{{ text_special }}</a></li>
+																<li><a href="{{ latest }}">{{ text_latest }}</a></li>
 																	{# <li><a href="#">Лидеры продаж</a></li>
 																	<li><a href="#">Акции</a></li>
 																	<li><a href="#">Новинки</a></li> #}
@@ -147,13 +150,12 @@
 													<div class="header_slide_inside ">Помощь:</div>
 														<div class="col-md-3 col-sm-3">
 																<ul class="f_menu_list">
-																		{# <li><a href="#">Вопросы</a></li>
-																		<li><a href="#">Доставка</a></li>
-																		<li><a href="#">Оплата</a></li> #}
-																		<li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
-																		<li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
-																		<li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
-																		<li><a href="{{ special }}">{{ text_special }}</a></li>
+																		<li><a href="{{ question }}">{{ text_question }}</a></li>
+																		{% for information in informations %}
+																			{% if information.right == 1 %}
+																				<li><a href="{{ information.href }}">{{ information.title }}</a></li>
+																			{% endif %}
+																		{% endfor %}
 																</ul>
 														</div>
 														<!-- closed_info end-->
