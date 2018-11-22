@@ -295,6 +295,8 @@ class ControllerProductProduct extends Controller {
 			} else {
 				$data['price'] = false;
 			}
+			$data['stock_status_id'] = $product_info['stock_status_id'];
+			
 			$data['product_info'] = $product_info;
 			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
 				$data['recommended_wholesale_price'] = $this->currency->format($product_info['recommended_wholesale_price'], $this->session->data['currency']);
