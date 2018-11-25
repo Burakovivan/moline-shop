@@ -244,43 +244,53 @@
 					</div>
 					<div class="tab-content-wrap">
 						<div id="tab1" class="tab-content specifications">
-
 							<div class="container">
-									<div class="row">
-											<div class="clump">
-													<div class="card">
-														<div class="section">
-															<!-- open -->
-															<div class="col-md-6 col-sm-6">
-																	<ul class="list_prop">
-																		<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-																		<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-																		<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-																		<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-																		<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-																	</ul>
-																</div>
-															<div class="detail closed">
-																<!-- closed_info -->
-																	<div class="col-md-6 col-sm-6">
-																			<ul>
-																					<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-																					<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-																					<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-																					<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-																					<li><span class="s_left">Производитель</span><span class="s_right">Apple</span></li>
-																				</ul>
-																	</div>
-																<!-- closed_info end-->
-															</div>
-														</div>
-														<div class="footer visible-xs">
-															<div class="slider_link more">Подробнее</div>
-															<div class="slider_link less hide_link">Скрыть</div>
-														</div>
+								<div class="row">
+									<div class="s_header_wrap">
+										<h2>Характеристики</h2>
+									</div>
+								</div>
+								<div class="row">
+									<div class="clump">
+										<div class="card">
+											<div class="section">
+												<!-- open -->
+												<div class="col-md-6 col-sm-6">
+													<ul class="list_prop">
+														{% for attr in attributes %}
+															{% if loop.index is not divisible by(2) %}
+																<li><span class="s_left">{{attr.name}}</span><span class="s_right">{{attr.text}}</span></li>
+															{% endif %}
+														{% endfor %}
+													</ul>
+												</div>
+												<div class="detail closed">
+													<div class="col-md-6 col-sm-6 ">
+														<ul class="list_prop">
+															{% for attr in attributes %}
+																{% if loop.index is divisible by(2) %}
+																	<li><span class="s_left">{{attr.name}}</span><span class="s_right">{{attr.text}}</span></li>
+																{% endif %}
+															{% endfor %}
+														</ul>
 													</div>
-												</div>					
+												</div>
+											</div>
+											<div class="footer visible-xs">
+												<div class="slider_link more">Подробнее</div>
+												<div class="slider_link less hide_link">Скрыть</div>
+											</div>
 										</div>
+									</div>					
+								</div>
+								<div class="row">
+									<div class="col-md-6 ">
+										<div class="full_descr">
+											<h3>Подробное описание:</h3>
+											{{description}}
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div id="tab2" class="tab-content review">
@@ -294,52 +304,6 @@
 		</div>
 		{# end of tab container #}
 		<div class="container">
-			<div class="row">
-				<div class="s_header_wrap">
-						<h2>Характеристики</h2>
-				</div>
-			</div>
-			<div class="row">
-					<div class="clump">
-							<div class="card">
-								<div class="section">
-									<!-- open -->
-									<div class="col-md-6 col-sm-6">
-											<ul class="list_prop">
-												{% for attr in attributes %}
-													{% if loop.index is not divisible by(2) %}
-														<li><span class="s_left">{{attr.name}}</span><span class="s_right">{{attr.text}}</span></li>
-													{% endif %}
-												{% endfor %}
-											</ul>
-									</div>
-									<div class="col-md-6 col-sm-6">
-											<ul class="list_prop">
-												{% for attr in attributes %}
-													{% if loop.index is divisible by(2) %}
-														<li><span class="s_left">{{attr.name}}</span><span class="s_right">{{attr.text}}</span></li>
-													{% endif %}
-												{% endfor %}
-											</ul>
-									</div>
-								
-								</div>
-								<div class="footer visible-xs">
-									<div class="slider_link more">Подробнее</div>
-									<div class="slider_link less hide_link">Скрыть</div>
-								</div>
-							</div>
-						</div>					
-				</div>
-			<div class="row">
-				<div class="col-md-6 hidden-xs">
-					<div class="full_descr">
-							<h3>Подробное описание:</h3>
-					{{description}}
-					</div>
-				</div>
-				
-			</div>
 			<div class="s_header_wrap rec_head">
 				<h2>рекомендуем</h2>
 			</div>

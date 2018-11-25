@@ -19,7 +19,9 @@
         </div>
     </div>
     <div class="cart_list_wrap">
+            <div hidden>{{cart_products|json_encode}}</div>
             {% for product in cart_products %}
+            
             <div class="item-test" data-cart-id="{{product.cart_id}}">
                 <div class="wrap_mob">
                 <div class="wrap_img">

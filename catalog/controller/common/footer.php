@@ -25,7 +25,7 @@ class ControllerCommonFooter extends Controller {
 			'center' => 0,
 			'id' => 0,
 			'title' => "Статьи",
-			'href'  => $this->url->link('information/information', 'statiy')
+			'href'  => $this->url->link('information/stories')
 		);
 		$contactAndReviews = array(
 			array(
