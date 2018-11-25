@@ -139,6 +139,14 @@ $(".tab").click(function() {
 });
 //end of tabs
 
+// $('#delivery_city').selectize();
+// $('#delivery_dept').selectize();
+$("[name='delivery_city']").selectize();
+$("[name='delivery_dept']").selectize();
+// $('#slct_otd').selectize();
+
+$('.select').toggleClass('select_ch');
+
 //--btn-buy-absent--//
 $('.popup-window').hide();
 

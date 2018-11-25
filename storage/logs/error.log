@@ -3324,3 +3324,16 @@
 2018-11-24 22:01:41 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
 2018-11-24 22:01:41 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
 2018-11-24 22:01:41 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-11-25 12:16:22 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-11-25 12:16:22 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-11-25 12:16:22 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-11-25 12:16:46 - PHP Notice:  Undefined variable: product_total in J:\XAMPP\htdocs\catalog\controller\checkout\cart.php on line 505
+2018-11-25 12:16:50 - PHP Notice:  Undefined variable: product_total in J:\XAMPP\htdocs\catalog\controller\checkout\cart.php on line 505
+2018-11-25 16:49:57 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-11-25 16:49:57 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-11-25 16:49:57 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-11-25 16:50:02 - PHP Notice:  Undefined variable: product_total in J:\XAMPP\htdocs\catalog\controller\checkout\cart.php on line 505
+2018-11-25 17:52:10 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-11-25 17:52:10 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-11-25 17:52:10 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-11-25 17:52:17 - PHP Notice:  Undefined variable: product_total in J:\XAMPP\htdocs\catalog\controller\checkout\cart.php on line 505
