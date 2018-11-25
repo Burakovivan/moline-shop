@@ -24,12 +24,14 @@ $_['entry_meta_description'] = 'Мета-тег Description';
 $_['entry_store']            = 'Магазины';
 $_['entry_keyword']          = 'SEO URL';
 $_['entry_bottom']           = 'Отображать снизу';
+$_['entry_article']          = '"Статьи"';
 $_['entry_status']           = 'Статус';
 $_['entry_sort_order']       = 'Порядок сортировки';
 $_['entry_layout']           = 'Макет';
 
 // Help
 $_['help_bottom']            = 'Показывать в нижней части сайта (футер, подвал)';
+$_['help_article']           = 'Показывать разделе "Cтатьи"';
 
 // Error
 $_['error_warning']          = 'Внимательно проверьте форму на ошибки!';

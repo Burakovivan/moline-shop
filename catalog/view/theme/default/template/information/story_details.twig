@@ -1,5 +1,6 @@
 {{ header }}
-<div class="bred_crambs">
+<div id="information-contact test3">
+  <div class="bred_crambs">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -12,76 +13,37 @@
 		</div>
 	</div>
 </div>
-
-
-<section class="s_white b_plugin">
-
-	<section class="stories_wrap">
+<section class="story_det_wrap">
 		<div class="container">
 			
 				<div class="row">
-					<div class="col-md-12">
-						<h2>Статьи</h2>
+					<div class="col-sm-12 col-lg-8 col-lg-offset-2">
+						<h2>{{story.title}}</h2>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12">
-						<div class="col-md-4 col-sm-6 col-xs-12">
-							<div class="item_story">
-									<a href="#">
-								<div class="img_wrap" style="background-image: url('../img/storieis_thumb.jpg');">
-								</div></a>
-								<div class="story_name">
-									<div class="text_wrap">
-											<a href="#">29 Motivational Quotes For Business And Other Work Environments</a>
-											
-									</div>
-								</div>
+						<div class="col-sm-12 col-lg-8 col-lg-offset-2">
+							<div class="article-content">
+								{{story.description}}
 							</div>
 						</div>
-						<div class="col-md-4 col-sm-6 col-xs-12">
-							<div class="item_story">
-								<div class="img_wrap" style="background-image: url('../img/storieis_thumb.jpg');">
-								</div>
-								<div class="story_name">
-									<div class="text_wrap">
-											29 Motivational Quotes For Business And Other Work Environments
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-sm-6 col-xs-12">
-							<div class="item_story">
-								<div class="img_wrap" style="background-image: url('../img/storieis_thumb.jpg');">
-								</div>
-								<div class="story_name">
-									<div class="text_wrap">
-											29 Motivational Quotes For Business And Other Work Environments
-									</div>
-								</div>
-							</div>
-						</div>
-
-					</div>
 				</div>
+				{# <div class="row">
+						<div class="col-sm-12 col-lg-8 col-lg-offset-2">
+							<div class="article-info">
+								<div class="row">
+										<div class="source text-left col col-xs-12 col-sm-6">Источник: saying thank</div>
+										<div class="date text-right col col-xs-12 col-sm-6">12.04.18</div>
+								</div>
+							</div>
+						</div>
+				</div> #}
 				
 		
 		</div>
 	</section>
-
-	<div class="pagination_wrap text-center">
-			{% if least %}
-				<button class="secondary_btn"><a href='{{next_page_link}}'>Еще {{least}} товаров</a></button>
-			{% endif %}
-				<div class="c_pagination">
-					{{pagination}}
-				</div>
-			</div>
-
-	</section>
-
 	<section class="s_white">
-		<div class="container pln prn">
+		<div class="container">
 			<div class="row">
 				<div class="advantages">
 
@@ -135,5 +97,5 @@
 			</div>
 		</div>
 	</section>
-	
+
 {{ footer }}

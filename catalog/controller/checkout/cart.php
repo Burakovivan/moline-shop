@@ -500,9 +500,13 @@ class ControllerCheckoutCart extends Controller {
 		$cart_products = $this->cart->getProducts();
 		foreach($cart_products as &$product){
 			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+				$product_total = min($product['quantity'],$product['maximum']);
 				$unit_price = $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax'));
 				$product['price'] = $this->currency->format($unit_price, $this->session->data['currency']);
 				$product['total'] = $this->currency->format($unit_price * $product_total, $this->session->data['currency']);
+				$product['t'] = $unit_price * $product_total;
+				$product['unit_price'] = $unit_price;
+				$product['product_total'] = $product_total;
 			} else {
 				$price = false;
 				$total = false;
