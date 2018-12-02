@@ -62,11 +62,16 @@
 								{% if categories %} 
 								<ul class="sidebarMenuInner">
 									{% for category in categories %}
-										<li class ="main-item"><a href="{{ category.href }}"><div class="icon_mnu_wrap">
+										<li class ="main-item">
+										{# <a href="{{ category.href }}"> #}
+										<div class="icon_mnu_wrap">
 										{% if category.image %}
 										 <img src="image/{{category.image}}" alt="">
 										 {% endif %}
-										 </div><p>{{ category.name }}</p><i class="fas fa-angle-right"></i></a>
+										 </div>
+										 	<p>{{ category.name }}</p><i class="fas fa-angle-right"></i>
+										 {# </a> #}
+
 											{% if category.children %}
 												{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
 													<ul class="inner-list">
@@ -90,7 +95,9 @@
 								</div>
 								{% endif %}
 							</div>
-						<div class="catalog hide_mnu_item_sm">Каталог товаров</div>
+							<label for="openSidebarMenu" class="l_cat_wrap">
+									<div class="catalog hide_mnu_item_sm">Каталог товаров</div>
+								</label>
 					</div>
 				</div>
 				
