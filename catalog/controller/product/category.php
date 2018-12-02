@@ -8,6 +8,7 @@ class ControllerProductCategory extends Controller {
 		$this->load->model('catalog/product');
 
 		$this->load->model('tool/image');
+		
 
 		if (isset($this->request->get['filter'])) {
 			$filter = $this->request->get['filter'];
@@ -415,6 +416,7 @@ class ControllerProductCategory extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+			$data['product_list'] = $this->load->controller('product/list',$data);
 
 			 if(isset($this->request->get['partial'])){
 				$json = array(
@@ -471,6 +473,7 @@ class ControllerProductCategory extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+			$data['product_list'] = $this->load->controller('product/list',$data);
 
 			$this->response->setOutput($this->load->view('error/not_found', $data));
 		}
