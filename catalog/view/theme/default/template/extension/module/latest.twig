@@ -1,76 +1,20 @@
 <section class="s_gray">
-
-		<div class="container">
-			<div class="row">
-				<div class="s_header_wrap ">
-					<h2>{{ heading_title }}</h2>
-				</div>
+	<div class="container">
+		<div class="row">
+			<div class="s_header_wrap ">
+				<h2>{{ heading_title }}</h2>
 			</div>
-			<div class="row"> {% for product in products %}
-				<div class="item_wrap col-md-3 col-xs-6 col-sm-3">
-					<div class="row top_info">
-						<div class="col-md-6 col-xs-5">
-							{% if product.discount %}
-										<div class="bage_green bage">-{{product.discount}}%</div>
-									{% elseif product.bestseller %}
-										<div class="bage_blue bage">Хит</div>
-									{% elseif  product.latest %}
-										<div class="bage_blue_new bage">New</div>
-									{% else %}
-										<div class="bage"></div>
-									{% endif %}
-						</div>
-						<div class="col-md-6 col-xs-7">
-							<div class="itm_artic_wrap">
-								{{ product.sku }}
-								
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<a href="{{product.href}}">
-							<div class="col-md-12 itm_img_wrap">
-								<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}">
-							</div>
-						</a>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 p_wrap">
-							{% if product.price %}
-							{% if not product.special %}
-							<div class="price">{{ product.price }}</div>
-							{% else %}
-							<div class="price">{{ product.special }}
-								<div class="old_price ">{{ product.price }}</div>
-							</div>
-							{% endif %}
-							{% endif %}
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 col-sm-12  col-sm-12 prn-md">
-							<div class="counter_wrap">
-								<div class="cw_inner">
-											<input hidden class="quantitiy_in_pack" value = "{{product.quantity_in_pack}}" >	
-									<span class="input-number-decrement">–</span><input class="input-number"  type="text" value="{{ product.minimum > product.quantity_in_pack ? product.minimum : product.quantity_in_pack }}" min="{{ product.minimum }}" max="{{product.maximum}}" ><span class="input-number-increment">+</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-12 btn_buy_wrap "><button onclick="cart.add('{{ product.product_id }}');" class="btn_buy primary_btn">{{ button_cart }}</button></div>
-					</div>
-				</div>
-				{% endfor %}
-			</div>
-			<div class="row">
-				<div class="s_bottom text-center">
-					<button class="text_btn">Все предложения</button>
-				</div>
-			</div>
-
 		</div>
-	</section>
+		<div class="row">
+			<div id="p_list">
+				{{product_list}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="s_bottom text-center">
+				<button class="text_btn">Все предложения</button>
+			</div>
+		</div>
+
+	</div>
+</section>

@@ -87,8 +87,8 @@ class ControllerInformationContact extends Controller {
 		$data['telephone_kyivstar'] = $this->config->get('config_telephone_kyivstar');
 		$data['telephone_lifecell'] = $this->config->get('config_telephone_lifecell');
 		$data['fax'] = $this->config->get('config_fax');
-		$data['open'] = nl2br($this->config->get('config_open'));
 		$data['comment'] = $this->config->get('config_comment');
+		$data['open'] = nl2br($this->config->get('config_open'));
 		$data['shop_email'] = $this->config->get('config_email');
 		
 		if ($this->config->get('config_account_id')) {

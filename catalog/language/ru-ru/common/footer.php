@@ -1,6 +1,6 @@
 <?php
 // Text
-$_['text_bestseller']      = 'Лидеры продаж';
+$_['text_bestseller']      = 'Хиты продаж';
 $_['text_special']      = 'Акции';
 $_['text_latest']      = 'Новинки';
 $_['text_question']      = 'Вопросы';

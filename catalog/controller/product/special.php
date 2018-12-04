@@ -4,9 +4,10 @@ class ControllerProductSpecial extends Controller {
 		$this->load->language('product/special');
 
 		$this->load->model('catalog/product');
+		$this->load->model('setting/module');
 
 		$this->load->model('tool/image');
-
+		$SpecialModuleId = 28;
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
@@ -70,14 +71,11 @@ class ControllerProductSpecial extends Controller {
 
 		$data['products'] = array();
 
-		$filter_data = array(
-			'sort'  => $sort,
-			'order' => $order,
-			'start' => ($page - 1) * $limit,
-			'limit' => $limit
-		);
+		$data['products'] = array();
 
-		$product_total = $this->model_catalog_product->getTotalProductSpecials();
+		$setting = $this->model_setting_module->getModule($SpecialModuleId);
+
+		$product_total = count($setting['product']);
 		$least = $product_total - ($limit * $page);
 		$least = $least > $limit ? $limit: $least;
 		if($least > 0)
@@ -85,60 +83,83 @@ class ControllerProductSpecial extends Controller {
 			$data['least'] = $least;
 		}
 		
-		$results = $this->model_catalog_product->getProductSpecials($filter_data);
 
-		foreach ($results as $result) {
-			if ($result['image']) {
-				$image = $this->model_tool_image->resize($result['image'], $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_height'));
-			} else {
-				$image = $this->model_tool_image->resize('placeholder.png', $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_width'), $this->config->get('theme_' . $this->config->get('config_theme') . '_image_product_height'));
-			}
+		if (!empty($setting['product'])) {
+			$products = array_slice($setting['product'], 0, (int)$setting['limit']);
 
-			if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-				$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-			} else {
-				$price = false;
-			}
+			foreach ($products as $product_id) {
+				$product_info = $this->model_catalog_product->getProduct($product_id);
 
-			if (is_numeric($result['special'])) {
-				$special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-			} else {
-				$special = false;
-			}
-			if(is_numeric($result['special'])){
-				$discount = $price > 0 ? ceil((1 - $special/$price)*100) : 100;
-			}else{
-				$discount = false;
-			}
-			if ($this->config->get('config_tax')) {
-				$tax = $this->currency->format(is_numeric($result['special']) ? $result['special'] : $result['price'], $this->session->data['currency']);
-			} else {
-				$tax = false;
-			}
+				if ($product_info) {
+					if ($product_info['image']) {
+						$image = $this->model_tool_image->resize($product_info['image'], $setting['width'], $setting['height']);
+					} else {
+						$image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
+					}
 
-			if ($this->config->get('config_review_status')) {
-				$rating = (int)$result['rating'];
-			} else {
-				$rating = false;
-			}
+					if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+						$price = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					} else {
+						$price = false;
+					}
 
-			$data['products'][] = array(
-				'product_id'  			=> $result['product_id'],
-				'thumb'       			=> $image,
-				'name'        			=> $result['name'],
-				'description' 			=> utf8_substr(trim(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'))), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
-				'price'       			=> $price,
-				'special'     			=> $special,
-				'discount'				=> $discount,
-				'tax'         			=> $tax,
-				'minimum'     			=> $result['minimum'] > 0 ? $result['minimum'] : 1,
-				'maximum'     			=> isset($result['quantity'])? $result['quantity'] : "",
-				'quantity_in_pack'     	=> $result['quantity_in_pack'],
-				'rating'      			=> $result['rating'],
-				'href'        			=> $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url)
-			);
+					if (is_numeric($product_info['special'])) {
+						$special = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+					} else {
+						$special = false;
+					}
+
+					if(is_numeric($product_info['special'])){
+						$discount = $product_info['price'] > 0 ? ceil((1 - $product_info['special']/$product_info['price'])*100) : 100;
+					}else{
+						$discount = false;
+					}
+
+					if ($this->config->get('config_tax')) {
+						$tax = $this->currency->format(is_numeric($product_info['special']) ? $product_info['special'] : $product_info['price'], $this->session->data['currency']);
+					} else {
+						$tax = false;
+					}
+
+					if ($this->config->get('config_review_status')) {
+						$rating = $product_info['rating'];
+					} else {
+						$rating = false;
+					}
+					if(is_numeric($product_info['recommended_wholesale_price'])){
+						$retail_price =  $this->currency->format($product_info['recommended_wholesale_price'], $this->session->data['currency']);
+
+					}else{
+						$retail_price = false;
+					}
+
+					$data['products'][] = array(
+						'product_id'  			=> $product_info['product_id'],
+						'thumb'       			=> $image,
+						'name'        			=> $product_info['name'],
+						'description' 			=> utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
+						'price'       			=> $price,
+						'special'     			=> $special,
+						'discount'    			 => $discount,
+						'tax'         			=> $tax,
+						'rating'      			=> $rating,
+						'href'        			=> $this->url->link('product/product', 'product_id=' . $product_info['product_id']),
+						'sku'		  			=> $product_info['sku'],
+						'minimum'     			=> $product_info['minimum'],
+						'maximum'     			=> isset($product_info['quantity']) ? $product_info['quantity'] : "",
+						'quantity_in_pack'		=> $product_info['quantity_in_pack'],
+						'rating'      			=> $product_info['rating'],
+						'prod'		  			=> json_encode($product_info),
+						'href'        			=> $this->url->link('product/product', 'product_id=' . $product_info['product_id']),
+						'bestseller'			=> isset($product_info['bestseller']) ? $product_info['bestseller'] : null,
+						'featured'				=> isset($product_info['featured'])? $product_info['featured'] : null,
+						'latest'				=> isset($product_info['latest'])? $product_info['latest'] : null,
+						'stock_status'			=> $product_info['stock_status'],
+						'stock_status_id'		=> $product_info['stock_status_id']
+					);
+				}
+			}
 		}
-
 		$url = '';
 
 		if (isset($this->request->get['limit'])) {
@@ -279,6 +300,7 @@ class ControllerProductSpecial extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
+		$data['product_list'] = $this->load->controller('product/list',$data);
 
 		$this->response->setOutput($this->load->view('product/special', $data));
 	}

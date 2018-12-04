@@ -12,7 +12,16 @@ class ControllerExtensionModuleFeatured extends Controller {
 		if (!$setting['limit']) {
 			$setting['limit'] = 4;
 		}
-		$data['featured'] =  $this->url->link('product/featured');
+
+		if($setting['module_id'] == "28"){
+			$data['more_link'] =  $this->url->link('product/special');
+		}
+		if($setting['module_id'] == "37"){
+			$data['more_link'] =  $this->url->link('product/latest');
+		}
+		if($setting['module_id'] == "36"){
+			$data['more_link'] =  $this->url->link('product/bestseller');
+		}
 		$data['heading_title_name'] = $setting['name']; 
 		if (!empty($setting['product'])) {
 			$products = array_slice($setting['product'], 0, (int)$setting['limit']);
@@ -57,6 +66,13 @@ class ControllerExtensionModuleFeatured extends Controller {
 						$rating = false;
 					}
 
+					if(is_numeric($product_info['recommended_wholesale_price'])){
+						$retail_price =  $this->currency->format($product_info['recommended_wholesale_price'], $this->session->data['currency']);
+
+					}else{
+						$retail_price = false;
+					}
+
 					$data['products'][] = array(
 						'product_id'  			=> $product_info['product_id'],
 						'thumb'       			=> $image,
@@ -72,12 +88,20 @@ class ControllerExtensionModuleFeatured extends Controller {
 						'minimum'     			=> $product_info['minimum'],
 						'maximum'     			=> isset($product_info['quantity']) ? $product_info['quantity'] : "",
 						'quantity_in_pack'		=> $product_info['quantity_in_pack'],
+						'rating'      			=> $product_info['rating'],
+						'prod'		  			=> json_encode($product_info),
+						'href'        			=> $this->url->link('product/product', 'product_id=' . $product_info['product_id']),
+						'bestseller'			=> isset($product_info['bestseller']) ? $product_info['bestseller'] : null,
+						'featured'				=> isset($product_info['featured'])? $product_info['featured'] : null,
+						'latest'				=> isset($product_info['latest'])? $product_info['latest'] : null,
+						'stock_status'			=> $product_info['stock_status'],
+						'stock_status_id'		=> $product_info['stock_status_id']
 					);
 				}
 			}
 		}
-
 		if ($data['products']) {
+			$data['product_list'] = $this->load->controller('product/list',$data);
 			return $this->load->view('extension/module/featured', $data);
 		}
 	}

@@ -54,25 +54,40 @@ class ControllerExtensionModuleSpecial extends Controller {
 				} else {
 					$rating = false;
 				}
+				if(is_numeric($result['recommended_wholesale_price'])){
+					$retail_price =  $this->currency->format($result['recommended_wholesale_price'], $this->session->data['currency']);
+
+				}else{
+					$retail_price = false;
+				}
 
 				$data['products'][] = array(
-					'product_id' 			=> $result['product_id'],
-					'thumb'      			=> $image,
-					'name'       			=> $result['name'],
-					'description'			=> utf8_substr(trim(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'))), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
-					'price'      			=> $price,
-					'special'    			=> $special,
-					'discount'   			=> $discount,
-					'tax'        			=> $tax,
-					'rating'     			=> $rating,
-					'href'       			=> $this->url->link('product/product', 'product_id=' . $result['product_id']),
-					'sku'		 			=> $result['sku'],
-					'minimum'    			=> $result['minimum'],
-					'maximum'    			=> isset($result['quantity'])? $result['quantity'] : "", 
+					'product_id'  			=> $result['product_id'],
+					'thumb'       			=> $image,
+					'name'        			=> $result['name'],
+					'description' 			=> utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
+					'price'       			=> $price,
+					'special'     			=> $special,
+					'discount'    			 => $discount,
+					'tax'         			=> $tax,
+					'rating'      			=> $rating,
+					'href'        			=> $this->url->link('product/product', 'product_id=' . $result['product_id']),
+					'sku'		  			=> $result['sku'],
+					'minimum'     			=> $result['minimum'],
+					'maximum'     			=> isset($result['quantity']) ? $result['quantity'] : "",
 					'quantity_in_pack'		=> $result['quantity_in_pack'],
+					'rating'      			=> $result['rating'],
+					'prod'		  			=> json_encode($result),
+					'href'        			=> $this->url->link('product/product', 'product_id=' . $result['product_id']),
+					'bestseller'			=> isset($result['bestseller']) ? $result['bestseller'] : null,
+					'featured'				=> isset($result['featured'])? $result['featured'] : null,
+					'latest'				=> isset($result['latest'])? $result['latest'] : null,
+					'stock_status'			=> $result['stock_status'],
+					'stock_status_id'		=> $result['stock_status_id']
 				);
 			}
 
+			$data['product_list'] = $this->load->controller('product/list',$data);
 			return $this->load->view('extension/module/special', $data);
 		}
 	}
