@@ -106,6 +106,12 @@ class ControllerProductBestseller extends Controller {
 						$special = false;
 					}
 
+					if(is_numeric($product_info['special'])){
+						$discount = $product_info['price'] > 0 ? ceil((1 - $product_info['special']/$product_info['price'])*100) : 100;
+					}else{
+						$discount = false;
+					}
+
 					if ($this->config->get('config_tax')) {
 						$tax = $this->currency->format(is_numeric($product_info['special']) ? $product_info['special'] : $product_info['price'], $this->session->data['currency']);
 					} else {
@@ -117,20 +123,36 @@ class ControllerProductBestseller extends Controller {
 					} else {
 						$rating = false;
 					}
+					if(is_numeric($product_info['recommended_wholesale_price'])){
+						$retail_price =  $this->currency->format($product_info['recommended_wholesale_price'], $this->session->data['currency']);
+
+					}else{
+						$retail_price = false;
+					}
 
 					$data['products'][] = array(
-						'product_id'  => $product_info['product_id'],
-						'thumb'       => $image,
-						'name'        => $product_info['name'],
-						'description' => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
-						'price'       => $price,
-						'special'     => $special,
-						'tax'         => $tax,
-						'rating'      => $rating,
-						'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id']),
-						'sku'		  => $product_info['sku'],
-						'minimum'     => $product_info['minimum'],
-						'maximum'     => $product_info['quantity'],
+						'product_id'  			=> $product_info['product_id'],
+						'thumb'       			=> $image,
+						'name'        			=> $product_info['name'],
+						'description' 			=> utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
+						'price'       			=> $price,
+						'special'     			=> $special,
+						'discount'    			 => $discount,
+						'tax'         			=> $tax,
+						'rating'      			=> $rating,
+						'href'        			=> $this->url->link('product/product', 'product_id=' . $product_info['product_id']),
+						'sku'		  			=> $product_info['sku'],
+						'minimum'     			=> $product_info['minimum'],
+						'maximum'     			=> isset($product_info['quantity']) ? $product_info['quantity'] : "",
+						'quantity_in_pack'		=> $product_info['quantity_in_pack'],
+						'rating'      			=> $product_info['rating'],
+						'prod'		  			=> json_encode($product_info),
+						'href'        			=> $this->url->link('product/product', 'product_id=' . $product_info['product_id']),
+						'bestseller'			=> isset($product_info['bestseller']) ? $product_info['bestseller'] : null,
+						'featured'				=> isset($product_info['featured'])? $product_info['featured'] : null,
+						'latest'				=> isset($product_info['latest'])? $product_info['latest'] : null,
+						'stock_status'			=> $product_info['stock_status'],
+						'stock_status_id'		=> $product_info['stock_status_id']
 					);
 				}
 			}
@@ -277,6 +299,7 @@ class ControllerProductBestseller extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
+		$data['product_list'] = $this->load->controller('product/list',$data);
 		$this->response->setOutput($this->load->view('product/bestseller', $data));
 	}
 }

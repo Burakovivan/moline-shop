@@ -437,7 +437,12 @@ class ControllerProductProduct extends Controller {
 				} else {
 					$special = false;
 				}
-
+				if(is_numeric($result['special'])){
+					$discount = $price > 0 ? ceil((1 - $special/$price)*100) : 100;
+				}else{
+					$discount = false;
+				}
+				$retail_price =  $this->currency->format($result['recommended_wholesale_price'], $this->session->data['currency']);
 				if ($this->config->get('config_tax')) {
 					$tax = $this->currency->format(is_numeric($result['special']) ? $result['special'] : $result['price'], $this->session->data['currency']);
 				} else {
@@ -451,18 +456,27 @@ class ControllerProductProduct extends Controller {
 				}
 
 				$data['products'][] = array(
-					'product_id'  => $result['product_id'],
-					'thumb'       => $image,
-					'name'        => $result['name'],
-					'description' => utf8_substr(trim(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'))), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
-					'price'       => $price,
-					'special'     => $special,
-					'tax'         => $tax,
-					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
-					'maximum'     => $result['quantity'],
-					'quantity_in_pack'=> $result['quantity_in_pack'],
-					'rating'      => $rating,
-					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+					'product_id'  		=> $result['product_id'],
+					'thumb'       		=> $image,
+					'name'        		=> $result['name'],
+					'description' 		=> utf8_substr(trim(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'))), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
+					'price'       		=> $price,
+					'retail_price'		=> $retail_price,
+					'special'     		=> $special,
+					'discount'			=> $discount,
+					'tax'         		=> $tax,
+					'sku'		  		=> $result['sku'],
+					'minimum'     		=> $result['minimum'] > 0 ? $result['minimum'] : 1,
+					'maximum'     		=> isset($result['quantity'])? $result['quantity']: "",
+					'quantity_in_pack'	=> $result['quantity_in_pack'],
+					'rating'      		=> $result['rating'],
+					'prod'		  		=> json_encode($result),
+					'href'        		=> $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url),
+					'bestseller'		=> isset($result['bestseller']) ? $result['bestseller'] : null,
+					'featured'			=> isset($result['featured'])? $result['featured'] : null,
+					'latest'			=> isset($result['latest'])? $result['latest'] : null,
+					'stock_status'		=> $result['stock_status'],
+					'stock_status_id'	=> $result['stock_status_id']
 				);
 			}
 
@@ -489,6 +503,8 @@ class ControllerProductProduct extends Controller {
 			$data['content_bottom'] = $this->load->controller('common/content_bottom');
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
+			$data['featured_product_list'] = $this->load->controller('product/list',$data);
+
 			$this->response->setOutput($this->load->view('product/product', $data));
 		} else {
 			$url = '';

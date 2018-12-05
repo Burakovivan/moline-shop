@@ -277,7 +277,13 @@ $('#m_ord_btn').click(function(){
 		var page = button.data('page');
 		urlParams.set('page',(parseInt(page)||0)+1);
 		urlParams.set('partial','Y');
-		var url = window.location.href.replace(/.*(\?.*)/,"?"+ urlParams.toString())
+		var url = "";
+		if(window.location.href.match(/.*(\?.*)/))
+		{
+			url = window.location.href.replace(/.*(\?.*)/,"?"+ urlParams.toString());
+		}else{
+			url = window.location.href + "?" + urlParams.toString();
+		}
 		$.get(url, function(data){
 			data = JSON.parse(data);
 			button.data('page',data.current_page);

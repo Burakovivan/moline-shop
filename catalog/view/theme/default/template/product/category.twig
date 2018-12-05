@@ -1,25 +1,19 @@
 {{ header }}
-|------------------------|<br>
-{{  singleProduct }}
-<br>|------------------------|
 <div id="product-category">
   <div class="bred_crambs">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						
-								<ul class="bred_crambs_list">
-										{% for breadcrumb in breadcrumbs %}
-											<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><img src="img/arrow.svg" alt=""></li>
-    								{% endfor %}
-								</ul>
+						<ul class="bred_crambs_list">
+							{% for breadcrumb in breadcrumbs %}
+								<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><img src="img/arrow.svg" alt=""></li>
+							{% endfor %}
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	<div class="overlay"></div>
-	
-
 	{% if categories %}
 		<section class="type_select">
 		<div class="container">
@@ -121,10 +115,7 @@
 					<div hidden> {{limit}}</div>
 					<div hidden> {{products_count}}</div>
 					<div hidden> {{page}}</div>
-					<div id="p_list">
 						{{product_list}}
-				
-					</div>
 				</div>
 			</div>
 			<div class="pagination_wrap text-center">

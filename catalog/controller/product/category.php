@@ -101,7 +101,7 @@ class ControllerProductCategory extends Controller {
 		}
 
 		$category_info = $this->model_catalog_category->getCategory($category_id);
-
+		$data['grid_size'] = 3;
 		if ($category_info) {
 			$this->document->setTitle($category_info['meta_title']);
 			$this->document->setDescription($category_info['meta_description']);
@@ -406,9 +406,9 @@ class ControllerProductCategory extends Controller {
 			
 			$data['continue'] = $this->url->link('common/home');
 			
-			if(isset($this->request->get['partial'])){
-				$this->response->setOutput($this->load->view('product/category_partial', $data));
-			}
+			// if(isset($this->request->get['partial'])){
+			// 	$this->response->setOutput($this->load->view('product/category_partial', $data));
+			// }
 
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
@@ -420,7 +420,7 @@ class ControllerProductCategory extends Controller {
 
 			 if(isset($this->request->get['partial'])){
 				$json = array(
-					'html' => $this->load->view('product/category_partial', $data),
+					'html' => $this->load->controller('product/list', $data),
 					'current_page' => $page,
 					'least' => $least,
 				);

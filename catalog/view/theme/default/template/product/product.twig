@@ -233,142 +233,83 @@
 
 	<section class="s_properties">
 	{# tab container #}
-		<div class="tab-container">
-					<div class="top_line">
-						<div class="container">
-							<div class="row">
-								<div rel="tab1" class="tab active">Характеристики</div>
-								<div rel="tab2" class="tab">Отзывы</div>
-							</div>
-						</div>
+		{# <div class="tab-container">
+			<div class="top_line">
+				<div class="container">
+					<div class="row">
+						<div rel="tab1" class="tab active">Характеристики</div>
+						<div rel="tab2" class="tab">Отзывы</div>
 					</div>
-					<div class="tab-content-wrap">
-						<div id="tab1" class="tab-content specifications">
-							<div class="container">
-								<div class="row">
-									<div class="s_header_wrap">
-										<h2>Характеристики</h2>
-									</div>
-								</div>
-								<div class="row">
-									<div class="clump">
-										<div class="card">
-											<div class="section">
-												<!-- open -->
-												<div class="col-md-6 col-sm-6">
-													<ul class="list_prop">
-														{% for attr in attributes %}
-															{% if loop.index is not divisible by(2) %}
-																<li><span class="s_left">{{attr.name}}</span><span class="s_right">{{attr.text}}</span></li>
-															{% endif %}
-														{% endfor %}
-													</ul>
-												</div>
-												<div class="detail closed">
-													<div class="col-md-6 col-sm-6 ">
-														<ul class="list_prop">
-															{% for attr in attributes %}
-																{% if loop.index is divisible by(2) %}
-																	<li><span class="s_left">{{attr.name}}</span><span class="s_right">{{attr.text}}</span></li>
-																{% endif %}
-															{% endfor %}
-														</ul>
-													</div>
-												</div>
-											</div>
-											<div class="footer visible-xs">
-												<div class="slider_link more">Подробнее</div>
-												<div class="slider_link less hide_link">Скрыть</div>
-											</div>
-										</div>
-									</div>					
-								</div>
-								<div class="row">
-									<div class="col-md-6 ">
-										<div class="full_descr">
-											<h3>Подробное описание:</h3>
-											{{description}}
-										</div>
-									</div>
-								</div>
+				</div>
+			</div>
+			<div class="tab-content-wrap">
+				<div id="tab1" class="tab-content specifications">
+					 #}
+					<div class="container">
+						<div class="row">
+							<div class="s_header_wrap">
+								<h2>Характеристики</h2>
 							</div>
 						</div>
-						<div id="tab2" class="tab-content review">
-							<div class="container">
-								<div class="row">
-									Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, facilis. Voluptatum ut, nihil veniam inventore quae necessitatibus provident, sunt voluptate hic reprehenderit blanditiis fugit molestiae deserunt totam perspiciatis sit excepturi.
+						<div class="row">
+							<div class="clump">
+								<div class="card">
+									<div class="section">
+										<!-- open -->
+										<div class="col-md-6 col-sm-6">
+											<ul class="list_prop">
+												{% for attr in attributes %}
+													{% if loop.index is not divisible by(2) %}
+														<li><span class="s_left">{{attr.name}}</span><span class="s_right">{{attr.text}}</span></li>
+													{% endif %}
+												{% endfor %}
+											</ul>
+										</div>
+										<div class="detail closed">
+											<div class="col-md-6 col-sm-6 ">
+												<ul class="list_prop">
+													{% for attr in attributes %}
+														{% if loop.index is divisible by(2) %}
+															<li><span class="s_left">{{attr.name}}</span><span class="s_right">{{attr.text}}</span></li>
+														{% endif %}
+													{% endfor %}
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="footer visible-xs">
+										<div class="slider_link more">Подробнее</div>
+										<div class="slider_link less hide_link">Скрыть</div>
+									</div>
+								</div>
+							</div>					
+						</div>
+						<div class="row">
+							<div class="col-md-6 ">
+								<div class="full_descr">
+									<h3>Подробное описание:</h3>
+									{{description}}
 								</div>
 							</div>
 						</div>
 					</div>
-		</div>
+					
+				{# </div>
+				<div id="tab2" class="tab-content review">
+					<div class="container">
+						<div class="row">
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, facilis. Voluptatum ut, nihil veniam inventore quae necessitatibus provident, sunt voluptate hic reprehenderit blanditiis fugit molestiae deserunt totam perspiciatis sit excepturi.
+						</div>
+					</div>
+				</div>
+			</div> 
+		</div> #}
 		{# end of tab container #}
 		<div class="container">
 			<div class="s_header_wrap rec_head">
 				<h2>рекомендуем</h2>
 			</div>
-
-			{% for product in products %}
-						
-						<div class="item_wrap product col-md-3 col-xs-6 col-sm-3" id='product_{{ product.product_id }}' data-product-id="{{ product.product_id }}">
-							<div class=" top_info">
-								<div class="pln col-md-6 col-xs-5">
-									<div class="bage_blue bage">Хит</div>
-								</div>
-								<div class="prn col-md-6 col-xs-7">
-									<div class="itm_artic_wrap">
-								{{ product.sku }}
-										
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<a href="{{product.href}}">
-									<div class="col-md-12 itm_img_wrap">
-										<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}">
-									</div>
-								</a>
-
-								<div class="col-md-12 h_wrap">
-									<h4><a href="{{product.href}}">{{ product.name }}	</a></h4>
-								</div>
-
-								<div class="col-md-12 p_wrap">
-									{% if product.price %}
-										{% if not product.special %}
-										<div class="price">{{ product.price }}</div>
-										{% else %}
-										<div class="price">{{ product.special }}
-											<div class="old_price visible-sm">{{ product.price }}</div>
-										</div>
-										{% endif %}
-									{% endif %}
-								</div>
-
-								<div class="col-md-6 col-sm-12  pr-lg-right cw_wrp">
-									<div class="counter_wrap">
-										<div class="cw_inner">
-											<span class="input-number-decrement">–</span><input class="input-number" readonly type="text" value="{{ product.minimum }}" min="{{ product.minimum }}" ><span class="input-number-increment">+</span>
-										</div>
-									</div>
-								</div>
-
-								<div class="col-md-6 col-sm-12 btn_buy_wrap btn_buy_wrap_link">
-									<button onclick="cart.add('{{ product.product_id }}', $(this).parent().parent().find('.input-number').val());" class="btn_buy primary_btn">{{ button_cart }}</button>
-								</div>
-								
-								<div class="ost col-sm-12 pln ct_hide">{{ product.maximum }}  ед. остаток на складе</div>
-								<div class="limit ct_hide">от <span class="amount_lim">{{ product.minimum }} ед.</span><span class="hidd_mobile">минимальный заказ</span></div>
-								<div class="retail_price ct_hide">Рекомендуемая розничная цена
-									<div class="price">12000,99 
-										<span class="currency">грн</span>
-									</div>
-								</div>
-
-							</div>
-						</div>
-
-					{% endfor %}
+			{{featured_product_list}}
 		</div>
 		
 	</section>
