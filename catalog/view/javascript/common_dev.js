@@ -363,6 +363,10 @@ $('.drop_down_button').on('click', function(){
 	var list_height = $('.sidebarMenuInner').height();
 	$('.sidebarMenuInner .main-item').find('.inner-list-wrap').css('min-height', list_height);
 	console.log(list_height);
+	var list_height_main = $('#sidebarMenu_dock .sidebarMenuInner').height();
+$('#sidebarMenu_dock .sidebarMenuInner .main-item').find('.inner-list-wrap').css('min-height', list_height);
+console.log(list_height_main);
+
 	$('.sidebarIconToggle').on('click', function () {
 		if(!$('#openSidebarMenu')[0].checked){
 			$('.sidebarMenuInner .main-item .inner-list-wrap').css('display', 'inline-block');

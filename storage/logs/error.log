@@ -3567,3 +3567,21 @@
 2018-12-05 21:54:45 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
 2018-12-05 21:54:45 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
 2018-12-05 21:54:45 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-12-06 13:09:09 - PHP Notice:  Undefined index: module_id in J:\XAMPP\htdocs\catalog\controller\extension\module\featured.php on line 16
+2018-12-06 13:09:09 - PHP Notice:  Undefined index: module_id in J:\XAMPP\htdocs\catalog\controller\extension\module\featured.php on line 19
+2018-12-06 13:09:09 - PHP Notice:  Undefined index: module_id in J:\XAMPP\htdocs\catalog\controller\extension\module\featured.php on line 22
+2018-12-06 13:09:09 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-12-06 13:09:09 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-12-06 13:09:09 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-12-06 13:09:09 - PHP Notice:  Undefined index: module_id in J:\XAMPP\htdocs\catalog\controller\extension\module\featured.php on line 16
+2018-12-06 13:09:09 - PHP Notice:  Undefined index: module_id in J:\XAMPP\htdocs\catalog\controller\extension\module\featured.php on line 19
+2018-12-06 13:09:09 - PHP Notice:  Undefined index: module_id in J:\XAMPP\htdocs\catalog\controller\extension\module\featured.php on line 22
+2018-12-06 13:09:30 - PHP Notice:  Undefined index: module_id in J:\XAMPP\htdocs\catalog\controller\extension\module\featured.php on line 16
+2018-12-06 13:09:30 - PHP Notice:  Undefined index: module_id in J:\XAMPP\htdocs\catalog\controller\extension\module\featured.php on line 19
+2018-12-06 13:09:30 - PHP Notice:  Undefined index: module_id in J:\XAMPP\htdocs\catalog\controller\extension\module\featured.php on line 22
+2018-12-06 13:09:30 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-12-06 13:09:30 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-12-06 13:09:30 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\extension\module\special.php on line 42
+2018-12-06 13:09:30 - PHP Notice:  Undefined index: module_id in J:\XAMPP\htdocs\catalog\controller\extension\module\featured.php on line 16
+2018-12-06 13:09:30 - PHP Notice:  Undefined index: module_id in J:\XAMPP\htdocs\catalog\controller\extension\module\featured.php on line 19
+2018-12-06 13:09:30 - PHP Notice:  Undefined index: module_id in J:\XAMPP\htdocs\catalog\controller\extension\module\featured.php on line 22

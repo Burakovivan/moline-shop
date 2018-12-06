@@ -13,6 +13,7 @@
 										<li class ="main-item"><a href="{{ category.href }}"><div class="icon_mnu_wrap"><img src="image/{{ category.image }}" alt=""></div><p>{{ category.name }}</p><i class="fas fa-angle-right"></i></a>
 											{% if category.children %}
 												{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+												<div class="inner-list-wrap">	
 													<ul class="inner-list">
 														<li class="sub-item back_btn_mnu" ><a href="#" class="back_b"><p>Назад</p></a></li>
 														{% for child in children %}
@@ -23,6 +24,7 @@
 															{% endif %}
 														{% endfor %}
 													</ul>
+												</div>
 													{% endfor %}
 											{% endif %}
 										</li>
