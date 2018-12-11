@@ -279,5 +279,7 @@
 	<script>
 	var cart_checkout_idList = {{cart_ids|json_encode()}};
 	$(window).load(initCommonCart);
+	
+	$('.input-number').inputNumber(true);
 		</script>
 {{ footer }} 

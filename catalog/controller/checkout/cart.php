@@ -139,6 +139,8 @@ class ControllerCheckoutCart extends Controller {
 					'thumb'     			=> $image,
 					'name'      			=> $product['name'],
 					'model'     			=> $product['model'],
+					'minimum'     			=> $product['minimum'],
+					'maximum'     			=> $product['maximum'],
 					'option'    			=> $option_data,
 					'recurring' 			=> $recurring,
 					'quantity'  			=> $product['quantity'],
