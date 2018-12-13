@@ -307,8 +307,8 @@ $('#m_ord_btn').click(function(){
 	$('.sidebarMenuInner .main-item').click(function(e) {
 		// e.preventDefault();
 		// $(this).find('.inner-list').addClass('display-on');
-		$('.sidebarMenuInner .main-item').removeClass('active');
-		$(this).addClass('active');
+		// $('.sidebarMenuInner .main-item').removeClass('active');
+		// $(this).addClass('active');
 		console.log('li ------ click');
 	});
 
@@ -383,12 +383,52 @@ console.log(list_height_main);
 		$('#openSidebarMenu').click();
 	});
 
-	$('.sidebarMenuInner .main-item').on('click', function () {
-		if ($(window).width() < 768) {
-			$('#sidebarMenu').toggleClass('slide-mm');
-			console.log('click main');
+	// $('.sidebarMenuInner .main-item').on('click', function () {
+	// 	if ($(window).width() < 768) {
+	// 		$('#sidebarMenu').toggleClass('slide-mm');
+	// 		console.log('click main');
+	// 	}
+	// });
+
+	//For mobile menu
+
+	
+if ($(window).width() < 769 ) {
+	console.log('< 769!!!!!!!!!!');
+	$('.sidebarIconToggle').on('click', function () {
+		if(!$('#openSidebarMenu')[0].checked){
+			// $('.sidebarMenuInner .main-item .inner-list-wrap').css('display', 'inline-block');
+		}else{
+			console.log('unchecked');
+			// $('.sidebarMenuInner .main-item .inner-list-wrap').css('display', 'none');
+			$('#sidebarMenu').removeClass('slide-mm');
+			$('.sidebarMenuInner .main-item').removeClass('mobile-active-item');
 		}
 	});
+
+	$('.sidebarMenuInner .main-item a').on('click', function(e){
+		e.preventDefault();
+		$('#sidebarMenu').addClass('slide-mm');
+		console.log('SLIDE!!');
+	});
+
+	$('.sidebarMenuInner .main-item').on('click', function(e){
+		// e.preventDefault();
+		console.log('mobile click');
+		$(this).addClass('mobile-active-item');
+		$(this).find('.inner-list-wrap').addClass('mobile-show');
+	
+	});
+	$('.back_btn_mnu').on('click', function(){
+		console.log('back');
+		$('#sidebarMenu').removeClass('slide-mm');
+		// $('.inner-list-wrap').removeClass('mobile-show');
+		// $(this).parent().parent().toggleClass('mobile-show');
+
+	});
+	console.log('click main');
+}
+//end of mobile menu
 
 	//second level menu	
 	// $(".sidebarMenuInner .main-item").hover(function() {
