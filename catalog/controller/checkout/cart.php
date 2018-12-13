@@ -139,6 +139,8 @@ class ControllerCheckoutCart extends Controller {
 					'thumb'     			=> $image,
 					'name'      			=> $product['name'],
 					'model'     			=> $product['model'],
+					'minimum'     			=> $product['minimum'],
+					'maximum'     			=> $product['maximum'],
 					'option'    			=> $option_data,
 					'recurring' 			=> $recurring,
 					'quantity'  			=> $product['quantity'],
@@ -412,7 +414,19 @@ class ControllerCheckoutCart extends Controller {
 			if(empty(($this->request->post['disable_redirect']))){
 				$this->response->redirect($this->url->link('checkout/cart'));
 			}else{
-				$json['total'] = $this->cart->countProducts();
+				$json['total_quantity'] = $this->cart->countProducts();
+				$json['cost_formated'] = $this->currency->format($this->cart->getTotal(), $this->session->data['currency']);
+				$json['cost'] = $this->cart->getTotal();
+
+				$json['products'] = array();
+				foreach($this->cart->getProducts() as $product){
+					$json['products'][] = array(
+						'cart_id' => $product['cart_id'],
+						'quantity' => $product['quantity'],
+						'total' => $product['total'],
+						'total_formated' =>$this->currency->format($product['total'], $this->session->data['currency']),
+					);
+				}
 				$this->response->setOutput(json_encode($json));
 			}
 		}
@@ -486,8 +500,20 @@ class ControllerCheckoutCart extends Controller {
 
 				array_multisort($sort_order, SORT_ASC, $totals);
 			}
-
-			$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
+			$json['total_quantity'] = $this->cart->countProducts();
+			$json['cost_formated'] = $this->currency->format($this->cart->getTotal(), $this->session->data['currency']);
+			$json['cost'] = $this->cart->getTotal();
+			$json['removed_key'] = $this->request->post['key'];
+			// $json['products'] = array();
+			// foreach($this->cart->getProducts() as $product){
+			// 	$json['products'][] = array(
+			// 		'cart_id' => $product['cart_id'],
+			// 		'quantity' => $product['quantity'],
+			// 		'total' => $product['total'],
+			// 		'total_formated' =>$this->currency->format($product['total'], $this->session->data['currency']),
+			// 	);
+			// }
+			// $json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total, $this->session->data['currency']));
 		}
 
 		$this->response->addHeader('Content-Type: application/json');

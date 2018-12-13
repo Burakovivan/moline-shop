@@ -12,10 +12,10 @@
 								<span>Проверьте ваш заказ:</span>
 							</div>
 						</div>
-		<div hidden >{{products|json_encode()}}</div>
+						<div hidden >{{products|json_encode()}}</div>
 						<div class="cart_list_wrap">
 							
-            {% for product in products %}
+            			{% for product in products %}
 							<div class="item-test"  data-cart-id="{{product.cart_id}}">
 								<div class="wrap_mob">
 								<div class="wrap_img">
@@ -36,7 +36,7 @@
 											<div class="articul hidden-xs">{{ product.sku }}</div>
 											{# <a href="#" class="name_item">Момент Универсальный Особопрочный… и запас под очень длинный заголовок</a>
 											<div class="articul hidden-xs">Арт.23456</div> #}
-									</div>
+							</div>
 								</div>
 								<div class="wrap_counter">
 									<div class="cw_inner">
@@ -60,7 +60,7 @@
 								</div>
 								</div>
 								<div class="wrap_delete">
-										<div class="delete" onclick="cart.remove('{{ product.cart_id }}');" >Удалить</div>
+										<div class="delete" onclick="RemoveCommonCart('{{ product.cart_id }}');" >Удалить</div>
 								</div>
 	
 							</div>
@@ -81,6 +81,8 @@
 						</div>
 					
 					</div>
+					<div class="wrap_cart_wrapper" style="z-index:9999;width: 300vw;height: 300vh; display:none; left: -100%;top: -100%;transform: rotate(-40deg);">
+</div>
 				</div>
 			</div>
 		</div>
@@ -275,12 +277,9 @@
 		</div>
 	</section>
 	<script>
-var cart_checkout_idList = {{cart_ids|json_encode()}};
-		$(".cart_checkout .input-number").on('change paste',function(){
-			setTimeout(function(){updateCheckoutCart(cart_checkout_idList);},100);
-		});
-		$(".input-number-decrement, .input-number-increment").click(function(){
-			setTimeout(function(){updateCheckoutCart(cart_checkout_idList);},100);
-		});
+	var cart_checkout_idList = {{cart_ids|json_encode()}};
+	$(window).load(initCommonCart);
+	
+	$('.input-number').inputNumber(true);
 		</script>
 {{ footer }} 
