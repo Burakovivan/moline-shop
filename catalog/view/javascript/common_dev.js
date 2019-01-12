@@ -146,27 +146,63 @@ $(function () {
 	$('.checkOutSelector').css('outline', '1px solid black');
 	$('.select').toggleClass('select_ch');
 
-	//--btn-buy-absent--//
-	$('.popup-window').hide();
+//--btn-buy-absent--//
 
-	$('.btn_order_prod').click(function () {
-		$('.popup-window').fadeIn("slow");
-	});
-	$('#modal_exit').click(function () {
-		$('.popup-window').fadeOut("slow");
-	});
-	$('#m_ok_btn').click(function () {
-		$('.popup-window').fadeOut("slow");
-	});
-	$('#m_ord_btn').click(function () {
+function show_modal(){
+	var tmp_popup = '<div class="popup-window"></div>';
+	// $(tmp_popup).insertAfter($('.overlay'));
+	$(tmp_popup).insertBefore($('.s_product'));
+
+	setTimeout(function(){
+		$('.popup-window').toggleClass('active');
+		$('.popup-window').toggleClass('show_pop');
+	},200);
+	setTimeout(function(){
+		$( ".popup-window" ).append("<div class='window-container'></div>");
+		$( ".window-container" ).append('<svg id="modal_exit" width="21px" height="21px" viewBox="0 0 21 21" version="1.1"><title>EBA93EB7-E714-432B-AF2F-5DA3BB321A8D</title><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="1.1.Produkt-ended---Large-desktop" transform="translate(-875.000000, -499.000000)" fill="#9E9E9E"><path d="M895.506534,517.102174 L893.102538,519.503833 C892.783237,519.823175 892.342548,520 891.899221,520 C891.458532,520 891.015205,519.823175 890.698542,519.503833 L885.5,514.307277 L880.304097,519.503833 C879.987434,519.823175 879.544107,520 879.103418,520 C878.66009,520 878.219402,519.823175 877.900101,519.503833 L875.496105,517.102174 C875.176803,516.782833 875,516.342089 875,515.898706 C875,515.457962 875.176803,515.014578 875.496105,514.697876 L880.694647,509.49868 L875.496105,504.299485 C875.176803,503.982782 875,503.539399 875,503.098655 C875,502.655272 875.176803,502.214528 875.496105,501.895187 L877.900101,499.493528 C878.219402,499.174186 878.66009,499 879.103418,499 C879.544107,499 879.987434,499.174186 880.304097,499.493528 L885.5,504.690084 L890.698542,499.493528 C891.015205,499.174186 891.458532,499 891.899221,499 C892.342548,499 892.783237,499.174186 893.102538,499.493528 L895.506534,501.895187 C895.825836,502.214528 896,502.655272 896,503.098655 C896,503.539399 895.825836,503.982782 895.506534,504.299485 L890.307992,509.49868 L895.506534,514.697876 C895.825836,515.014578 896,515.457962 896,515.898706 C896,516.342089 895.825836,516.782833 895.506534,517.102174" id="Fill-1"></path></g></g></svg>');
+		$( ".window-container" ).append('<div class="top_line">	<div class="modal_name ">Введите телефон</div><div class="modal_message hidden">Ваша заявка принята. Мы свяжемся с Вами как только этот товар появится на складе.</div></div>');
+		$( ".window-container" ).append('	<input type="text" name="phone" placeholder="Телефон" class="" id="mod_phone"><button class="primary_btn" id="m_ord_btn">Оформить</button><button class="primary_btn hidden" id="m_ok_btn">Ок</button>');
+	}, 300);
+	setTimeout(function(){
+		$( ".window-container" ).toggleClass('active');
+	},400);
+}
+$('.link_f_popup').click(function(){
+	show_modal();
+});
+$('.btn_absent').click(function(){
+	show_modal();
+});
+
+function exit_popup(){
+	$( ".popup-window" ).toggleClass('show_pop');
+	setTimeout(function(){
+		$( ".popup-window" ).remove();
+	},400);
+}
+$(document).on('click', '#modal_exit', function () {
+	$(this).parent().toggleClass('active');
+	setTimeout(function(){
+		exit_popup();
+	}, 300);
+});
+
+$(document).on('click', '#m_ok_btn', function () {
+	exit_popup();
+});
+
+$(document).on('click', '#m_ord_btn', function () {
+	if( $('#mod_phone').val().length === 0 ){
+		console.log('empty input');
+	}else{
 		$('#mod_phone').toggleClass("hidden");
 		$('.modal_name').toggleClass("hidden");
 		$('.modal_message').toggleClass("hidden");
 		$('#m_ok_btn').toggleClass("hidden");
 		$(this).toggleClass("hidden");
-	});
-
-	//--btn-buy-absent-end-//
+	}
+});
+//--btn-buy-absent-end-//
 
 	/*FAQ*/
 	$('dd').hide();
