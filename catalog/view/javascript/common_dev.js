@@ -313,15 +313,28 @@ $(document).on('click', '#m_ord_btn', function () {
 		}
 		location = url;
 	});
+	$('.filter_show_btn_exit').click(function () {
+		console.log('exit');
+	});
 	$('.styled-checkbox').click(function () {
-		// if($(this).prop('checked')){
-		$('.show_cat').hide();
-		$(this).parent().find('.show_cat').show().css('right', '-222px');
+		if(!$(this).prop('checked')){
+			console.log('Checked!!');
+			$('.show_cat').addClass('checked!');
+			$('.show_cat').hide();
+			
+		}else{
+			console.log('Unchecked!!');
+			$(this).parent().find('.show_cat').show().css('right', '-184px');
+			$(this).parent().find('.show_cat').find('svg').show();
+		}
+		// $('.show_cat').hide();
+		// $(this).parent().find('.show_cat').show().css('right', '-184px');
 		// $(this).parent().find('.show_cat').find('svg').show().hide();
-		$(this).parent().find('.show_cat').find('svg').show();
-		setTimeout(function () {
-			$(this).parent().find('.show_cat').find('svg').hide();
-		}, 3000);
+		// $(this).parent().find('.show_cat').find('svg').show();
+		
+		// setTimeout(function () {
+		// 	$(this).parent().find('.show_cat').find('svg').hide();
+		// }, 3000);
 		// Instead of .addClass("newclass")
 		// $("#item").attr("class", "oldclass newclass");
 		// Instead of .removeClass("newclass")
