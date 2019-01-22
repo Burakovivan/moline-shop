@@ -59,9 +59,17 @@
             {% for filter in filter_group.filter %}
             <li>
               {% if filter.filter_id in filter_category %}
-                <input class="styled-checkbox" id="styled-checkbox-{{filter.filter_id}}" name="filter[]" value="{{ filter.filter_id }}" type="checkbox" checked>
+                {% if filter.products_count == 0 %}
+                  <input class="styled-checkbox" disabled id="styled-checkbox-{{filter.filter_id}}" name="filter[]" value="{{ filter.filter_id }}" type="checkbox" checked>
+                {% else %}
+                  <input class="styled-checkbox" id="styled-checkbox-{{filter.filter_id}}" name="filter[]" value="{{ filter.filter_id }}" type="checkbox" checked>
+                {% endif %}
               {% else %}
-                <input class="styled-checkbox" id="styled-checkbox-{{filter.filter_id}}" name="filter[]" value="{{ filter.filter_id }}" type="checkbox">
+                {% if filter.products_count == 0 %}
+                  <input class="styled-checkbox" disabled id="styled-checkbox-{{filter.filter_id}}" name="filter[]" value="{{ filter.filter_id }}" type="checkbox">
+                {% else %}
+                  <input class="styled-checkbox" id="styled-checkbox-{{filter.filter_id}}" name="filter[]" value="{{ filter.filter_id }}" type="checkbox">
+                {% endif %}
               {% endif %}
               <label for="styled-checkbox-{{filter.filter_id}}">  {{ filter.name }}</label>
               <div class="amount">{{ filter.products_count}}</div>

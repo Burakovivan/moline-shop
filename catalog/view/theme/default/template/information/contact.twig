@@ -20,10 +20,10 @@
 						<div class="contact-group-head">{{ text_telephone }}</div>
 						{# <div class="contact-group-head">Консльтация и заказ по телефону</div> #}
 						<ul class="phones">
-							<li><img src="img/contacts_icon/vodafone.svg" alt="">{{ telephone_vodafone }}</li>
-							<li><img src="img/contacts_icon/kvstr.svg" alt="">{{ telephone_kyivstar }}</li>
-							<li><img src="img/contacts_icon/life.svg" alt="">{{ telephone_lifecell }}</li>
-							<li><i class="fas fa-envelope"></i>{{shop_email}}</li>
+							<li><img src="img/contacts_icon/vodafone.svg" alt=""><a href="tel:{{telephone_vodafone}}">{{ telephone_vodafone }}</a></li>
+							<li><img src="img/contacts_icon/kvstr.svg" alt=""><a href="tel:{{telephone_kyivstar}}">{{ telephone_kyivstar }}</a></li>
+							<li><img src="img/contacts_icon/life.svg" alt=""><a href="tel:{{telephone_lifecell}}">{{ telephone_lifecell }}</a></li>
+							<li><i class="fas fa-envelope"></i><a href="mailto:{{shop_email}}">{{shop_email}}</a></li>
 						</ul>		
 				</div>
 				{# <div class="contact-group">

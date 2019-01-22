@@ -3,6 +3,18 @@ class ControllerProductProduct extends Controller {
 	private $error = array();
 
 	public function index() {
+		// var_dump($this->request->get);
+		$queryArray = explode('/',$this->request->get['_route_']);
+		// var_dump($queryArray);
+		if(count($queryArray) > 1){
+			// http_response_code(301);
+			// header('Location: /option-a'); 
+			// header("Location: ".$queryArray[count($queryArray)-1],TRUE,301);
+
+			header("HTTP/1.1 301 Moved Permanently"); 
+			header("Location: /".$queryArray[count($queryArray)-1]); 
+			exit();
+		}
 		$this->load->language('product/product');
 
 		$data['breadcrumbs'] = array();

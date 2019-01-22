@@ -249,7 +249,7 @@ class ControllerProductCategory extends Controller {
 					'quantity_in_pack'	=> $result['quantity_in_pack'],
 					'rating'      		=> $result['rating'],
 					'prod'		  		=> json_encode($result),
-					'href'        		=> $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url),
+					'href'        		=> $this->url->link('product/product', 'product_id=' . $result['product_id'] . $url),
 					'bestseller'		=> isset($result['bestseller']) ? $result['bestseller'] : null,
 					'featured'			=> isset($result['featured'])? $result['featured'] : null,
 					'latest'			=> isset($result['latest'])? $result['latest'] : null,
