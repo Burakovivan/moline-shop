@@ -2,6 +2,28 @@
 class ControllerCheckoutConfirm extends Controller {
 	public function index() {
 		$redirect = '';
+		$data = json_decode( file_get_contents( 'php://input' ), true );
+		$this->session->data['shipping_address']['city']		= $data['shipping_address']['city'];
+		$this->session->data['shipping_address']['address_1']	= $data['shipping_address']['address_1'];
+		$this->session->data['shipping_address']['firstname']	= $data['shipping_address']['firstname'];
+		$this->session->data['shipping_address']['country']		= $data['shipping_address']['country'];
+		
+		$this->session->data['payment_address']['city']			= $data['payment_address']['city'];
+		$this->session->data['payment_address']['address_1']	= $data['payment_address']['address_1'];
+		$this->session->data['payment_address']['firstname']	= $data['payment_address']['firstname'];
+		$this->session->data['payment_address']['country']		= $data['payment_address']['country'];
+		
+		$this->session->data['payment_method']['title']			= $data['payment_method']['title'];
+		
+		$this->session->data['shipping_method']['title']		= $data['shipping_method']['title'];
+		
+		$this->session->data['guest']['firstname']				= $data['guest']['firstname'];
+		$this->session->data['guest']['email']					= $data['guest']['email'];
+		$this->session->data['guest']['telephone']				= $data['guest']['telephone'];
+		
+		$this->session->data['comment']							= $data['comment'];
+		
+		// return;
 
 		if ($this->cart->hasShipping()) {
 			// Validate if shipping address has been set.
@@ -23,7 +45,6 @@ class ControllerCheckoutConfirm extends Controller {
 		if (!isset($this->session->data['payment_address'])) {
 			$redirect = $this->url->link('checkout/checkout', '', true);
 		}
-
 		// Validate if payment method has been set.
 		if (!isset($this->session->data['payment_method'])) {
 			$redirect = $this->url->link('checkout/checkout', '', true);
@@ -322,6 +343,8 @@ class ControllerCheckoutConfirm extends Controller {
 			$this->load->model('checkout/order');
 
 			$this->session->data['order_id'] = $this->model_checkout_order->addOrder($order_data);
+			var_dump($order_data);
+			var_dump($this->session->data);
 
 			$this->load->model('tool/upload');
 

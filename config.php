@@ -1,11 +1,11 @@
 <?php
 // HTTP
-// define('HTTP_SERVER', 'http://moline.com.ua/');
-define('HTTP_SERVER', 'http://localhost/');
+define('HTTP_SERVER', 'http://moline.com.ua/');
+// define('HTTP_SERVER', 'http://localhost/');
 
 // HTTPS
-// define('HTTPS_SERVER', 'http://moline.com.ua/');
-define('HTTPS_SERVER', 'http://localhost/');
+define('HTTPS_SERVER', 'http://moline.com.ua/');
+// define('HTTPS_SERVER', 'http://localhost/');
  
 // DIR
 define('DIR_APPLICATION', str_replace('\\','/',__DIR__ ). '/catalog/');
@@ -22,8 +22,8 @@ define('DIR_MODIFICATION', DIR_STORAGE . 'modification/');
 define('DIR_SESSION', DIR_STORAGE . 'session/');
 define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
 
-// DB
-// DB
+//--DB--//
+// test
 // define('DB_DRIVER', 'mysqli');
 // define('DB_HOSTNAME', 'mysql.ukrdomen.com');
 // define('DB_USERNAME', 'uh1090933_root');
@@ -31,13 +31,21 @@ define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
 // define('DB_DATABASE', 'uh1090933_molineDb');
 // define('DB_PORT', '3306');
 // define('DB_PREFIX', 'oc_');
-
+//live
 define('DB_DRIVER', 'mysqli');
-define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_DATABASE', 'moline_db');
+define('DB_HOSTNAME', 'mysql.ukrdomen.com');
+define('DB_USERNAME', 'uh1117916_root');
+define('DB_PASSWORD', 'yWO2u0yK4');
+define('DB_DATABASE', 'uh1117916_molineDb');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
+//local
+// define('DB_DRIVER', 'mysqli');
+// define('DB_HOSTNAME', 'localhost');
+// define('DB_USERNAME', 'root');
+// define('DB_PASSWORD', '');
+// define('DB_DATABASE', 'moline_db');
+// define('DB_PORT', '3306');
+// define('DB_PREFIX', 'oc_');
 
 define('NP_API_KEY','4ce2347821d2e9e93c08b5683631764e');
