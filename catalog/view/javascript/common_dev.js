@@ -73,6 +73,7 @@ $(function () {
 
 
 	$(".inner_list_img_wrap").slick({
+		
 		// dots: true,
 		infinite: true,
 		slidesToShow: 4,

@@ -35,7 +35,8 @@ define('DIR_MODIFICATION', DIR_STORAGE . 'modification/');
 define('DIR_SESSION', DIR_STORAGE . 'session/');
 define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
 
-// DB
+//--DB--//
+// test
 // define('DB_DRIVER', 'mysqli');
 // define('DB_HOSTNAME', 'mysql.ukrdomen.com');
 // define('DB_USERNAME', 'uh1090933_root');
@@ -43,14 +44,22 @@ define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
 // define('DB_DATABASE', 'uh1090933_molineDb');
 // define('DB_PORT', '3306');
 // define('DB_PREFIX', 'oc_');
-
+//live
 define('DB_DRIVER', 'mysqli');
-define('DB_HOSTNAME', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_DATABASE', 'moline_db');
+define('DB_HOSTNAME', 'mysql.ukrdomen.com');
+define('DB_USERNAME', 'uh1117916_root');
+define('DB_PASSWORD', 'yWO2u0yK4');
+define('DB_DATABASE', 'uh1117916_molineDb');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
+//local
+// define('DB_DRIVER', 'mysqli');
+// define('DB_HOSTNAME', 'localhost');
+// define('DB_USERNAME', 'root');
+// define('DB_PASSWORD', '');
+// define('DB_DATABASE', 'moline_db');
+// define('DB_PORT', '3306');
+// define('DB_PREFIX', 'oc_');
 
 // OpenCart API
 define('OPENCART_SERVER', 'https://www.opencart.com/');
