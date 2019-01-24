@@ -178,6 +178,7 @@ class ControllerProductCategory extends Controller {
 			);
 
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+			$data['product_total'] = $product_total;
 			// $product_total_entiere = $this->model_catalog_product->getTotalProducts();
 			$least = $product_total - ($limit * $page);
 			$least = $least > $limit ? $limit: $least;
