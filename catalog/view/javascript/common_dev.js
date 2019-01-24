@@ -239,8 +239,31 @@ $(document).on('click', '#m_ord_btn', function () {
 	/*end Cart*/
 
 	/*Slide down*/
+	// $(".sb_block_name").click(function () {
+	// 	$(this).parent().find('.block_info').toggleClass('closed');
+	// });
 	$(".sb_block_name").click(function () {
-		$(this).parent().find('.block_info').toggleClass('closed');
+	
+		if(!$(this).parent().find('.block_info.closed').length > 0){
+			console.log('one');
+			console.log('close');
+			var self = $(this).parent();
+			console.log(self);
+			$(this).find('.block_info').addClass('closed');
+			setTimeout(function(){
+				self.find('.block_info').addClass('dn');
+			}, 300);
+		}else{
+			console.log('two');
+			$(this).parent().find('.block_info').removeClass('closed');
+			$(this).parent().find('.block_info').removeClass('dn');
+		}
+	});
+
+	$(".rulet").click(function () {
+	
+		
+		
 	});
 
 	$(".more").click(function () {
@@ -294,13 +317,14 @@ $(document).on('click', '#m_ord_btn', function () {
 		// $(this).closest(".clump").find(".slider_link_seo").toggleClass("more_seo");
 	});
 	
-	$('.show_cat').on('click', function () {
+	$('.show_cat > p').on('click', function () {
 		filter = [];
 		$('input[name^=\'filter\']').each(function (idx, element) {
 			if ($(element).prop('checked')) {
 				filter.push(this.value);
 			}
 		});
+
 		var action = $('#filter_action').data('action');
 		var price_range = {
 			price_from: $('input[name=price_from]').val(),
@@ -315,16 +339,25 @@ $(document).on('click', '#m_ord_btn', function () {
 	});
 	$('.filter_show_btn_exit').click(function () {
 		console.log('exit');
+		$('.show_cat').hide();
 	});
+
 	$('.styled-checkbox').click(function () {
 		if(!$(this).prop('checked')){
 			console.log('Checked!!');
 			$('.show_cat').addClass('checked!');
 			$('.show_cat').hide();
-			
+			$(this).parent().find('.show_cat').removeClass('on');
+
 		}else{
+			if($(".show_cat.on").length > 0){
+				console.log('exist open labels');
+				$('.show_cat').hide();
+			}
 			console.log('Unchecked!!');
+			
 			$(this).parent().find('.show_cat').show().css('right', '-184px');
+			$(this).parent().find('.show_cat').addClass('on');
 			$(this).parent().find('.show_cat').find('svg').show();
 		}
 		// $('.show_cat').hide();
