@@ -250,21 +250,20 @@ $(document).on('click', '#m_ord_btn', function () {
 			console.log('close');
 			var self = $(this).parent();
 			console.log(self);
-			$(this).find('.block_info').addClass('closed');
+			self.find('.block_info').addClass('closed');
 			setTimeout(function(){
 				self.find('.block_info').addClass('dn');
 			}, 300);
 		}else{
 			console.log('two');
+			console.log(this);
 			$(this).parent().find('.block_info').removeClass('closed');
 			$(this).parent().find('.block_info').removeClass('dn');
 		}
 	});
 
 	$(".rulet").click(function () {
-	
-		
-		
+			
 	});
 
 	$(".more").click(function () {

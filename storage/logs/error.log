@@ -3855,3 +3855,71 @@
 2019-01-24 15:05:50 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 212
 2019-01-24 15:05:50 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 212
 2019-01-24 15:05:50 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 212
+2019-01-24 15:08:50 - PHP Warning:  mysqli::__construct(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2019-01-24 15:08:50 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 15:08:50 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 15:08:59 - PHP Warning:  mysqli::__construct(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2019-01-24 15:08:59 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 15:08:59 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 15:09:10 - PHP Warning:  mysqli::__construct(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2019-01-24 15:09:10 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 15:09:10 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 15:09:50 - PHP Warning:  mysqli::__construct(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2019-01-24 15:09:50 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 15:09:50 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 15:12:02 - PHP Warning:  mysqli::__construct(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2019-01-24 15:12:02 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 15:12:02 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 15:19:03 - PHP Warning:  mysqli::__construct(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2019-01-24 15:19:03 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 15:19:03 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 15:19:09 - PHP Warning:  mysqli::__construct(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2019-01-24 15:19:09 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 15:19:09 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 16:52:47 - PHP Warning:  mysqli::__construct(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2019-01-24 16:52:47 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 16:52:47 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 16:53:13 - PHP Warning:  mysqli::__construct(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2019-01-24 16:53:13 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 16:53:13 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 17:08:05 - PHP Warning:  mysqli::__construct(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2019-01-24 17:08:05 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 17:08:05 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 17:12:37 - PHP Warning:  mysqli::__construct(): (HY000/2002): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+ in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 7
+2019-01-24 17:12:37 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 17:12:37 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in J:\XAMPP\htdocs\system\library\db\mysqli.php on line 10
+2019-01-24 17:28:43 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 17:28:43 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 17:28:43 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 17:28:43 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:01:29 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:01:29 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:01:29 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:01:29 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:03:05 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:03:05 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:03:05 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:03:05 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:03:49 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:03:49 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:03:49 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:03:49 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:04:22 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:04:22 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:04:22 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:04:22 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:05:29 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:05:29 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:05:29 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
+2019-01-24 18:05:29 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\category.php on line 213
