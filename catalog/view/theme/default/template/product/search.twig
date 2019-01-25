@@ -23,195 +23,113 @@
     {% set class = 'col-sm-12' %}
     {% endif %}
     <div id="content" class="{{ class }}">{{ content_top }}
-      <label class="control-label" for="input-search">{{ entry_search }}</label>
-      <div class="row">
-        <div class="col-sm-4">
-          <input type="text" name="search" value="{{ search }}" placeholder="{{ text_keyword }}" id="input-search"
-            class="form-control" />
+      <div class="row form_order">
+        <div class="col-lg-4 col-md-4 col-sm-6">
+          <div class="input_wrap">
+            <label class="control-label" for="input-search">{{ entry_search }}</label>
+            <input type="text" name="search" value="{{ search }}" placeholder="{{ text_keyword }}" id="input-search"  />
+          </div>
         </div>
-        <div class="col-sm-3">
-          <select name="category_id" class="form-control">
-            <option value="0">{{ text_category }}</option>
-            {% for category_1 in categories %}
-            {% if category_1.category_id == category_id %}
-            <option value="{{ category_1.category_id }}" selected="selected">{{ category_1.name }}</option>
-            {% else %}
-            <option value="{{ category_1.category_id }}">{{ category_1.name }}</option>
-            {% endif %}
-            {% for category_2 in category_1.children %}
-            {% if category_2.category_id == category_id %}
-            <option value="{{ category_2.category_id }}" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{
-              category_2.name }}</option>
-            {% else %}
-            <option value="{{ category_2.category_id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ category_2.name }}</option>
-            {% endif %}
-            {% for category_3 in category_2.children %}
-            {% if category_3.category_id == category_id %}
-            <option value="{{ category_3.category_id }}" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{
-              category_3.name }}</option>
-            {% else %}
-            <option value="{{ category_3.category_id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{
-              category_3.name }}</option>
-            {% endif %}
-            {% endfor %}
-            {% endfor %}
-            {% endfor %}
-          </select>
-        </div>
-        <div class="col-sm-3">
-          <label class="checkbox-inline">
-            {% if sub_category %}
-            <input type="checkbox" name="sub_category" value="1" checked="checked" />
-            {% else %}
-            <input type="checkbox" name="sub_category" value="1" />
-            {% endif %}
-            {{ text_sub_category }}</label>
+        <div class="col-lg-4 col-md-4 col-sm-6">
+            <button type="button" id="button-search"  class="reverse_button button_form primary_btn">{{ button_search }}</button>
         </div>
       </div>
-      <p>
-        <label class="checkbox-inline">
-          {% if description %}
-          <input type="checkbox" name="description" value="1" id="description" checked="checked" />
-          {% else %}
-          <input type="checkbox" name="description" value="1" id="description" />
-          {% endif %}
-          {{ entry_description }}</label>
-      </p>
-      <input type="button" value="{{ button_search }}" id="button-search" class="btn btn-primary" />
       <!-- <h2>{{ text_search }}</h2> -->
       {% if products %}
-      <!-- <div class="row">
-        <div class="col-md-2 col-sm-6 hidden-xs">
-          <div class="btn-group btn-group-sm">
-            <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="{{ button_list }}"><i
-                class="fa fa-th-list"></i></button>
-            <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="{{ button_grid }}"><i
-                class="fa fa-th"></i></button>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="form-group">
-            <a href="{{ compare }}" id="compare-total" class="btn btn-link">{{ text_compare }}</a>
-          </div>
-        </div>
-        <div class="col-md-4 col-xs-6">
-          <div class="form-group input-group input-group-sm">
-            <label class="input-group-addon" for="input-sort">{{ text_sort }}</label>
-            <select id="input-sort" class="form-control" onchange="location = this.value;">
-              {% for sorts in sorts %}
-              {% if sorts.value == '%s-%s'|format(sort, order) %}
-              <option value="{{ sorts.href }}" selected="selected">{{ sorts.text }}</option>
-              {% else %}
-              <option value="{{ sorts.href }}">{{ sorts.text }}</option>
-              {% endif %}
-              {% endfor %}
-            </select>
-          </div>
-        </div>
-        <div class="col-md-3 col-xs-6">
-          <div class="form-group input-group input-group-sm">
-            <label class="input-group-addon" for="input-limit">{{ text_limit }}</label>
-            <select id="input-limit" class="form-control" onchange="location = this.value;">
-              {% for limits in limits %}
-              {% if limits.value == limit %}
-              <option value="{{ limits.href }}" selected="selected">{{ limits.text }}</option>
-              {% else %}
-              <option value="{{ limits.href }}">{{ limits.text }}</option>
-              {% endif %}
-              {% endfor %}
-            </select>
-          </div>
-        </div>
-      </div> -->
       <section class="s_white s_catalog">
-          <!-- <div class="container pnl-sm pnr-sm"> -->
-          <div class="container">
-            <div class="row">
-              <div class="col-md-3 pn-lg-left pnl-sm">
-                <h1 class="cat_name">{{ heading_title }}</h1>
-                <div class="cat_info">
-                  <div class="all">Всего: {{product_total}} видов товара</div>
-                  <div class="page">
-                    {# страница 1 #}
-                    {{ results }}
-                  </div>
+        <!-- <div class="container pnl-sm pnr-sm"> -->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 pn-lg-left pnl-sm">
+              <h1 class="cat_name">{{ heading_title }}</h1>
+              <div class="cat_info">
+                <div class="all">Всего: {{product_total}} видов товара</div>
+                <div class="page">
+                  {# страница 1 #}
+                  {{ results }}
                 </div>
               </div>
-              <!-- <div class="col-xs-12 col-sm-4 pln-sm prn-xs hidden-md hidden-lg"> -->
-              <!-- <div class="col-xs-12 col-sm-4 pnl-sm pnr-sm pln-before992 hidden-md hidden-lg"> -->
-              <div class="col-xs-12 col-sm-4 pnl-sm pnr-sm pln-before992 visible-xs visible-sm">
-                <div class="filter_btn_wrap">
-                  <div class="filter_btn"><img src="img/cat_icon/page-1.svg" alt="">Фильтры</div>
+            </div>
+            <!-- <div class="col-xs-12 col-sm-4 pln-sm prn-xs hidden-md hidden-lg"> -->
+            <!-- <div class="col-xs-12 col-sm-4 pnl-sm pnr-sm pln-before992 hidden-md hidden-lg"> -->
+            <div class="col-xs-12 col-sm-4 pnl-sm pnr-sm pln-before992 visible-xs visible-sm">
+              <div class="filter_btn_wrap">
+                <div class="filter_btn"><img src="img/cat_icon/page-1.svg" alt="">Фильтры</div>
+              </div>
+            </div>
+
+            <div class="col-md-5 col-xs-8 col-sm-6">
+
+              <div class="sort_wrap">
+                <div class="s_action">
+                  {{ text_sort }}
+                </div>
+                <div class="select">
+                  <select name="slct" id="slct" onchange="location = this.value;">
+                    {% for sorts in sorts %}
+                    {% if sorts.value == '%s-%s'|format(sort, order) %}
+                    <option value="{{ sorts.href }}" selected="selected">{{ sorts.text }}</option>
+                    {% else %}
+                    <option value="{{ sorts.href }}">{{ sorts.text }}</option>
+                    {% endif %}
+                    {% endfor %}
+                  </select>
                 </div>
               </div>
-              
-              <div class="col-md-5 col-xs-8 col-sm-6">
-          
-                <div class="sort_wrap">
-                  <div class="s_action">
-                    {{ text_sort }}
-                  </div>
-                  <div class="select">
-                    <select name="slct" id="slct" onchange="location = this.value;">
-                        {% for sorts in sorts %}
-                         {% if sorts.value == '%s-%s'|format(sort, order) %}
-                          <option value="{{ sorts.href }}" selected="selected">{{ sorts.text }}</option>
-                        {% else %}         
-                          <option value="{{ sorts.href }}">{{ sorts.text }}</option>
-                        {% endif %}
-                        {% endfor %}
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 col-xs-4  col-sm-2 pr-lg-right">
-                
-                <div class="grid_type_select">
-                  
-                  <svg class="active" id="type_grid" width="29px" height="21px" viewBox="0 0 29 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <title>AD118840-605A-4994-99AB-7CE599791E00</title>
-                    <defs></defs>
-                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <g id="1.Catalog-categories---Large-desktop" transform="translate(-1286.000000, -561.000000)" fill="#D8D8DA">
-                            <path d="M1306.45134,582 L1315,582 L1315,572.295749 L1306.45134,572.295749 L1306.45134,582 Z M1306.45134,570.704251 L1315,570.704251 L1315,561 L1306.45134,561 L1306.45134,570.704251 Z M1296.22567,582 L1304.77433,582 L1304.77433,572.295749 L1296.22567,572.295749 L1296.22567,582 Z M1296.22567,570.704251 L1304.77433,570.704251 L1304.77433,561 L1296.22567,561 L1296.22567,570.704251 Z M1286,582 L1294.54866,582 L1294.54866,572.295749 L1286,572.295749 L1286,582 Z M1286,570.704251 L1294.54866,570.704251 L1294.54866,561 L1286,561 L1286,570.704251 Z" id="Fill-6"></path>
-                        </g>
+            </div>
+            <div class="col-md-4 col-xs-4  col-sm-2 pr-lg-right">
+
+              <div class="grid_type_select">
+
+                <svg class="active" id="type_grid" width="29px" height="21px" viewBox="0 0 29 21" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>AD118840-605A-4994-99AB-7CE599791E00</title>
+                  <defs></defs>
+                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="1.Catalog-categories---Large-desktop" transform="translate(-1286.000000, -561.000000)" fill="#D8D8DA">
+                      <path d="M1306.45134,582 L1315,582 L1315,572.295749 L1306.45134,572.295749 L1306.45134,582 Z M1306.45134,570.704251 L1315,570.704251 L1315,561 L1306.45134,561 L1306.45134,570.704251 Z M1296.22567,582 L1304.77433,582 L1304.77433,572.295749 L1296.22567,572.295749 L1296.22567,582 Z M1296.22567,570.704251 L1304.77433,570.704251 L1304.77433,561 L1296.22567,561 L1296.22567,570.704251 Z M1286,582 L1294.54866,582 L1294.54866,572.295749 L1286,572.295749 L1286,582 Z M1286,570.704251 L1294.54866,570.704251 L1294.54866,561 L1286,561 L1286,570.704251 Z"
+                        id="Fill-6"></path>
                     </g>
-                  </svg>
-                  <svg id="type_list" class="c_type_list" width="26px" height="21px" viewBox="0 0 26 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <title>F32A416C-6471-4738-9CEC-FFB5CE06620C</title>
-                    <defs></defs>
-                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                        <g id="1.Catalog-categories---Large-desktop" transform="translate(-1334.000000, -561.000000)" fill="#D8D8DA">
-                            <path d="M1341.66432,582 L1360,582 L1360,576.010309 L1341.66432,576.010309 L1341.66432,582 Z M1341.66432,574.530928 L1360,574.530928 L1360,568.469072 L1341.66432,568.469072 L1341.66432,574.530928 Z M1341.66432,566.989691 L1360,566.989691 L1360,561 L1341.66432,561 L1341.66432,566.989691 Z M1334,582 L1340.16079,582 L1340.16079,576.010309 L1334,576.010309 L1334,582 Z M1334,574.530928 L1340.16079,574.530928 L1340.16079,568.469072 L1334,568.469072 L1334,574.530928 Z M1334,566.989691 L1340.16079,566.989691 L1340.16079,561 L1334,561 L1334,566.989691 Z" id="Fill-4"></path>
-                        </g>
-                    </g>
+                  </g>
                 </svg>
-                </div>
-              </div>
-            </div>
-      
-            <div class="row">
-              <!-- <div class="slide_mobile_filters col-md-3 pr-lg-right pn-lg-left prn-md pln-md visible-md visible-lg"> -->
-              {{column_left}}
-      
-              <!-- <div class="col-md-9 pr-lg-right pn-lg-left prn-md pln-md"> -->
-              <div class="block_products grid col-xs-12">
-                <div hidden> {{limit}}</div>
-                <div hidden> {{products_count}}</div>
-                <div hidden> {{page}}</div>
-                  {{product_list}}
-              </div>
-            </div>
-            <div class="pagination_wrap text-center">
-            {% if least %}
-              <button class="secondary_btn category-more-btn" data-page="{{page}}">Еще <span id="least">{{least}}</span> товаров</button>
-            {% endif %}
-              <div class="c_pagination">
-                {{pagination}}
+                <svg id="type_list" class="c_type_list" width="26px" height="21px" viewBox="0 0 26 21" version="1.1"
+                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>F32A416C-6471-4738-9CEC-FFB5CE06620C</title>
+                  <defs></defs>
+                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="1.Catalog-categories---Large-desktop" transform="translate(-1334.000000, -561.000000)" fill="#D8D8DA">
+                      <path d="M1341.66432,582 L1360,582 L1360,576.010309 L1341.66432,576.010309 L1341.66432,582 Z M1341.66432,574.530928 L1360,574.530928 L1360,568.469072 L1341.66432,568.469072 L1341.66432,574.530928 Z M1341.66432,566.989691 L1360,566.989691 L1360,561 L1341.66432,561 L1341.66432,566.989691 Z M1334,582 L1340.16079,582 L1340.16079,576.010309 L1334,576.010309 L1334,582 Z M1334,574.530928 L1340.16079,574.530928 L1340.16079,568.469072 L1334,568.469072 L1334,574.530928 Z M1334,566.989691 L1340.16079,566.989691 L1340.16079,561 L1334,561 L1334,566.989691 Z"
+                        id="Fill-4"></path>
+                    </g>
+                  </g>
+                </svg>
               </div>
             </div>
           </div>
-        </section>
+
+          <div class="row">
+            <!-- <div class="slide_mobile_filters col-md-3 pr-lg-right pn-lg-left prn-md pln-md visible-md visible-lg"> -->
+            {{column_left}}
+
+            <!-- <div class="col-md-9 pr-lg-right pn-lg-left prn-md pln-md"> -->
+            <div class="block_products grid col-xs-12">
+              <div hidden> {{limit}}</div>
+              <div hidden> {{products_count}}</div>
+              <div hidden> {{page}}</div>
+              {{product_list}}
+            </div>
+          </div>
+          <div class="pagination_wrap text-center">
+            {% if least %}
+            <button class="secondary_btn category-more-btn" data-page="{{page}}">Еще <span id="least">{{least}}</span>
+              товаров</button>
+            {% endif %}
+            <div class="c_pagination">
+              {{pagination}}
+            </div>
+          </div>
+        </div>
+      </section>
       <div class="row">
         <div class="col-sm-6 text-left">{{ pagination }}</div>
         <div class="col-sm-6 text-right">{{ results }}</div>
@@ -225,35 +143,35 @@
   </div>
 </div>
 <script type="text/javascript">
-    $('#button-search').bind('click', function () {
-      url = 'index.php?route=product/search';
+  $('#button-search').bind('click', function () {
+    url = 'index.php?route=product/search';
 
-      var search = $('#content input[name=\'search\']').prop('value');
+    var search = $('#content input[name=\'search\']').prop('value');
 
-      if (search) {
-        url += '&search=' + encodeURIComponent(search);
-      }
+    if (search) {
+      url += '&search=' + encodeURIComponent(search);
+    }
 
-      var category_id = $('#content select[name=\'category_id\']').prop('value');
+    var category_id = $('#content select[name=\'category_id\']').prop('value');
 
-      if (category_id > 0) {
-        url += '&category_id=' + encodeURIComponent(category_id);
-      }
+    if (category_id > 0) {
+      url += '&category_id=' + encodeURIComponent(category_id);
+    }
 
-      var sub_category = $('#content input[name=\'sub_category\']:checked').prop('value');
+    var sub_category = $('#content input[name=\'sub_category\']:checked').prop('value');
 
-      if (sub_category) {
-        url += '&sub_category=true';
-      }
+    if (sub_category) {
+      url += '&sub_category=true';
+    }
 
-      var filter_description = $('#content input[name=\'description\']:checked').prop('value');
+    var filter_description = $('#content input[name=\'description\']:checked').prop('value');
 
-      if (filter_description) {
-        url += '&description=true';
-      }
+    if (filter_description) {
+      url += '&description=true';
+    }
 
-      location = url;
-    });
+    location = url;
+  });
 
   $('#content input[name=\'search\']').bind('keydown', function (e) {
     if (e.keyCode == 13) {
@@ -270,5 +188,5 @@
   });
 
   $('select[name=\'category_id\']').trigger('change');
-  </script>
+</script>
 {{ footer }}

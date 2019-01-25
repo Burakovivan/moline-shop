@@ -23,12 +23,12 @@ class ControllerProductSearch extends Controller {
 			$tag = '';
 		}
 
-		if (isset($this->request->get['description'])) {
-			$description = $this->request->get['description'];
-		} else {
-			$description = '';
-		}
-
+		// if (isset($this->request->get['description'])) {
+		// 	$description = $this->request->get['description'];
+		// } else {
+		// 	$description = '';
+		// }
+		$description = 'true';
 		if (isset($this->request->get['category_id'])) {
 			$category_id = $this->request->get['category_id'];
 		} else {
