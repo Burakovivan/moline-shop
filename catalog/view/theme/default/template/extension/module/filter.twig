@@ -1,0 +1,113 @@
+{# <div class="panel panel-default">
+  <div class="panel-heading">{{ heading_title }}</div>
+  <div class="list-group"> {% for filter_group in filter_groups %} <a class="list-group-item">{{ filter_group.name }}</a>
+    <div class="list-group-item">
+      <div id="filter-group{{ filter_group.filter_group_id }}">{% for filter in filter_group.filter %}
+        <div class="checkbox">
+          <label>
+            {% if filter.filter_id in filter_category %}
+            <input type="checkbox" name="filter[]" value="{{ filter.filter_id }}" checked="checked" />
+            {{ filter.name }}
+            {% else %}
+            <input type="checkbox" name="filter[]" value="{{ filter.filter_id }}" />
+            {{ filter.name }}
+            {% endif %}</label>
+        </div>
+        {% endfor %}</div>
+    </div>
+    {% endfor %}</div>
+  <div class="panel-footer text-right">
+    <button type="button" id="button-filter" class="btn btn-primary">{{ button_filter }}</button>
+  </div>
+</div> #}
+
+
+<div hidden id='filter_action' data-action="{{action}}">{{price_range |json_encode()}}</div>
+ <div class="s_cont  col-md-3 pr-lg-right pn-lg-left prn-md pln-md  slide_mobile_filters f_position ">
+  <aside class="sidebar ">
+    <svg class="exit_filter_btn" width="22px" height="22px" viewBox="0 0 22 22" version="1.1" >
+        <title>114ABD1B-E5AF-4E56-A79F-CE16CEF6C394</title>
+        <defs></defs>
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="5.Filters---Mobile" transform="translate(-255.000000, -24.000000)" fill="#94949F">
+                <path d="M276.483036,42.9641825 L273.964564,45.4802061 C273.630058,45.8147543 273.168384,46 272.703946,46 C272.242272,46 271.777834,45.8147543 271.446092,45.4802061 L266,40.0361945 L260.556673,45.4802061 C260.224931,45.8147543 259.760493,46 259.298819,46 C258.83438,46 258.372707,45.8147543 258.038201,45.4802061 L255.519729,42.9641825 C255.185222,42.6296343 255,42.1679025 255,41.7034058 C255,41.241674 255.185222,40.7771773 255.519729,40.445394 L260.965821,34.9986176 L255.519729,29.5518411 C255.185222,29.2200578 255,28.7555611 255,28.2938293 C255,27.8293327 255.185222,27.3676009 255.519729,27.0330527 L258.038201,24.517029 C258.372707,24.1824808 258.83438,24 259.298819,24 C259.760493,24 260.224931,24.1824808 260.556673,24.517029 L266,29.9610406 L271.446092,24.517029 C271.777834,24.1824808 272.242272,24 272.703946,24 C273.168384,24 273.630058,24.1824808 273.964564,24.517029 L276.483036,27.0330527 C276.817542,27.3676009 277,27.8293327 277,28.2938293 C277,28.7555611 276.817542,29.2200578 276.483036,29.5518411 L271.036944,34.9986176 L276.483036,40.445394 C276.817542,40.7771773 277,41.241674 277,41.7034058 C277,42.1679025 276.817542,42.6296343 276.483036,42.9641825" id="Fill-1"></path>
+            </g>
+        </g>
+    </svg>
+
+    <div class="sb_block sb_price">
+      <div class="sb_block_name">Цена</div>
+      <input id="one" type="text" name="price_from" class="input_price">
+      <input id="two" type="text" name="price_to" class="input_price">
+      
+      <fieldset class="range_wrap">
+        <div class="price-field">
+            <div class="input-range-container">
+                <div class="input-range-tracker"></div>
+                <div class="input-range-tracker-between"></div>
+                <input type="range" max="{{price_range.max}}"  min="{{price_range.min}}" value="{{real_price_range.min}}" step="0.01" name="range-lower" id="range-lower">
+                <input type="range" max="{{price_range.max}}"  min="{{price_range.min}}" value="{{real_price_range.max}}" step="0.01" name="range-upper" id="range-upper">
+              </div>								
+        </div>
+      </fieldset>
+    </div>
+    {% for filter_group in filter_groups %}
+      <div class="sb_block rulet">
+        <div class="sb_block_name">{{ filter_group.name }}</div>
+        <div class="block_info closed dn">
+          <ul id="filter-group{{ filter_group.filter_group_id }}" class="unstyled centered cat_list_sb">
+            {% for filter in filter_group.filter %}
+            <li>
+              {% if filter.filter_id in filter_category %}
+                {% if filter.products_count == 0 %}
+                  <input class="styled-checkbox" disabled id="styled-checkbox-{{filter.filter_id}}" name="filter[]" value="{{ filter.filter_id }}" type="checkbox" checked>
+                {% else %}
+                  <input class="styled-checkbox" id="styled-checkbox-{{filter.filter_id}}" name="filter[]" value="{{ filter.filter_id }}" type="checkbox" checked>
+                {% endif %}
+              {% else %}
+                {% if filter.products_count == 0 %}
+                  <input class="styled-checkbox" disabled id="styled-checkbox-{{filter.filter_id}}" name="filter[]" value="{{ filter.filter_id }}" type="checkbox">
+                {% else %}
+                  <input class="styled-checkbox" id="styled-checkbox-{{filter.filter_id}}" name="filter[]" value="{{ filter.filter_id }}" type="checkbox">
+                {% endif %}
+              {% endif %}
+              <label for="styled-checkbox-{{filter.filter_id}}">  {{ filter.name }}</label>
+              <div class="amount">{{ filter.products_count}}</div>
+              <div class="show_cat">
+                <p>{#(N)#} Показать</p>
+                <svg width="20px" class="filter_show_btn_exit" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>Exit</title>
+                  <defs></defs>
+                  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="show-filter" transform="translate(-175.000000, -14.000000)" fill="#FFFFFF">
+                      <path d="M190.024038,27.6057692 L186.418269,24 L190.024038,20.3942308 L188.605769,18.9759615 L185,22.5817308 L181.394231,18.9759615 L179.975962,20.3942308 L183.581731,24 L179.975962,27.6057692 L181.394231,29.0240385 L185,25.4182692 L188.605769,29.0240385 L190.024038,27.6057692 Z M185,14 C186.826923,14 188.517628,14.458734 190.072115,15.3721955 C191.578526,16.2355769 192.764423,17.4234776 193.629808,18.9278846 C194.543269,20.4823718 195,22.1730769 195,24 C195,25.8269231 194.543269,27.5176282 193.629808,29.0721154 C192.764423,30.5785256 191.578526,31.7644231 190.072115,32.6318109 C188.517628,33.5452724 186.826923,34 185,34 C183.173077,34 181.482372,33.5452724 179.927885,32.6318109 C178.421474,31.7483974 177.235577,30.5564904 176.370192,29.0500801 C175.456731,27.4935897 175,25.8108974 175,24 C175,22.1911058 175.456731,20.5064103 176.370192,18.9539263 C177.251603,17.447516 178.445513,16.2516026 179.951923,15.3721955 C181.50641,14.458734 183.189103,14 185,14 L185,14 Z"
+                        id="Fill-1"></path>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+            </li>
+             {% endfor %}
+            {# <li>
+              <input class="styled-checkbox" id="styled-checkbox-2" type="checkbox" value="value2" checked>
+              <label for="styled-checkbox-2">CSS Only</label>
+              <div class="amount">8</div>
+            </li>
+            <li>
+              <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3" disabled>
+              <label for="styled-checkbox-3">A disabled checkbox</label>
+              <div class="amount">8</div>
+            </li>
+            <li>
+              <input class="styled-checkbox" id="styled-checkbox-4" type="checkbox" value="value4">
+              <label for="styled-checkbox-4">Fourth option</label>
+
+            </li> #}
+          </ul>
+        </div>
+      </div>
+    {% endfor %}
+      {# <button type="button" id="button-filter" class="btn btn-primary">{{ button_filter }}</button> #}
+  </aside>
+</div> 

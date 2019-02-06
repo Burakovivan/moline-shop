@@ -1,0 +1,96 @@
+{{ header }}
+<div class="bred_crambs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="bred_crambs_list">
+						{% for breadcrumb in breadcrumbs %}
+							<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><img src="img/arrow.svg" alt=""></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<section class="s_white b_plugin">
+
+		<div class="container">
+			<div class="row">
+				<div class="s_header_wrap ">
+					<h2>{{ heading_title }} </h2>
+				</div>
+			</div>
+			<div class="row grid"> 
+				<div id="p_list">
+					{{product_list}}
+				</div>
+			</div>
+		</div>
+
+	<div class="pagination_wrap text-center">
+			{% if least %}
+				<button class="secondary_btn"><a href='{{next_page_link}}'>Еще {{least}} товаров</a></button>
+			{% endif %}
+				<div class="c_pagination">
+					{{pagination}}
+				</div>
+			</div>
+
+	</section>
+
+	<section class="s_white">
+		<div class="container pln prn">
+			<div class="row">
+				<div class="advantages">
+
+					<div class="col-md-4 col-sm-4 pln prn">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2 pln prn">
+								<div class="img_wrap">
+									<img src="img/package.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10 pln">
+								<div class="text-wrap">
+									<h3>Отгрузка в день заказа</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 pln prn">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2 prn pln">
+								<div class="img_wrap">
+									<img src="img/sklad.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10 pln">
+								<div class="text-wrap">
+									<h3>Наличие собственного склада</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 pln prn">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2 prn pln">
+								<div class="img_wrap">
+									<img src="img/steaker.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10 pln">
+								<div class="text-wrap">
+									<h3>Только оригинальная продукция</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+{{ footer }}

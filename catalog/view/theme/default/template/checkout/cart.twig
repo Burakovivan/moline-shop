@@ -1,0 +1,287 @@
+{{ header }}
+<section>
+		<div class="cart_checkout">
+			<div class="container pn-xs">
+			<!-- <div class=""> -->
+				<!-- <div class="col-md-12 col-lg-10 col-lg-offset-1 lgup-pl-pr-n pln-md prn-md"> -->
+				<div class="">
+					<div class="wrap_cart">
+						<div class="top_line">
+							<div class="header_cart">
+								<span class="num_sect">1</span>
+								<span>Проверьте ваш заказ:</span>
+							</div>
+						</div>
+						<div hidden >{{products|json_encode()}}</div>
+						<div class="cart_list_wrap">
+							
+            			{% for product in products %}
+							<div class="item-test"  data-cart-id="{{product.cart_id}}">
+								<div class="wrap_mob">
+								<div class="wrap_img">
+									{% if product.thumb %} <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail" /></a> {% endif %}
+								</div>
+								<div class="wrap_name">
+									<div class="inner_wrap_name">
+											<a href="{{ product.href }}" class="name_item">{{ product.name }}</a> {% if not product.stock %} <span class="text-danger">***</span> {% endif %}
+                			{% if product.option %}
+                			{% for option in product.option %} <br />
+                			<small>{{ option.name }}: {{ option.value }}</small> {% endfor %}
+                			{% endif %}
+                			{% if product.reward %} <br />
+                			<small>{{ product.reward }}</small> {% endif %}
+                			{% if product.recurring %} <br />
+                			<span class="label label-info">{{ text_recurring_item }}</span> <small>{{ product.recurring }}</small> {% endif %}
+											
+											<div class="articul hidden-xs">{{ product.sku }}</div>
+											{# <a href="#" class="name_item">Момент Универсальный Особопрочный… и запас под очень длинный заголовок</a>
+											<div class="articul hidden-xs">Арт.23456</div> #}
+							</div>
+								</div>
+								<div class="wrap_counter">
+									<div class="cw_inner">
+										<span class="input-number-decrement">–</span><input class="input-number" type="text" value="{{product.quantity}}" min="{{product.minimum}}" max="{{product.maximum}}"><span
+										 class="input-number-increment">+</span>
+										 <div class="limit">это минимальное кол-во товара</div>
+									</div>
+								</div>
+								<div class="wrap_price_pi">
+									<div class="wrap_price_pi_inner_wrap">
+											<div class="price_per_item">
+													{{ product.price }}
+											</div>
+											<div class="legend">за еденицу</div>
+									</div>
+								</div>
+								<div class="wrap_total">
+										<div class="total_price_wrap">
+												<div class="total_by_item">{{ product.total }}{#<span>грн</span>#}</div>
+										</div>
+								</div>
+								</div>
+								<div class="wrap_delete">
+										<div class="delete" onclick="RemoveCommonCart('{{ product.cart_id }}');" >Удалить</div>
+								</div>
+	
+							</div>
+						{% endfor %}
+										
+						</div>
+						<div class="order_info">
+							<div class="row m-none">
+									<div class="line"></div>		
+									<div class="clearfix"></div>
+									<div class="total">
+										{% for total in totals %}
+										<span class="t_word">{{ total.title }}:</span>
+										<span class="cost">{{ total.text }}</span>
+										{% endfor %}
+									</div>		
+							</div>
+						</div>
+					
+					</div>
+					<div class="wrap_cart_wrapper" style="z-index:9999;width: 300vw;height: 300vh; display:none; left: -100%;top: -100%;transform: rotate(-40deg);">
+</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="s_gray form_order">
+		<div class="container">
+			<!-- <div class="row"> -->
+			<div >
+				<div class="header_order">
+					<span class="num_sect">2</span>
+					<span>Заполните форму:</span>
+				</div>
+			</div>
+				<div class="form_wrap">
+					<form action="#">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="sub_section_name">Персональные данные</div>
+							</div>
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="input_wrap">
+								<label for="IF">Имя, фамилия</label>
+								<input type="text" name="IF" id="IF">
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="input_wrap">
+								<label for="phone">Телефон</label>
+								<input type="text" name="phone" id="phone">
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="input_wrap">
+								<label for="Email">Email</label>
+								<input type="text" name="Email" id="Email">
+							</div>
+						</div>
+						</div>
+						
+					
+
+						<fieldset class="pay">
+							<legend class="sub_section_name">Способ оплаты</legend>
+							<div class="element_wrap">
+							<div class="elment">
+								<label for="cash">
+									<input type="radio" value="cash" name="pay" id="cash" checked> <div class="name">Наличные</div>
+								</label>
+							</div>
+							<div class="elment">
+								<label for="cod">
+									<input type="radio" value="cod" name="pay" id="cod"> <div class="name">Наложенным платежом</div>
+								</label>
+							</div>
+							<div class="elment">
+								<label for="cashless">
+									<input type="radio" value="cashless" name="pay" id="cashless"> <div class="name">Безналичный</div>
+								</label>
+							</div>
+							</div>
+						</fieldset>
+
+						<fieldset class="delivery">
+							<legend class="sub_section_name">Способ доставки</legend>
+							<div class="element_wrap">
+							
+							<!-- <div class="col-md-4 col-sm-6"> -->
+							<div class="element">
+								<label for="self">
+									<input type="radio" value="self" name="delivery" id="self" checked>
+									<div class="name" >Самовывоз</div>
+									<div class="sub_info">по адресу ул. Черксская 13, г.Киев</div>
+								</label>
+							</div>
+
+							<!-- <div class="col-md-4 col-sm-6"> -->
+							<div class="element">		
+								<label for="InTime">
+									<input type="radio" value="InTime" name="delivery" id="InTime">
+									<div class="name">Интайм, <a href="#">условия и тарифы</a></div>
+									<div class="sub_info"></div>
+							</label>
+							</div>
+
+							<!-- <div class="col-md-4 col-sm-6"> -->
+							<div class="element">							
+								<label for="express">
+									<input type="radio" value="express" name="delivery" id="express">
+									<div class="name">Курьерская доставка по Киеву</div>
+									<div class="sub_info">Бесплатная доставка от 500 у.е.</div>
+									
+								</label>
+							</div>
+
+							<!-- <div class="col-md-4 col-sm-6"> -->
+							<div class="element">														
+								<label for="delivAuto">
+									<input type="radio" value="delivAuto" name="delivery" id="delivAuto"> 
+									<div class="name">Delivery Auto,  <a href="#">условия и тарифы</a></div>
+									<div class="sub_info"></div>
+							</label>
+							</div>
+
+							<!-- <div class="col-md-4 col-sm-6"> -->
+							<div class="element">							
+								<label for="new_post">
+									<input type="radio" value="new_post" name="delivery" id="new_post">
+									<div class="name">Новая почта</div>
+									<div class="sub_info"></div>
+								</label>
+							</div>
+							<!-- <div class="col-md-4 col-sm-6"> -->
+							<div class="element">							
+								<label for="other">
+									<input type="radio" value="other" name="delivery" id="other">
+									<div class="name">Другое</div>
+									<div class="sub_info"></div>
+								</label>
+							</div>
+							
+							</div>
+						</fieldset>
+
+					<div class="row delivAuto_details" style="display:none;">
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="input_wrap select_wrap">
+								<label for="city">Город</label>
+								<!-- <input type="text" name="IF" id="IF"> -->
+								<div class="select city">
+									<select name="delivery_city" id="delivery_city" placeholder="Выберите город">
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="input_wrap select_wrap">
+								<label for="city">Отделение</label>
+								<!-- <input type="text" name="IF" id="IF"> -->
+								<div class="select city">
+									<select name="delivery_dept" id="delivery_dept">
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row new_post_details" style="display:none;">
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="input_wrap select_wrap">
+								<label for="city">Город</label>
+								<!-- <input type="text" name="IF" id="IF"> -->
+								<div class="select city">
+									<select name="delivery_city" id="delivery_city" placeholder="Выберите город">
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-lg-4 col-md-4 col-sm-6">
+							<div class="input_wrap select_wrap">
+								<label for="city">Отделение</label>
+								<!-- <input type="text" name="IF" id="IF"> -->
+								<div class="select city">
+									<select name="delivery_dept" id="delivery_dept">
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="bottom_line">
+								<div class="col-lg-4 col-md-5 col-sm-6">
+										<textarea style="height:70px; width:100%; resize:none; overflow:auto;" hidden id="comment-order"></textarea>
+										<div class="wrap_link">
+											<i class="far fa-comment"></i><a class="comment_ord">Добавить комментарий к заказу</a>
+										</div>
+									</div>
+									
+									<div class="col-lg-4 col-md-5 col-sm-6">
+										<button class="primary_btn submit_ord" onclick="chekcout.submit()">Подтвердить оформление</button>
+										<!-- <input type="submit" value="Подтвердить оформление" class="primary_btn submit_ord"> -->
+									</div>
+						</div>
+					</div>
+
+					</form>
+				</div>
+
+			<!-- </div> -->
+		</div>
+	</section>
+	<script>
+	var cart_checkout_idList = {{cart_ids|json_encode()}};
+	$(window).load(initCommonCart);
+	
+	$('.input-number').inputNumber(true);
+		</script>
+<script src="catalog/view/javascript/checkout.js" type="text/javascript"></script>
+
+{{ footer }} 

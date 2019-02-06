@@ -1,0 +1,144 @@
+<div class="top_menu">
+	<div class="container">
+		<div class="col-lg-4 col-md-3 col-xs-5 col-sm-3 pl-nl pr-nr">
+				<div class="logo test">
+					<a href="/">
+						<img src="img/logo.svg" class="visible-xs" id="xs_logo">
+						<img src="{{ logo }}" alt="" class="large_logo">
+					</a>
+				</div>
+		</div>
+		
+		<div class="col-lg-6 col-sm-6 col-md-6 hidden-xs pn-sm-l pn-sm-r pln prn">
+				{# {% if categories %} #}
+				<nav>
+						<ul id="white_menu">
+							{# {% for category in categories %} #}
+							{# <li><a href="{{ category.href }}">{{ category.name }}</a></li> #}
+							{# {% endfor %} #}
+
+							<li><a href="/">Главная</a></li>
+							<li><a href="{{special}}">Акции</a></li>
+							<li><a href="{{latest}}">Новинки</a></li>
+							<li><a href="{{delivery}}">Доставка</a></li>
+							<li><a href="{{payment}}" >Оплата</a></li>
+							<li><a href="{{about_us}}" >О нас</a></li>
+							<li><a href="{{questoin}}" >Вопросы</a></li>
+							<li><a href="{{partnership}}">Сотрудничество</a></li>
+							{# <li class="visible-lg"><a href="#">Контакты</a></li> #}
+						</ul>
+					</nav>
+				{# {% endif %} #}
+		</div>
+		<div class="col-lg-2 col-md-3 col-xs-7 col-sm-3 pl-nl pr-nr pn-sm-l pn-sm-r prn">
+			<div class="r_wrap">
+					<div class="ddb_wrap ">
+							<div class="drop_down_button">
+									<div class="dot"></div>
+									<div class="dot"></div>
+									<div class="dot"></div>
+							</div>
+							<div class="drop-down-list-wrap">
+								<ul class="drop-down-list-c">
+								</ul>
+							</div>
+					</div>
+					<div class="r_info">
+							<a href="tel:{{location.telephone}}">{{location.telephone}}</a>
+							<br>
+							<span class="street">{{location.address}}</a></span>
+					</div>
+				</div>
+			</div>			
+	</div>
+</div>
+			<div class="green_menu">
+			<div class="container cpn-xs">
+				<div class="col-lg-4 col-md-3 col-sm-4 col-xs-3 col-plrn-xs flex-wrap pln prn mob_p_static">
+					<div class="mnu_button_wrap">
+						<input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+						<label for="openSidebarMenu" class="sidebarIconToggle">
+							<div class="spinner diagonal part-1"></div>
+							<div class="spinner horizontal"></div>
+							<div class="spinner diagonal part-2"></div>
+						</label>
+							<div id="sidebarMenu">
+								{% if categories %} 
+								<ul class="sidebarMenuInner">
+									{% for category in categories %}
+										<li class ="main-item">
+										<a href="{{ category.href }}">
+										<div class="icon_mnu_wrap">
+										{% if category.image %}
+										 <img src="image/{{category.image}}" alt="">
+										 {% endif %}
+										 </div>
+										 	<p>{{ category.name }}</p><i class="fas fa-angle-right"></i>
+										 </a>
+
+											{% if category.children %}
+												{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+												<div class="inner-list-wrap">
+													<ul class="inner-list">
+														<li class="sub-item back_btn_mnu" ><a href="#" class="back_b"><p>Назад</p></a></li>
+														{% for child in children %}
+															{% if child.image %}
+																<li class="sub-item"><a href="{{ child.href }}"><div class="img_wrap"><img src="image/{{ child.image }}" alt=""></div><p>{{ child.name }}</p></a></li>
+															{% else %}
+																<li class="sub-item"><a href="{{ child.href }}"><div class="img_wrap"><img alt=""></div><p>{{ child.name }}</p></a></li>
+															{% endif %}
+														{% endfor %}
+													</ul>
+												</div>
+													{% endfor %}
+											{% endif %}
+										</li>
+									{% endfor %}
+								</ul>
+									
+								<div class="bottom_link">
+									<a href="#" ><img src="img/cat_icon/file.svg" alt="">Скачать прайс-лист</a>
+								</div>
+								{% endif %}
+							</div>
+							<label for="openSidebarMenu" class="l_cat_wrap">
+									<div class="catalog hide_mnu_item_sm">Каталог товаров</div>
+								</label>
+					</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-3 col-plrn-xs ">
+						<div class="search-wrap flx-wrap">
+								<!-- <div class="search"> -->
+									 <input type="text"  name="search" class="searchTerm hidden-xs" placeholder="Поиск товара">
+									 <button type="submit" class="searchButton">
+										 <i class="fas fa-search"></i>
+									</button>
+								<!-- </div> -->
+						 </div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-2 col-xs-3 col-plrn-xs ">
+					<div class="auth-block flx-wrap">
+						<a href="{{ login }}" id="login_link"><i class="fas fa-user-alt"></i><span class="hide_mnu_item">{{ text_login }}</span></a><span class="hide_mnu_item">,</span>
+						<a href="{{ login }}" class="hide_mnu_item" id="register_link">{{ text_register }}</a>	
+						{# <a href="{{ login }}" id="login_link"><i class="fas fa-user-alt"></i><span class="hide_mnu_item">{{ text_login }}</span></a><span class="hide_mnu_item">,</span>
+						<a href="{{ register }}" class="hide_mnu_item" id="register_link">{{ text_register }}</a>	 #}
+						
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 col-plrn-xs pln prn">
+					<div class="cart-wrap flx-wrap">
+						{#<a href="{{shopping_cart}}">#}
+						<div class="icon-wrap">
+							<img src="img/cart.svg" alt="" width="28px">
+							<div class="counter">
+								<span class="cart-total">{{ text_items }}</span>
+							</div>
+						</div>
+						<span class="hide_mnu_item">Корзина</span>
+					</a>
+					</div>
+				</div>
+				
+			</div>
+		</div>

@@ -1,0 +1,174 @@
+<footer>
+		<div class="f_subscribe">
+			<div class="container">
+				<div class="row">
+						<div class="clump">
+								<div class="card">
+									<div class="section">
+										<!-- open -->
+								
+										<div class="detail closed">
+											<!-- closed_info -->
+											<form>
+												<div class="input-wrapper ">
+													<!-- <div class="header_slide_inside visible-xs">Подпишитесь на скидки:</div> -->
+													<div class="header_slide_inside call_to_action text-left">Подпишитесь на скидки:</div>
+													<!-- <div class="header_slide_inside visible-xs text-left">Moline:</div> -->
+														<input type="text" name="name" placeholder="Email"><input type="text" name="name" placeholder="Имя"><input type="text" name="phone" placeholder="Город">
+														<button class="reverse_button button_form primary_btn" type="submit">Подписаться</button>
+														{# <button class="reverse_button button_form" type="submit">Подписаться</button> #}
+												</div>
+											</form>
+											<!-- closed_info end-->
+										</div>
+									</div>
+									<div class="footer visible-xs">
+										<div class="header_slide visible-xs">Подпишитесь на скидки:</div>
+										<div class="slider_link less hide_link">Скрыть</div>
+									</div>
+								</div>
+							</div>
+						<!-- <form>
+								<div class="input-wrapper ">
+										<div class="call_to_action">Подпишитесь на скидки:</div>
+										<input type="text" name="name" placeholder="Email"><input type="text" name="name" placeholder="Имя"><input type="text" name="phone" placeholder="Город">
+									<button class="reverse_button button_form" type="submit">Подписаться</button>
+								</div>
+							</form> -->
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="f_bottom">
+					<div class="row">
+							<div class="clump">
+									<div class="card">
+										<div class="section">
+											<!-- open -->
+									
+											<div class="detail closed">
+												<!-- closed_info -->
+												<div class="header_slide_inside ">Контакты:</div>
+												<div class="col-md-3 col-sm-3">
+														<div class="logo_wrap">
+															<img src="img/footer_logo.svg" alt="logo">
+														</div>
+														
+														<ul class="phone_list">
+															<li><a href="tel:{{telephone_vodafone}}">{{ telephone_vodafone }}</a></li>
+															<li><a href="tel:{{telephone_kyivstar}}">{{ telephone_kyivstar }}</a></li>
+															<li><a href="tel:{{telephone_lifecell}}">{{ telephone_lifecell }}</a></li>
+														</ul>
+						
+														<div class="mail"><a href="mailto:{{shop_email}}">{{shop_email}}</a></div>
+														<div class="f_info">
+														
+															Мы работаем:<br>{{open}}
+														</div>
+														<div class="f_info">
+														{{address}}
+														</div>
+													</div>
+												<!-- closed_info end-->
+											</div>
+										</div>
+										<div class="footer ">
+											<div class="header_slide ">Контакты:</div>
+											<div class="slider_link less hide_link">Скрыть</div>
+										</div>
+									</div>
+								</div>
+							<div class="clump">
+									<div class="card">
+										<div class="section">
+											<!-- open -->
+									
+											<div class="detail closed">
+												<!-- closed_info -->
+												<div class="header_slide_inside ">Moline:</div>
+												<div class="col-md-3 col-sm-3">
+													{% if informations %}
+														<ul class="f_menu_list">
+														<div hidden>{{informations|json_encode()}}</div>
+															{% for information in informations %}
+																{% if information.left == 1 %}
+																	<li><a href="{{ information.href }}">{{ information.title }}</a></li>
+																{% endif %}
+															{% endfor %}
+															{# <li><a href="#">О нас</a></li>
+															<li><a href="#">Статьи</a></li>
+															<li><a href="#">Контакты</a></li>
+															<li class="visible-lg"><a href="#">Отзывы</a></li>
+															<li class="visible-lg"><a href="#">Сотрудничество</a></li> #}
+														</ul>
+													{% endif %}
+														<div class="price_list"><a href="#"><img src="img/file.svg" alt="">Скачать прайс-лист</a></div>
+													</div>
+												<!-- closed_info end-->
+											</div>
+										</div>
+										<div class="footer ">
+											<div class="header_slide ">Moline:</div>
+											<div class="slider_link less hide_link">Скрыть</div>
+										</div>
+									</div>
+								</div>
+							<div class="clump">
+										<div class="card">
+											<div class="section">
+												<!-- open -->
+										
+												<div class="detail closed">
+													<!-- closed_info -->
+													<div class="header_slide_inside ">Услуги:</div>
+													<div class="col-md-3 col-sm-3">
+															<ul class="f_menu_list">
+																<li><a href="{{ bestseller }}">{{ text_bestseller }}</a></li>
+																<li><a href="{{ special }}">{{ text_special }}</a></li>
+																<li><a href="{{ latest }}">{{ text_latest }}</a></li>
+																	{# <li><a href="#">Лидеры продаж</a></li>
+																	<li><a href="#">Акции</a></li>
+																	<li><a href="#">Новинки</a></li> #}
+															</ul>
+													</div>
+													<!-- closed_info end-->
+												</div>
+											</div>
+											<div class="footer ">
+												<div class="header_slide ">Услуги:</div>
+												<div class="slider_link less hide_link">Скрыть</div>
+											</div>
+										</div>
+								</div>
+							<div class="clump">
+											<div class="card">
+												<div class="section">
+													<!-- open -->
+											
+													<div class="detail closed">
+														<!-- closed_info -->
+													<div class="header_slide_inside ">Помощь:</div>
+														<div class="col-md-3 col-sm-3">
+																<ul class="f_menu_list">
+																		<li><a href="{{ question }}">{{ text_question }}</a></li>
+																		{% for information in informations %}
+																			{% if information.right == 1 %}
+																				<li><a href="{{ information.href }}">{{ information.title }}</a></li>
+																			{% endif %}
+																		{% endfor %}
+																</ul>
+														</div>
+														<!-- closed_info end-->
+													</div>
+												</div>
+												<div class="footer ">
+													<div class="header_slide ">Помощь:</div>
+													<div class="slider_link less hide_link">Скрыть</div>
+												</div>
+											</div>
+								</div>
+				
+						</div>
+			</div>
+		</div>
+	</footer>

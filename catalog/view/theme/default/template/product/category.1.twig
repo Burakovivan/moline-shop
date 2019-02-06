@@ -1,0 +1,332 @@
+{{ header }}
+<div id="product-category">
+  <div class="bred_crambs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						
+								<ul class="bred_crambs_list">
+										{% for breadcrumb in breadcrumbs %}
+											<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><img src="img/arrow.svg" alt=""></li>
+    								{% endfor %}
+								</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="overlay"></div>
+	
+
+	{% if categories %}
+		<section class="type_select">
+		<div class="container">
+			<div class="row">
+				<h3>Выберите тип товара:</h3>
+			</div>
+			<div class="row">
+
+				<ul class="top_cat_list">
+					 {% for category in categories %}
+					<li>
+							<a href="{{ category.href }}">
+								<div class="type-item">
+									<div class="img_wrap"><img src="image/{{ category.image }}" alt="{{ category.name }}"></div>
+									<p>{{ category.name }}</p>
+								</div>
+							</a>
+					</li>
+					 {% endfor %}
+				</ul>
+			</div>
+		</div>
+	</section>
+	{% endif %}
+
+	<section class="s_white s_catalog">
+		<!-- <div class="container pnl-sm pnr-sm"> -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 pn-lg-left pnl-sm">
+					<h1 class="cat_name">{{ heading_title }}</h1>
+					<div class="cat_info">
+						<div class="all">Всего: 37 видов товара</div>
+						<div class="page">
+							{# страница 1 #}
+							{{ results }}
+						</div>
+					</div>
+				</div>
+				<!-- <div class="col-xs-12 col-sm-4 pln-sm prn-xs hidden-md hidden-lg"> -->
+				<!-- <div class="col-xs-12 col-sm-4 pnl-sm pnr-sm pln-before992 hidden-md hidden-lg"> -->
+				<div class="col-xs-12 col-sm-4 pnl-sm pnr-sm pln-before992 visible-xs visible-sm">
+					<div class="filter_btn_wrap">
+						<div class="filter_btn"><img src="img/cat_icon/page-1.svg" alt="">Фильтры</div>
+					</div>
+				</div>
+				
+				<div class="col-md-5 col-xs-8 col-sm-6">
+		
+					<div class="sort_wrap">
+						<div class="s_action">
+							{{ text_sort }}
+						</div>
+						<div class="select">
+							<select name="slct" id="slct" onchange="location = this.value;">
+									{% for sorts in sorts %}
+             			{% if sorts.value == '%s-%s'|format(sort, order) %}
+                    <option value="{{ sorts.href }}" selected="selected">{{ sorts.text }}</option>
+        					{% else %}         
+              			<option value="{{ sorts.href }}">{{ sorts.text }}</option>
+									{% endif %}
+              		{% endfor %}
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-xs-4  col-sm-2 pr-lg-right">
+					
+					<div class="grid_type_select">
+						
+						<svg class="active" id="type_grid" width="29px" height="21px" viewBox="0 0 29 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<title>AD118840-605A-4994-99AB-7CE599791E00</title>
+							<defs></defs>
+							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+									<g id="1.Catalog-categories---Large-desktop" transform="translate(-1286.000000, -561.000000)" fill="#D8D8DA">
+											<path d="M1306.45134,582 L1315,582 L1315,572.295749 L1306.45134,572.295749 L1306.45134,582 Z M1306.45134,570.704251 L1315,570.704251 L1315,561 L1306.45134,561 L1306.45134,570.704251 Z M1296.22567,582 L1304.77433,582 L1304.77433,572.295749 L1296.22567,572.295749 L1296.22567,582 Z M1296.22567,570.704251 L1304.77433,570.704251 L1304.77433,561 L1296.22567,561 L1296.22567,570.704251 Z M1286,582 L1294.54866,582 L1294.54866,572.295749 L1286,572.295749 L1286,582 Z M1286,570.704251 L1294.54866,570.704251 L1294.54866,561 L1286,561 L1286,570.704251 Z" id="Fill-6"></path>
+									</g>
+							</g>
+						</svg>
+						<svg id="type_list" class="c_type_list" width="26px" height="21px" viewBox="0 0 26 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<title>F32A416C-6471-4738-9CEC-FFB5CE06620C</title>
+							<defs></defs>
+							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+									<g id="1.Catalog-categories---Large-desktop" transform="translate(-1334.000000, -561.000000)" fill="#D8D8DA">
+											<path d="M1341.66432,582 L1360,582 L1360,576.010309 L1341.66432,576.010309 L1341.66432,582 Z M1341.66432,574.530928 L1360,574.530928 L1360,568.469072 L1341.66432,568.469072 L1341.66432,574.530928 Z M1341.66432,566.989691 L1360,566.989691 L1360,561 L1341.66432,561 L1341.66432,566.989691 Z M1334,582 L1340.16079,582 L1340.16079,576.010309 L1334,576.010309 L1334,582 Z M1334,574.530928 L1340.16079,574.530928 L1340.16079,568.469072 L1334,568.469072 L1334,574.530928 Z M1334,566.989691 L1340.16079,566.989691 L1340.16079,561 L1334,561 L1334,566.989691 Z" id="Fill-4"></path>
+									</g>
+							</g>
+					</svg>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<!-- <div class="slide_mobile_filters col-md-3 pr-lg-right pn-lg-left prn-md pln-md visible-md visible-lg"> -->
+				{{column_left}}
+
+				<!-- <div class="col-md-9 pr-lg-right pn-lg-left prn-md pln-md"> -->
+				<div class="block_products grid col-md-9 pr-lg-right pn-lg-left prn-md pln-md">
+						<div hidden> {{limit}}</div>
+						<div hidden> {{products_count}}</div>
+						<div hidden> {{page}}</div>
+					{% for product in products %}
+						<div hidden> {{product.prod}}</div>
+
+						<div class="item_wrap product col-md-4 col-xs-6 col-sm-3" id='product_{{ product.product_id }}' data-product-id="{{ product.product_id }}">
+							<div class=" top_info">
+								{# <div>{{product.stock_status}}</div>
+								<div>{{product.stock_status_id}}</div> #}
+								<div class="pln col-md-6 col-xs-5">
+									{% if product.discount %}
+										<div class="bage_green bage">-{{product.discount}}%</div>
+									{% elseif product.bestseller %}
+										<div class="bage_blue bage">Хит</div>
+									{% elseif  product.latest %}
+										<div class="bage_blue_new bage">New</div>
+									{% else %}
+										<div class="bage"></div>
+									{% endif %}
+								</div>
+								<div class="prn col-md-6 col-xs-7">
+									<div class="itm_artic_wrap">
+								{{ product.sku }}
+										
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<a href="{{product.href}}">
+									<div class="col-md-12 itm_img_wrap">
+										<img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}">
+									</div>
+								</a>
+
+								<div class="col-md-12 h_wrap">
+									<h4><a href="{{product.href}}">{{ product.name }}	</a></h4>
+								</div>
+
+								<div class="col-md-12 p_wrap">
+									{% if product.price %}
+										{% if not product.special %}
+										<div class="price">{{ product.price }}</div>
+										{% else %}
+										<div class="price">{{ product.special }}
+											<div class="old_price">{{ product.price }}</div>
+										</div>
+										{% endif %}
+									{% endif %}
+								</div>
+								{#pod zakaz#}
+								{% if product.stock_status_id == 8 %}
+								{% endif %}
+								{#skoro v prodaze#}
+								{% if product.stock_status_id == 6 %}
+								{% endif %}
+								{#net v nalichii#}
+								{% if product.stock_status_id == 5 %}
+								{% endif %}
+								{#est v nalichii#}
+								{% if product.stock_status_id == 7 %}
+								<div class="col-md-6 col-sm-12  pr-lg-right cw_wrp">
+									<div class="counter_wrap">
+										<div class="cw_inner">
+											<span class="input-number-decrement">–</span><input class="input-number" readonly type="text" value="{{ product.minimum }}" min="{{ product.minimum }}" ><span class="input-number-increment">+</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-6 col-sm-12 btn_buy_wrap btn_buy_wrap_link">
+									<button onclick="cart.add('{{ product.product_id }}', $(this).parent().parent().find('.input-number').val());" class="btn_buy primary_btn">{{ button_cart }}</button>
+								</div>
+								{% endif %}
+								
+								<div class="ost col-sm-12 pln ct_hide">{{ product.maximum }} ед. остаток на складе</div>
+								<div class="limit ct_hide">от <span class="amount_lim">{{ product.minimum }} ед.</span><span class="hidd_mobile">минимальный заказ</span></div>
+								<div class="retail_price ct_hide">Рекомендуемая розничная цена
+									<div class="price">{{product.retail_price}}
+										{# <span class="currency">грн</span> #}
+									</div>
+								</div>
+							</div>
+						</div>
+
+					{% endfor %}
+				</div>
+			</div>
+			<div class="pagination_wrap text-center">
+			{% if least %}
+				<button class="secondary_btn category-more-btn" data-page="{{page}}">Еще <span id="least">{{least}}</span> товаров</button>
+			{% endif %}
+				<div class="c_pagination">
+					{{pagination}}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="s_gray s_seo">
+		<div class="container">
+			<div class="row">
+				<div class="clump">
+						<div class="card">
+							<div class="section">
+								<!-- open -->
+								<!-- <div class="col-md-11"> -->
+								<div class="flx_cont_seo">
+									<div class="fex_elem text_block">
+											<h2>Оптовый интернет-магазин батареек, клея и хозтоваров M8line</h2>
+											<p>Наша компания уже долгое время завоевывает рынок Украины, мы работаем как оптовый поставщик батареек, клея и хозтоваров, 
+                      так и производим собственную линию товаров под торговой маркой M8line. В 2017 году наша команда поставила перед собой 
+                      новую цель - онлайн, теперь каждый посетитель может купить товар мелким и крупным оптом в нашем интернет-магазине! 
+                      А также мы можем способствовать в организации и сопровождении производства товаров под своей торговой маркой как на территории 
+                      Украины, так и в Китае или Польше.
+											</p>
+									</div>
+									<div class="fex_elem btn_block">
+										<div class="slider_link_seo more_seo"></div>
+									</div>
+								</div>
+								
+								<div class="detail_seo closed">
+									<!-- closed_info -->
+									<div class="flx_cont_seo">
+											<div class="fex_elem text_block">
+													<h3>Почему купить оптом в Украине стало проще? </h3>
+													<ul>
+														<li>При оформлении товара мелким или крупным оптом, отгрузка выполняется в день заказа со склада в городе Киев.</li>
+														<li>Предоставление подробного описания о каждом товаре, реальные фотографии и инструкции по применению.</li>
+														<li> M8line имеет собственный шоурум, где каждый желающий может ознакомится с продукцией собственного производства, а также с товаром представленным в интернет-магазине.</li>
+														<li>Теперь купить скотч оптом, клей оптом, батарейки оптом, кисти оптом, скотч оптом и другие хозяйственные товары вы можете в несколько кликов.</li>
+														<li>Только реальные отзывы проверенных покупателей.</li> 
+														<li>Мы работаем с Наша Сила, Varta, Duracell, Химик Плюс, Evciplastik, YAJIA, POLICE и другими брендами проверенными временем и личным опытом.</li>
+														<li>Профессиональная поддержка наших менеджеров на протяжении полного срока сотрудничества с вами.</li>
+														<li>Реальная помощь при построении личного бизнеса с оптовым интернет-магазином M8line.</li>
+														<li>В ближайшее время, каждый покупатель сможет производить самовывоз товара в городах Харьков, Одесса, Львов и других городах Украины.</li>
+														<li>Уникальная система скидок и регулярные распродажи. При покупке товара крупным оптом (от 500 долларов), вы получаете дополнительную скидку на полный список заказа. За детальной информацией обращайтесь к нашим менеджерам.</li>
+													</ul>
+											</div>
+											<div class="fex_elem btn_block">
+												
+											</div>
+										</div>
+									<!-- closed_info end-->
+								</div>
+							</div>
+							<div class="footer">
+								<!-- <div class="slider_link more">Подробнее</div> -->
+								<!-- <div class="slider_link less hide_link">Скрыть</div> -->
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="s_white">
+		<div class="container pln prn">
+			<div class="row">
+				<div class="advantages ">
+
+					<div class="col-md-4 col-sm-4 pln prn">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2 pln prn">
+								<div class="img_wrap">
+									<img src="img/package.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10 pln">
+								<div class="text-wrap">
+									<h3>Отгрузка в день заказа</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 pln prn">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2 prn pln">
+								<div class="img_wrap">
+									<img src="img/sklad.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10 pln">
+								<div class="text-wrap">
+									<h3>Наличие собственного склада</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 pln prn">
+						<div class="bottom_servise_wrap">
+							<div class="col-md-2 prn pln">
+								<div class="img_wrap">
+									<img src="img/steaker.svg" alt="">
+								</div>
+							</div>
+							<div class="col-md-10 pln">
+								<div class="text-wrap">
+									<h3>Только оригинальная продукция</h3>
+									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+  
+</div>
+{{ footer }} 
