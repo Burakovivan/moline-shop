@@ -3961,6 +3961,7 @@
 2019-01-26 10:15:08 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\search.php on line 226
 2019-01-26 10:16:01 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\search.php on line 226
 2019-01-26 10:16:01 - PHP Notice:  A non well formed numeric value encountered in J:\XAMPP\htdocs\catalog\controller\product\search.php on line 226
+<<<<<<< HEAD
 2019-02-06 14:42:16 - PHP Warning:  fopen(F:/XAMPP/htdocs/storage/cache/cache.catalog.language.1549467736): failed to open stream: No such file or directory in F:\XAMPP\htdocs\system\library\cache\file.php on line 49
 2019-02-06 14:42:16 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in F:\XAMPP\htdocs\system\library\cache\file.php on line 51
 2019-02-06 14:42:16 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in F:\XAMPP\htdocs\system\library\cache\file.php on line 53
@@ -4009,3 +4010,5 @@
 2019-02-06 14:42:34 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in F:\XAMPP\htdocs\system\library\cache\file.php on line 55
 2019-02-06 14:42:34 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in F:\XAMPP\htdocs\system\library\cache\file.php on line 57
 2019-02-06 14:42:34 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in F:\XAMPP\htdocs\system\library\cache\file.php on line 59
+=======
+>>>>>>> refs/remotes/origin/master
