@@ -10,8 +10,8 @@ chekcout = {
             },
             shipping: {
                 type: form.delivery.value,
-                city: $(form).find("." + form.delivery.value + "_delivery_city").val(),
-                dept: $(form).find("." + form.delivery.value + "_delivery_dept").val(),
+                city: $(form).find("." + form.delivery.value + "_delivery_city.single .item").text(),
+                dept: $(form).find("." + form.delivery.value + "_delivery_dept.single .item").text(),
             },
             comment: form['comment-order'].value,
         }
@@ -43,8 +43,8 @@ chekcout = {
     map: function (model) {
         return {
             shipping_address: {
-                city: model.city,
-                address_1: model.dept,
+                city: model.shipping.city,
+                address_1: model.shipping.dept,
                 firstname: model.name,
                 country: "UA",
             },
@@ -52,8 +52,8 @@ chekcout = {
                 title: model.shipping.type
             },
             payment_address: {
-                city: model.city,
-                address_1: model.dept,
+                city: model.shipping.city,
+                address_1: model.shipping.dept,
                 firstname: model.name,
                 country: "UA",
             },
@@ -64,7 +64,7 @@ chekcout = {
             },
             comment: model.comment,
             payment_method: {
-                title: model.payment,
+                title: model.payment.type,
             },
         }
     },
@@ -74,7 +74,15 @@ chekcout = {
             url: '/index.php?route=checkout/confirm',
             method: 'POST',
             contentType: "application/json",
-            data: JSON.stringify(modelToSent)
+            dataType: "html",
+            data: JSON.stringify(modelToSent),
+            success: function (data){
+                if(data){
+                    $('.form_order .container').remove()
+                    $('.cart_checkout').parent().html(data);
+                    // window.location = '/index.php?route=checkout/confirm&order_id='+data['order_id'];
+                }
+            }
         })
     }
 
