@@ -149,11 +149,16 @@ $(function () {
 
 //--btn-buy-absent--//
 
-function show_modal(){
+function show_modal(modal_name, mode){
 	var tmp_popup = '<div class="popup-window"></div>';
+	var modal_name = modal_name;
+	var mode = mode;
 	// $(tmp_popup).insertAfter($('.overlay'));
-	$(tmp_popup).insertBefore($('.s_product'));
-
+	if(mode === 'order'){
+		$(tmp_popup).insertBefore($('.s_product'));
+	}else{
+		$(tmp_popup).insertAfter($('.overlay'));
+	}
 	setTimeout(function(){
 		$('.popup-window').toggleClass('active');
 		$('.popup-window').toggleClass('show_pop');
@@ -161,18 +166,39 @@ function show_modal(){
 	setTimeout(function(){
 		$( ".popup-window" ).append("<div class='window-container'></div>");
 		$( ".window-container" ).append('<svg id="modal_exit" width="21px" height="21px" viewBox="0 0 21 21" version="1.1"><title>EBA93EB7-E714-432B-AF2F-5DA3BB321A8D</title><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="1.1.Produkt-ended---Large-desktop" transform="translate(-875.000000, -499.000000)" fill="#9E9E9E"><path d="M895.506534,517.102174 L893.102538,519.503833 C892.783237,519.823175 892.342548,520 891.899221,520 C891.458532,520 891.015205,519.823175 890.698542,519.503833 L885.5,514.307277 L880.304097,519.503833 C879.987434,519.823175 879.544107,520 879.103418,520 C878.66009,520 878.219402,519.823175 877.900101,519.503833 L875.496105,517.102174 C875.176803,516.782833 875,516.342089 875,515.898706 C875,515.457962 875.176803,515.014578 875.496105,514.697876 L880.694647,509.49868 L875.496105,504.299485 C875.176803,503.982782 875,503.539399 875,503.098655 C875,502.655272 875.176803,502.214528 875.496105,501.895187 L877.900101,499.493528 C878.219402,499.174186 878.66009,499 879.103418,499 C879.544107,499 879.987434,499.174186 880.304097,499.493528 L885.5,504.690084 L890.698542,499.493528 C891.015205,499.174186 891.458532,499 891.899221,499 C892.342548,499 892.783237,499.174186 893.102538,499.493528 L895.506534,501.895187 C895.825836,502.214528 896,502.655272 896,503.098655 C896,503.539399 895.825836,503.982782 895.506534,504.299485 L890.307992,509.49868 L895.506534,514.697876 C895.825836,515.014578 896,515.457962 896,515.898706 C896,516.342089 895.825836,516.782833 895.506534,517.102174" id="Fill-1"></path></g></g></svg>');
-		$( ".window-container" ).append('<div class="top_line">	<div class="modal_name ">Введите телефон</div><div class="modal_message hidden">Ваша заявка принята. Мы свяжемся с Вами как только этот товар появится на складе.</div></div>');
-		$( ".window-container" ).append('	<input type="text" name="phone" placeholder="Телефон" class="" id="mod_phone"><button class="primary_btn" id="m_ord_btn">Оформить</button><button class="primary_btn hidden" id="m_ok_btn">Ок</button>');
+		if(mode === 'order'){
+			$( ".window-container" ).append('<div class="top_line">	<div class="modal_name ">'+modal_name+'</div><div class="modal_message hidden">Ваша заявка принята. Мы свяжемся с Вами как только этот товар появится на складе.</div></div>');
+			$( ".window-container" ).append('<input type="text" name="phone" placeholder="Телефон" class="" id="mod_phone"><button class="primary_btn" id="m_ord_btn">Оформить</button><button class="primary_btn hidden" id="m_ok_btn">Ок</button>');
+		}else if(mode === 'authorization'){
+			$( ".window-container" ).addClass('authorization');
+			$( ".window-container" ).append('<div class="top_line">	<div class="modal_name ">'+modal_name+'</div><div class="modal_message hidden">Проверьте Вашу почту. Вам отправлено письмо с паролем от аккаунта.</div></div>');
+			// $( ".window-container" ).append('<input type="emal" name="emal" placeholder="Emal" class="" id="mod_email"><input type="password" name="password" placeholder="Пароль" class="" id="mod_пароль"><button class="primary_btn" id="m_ord_btn">Вход</button><div><p></p></div><button class="secondary_btn" id="m_ord_btn">Регистрация</button><button class="primary_btn hidden" id="m_ok_btn">Ок</button>');
+			$( ".window-container" ).append(`
+				<input type="emal" name="emal" placeholder="Emal" class="" id="mod_email">
+				<input type="password" name="password" placeholder="Пароль" class="" id="mod_password">
+				<button class="primary_btn" id="mo_enter_btn">Вход</button>
+				<div class="notif_block_wrap">
+				<p class="notif_block">
+					<a href="#" class="auth_notif_emal hidden">Email не зарегистрирован!</a>
+					<a href="#" class="auth_notif_pass" id="fg_pass">Забыли пароль ?</a>
+				</p>
+				</div>
+				<a href="/index.php?route=account/register" class="secondary_btn" id="mo_reg_btn">Регистрация</a>
+			`);
+		}
+		
 	}, 300);
 	setTimeout(function(){
 		$( ".window-container" ).toggleClass('active');
 	},400);
-}
+};
 $('.link_f_popup').click(function(){
-	show_modal();
+	var modal_name = 'Введите номер телефона';
+	show_modal(modal_name, 'order');
 });
 $('.btn_absent').click(function(){
-	show_modal();
+	var modal_name = 'Введите номер телефона';
+	show_modal(modal_name, 'order');
 });
 
 function exit_popup(){
@@ -203,7 +229,59 @@ $(document).on('click', '#m_ord_btn', function () {
 		$(this).toggleClass("hidden");
 	}
 });
+$(document).on('click', '#fg_pass', function (e) {
+	e.preventDefault();
+	$('#mod_password').toggleClass("hidden");
+	modal_name = "Восстановление пароля";
+	$('.modal_name').text(modal_name);
+	$('#mo_enter_btn').toggleClass("hidden");
+	$('#mo_reg_btn').toggleClass("hidden");
+	
+	var recovery_mod = `
+		<button class="primary_btn" id="mo_send_btn">Отправить пароль</button>
+		<button class="primary_btn" id="mo_back_btn">Назад</button>`;
+	$(recovery_mod).insertAfter($('.window-container #mod_email'));
+
+	$(this).toggleClass("hidden");
+});
+$(document).on('click', '#mo_back_btn', function () {
+	$('#mod_password').toggleClass("hidden");
+	modal_name = "Вход, Регистрация";
+	$('.modal_name').text(modal_name);
+
+	$('#mo_enter_btn').toggleClass("hidden");
+	$('#mo_reg_btn').toggleClass("hidden");
+	$('#fg_pass').toggleClass("hidden");
+
+	$('#mo_send_btn').remove();
+	$('#mo_back_btn').remove();
+
+});
+$(document).on('click', '#mo_send_btn', function () {
+	if( $('#mod_email').val().length === 0 ){
+		console.log('empty input');
+	}else{
+		var ok = `<button class="primary_btn hidden" id="m_ok_btn">Ок</button>`;
+		var message = `Проверьте Вашу почту. Вам отправлено письмо с паролем от аккаунта.`;
+		
+		$(ok).insertAfter($('.window-container .modal_message'));
+		$('.modal_name').toggleClass("hidden");
+		$('.modal_message').toggleClass("hidden");
+		$('#mo_back_btn').toggleClass("hidden");
+		$('#mod_email').toggleClass("hidden");
+		$('#m_ok_btn').toggleClass("hidden");
+		$(this).toggleClass("hidden");
+	}
+});
+
 //--btn-buy-absent-end-//
+//--login-and-register--//
+$('#login_link').click(function(e){
+	e.preventDefault();
+	var modal_name = 'Вход, Регистрация';
+	show_modal(modal_name, 'authorization');
+});
+//--login-and-register--end//
 
 	/*FAQ*/
 	$('dd').hide();
