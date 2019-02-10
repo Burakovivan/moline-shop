@@ -1,4 +1,4 @@
-{% if not redirect %}
+{# {% if not redirect %}
 <div class="table-responsive">
   <table class="table table-bordered table-hover">
     <thead>
@@ -52,4 +52,26 @@
 <script type="text/javascript"><!--
 location = '{{ redirect }}';
 //--></script> 
-{% endif %} 
+{% endif %}  #}
+<div style="padding: 40px 0;">
+
+  <p style="
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+  ">Спасибо!</p>
+  <br>
+  <p style="
+  text-align: center;
+  ">Ваш заказ успешно оформлен. Мы свяжимся с вами в ближайшее время.
+</p><p style="
+text-align: center;
+">Номер вашего заказа #{{order_id}}
+</p>
+
+<button class="button_form primary_btn" style="
+display: block;
+margin: 0 auto;
+padding: 5px 36px;
+">Продолжить покупки</button>
+</div>

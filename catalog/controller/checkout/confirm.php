@@ -1,27 +1,65 @@
 <?php
 class ControllerCheckoutConfirm extends Controller {
+	private $translate = array(
+		'new_post'		=> 'Новая почта',
+		'delivAuto'		=> 'Delivery Auto',
+		'InTime'		=> 'Интайм',
+		'express'		=> 'Курьерская доставка по Киеву',
+		'self'			=> 'Самовывоз',
+		'other'			=> 'Другое',
+
+		'cash'			=> 'Наличные',
+		'cod'			=> 'Наложенный платеж',
+		'cashless'		=> 'Безналичный рассчет',
+	);
 	public function index() {
 		$redirect = '';
-		$data = json_decode( file_get_contents( 'php://input' ), true );
-		$this->session->data['shipping_address']['city']		= $data['shipping_address']['city'];
-		$this->session->data['shipping_address']['address_1']	= $data['shipping_address']['address_1'];
-		$this->session->data['shipping_address']['firstname']	= $data['shipping_address']['firstname'];
-		$this->session->data['shipping_address']['country']		= $data['shipping_address']['country'];
+		if(!isset($this->request->get['checkout']))
+		{
+
 		
-		$this->session->data['payment_address']['city']			= $data['payment_address']['city'];
-		$this->session->data['payment_address']['address_1']	= $data['payment_address']['address_1'];
-		$this->session->data['payment_address']['firstname']	= $data['payment_address']['firstname'];
-		$this->session->data['payment_address']['country']		= $data['payment_address']['country'];
+		$dataJson = json_decode( file_get_contents( 'php://input' ), true );
+		$this->session->data['shipping_address']['city']			= $dataJson['shipping_address']['city'];
+		$this->session->data['shipping_address']['address_1']		= $dataJson['shipping_address']['address_1'];
+		$this->session->data['shipping_address']['firstname']		= $dataJson['shipping_address']['firstname'];
+		$this->session->data['shipping_address']['country']			= $dataJson['shipping_address']['country'];
+		$this->session->data['shipping_address']['address_2']		= '';
+		$this->session->data['shipping_address']['zone']			= '';
+		$this->session->data['shipping_address']['zone_id']			= '';
+		$this->session->data['shipping_address']['country_id']		= '';
+		$this->session->data['shipping_address']['postcode']		= '';
+		$this->session->data['shipping_address']['address_format']	= '';
+		$this->session->data['shipping_address']['custom_field']	= '';
+		$this->session->data['shipping_address']['company']			= '';
+		$this->session->data['shipping_address']['lastname']		= '';
 		
-		$this->session->data['payment_method']['title']			= $data['payment_method']['title'];
+		$this->session->data['payment_address']['city']				= $dataJson['payment_address']['city'];
+		$this->session->data['payment_address']['address_1']		= $dataJson['payment_address']['address_1'];
+		$this->session->data['payment_address']['firstname']		= $dataJson['payment_address']['firstname'];
+		$this->session->data['payment_address']['country']			= $dataJson['payment_address']['country'];
+		$this->session->data['payment_address']['address_2']		= '';
+		$this->session->data['payment_address']['zone']				= '';
+		$this->session->data['payment_address']['zone_id']			= '';
+		$this->session->data['payment_address']['country_id']		= '';
+		$this->session->data['payment_address']['postcode']			= '';
+		$this->session->data['payment_address']['address_format']	= '';
+		$this->session->data['payment_address']['custom_field']		= '';
+		$this->session->data['payment_address']['company']			= '';
+		$this->session->data['payment_address']['lastname']			= '';
 		
-		$this->session->data['shipping_method']['title']		= $data['shipping_method']['title'];
+		$this->session->data['payment_method']['title']			= $this->translate[$dataJson['payment_method']['title']];
+		$this->session->data['payment_method']['code']			= $this->translate[$dataJson['payment_method']['title']];
 		
-		$this->session->data['guest']['firstname']				= $data['guest']['firstname'];
-		$this->session->data['guest']['email']					= $data['guest']['email'];
-		$this->session->data['guest']['telephone']				= $data['guest']['telephone'];
+		$this->session->data['shipping_method']['title']		= $this->translate[$dataJson['shipping_method']['title']];
+		$this->session->data['shipping_method']['code']			= $this->translate[$dataJson['shipping_method']['title']];
 		
-		$this->session->data['comment']							= $data['comment'];
+		$this->session->data['guest']['firstname']				= $dataJson['guest']['firstname'];
+		$this->session->data['guest']['email']					= $dataJson['guest']['email'];
+		$this->session->data['guest']['telephone']				= $dataJson['guest']['telephone'];
+		$this->session->data['guest']['lastname']				= '';
+		$this->session->data['guest']['custom_field']			= '';
+		
+		$this->session->data['comment']							= $dataJson['comment'];
 		
 		// return;
 
@@ -149,7 +187,7 @@ class ControllerCheckoutConfirm extends Controller {
 				$order_data['custom_field'] = json_decode($customer_info['custom_field'], true);
 			} elseif (isset($this->session->data['guest'])) {
 				$order_data['customer_id'] = 0;
-				$order_data['customer_group_id'] = $this->session->data['guest']['customer_group_id'];
+				$order_data['customer_group_id'] = 1; //$this->session->data['guest']['customer_group_id'];
 				$order_data['firstname'] = $this->session->data['guest']['firstname'];
 				$order_data['lastname'] = $this->session->data['guest']['lastname'];
 				$order_data['email'] = $this->session->data['guest']['email'];
@@ -342,10 +380,13 @@ class ControllerCheckoutConfirm extends Controller {
 
 			$this->load->model('checkout/order');
 
-			$this->session->data['order_id'] = $this->model_checkout_order->addOrder($order_data);
-			var_dump($order_data);
-			var_dump($this->session->data);
-
+			$order_id = $this->model_checkout_order->addOrder($order_data);
+			$this->session->data['order_id'] = $order_id;
+			$data['order_id'] = $order_id;
+			$this->model_checkout_order->addOrderHistory($order_id, 1);
+			// var_dump($order_data);
+			// var_dump($this->session->data);
+		}
 			$this->load->model('tool/upload');
 
 			$data['products'] = array();
@@ -435,6 +476,6 @@ class ControllerCheckoutConfirm extends Controller {
 			$data['redirect'] = $redirect;
 		}
 
-		$this->response->setOutput($this->load->view('checkout/confirm', $data));
+		$this->response->setOutput($this->load->view('checkout/confirm',$data));
 	}
 }
