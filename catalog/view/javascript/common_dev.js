@@ -338,14 +338,19 @@ $(function () {
 		}
 	});
 
-	//--btn-buy-absent-end-//
-	//--login-and-register--//
-	$('#login_link').click(function (e) {
-		e.preventDefault();
-		var modal_name = 'Вход, Регистрация';
-		show_modal(modal_name, 'authorization');
-	});
-	//--login-and-register--end//
+//--btn-buy-absent-end-//
+//--login-and-register--//
+$('#login_link').click(function(e){
+	e.preventDefault();
+	var modal_name = 'Вход, Регистрация';
+	show_modal(modal_name, 'authorization');
+});
+$('#register_link').click(function(e){
+	e.preventDefault();
+	var modal_name = 'Вход, Регистрация';
+	show_modal(modal_name, 'authorization');
+});
+//--login-and-register--end//
 
 	/*FAQ*/
 	$('dd').hide();
