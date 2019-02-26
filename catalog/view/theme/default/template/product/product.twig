@@ -151,7 +151,7 @@
 							{#pod zakaz#}
 							{% if stock_status_id == 8 %}
 								<div class="col-md-10 col-sm-8">
-									<button class="primary_btn btn_buy main_btn_buy btn_order_prod link_f_popup">Заказать
+									<button class="primary_btn btn_buy main_btn_buy btn_order_prod link_f_popup" data-text="Под заказ">Заказать
 										<div class="massage" id="cart-message">Вы заказали 1 штуку, спасибо, смотри корзину</div>
 									</button>
 									<div class="prod_ost">115 ед. остаток на складе</div>
@@ -159,15 +159,15 @@
 							{% endif %}
 							{#net v nalichii#}
 							{% if stock_status_id == 5 %}
-								<div class="col-md-10 col-sm-8">
-									<button class="primary_btn btn_buy main_btn_buy btn_absent btn_order_prod">Сообщить когда появится</button>
+								<div class="col-md-10 col-sm-8" >
+									<button class="primary_btn btn_buy main_btn_buy btn_absent btn_order_prod" data-text="Сообщить (товар закончился)">Сообщить когда появится</button>
 								</div> 
 							{% endif %}
 
 							{#skoro v prodazhe#}
 							{% if stock_status_id == 6 %}
 								<div class="col-md-10 col-sm-8">
-									<button class="primary_btn btn_buy main_btn_buy btn_absent btn_order_prod">Сообщить когда появится</button>
+									<button class="primary_btn btn_buy main_btn_buy btn_absent btn_order_prod"  data-text="Сообщить (скоро в продаже)">Сообщить когда появится</button>
 								</div> 
 							{% endif %}
 					</div>

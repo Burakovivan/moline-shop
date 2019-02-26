@@ -11,14 +11,17 @@ class ControllerCheckoutConfirm extends Controller {
 		'cash'			=> 'Наличные',
 		'cod'			=> 'Наложенный платеж',
 		'cashless'		=> 'Безналичный рассчет',
+		''				=> ''
 	);
 	public function index() {
 		$redirect = '';
 		if(!isset($this->request->get['checkout']))
 		{
 
-		
-		$dataJson = json_decode( file_get_contents( 'php://input' ), true );
+		$fileContent = file_get_contents( 'php://input' );
+		$dataJson = json_decode( $fileContent, true );
+		// var_dump($fileContent);
+		// var_dump($dataJson);
 		$this->session->data['shipping_address']['city']			= $dataJson['shipping_address']['city'];
 		$this->session->data['shipping_address']['address_1']		= $dataJson['shipping_address']['address_1'];
 		$this->session->data['shipping_address']['firstname']		= $dataJson['shipping_address']['firstname'];
@@ -60,19 +63,29 @@ class ControllerCheckoutConfirm extends Controller {
 		$this->session->data['guest']['custom_field']			= '';
 		
 		$this->session->data['comment']							= $dataJson['comment'];
-		
+		$preorder = false;
+		if(isset($dataJson['pre-order'])){
+			$preorder = true;
+			$preOrderProductId = $dataJson['pre-order']['product_id'];
+			// var_dump($preOrderProductId);
+			try{
+				$this->cart->add($preOrderProductId, 1);
+			}catch(Exception $ex){
+					// var_dump($ex);
+			}
+		}
 		// return;
 
 		if ($this->cart->hasShipping()) {
 			// Validate if shipping address has been set.
 			if (!isset($this->session->data['shipping_address'])) {
 				$redirect = $this->url->link('checkout/checkout', '', true);
-			}
+		}
 
 			// Validate if shipping method has been set.
 			if (!isset($this->session->data['shipping_method'])) {
 				$redirect = $this->url->link('checkout/checkout', '', true);
-			}
+		}
 		} else {
 			unset($this->session->data['shipping_address']);
 			unset($this->session->data['shipping_method']);
@@ -89,29 +102,28 @@ class ControllerCheckoutConfirm extends Controller {
 		}
 
 		// Validate cart has products and has stock.
-		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || ($preorder ? false : (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout')))) {
 			$redirect = $this->url->link('checkout/cart');
 		}
-
 		// Validate minimum quantity requirements.
 		$products = $this->cart->getProducts();
-
+		// var_dump($products);
 		foreach ($products as $product) {
 			$product_total = 0;
-
+			
 			foreach ($products as $product_2) {
 				if ($product_2['product_id'] == $product['product_id']) {
 					$product_total += $product_2['quantity'];
 				}
 			}
-
+			
 			if ($product['minimum'] > $product_total) {
 				$redirect = $this->url->link('checkout/cart');
-
+				
 				break;
 			}
 		}
-
+		
 		if (!$redirect) {
 			$order_data = array();
 
@@ -379,11 +391,17 @@ class ControllerCheckoutConfirm extends Controller {
 			}
 
 			$this->load->model('checkout/order');
-
+			
 			$order_id = $this->model_checkout_order->addOrder($order_data);
+			echo($order_id);
 			$this->session->data['order_id'] = $order_id;
 			$data['order_id'] = $order_id;
-			$this->model_checkout_order->addOrderHistory($order_id, 1);
+			try{
+				$this->model_checkout_order->addOrderHistory($order_id, 1);
+				$this->cart->clear();
+			}catch(Exception $ex){
+				// var_dump($ex);
+			}
 			// var_dump($order_data);
 			// var_dump($this->session->data);
 		}
@@ -475,7 +493,7 @@ class ControllerCheckoutConfirm extends Controller {
 		} else {
 			$data['redirect'] = $redirect;
 		}
-
+		$data['home_link'] = $this->url->link('common/home');
 		$this->response->setOutput($this->load->view('checkout/confirm',$data));
 	}
 }

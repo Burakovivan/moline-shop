@@ -1,10 +1,10 @@
-function ChekcProductQuantity(el,isCart){
+function ChekcProductQuantity(el, isCart) {
 	var value = parseInt(el[0].value) || 0;
 	var min = el.attr('min') || false;
 	var max = el.attr('max') || false;
 	if (value < min && min) {
 		el[0].value = min;
-		if(isCart){
+		if (isCart) {
 			alert(min + "шт. это минимальное количество для заказа!");
 		}
 	}
@@ -24,7 +24,7 @@ $(function () {
 
 		function init(el) {
 			el.blur(function () {
-				ChekcProductQuantity(el,isCart);
+				ChekcProductQuantity(el, isCart);
 			});
 			if (isCart) {
 				return;
@@ -73,7 +73,7 @@ $(function () {
 
 
 	$(".inner_list_img_wrap").slick({
-		
+
 		// dots: true,
 		infinite: true,
 		slidesToShow: 4,
@@ -147,33 +147,33 @@ $(function () {
 	$('.checkOutSelector').css('outline', '1px solid black');
 	$('.select').toggleClass('select_ch');
 
-//--btn-buy-absent--//
+	//--btn-buy-absent--//
 
-function show_modal(modal_name, mode){
-	var tmp_popup = '<div class="popup-window"></div>';
-	var modal_name = modal_name;
-	var mode = mode;
-	// $(tmp_popup).insertAfter($('.overlay'));
-	if(mode === 'order'){
-		$(tmp_popup).insertBefore($('.s_product'));
-	}else{
-		$(tmp_popup).insertAfter($('.overlay'));
-	}
-	setTimeout(function(){
-		$('.popup-window').toggleClass('active');
-		$('.popup-window').toggleClass('show_pop');
-	},200);
-	setTimeout(function(){
-		$( ".popup-window" ).append("<div class='window-container'></div>");
-		$( ".window-container" ).append('<svg id="modal_exit" width="21px" height="21px" viewBox="0 0 21 21" version="1.1"><title>EBA93EB7-E714-432B-AF2F-5DA3BB321A8D</title><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="1.1.Produkt-ended---Large-desktop" transform="translate(-875.000000, -499.000000)" fill="#9E9E9E"><path d="M895.506534,517.102174 L893.102538,519.503833 C892.783237,519.823175 892.342548,520 891.899221,520 C891.458532,520 891.015205,519.823175 890.698542,519.503833 L885.5,514.307277 L880.304097,519.503833 C879.987434,519.823175 879.544107,520 879.103418,520 C878.66009,520 878.219402,519.823175 877.900101,519.503833 L875.496105,517.102174 C875.176803,516.782833 875,516.342089 875,515.898706 C875,515.457962 875.176803,515.014578 875.496105,514.697876 L880.694647,509.49868 L875.496105,504.299485 C875.176803,503.982782 875,503.539399 875,503.098655 C875,502.655272 875.176803,502.214528 875.496105,501.895187 L877.900101,499.493528 C878.219402,499.174186 878.66009,499 879.103418,499 C879.544107,499 879.987434,499.174186 880.304097,499.493528 L885.5,504.690084 L890.698542,499.493528 C891.015205,499.174186 891.458532,499 891.899221,499 C892.342548,499 892.783237,499.174186 893.102538,499.493528 L895.506534,501.895187 C895.825836,502.214528 896,502.655272 896,503.098655 C896,503.539399 895.825836,503.982782 895.506534,504.299485 L890.307992,509.49868 L895.506534,514.697876 C895.825836,515.014578 896,515.457962 896,515.898706 C896,516.342089 895.825836,516.782833 895.506534,517.102174" id="Fill-1"></path></g></g></svg>');
-		if(mode === 'order'){
-			$( ".window-container" ).append('<div class="top_line">	<div class="modal_name ">'+modal_name+'</div><div class="modal_message hidden">Ваша заявка принята. Мы свяжемся с Вами как только этот товар появится на складе.</div></div>');
-			$( ".window-container" ).append('<input type="text" name="phone" placeholder="Телефон" class="" id="mod_phone"><button class="primary_btn" id="m_ord_btn">Оформить</button><button class="primary_btn hidden" id="m_ok_btn">Ок</button>');
-		}else if(mode === 'authorization'){
-			$( ".window-container" ).addClass('authorization');
-			$( ".window-container" ).append('<div class="top_line">	<div class="modal_name ">'+modal_name+'</div><div class="modal_message hidden">Проверьте Вашу почту. Вам отправлено письмо с паролем от аккаунта.</div></div>');
-			// $( ".window-container" ).append('<input type="emal" name="emal" placeholder="Emal" class="" id="mod_email"><input type="password" name="password" placeholder="Пароль" class="" id="mod_пароль"><button class="primary_btn" id="m_ord_btn">Вход</button><div><p></p></div><button class="secondary_btn" id="m_ord_btn">Регистрация</button><button class="primary_btn hidden" id="m_ok_btn">Ок</button>');
-			$( ".window-container" ).append(`
+	function show_modal(modal_name, mode) {
+		var tmp_popup = '<div class="popup-window"></div>';
+		var modal_name = modal_name;
+		var mode = mode;
+		// $(tmp_popup).insertAfter($('.overlay'));
+		if (mode === 'order') {
+			$(tmp_popup).insertBefore($('.s_product'));
+		} else {
+			$(tmp_popup).insertAfter($('.overlay'));
+		}
+		setTimeout(function () {
+			$('.popup-window').toggleClass('active');
+			$('.popup-window').toggleClass('show_pop');
+		}, 200);
+		setTimeout(function () {
+			$(".popup-window").append("<div class='window-container'></div>");
+			$(".window-container").append('<svg id="modal_exit" width="21px" height="21px" viewBox="0 0 21 21" version="1.1"><title>EBA93EB7-E714-432B-AF2F-5DA3BB321A8D</title><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="1.1.Produkt-ended---Large-desktop" transform="translate(-875.000000, -499.000000)" fill="#9E9E9E"><path d="M895.506534,517.102174 L893.102538,519.503833 C892.783237,519.823175 892.342548,520 891.899221,520 C891.458532,520 891.015205,519.823175 890.698542,519.503833 L885.5,514.307277 L880.304097,519.503833 C879.987434,519.823175 879.544107,520 879.103418,520 C878.66009,520 878.219402,519.823175 877.900101,519.503833 L875.496105,517.102174 C875.176803,516.782833 875,516.342089 875,515.898706 C875,515.457962 875.176803,515.014578 875.496105,514.697876 L880.694647,509.49868 L875.496105,504.299485 C875.176803,503.982782 875,503.539399 875,503.098655 C875,502.655272 875.176803,502.214528 875.496105,501.895187 L877.900101,499.493528 C878.219402,499.174186 878.66009,499 879.103418,499 C879.544107,499 879.987434,499.174186 880.304097,499.493528 L885.5,504.690084 L890.698542,499.493528 C891.015205,499.174186 891.458532,499 891.899221,499 C892.342548,499 892.783237,499.174186 893.102538,499.493528 L895.506534,501.895187 C895.825836,502.214528 896,502.655272 896,503.098655 C896,503.539399 895.825836,503.982782 895.506534,504.299485 L890.307992,509.49868 L895.506534,514.697876 C895.825836,515.014578 896,515.457962 896,515.898706 C896,516.342089 895.825836,516.782833 895.506534,517.102174" id="Fill-1"></path></g></g></svg>');
+			if (mode === 'order') {
+				$(".window-container").append('<div class="top_line">	<div class="modal_name ">' + modal_name + '</div><div class="modal_message hidden">Ваша заявка принята. Мы свяжемся с Вами как только этот товар появится на складе.</div></div>');
+				$(".window-container").append('<input type="text" name="phone" placeholder="Телефон" class="" id="mod_phone"><button class="primary_btn" id="m_ord_btn">Оформить</button><button class="primary_btn hidden" id="m_ok_btn">Ок</button>');
+			} else if (mode === 'authorization') {
+				$(".window-container").addClass('authorization');
+				$(".window-container").append('<div class="top_line">	<div class="modal_name ">' + modal_name + '</div><div class="modal_message hidden">Проверьте Вашу почту. Вам отправлено письмо с паролем от аккаунта.</div></div>');
+				// $( ".window-container" ).append('<input type="emal" name="emal" placeholder="Emal" class="" id="mod_email"><input type="password" name="password" placeholder="Пароль" class="" id="mod_пароль"><button class="primary_btn" id="m_ord_btn">Вход</button><div><p></p></div><button class="secondary_btn" id="m_ord_btn">Регистрация</button><button class="primary_btn hidden" id="m_ok_btn">Ок</button>');
+				$(".window-container").append(`
 				<input type="emal" name="emal" placeholder="Emal" class="" id="mod_email">
 				<input type="password" name="password" placeholder="Пароль" class="" id="mod_password">
 				<button class="primary_btn" id="mo_enter_btn">Вход</button>
@@ -185,103 +185,167 @@ function show_modal(modal_name, mode){
 				</div>
 				<a href="/index.php?route=account/register" class="secondary_btn" id="mo_reg_btn">Регистрация</a>
 			`);
-		}
-		
-	}, 300);
-	setTimeout(function(){
-		$( ".window-container" ).toggleClass('active');
-	},400);
-};
-$('.link_f_popup').click(function(){
-	var modal_name = 'Введите номер телефона';
-	show_modal(modal_name, 'order');
-});
-$('.btn_absent').click(function(){
-	var modal_name = 'Введите номер телефона';
-	show_modal(modal_name, 'order');
-});
+			}
 
-function exit_popup(){
-	$( ".popup-window" ).toggleClass('show_pop');
-	setTimeout(function(){
-		$( ".popup-window" ).remove();
-	},400);
-}
-$(document).on('click', '#modal_exit', function () {
-	$(this).parent().toggleClass('active');
-	setTimeout(function(){
-		exit_popup();
-	}, 300);
-});
+		}, 300);
+		setTimeout(function () {
+			$(".window-container").toggleClass('active');
+		}, 400);
+	};
+	$('.link_f_popup').click(function () {
+		var modal_name = 'Введите номер телефона';
+		show_modal(modal_name, 'order');
+	});
+	$('.btn_absent').click(function () {
+		var modal_name = 'Введите номер телефона';
+		show_modal(modal_name, 'order');
+	});
 
-$(document).on('click', '#m_ok_btn', function () {
-	exit_popup();
-});
-
-$(document).on('click', '#m_ord_btn', function () {
-	if( $('#mod_phone').val().length === 0 ){
-		console.log('empty input');
-	}else{
-		$('#mod_phone').toggleClass("hidden");
-		$('.modal_name').toggleClass("hidden");
-		$('.modal_message').toggleClass("hidden");
-		$('#m_ok_btn').toggleClass("hidden");
-		$(this).toggleClass("hidden");
+	function exit_popup() {
+		$(".popup-window").toggleClass('show_pop');
+		setTimeout(function () {
+			$(".popup-window").remove();
+		}, 400);
 	}
-});
-$(document).on('click', '#fg_pass', function (e) {
-	e.preventDefault();
-	$('#mod_password').toggleClass("hidden");
-	modal_name = "Восстановление пароля";
-	$('.modal_name').text(modal_name);
-	$('#mo_enter_btn').toggleClass("hidden");
-	$('#mo_reg_btn').toggleClass("hidden");
-	
-	var recovery_mod = `
+	$(document).on('click', '#modal_exit', function () {
+		$(this).parent().toggleClass('active');
+		setTimeout(function () {
+			exit_popup();
+		}, 300);
+	});
+
+
+	$('input.invalid').on('input change', function (e) {
+		$(e.currentTarget).removeClass('invalid');
+	});
+	$(document).on('click', '#m_ok_btn', function () {
+		exit_popup();
+	});
+
+	$(document).on('click', '#m_ord_btn', function (e) {
+		var phone = $('#mod_phone').val();
+		var product_id =  $("input[name=product_id]").val();
+		if (phone.length > 9 && phone.length < 14 && product_id) {
+			var formModel = {
+				shipping_address: {
+					city: "",
+					address_1: "",
+					firstname: "",
+					country: "UA",
+				},
+				shipping_method: {
+					title: ""
+				},
+				payment_address: {
+					city: "",
+					address_1: "",
+					firstname: "",
+					country: "UA",
+				},
+				guest: {
+					firstname: $(".btn_order_prod").data('text'),
+					email: "fake@fake.fake",
+					telephone: phone,
+				},
+				comment: "",
+				payment_method: {
+					title: "",
+				},
+				"pre-order": {
+					product_id: product_id
+				}
+			};
+
+			var body = $("html, body");
+			body.stop().animate({ scrollTop: 0 }, 500, 'swing');
+			// $('.cart').show();
+			// $(".wrap_cart_wrapper").show();
+			// $(".wrap_cart_wrapper").css("background", "rgba(50, 50, 50, 0.3) url(img/loader.svg) no-repeat center");
+			// $(".wrap_cart_wrapper").css("position", "absolute");
+			$.ajax({
+				url: '/index.php?route=checkout/confirm',
+				method: 'POST',
+				contentType: "application/json",
+				dataType: "html",
+				data: JSON.stringify(formModel),
+				success: function (data) {
+					if (data) {
+						$('.form_order').remove()
+						$('.cart_checkout').parent().html(data);
+						setTimeout(function () {
+
+							$(".wrap_cart_wrapper").hide();
+							$('.cart').hide();
+						}, 500);
+						// $('#mod_phone').toggleClass("hidden");
+						// $('.modal_name').toggleClass("hidden");
+						// $('.modal_message').toggleClass("hidden");
+						// $('#m_ok_btn').toggleClass("hidden");
+						// $(this).toggleClass("hidden");
+						// window.location = '/index.php?route=checkout/confirm&order_id='+data['order_id'];
+					}
+				}
+			})
+
+		} else {
+			$('#mod_phone').addClass("invalid");
+			console.log('empty input');
+		}
+	});
+
+	$(document).on('click', '#fg_pass', function (e) {
+		e.preventDefault();
+		$('#mod_password').toggleClass("hidden");
+		modal_name = "Восстановление пароля";
+		$('.modal_name').text(modal_name);
+		$('#mo_enter_btn').toggleClass("hidden");
+		$('#mo_reg_btn').toggleClass("hidden");
+
+		var recovery_mod = `
 		<button class="primary_btn" id="mo_send_btn">Отправить пароль</button>
 		<button class="primary_btn" id="mo_back_btn">Назад</button>`;
-	$(recovery_mod).insertAfter($('.window-container #mod_email'));
+		$(recovery_mod).insertAfter($('.window-container #mod_email'));
 
-	$(this).toggleClass("hidden");
-});
-$(document).on('click', '#mo_back_btn', function () {
-	$('#mod_password').toggleClass("hidden");
-	modal_name = "Вход, Регистрация";
-	$('.modal_name').text(modal_name);
-
-	$('#mo_enter_btn').toggleClass("hidden");
-	$('#mo_reg_btn').toggleClass("hidden");
-	$('#fg_pass').toggleClass("hidden");
-
-	$('#mo_send_btn').remove();
-	$('#mo_back_btn').remove();
-
-});
-$(document).on('click', '#mo_send_btn', function () {
-	if( $('#mod_email').val().length === 0 ){
-		console.log('empty input');
-	}else{
-		var ok = `<button class="primary_btn hidden" id="m_ok_btn">Ок</button>`;
-		var message = `Проверьте Вашу почту. Вам отправлено письмо с паролем от аккаунта.`;
-		
-		$(ok).insertAfter($('.window-container .modal_message'));
-		$('.modal_name').toggleClass("hidden");
-		$('.modal_message').toggleClass("hidden");
-		$('#mo_back_btn').toggleClass("hidden");
-		$('#mod_email').toggleClass("hidden");
-		$('#m_ok_btn').toggleClass("hidden");
 		$(this).toggleClass("hidden");
-	}
-});
+	});
+	$(document).on('click', '#mo_back_btn', function () {
+		$('#mod_password').toggleClass("hidden");
+		modal_name = "Вход, Регистрация";
+		$('.modal_name').text(modal_name);
 
-//--btn-buy-absent-end-//
-//--login-and-register--//
-$('#login_link').click(function(e){
-	e.preventDefault();
-	var modal_name = 'Вход, Регистрация';
-	show_modal(modal_name, 'authorization');
-});
-//--login-and-register--end//
+		$('#mo_enter_btn').toggleClass("hidden");
+		$('#mo_reg_btn').toggleClass("hidden");
+		$('#fg_pass').toggleClass("hidden");
+
+		$('#mo_send_btn').remove();
+		$('#mo_back_btn').remove();
+
+	});
+	$(document).on('click', '#mo_send_btn', function () {
+		if ($('#mod_email').val().length === 0) {
+			console.log('empty input');
+		} else {
+			var ok = `<button class="primary_btn hidden" id="m_ok_btn">Ок</button>`;
+			var message = `Проверьте Вашу почту. Вам отправлено письмо с паролем от аккаунта.`;
+
+			$(ok).insertAfter($('.window-container .modal_message'));
+			$('.modal_name').toggleClass("hidden");
+			$('.modal_message').toggleClass("hidden");
+			$('#mo_back_btn').toggleClass("hidden");
+			$('#mod_email').toggleClass("hidden");
+			$('#m_ok_btn').toggleClass("hidden");
+			$(this).toggleClass("hidden");
+		}
+	});
+
+	//--btn-buy-absent-end-//
+	//--login-and-register--//
+	$('#login_link').click(function (e) {
+		e.preventDefault();
+		var modal_name = 'Вход, Регистрация';
+		show_modal(modal_name, 'authorization');
+	});
+	//--login-and-register--end//
 
 	/*FAQ*/
 	$('dd').hide();
@@ -322,17 +386,17 @@ $('#login_link').click(function(e){
 	// 	$(this).parent().find('.block_info').toggleClass('closed');
 	// });
 	$(".sb_block_name").click(function () {
-	
-		if(!$(this).parent().find('.block_info.closed').length > 0){
+
+		if (!$(this).parent().find('.block_info.closed').length > 0) {
 			console.log('one');
 			console.log('close');
 			var self = $(this).parent();
 			console.log(self);
 			self.find('.block_info').addClass('closed');
-			setTimeout(function(){
+			setTimeout(function () {
 				self.find('.block_info').addClass('dn');
 			}, 300);
-		}else{
+		} else {
 			console.log('two');
 			console.log(this);
 			$(this).parent().find('.block_info').removeClass('closed');
@@ -341,7 +405,7 @@ $('#login_link').click(function(e){
 	});
 
 	$(".rulet").click(function () {
-			
+
 	});
 
 	$(".more").click(function () {
@@ -377,7 +441,7 @@ $('#login_link').click(function(e){
 		$(this).closest(".clump").find(".sb_header_slide_inside").addClass("hide_link");
 	});
 
-		//Seo block
+	//Seo block
 	$(".more_seo").click(function () {
 		console.log('click more');
 		$(this).closest(".clump").find(".detail_seo").toggleClass("closed");
@@ -394,7 +458,7 @@ $('#login_link').click(function(e){
 		// $(this).closest(".clump").find(".slider_link_seo").toggleClass("less_seo");
 		// $(this).closest(".clump").find(".slider_link_seo").toggleClass("more_seo");
 	});
-	
+
 	$('.show_cat > p').on('click', function () {
 		filter = [];
 		$('input[name^=\'filter\']').each(function (idx, element) {
@@ -421,19 +485,19 @@ $('#login_link').click(function(e){
 	});
 
 	$('.styled-checkbox').click(function () {
-		if(!$(this).prop('checked')){
+		if (!$(this).prop('checked')) {
 			console.log('Checked!!');
 			$('.show_cat').addClass('checked!');
 			$('.show_cat').hide();
 			$(this).parent().find('.show_cat').removeClass('on');
 
-		}else{
-			if($(".show_cat.on").length > 0){
+		} else {
+			if ($(".show_cat.on").length > 0) {
 				console.log('exist open labels');
 				$('.show_cat').hide();
 			}
 			console.log('Unchecked!!');
-			
+
 			$(this).parent().find('.show_cat').show().css('right', '-184px');
 			$(this).parent().find('.show_cat').addClass('on');
 			$(this).parent().find('.show_cat').find('svg').show();
@@ -442,7 +506,7 @@ $('#login_link').click(function(e){
 		// $(this).parent().find('.show_cat').show().css('right', '-184px');
 		// $(this).parent().find('.show_cat').find('svg').show().hide();
 		// $(this).parent().find('.show_cat').find('svg').show();
-		
+
 		// setTimeout(function () {
 		// 	$(this).parent().find('.show_cat').find('svg').hide();
 		// }, 3000);
@@ -499,8 +563,8 @@ $('#login_link').click(function(e){
 		$('.overlay').toggleClass('show');
 	});
 	//checkout
-	$("button.submit_ord").click(function(e){
-e.preventDefault();
+	$("button.submit_ord").click(function (e) {
+		e.preventDefault();
 	});
 	//DropDownMenu
 	if ($(window).width() < 992) {
@@ -575,43 +639,43 @@ e.preventDefault();
 	// 	}
 	// });
 
-//For mobile menu
-if ($(window).width() < 769 ) {
-	$('.sidebarIconToggle').on('click', function () {
-		if(!$('#openSidebarMenu')[0].checked){
-			// $('.sidebarMenuInner .main-item .inner-list-wrap').css('display', 'inline-block');
-		}else{
-			console.log('unchecked');
-			// $('.sidebarMenuInner .main-item .inner-list-wrap').css('display', 'none');
+	//For mobile menu
+	if ($(window).width() < 769) {
+		$('.sidebarIconToggle').on('click', function () {
+			if (!$('#openSidebarMenu')[0].checked) {
+				// $('.sidebarMenuInner .main-item .inner-list-wrap').css('display', 'inline-block');
+			} else {
+				console.log('unchecked');
+				// $('.sidebarMenuInner .main-item .inner-list-wrap').css('display', 'none');
+				$('#sidebarMenu').removeClass('slide-mm');
+				$('.sidebarMenuInner .main-item').removeClass('mobile-active-item');
+			}
+		});
+
+		$('.sidebarMenuInner .main-item > a').on('click', function (e) {
+			e.preventDefault();
+			$('#sidebarMenu').addClass('slide-mm');
+			console.log('SLIDE!!');
+		});
+
+		$('.sidebarMenuInner .main-item a').on('click', function (e) {
+			// e.preventDefault();
+			console.log('mobile click');
+			$(this).parent().addClass('mobile-active-item');
+			$('.mobile-active-item').find('.inner-list-wrap').addClass('mobile-show');
+
+
+		});
+		$('.back_b').on('click', function () {
 			$('#sidebarMenu').removeClass('slide-mm');
-			$('.sidebarMenuInner .main-item').removeClass('mobile-active-item');
-		}
-	});
-
-	$('.sidebarMenuInner .main-item > a').on('click', function(e){
-		e.preventDefault();
-		$('#sidebarMenu').addClass('slide-mm');
-		console.log('SLIDE!!');
-	});
-
-	$('.sidebarMenuInner .main-item a').on('click', function(e){
-		// e.preventDefault();
-		console.log('mobile click');
-		$(this).parent().addClass('mobile-active-item');
-		$('.mobile-active-item').find('.inner-list-wrap').addClass('mobile-show');
-		
-		
-	});
-	$('.back_b').on('click', function(){
-		$('#sidebarMenu').removeClass('slide-mm');
-		$(this).parent().removeClass('mobile-active-item');
-		$(this).closest('.inner-list-wrap').toggleClass('this');
-		$(this).closest('.inner-list-wrap').removeClass('mobile-show');
-		$(this).closest('.inner-list-wrap').parent().removeClass('mobile-active-item');
-	});
-	console.log('click main');
-}
-//end of mobile menu
+			$(this).parent().removeClass('mobile-active-item');
+			$(this).closest('.inner-list-wrap').toggleClass('this');
+			$(this).closest('.inner-list-wrap').removeClass('mobile-show');
+			$(this).closest('.inner-list-wrap').parent().removeClass('mobile-active-item');
+		});
+		console.log('click main');
+	}
+	//end of mobile menu
 
 	//second level menu	
 	// $(".sidebarMenuInner .main-item").hover(function() {
@@ -1004,47 +1068,83 @@ if ($(window).width() < 769 ) {
 			$(".delivAuto_details .sel_1 ").append(select1);
 			$(".sel_1").addClass('remake1');
 		}
-		getDADeptList();
+		getDADeptList().then(
 
-		setTimeout(function () {
-			$('.delivAuto_delivery_dept').selectize();
-			// $('.delivAuto_delivery_city').selectize();										
-		}, 300);
-
+			function (response) {
+				if ($(".delivAuto_details #delivery_dept").length) {
+					$(".delivAuto_details #delivery_dept").empty();
+					response.data.sort(function (a, b) { return a > b });
+					response.data.forEach(function (city) {
+						var type = city.WarehouseType == 2 ? "Почтомат" : city.WarehouseType == 3 ? "Склад с наложеным платежом" : city.WarehouseType == 0 ? "Склад" : "";
+						$(".delivAuto_details #delivery_dept").append(new Option(city.name + ", " + type + ", " + city.address, city.id, false, false));
+					});
+					if (!$(".delivAuto_details #delivery_dept")[0].options.length) {
+						$(".delivAuto_details #delivery_dept").append(new Option("Нет отделений", "", true, true));
+					}
+					$(".delivAuto_details #delivery_dept")[0].options[0].selected = true;
+				}
+				$('.delivAuto_delivery_dept').selectize()
+			});
 
 	});
-	//
 
 
 	$('input[type=radio][name=delivery]').change(function () {
 		$("[class$=_details]").hide();
 		var deliveryType = $('input[type=radio][name=delivery]:checked').val();
-		$("." + deliveryType + "_details").show();
 		if (deliveryType == "new_post") {
 			if ($(".new_post_details #delivery_city").length ? !$(".new_post_details #delivery_city")[0].options.length : false) {
-				getNPCityList();
-				$('.new_post_details > div:nth-child(2) .select').addClass('sel_2');
-				$('.new_post_details #delivery_city').addClass('new_post_delivery_city');
-				$('.new_post_details #delivery_dept').addClass('new_post_delivery_dept');
+				getNPCityList().then(function (response) {
+					if ($(".new_post_details #delivery_city").length) {
+						$(".new_post_details #delivery_city").empty();
+						response.data.forEach(function (city) {
+							$(".new_post_details #delivery_city").append(new Option(city.DescriptionRu, city.Ref, false, false));
+						});
+						$(".new_post_details #delivery_city").change();
 
-				setTimeout(function () {
-					$('.new_post_delivery_city').selectize();
-				}, 1000);
+						$('.new_post_details > div:nth-child(2) .select').addClass('sel_2');
+						$('.new_post_details #delivery_city').addClass('new_post_delivery_city');
+						$('.new_post_details #delivery_dept').addClass('new_post_delivery_dept');
+						$('.new_post_delivery_city').selectize();
+						$("." + deliveryType + "_details").show();
+					}
+					console.log('np done')
+				});
+			} else {
+				$("." + deliveryType + "_details").show();
 			}
+
 		}
 		if (deliveryType == "delivAuto") {
 			if ($(".delivAuto_details #delivery_city").length ? !$(".delivAuto_details #delivery_city")[0].options.length : false) {
-				getDACityList();
+				getDACityList().then(
+					function (response) {
+						if ($(".delivAuto_details #delivery_city").length) {
+							$(".delivAuto_details #delivery_city").empty();
+							response.data = response.data.filter(function (x) { return x.IsWarehouse; });
+							response.data.forEach(function (city) {
+								$(".delivAuto_details #delivery_city").append(new Option(city.name, city.id, false, false));
+							});
+							$(".delivAuto_details #delivery_city").change();
+						}
 
-				console.log('tttt');
-				$('.delivAuto_details > div:nth-child(2) .select').addClass('sel_1');
-				$('.delivAuto_details #delivery_city').addClass('delivAuto_delivery_city');
-				$('.delivAuto_details #delivery_dept').addClass('delivAuto_delivery_dept');
+						$('.delivAuto_details > div:nth-child(2) .select').addClass('sel_1');
+						$('.delivAuto_details #delivery_city').addClass('delivAuto_delivery_city');
+						$('.delivAuto_details #delivery_dept').addClass('delivAuto_delivery_dept');
 
-				setTimeout(function () {
-					$('.delivAuto_delivery_city').selectize();
-				}, 5000);
+						$('.delivAuto_delivery_city').selectize();
+						$("." + deliveryType + "_details").show();
+					}
+				)
+			} else {
+				$("." + deliveryType + "_details").show();
 			}
+		}
+		if (deliveryType == "InTime") {
+			$(".InTime_details").show();
+		}
+		if (deliveryType == "express") {
+			$(".express_details").show();
 		}
 	});
 	//delivery end
@@ -1099,7 +1199,7 @@ function updateCommonCart(idList, callback = null) {
 }
 function updateCheckoutCart(e, type) {
 	e.preventDefault();
-	
+
 	var quantity = $(e.currentTarget).parents(".item-test").find(".input-number").val();
 	if (type == "inc") {
 		quantity++;
@@ -1110,8 +1210,7 @@ function updateCheckoutCart(e, type) {
 	$(e.currentTarget).parents(".item-test").find(".input-number").val(quantity);
 	var element = $(e.currentTarget).parent().find('.input-number');
 	var newQuantity = ChekcProductQuantity(element, true);
-	if(newQuantity != quantity)
-	{
+	if (newQuantity != quantity) {
 		return;
 	}
 	$(".wrap_cart_wrapper").show();
@@ -1174,12 +1273,12 @@ function initCommonCart() {
 	});
 	$(".wrap_cart").find(".input-number-increment, .input-number-decrement").unbind('click')
 	$(".wrap_cart").find(".input-number-increment").on("click", function (e) {
-		
+
 		updateCheckoutCart(e, "inc");
 	});
 
 	$(".wrap_cart").find(".input-number-decrement").on("click", function (e) {
-	
+
 		updateCheckoutCart(e, "dec");
 	});
 
@@ -1213,19 +1312,11 @@ function getNPCityList(city) {
 		modelName: "Address",
 		calledMethod: "getCities",
 	}
-	$.ajax({
+	return $.ajax({
 		url: 'https://api.novaposhta.ua/v2.0/json/',
 		data: JSON.stringify(request),
 		method: "POST",
-		success: function (response) {
-			if ($(".new_post_details #delivery_city").length) {
-				$(".new_post_details #delivery_city").empty();
-				response.data.forEach(function (city) {
-					$(".new_post_details #delivery_city").append(new Option(city.DescriptionRu, city.Ref, false, false));
-				});
-				$(".new_post_details #delivery_city").change();
-			}
-		}
+
 	})
 }
 function getNPDeptList(city) {
@@ -1264,40 +1355,18 @@ function getDACityList(city) {
 		modelName: "Address",
 		calledMethod: "getCities",
 	}
-	$.ajax({
+	return $.ajax({
 		url: 'https://www.delivery-auto.com/api/v4/Public/GetAreasList?culture=ru-RU&fl_all=true&country=1',//&regionId={regionId}',
 		method: "Get",
-		success: function (response) {
-			if ($(".delivAuto_details #delivery_city").length) {
-				$(".delivAuto_details #delivery_city").empty();
-				response.data = response.data.filter(function (x) { return x.IsWarehouse; });
-				response.data.forEach(function (city) {
-					$(".delivAuto_details #delivery_city").append(new Option(city.name, city.id, false, false));
-				});
-				$(".delivAuto_details #delivery_city").change();
-			}
-		}
+
 	})
 }
 function getDADeptList(city) {
 
-	$.ajax({
+	return $.ajax({
 		url: 'https://www.delivery-auto.com/api/v4/Public/GetWarehousesListInDetail?culture=ru-RU&CityId=' + $(".delivAuto_details #delivery_city").val() + '&country=1',
 		method: "Get",
-		success: function (response) {
-			if ($(".delivAuto_details #delivery_dept").length) {
-				$(".delivAuto_details #delivery_dept").empty();
-				response.data.sort(function (a, b) { return a > b });
-				response.data.forEach(function (city) {
-					var type = city.WarehouseType == 2 ? "Почтомат" : city.WarehouseType == 3 ? "Склад с наложеным платежом" : city.WarehouseType == 0 ? "Склад" : "";
-					$(".delivAuto_details #delivery_dept").append(new Option(city.name + ", " + type + ", " + city.address, city.id, false, false));
-				});
-				if (!$(".delivAuto_details #delivery_dept")[0].options.length) {
-					$(".delivAuto_details #delivery_dept").append(new Option("Нет отделений", "", true, true));
-				}
-				$(".delivAuto_details #delivery_dept")[0].options[0].selected = true;
-			}
-		}
+
 	})
 }
 

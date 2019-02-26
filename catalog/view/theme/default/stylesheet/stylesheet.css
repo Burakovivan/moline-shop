@@ -761,3 +761,19 @@ h2.price {
     background-color: #df5c39;
 }
 
+.invalid{
+	background-color: rgba(225,0,0,0.05) !important;
+    outline: 2px auto rgba(225,0,0,0.8) !important;
+}
+.selectize-input{
+	height: 43px !important;
+}
+.selectize-input input{
+	text-transform: uppercase;
+	height: 38px !important;
+	font-size: 14px !important;
+	line-height: 1 !important;
+}
+.form_order .select {
+	width: unset !important;
+}

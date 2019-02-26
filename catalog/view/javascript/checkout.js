@@ -1,4 +1,19 @@
 chekcout = {
+    submitMobile: function () {
+        var phone
+        var formModel = {
+            name: "Имя Фамилия???",
+            phone: phone,
+            payment: {
+                type: "none",
+            },
+            shipping: {
+                type: "none",
+                city: "none",
+                dept: "none",
+            }
+        }
+    },
     submit: function () {
         var form = $(".form_wrap form")[0];
         var formModel = {
@@ -15,30 +30,56 @@ chekcout = {
             },
             comment: form['comment-order'].value,
         }
+
+        if (formModel.shipping.type == "express") {
+            formModel.shipping.city = "Киев";
+            formModel.shipping.dept = $(form).find("." + form.delivery.value + "_details #delivery_dept").val();
+        }
+        if (formModel.shipping.type == "self") {
+            formModel.shipping.city = "Киев";
+            formModel.shipping.dept = $(form).find(".delivery label[for=self] .sub_info").text()
+        }
+        if (formModel.shipping.type == "InTime") {
+            formModel.shipping.city = $(form).find("." + form.delivery.value + "_details #delivery_city").val();
+            formModel.shipping.dept = $(form).find("." + form.delivery.value + "_details #delivery_dept").val();
+        }
         if (this.validate(formModel)) {
             this.send(formModel);
         }
     },
     validate: function (model) {
-        if (!validateText(model.name)) {
-            return false;
+        var returnValue = true;
+        if (!validateName(model.name)) {
+            $('#IF').addClass("invalid");
+            returnValue = false;
         }
         if (!validatePhone(model.phone)) {
-            return false;
+            $('#phone').addClass("invalid");
+            returnValue = false;
         }
         if (!validateEmail(model.email)) {
-            return false;
+            $('#Email').addClass("invalid");
+            returnValue = false;
         }
         if (!validatePaymentType(model.payment.type)) {
-            return false;
+            returnValue = false;
         }
         if (!validateShippingType(model.shipping.type)) {
-            return false;
+            $('#IF').addClass("invalid");
+            returnValue = false;
         }
         if (!validateShipping(model.shipping.type, model.shipping.city, model.shipping.dept)) {
-            return false;
+            $('#IF').addClass("invalid");
+            returnValue = false;
         }
-        return true;
+        if (!returnValue) {
+            $('input.invalid').each(function (idx, element) {
+                element.addEventListener("input", function (e) {
+                    $(e.currentTarget).removeClass('invalid');
+                })
+            });
+        }
+        return returnValue;
     },
     map: function (model) {
         return {
@@ -66,20 +107,31 @@ chekcout = {
             payment_method: {
                 title: model.payment.type,
             },
+            
         }
     },
     send: function (model) {
         var modelToSent = this.map(model);
+
+        var body = $("html, body");
+        body.stop().animate({ scrollTop: 0 }, 500, 'swing');
+        $(".wrap_cart_wrapper").show();
+        $(".wrap_cart_wrapper").css("background", "rgba(50, 50, 50, 0.3) url(img/loader.svg) no-repeat center");
+        $(".wrap_cart_wrapper").css("position", "absolute");
         $.ajax({
             url: '/index.php?route=checkout/confirm',
             method: 'POST',
             contentType: "application/json",
             dataType: "html",
             data: JSON.stringify(modelToSent),
-            success: function (data){
-                if(data){
-                    $('.form_order .container').remove()
+            success: function (data) {
+                if (data) {
+                    $('.form_order').remove()
                     $('.cart_checkout').parent().html(data);
+                    setTimeout(function () {
+
+                        $(".wrap_cart_wrapper").hide();
+                    }, 500);
                     // window.location = '/index.php?route=checkout/confirm&order_id='+data['order_id'];
                 }
             }
@@ -88,7 +140,7 @@ chekcout = {
 
 };
 
-function validateText(text, min = 3) {
+function validateName(text, min = 3) {
     return text.length >= min;
 }
 function validatePhone(phone) {
