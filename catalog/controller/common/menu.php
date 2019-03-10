@@ -80,6 +80,13 @@ class ControllerCommonMenu extends Controller {
 				);
 			}
 		}
+		if ($this->customer->isLogged()) {
+			$this->load->model('account/customer');
+			
+			$customer_info = $this->model_account_customer->getCustomer($this->customer->getId());
+			$data['customer'] = $customer_info;
+				
+		}
 		$data['location'] = $data['locations'][count($data['locations'])-1];
 
 		$data['shopping_cart'] = $this->url->link('checkout/cart');
@@ -88,7 +95,8 @@ class ControllerCommonMenu extends Controller {
 		$data['latest'] =  $this->url->link('product/latest');
 		$data['partnership'] =  $this->url->link('information/information','information_id=9');
 		$data['login'] = $this->url->link('account/login', '', true);
-		
+		$data['manage'] = $this->url->link('account/account', '', true);
+
 		$data['delivery'] =  $this->url->link('information/information','information_id=6');
 		$data['payment'] =  $this->url->link('information/information','information_id=8');
 		$data['about_us'] =  $this->url->link('information/information','information_id=4');

@@ -178,9 +178,11 @@ $(function () {
 				$(".window-container").append('<div class="top_line">	<div class="modal_name ">' + modal_name + '</div><div class="modal_message hidden">Проверьте Вашу почту. Вам отправлено письмо с паролем от аккаунта.</div></div>');
 				// $( ".window-container" ).append('<input type="emal" name="emal" placeholder="Emal" class="" id="mod_email"><input type="password" name="password" placeholder="Пароль" class="" id="mod_пароль"><button class="primary_btn" id="m_ord_btn">Вход</button><div><p></p></div><button class="secondary_btn" id="m_ord_btn">Регистрация</button><button class="primary_btn hidden" id="m_ok_btn">Ок</button>');
 				$(".window-container").append(`
-				<input type="emal" name="emal" placeholder="Emal" class="" id="mod_email">
-				<input type="password" name="password" placeholder="Пароль" class="" id="mod_password">
-				<button class="primary_btn" id="mo_enter_btn">Вход</button>
+				<form action="index.php?route=account/login" method="post">
+					<input type="email" name="email" placeholder="Emal" class="" id="mod_email">
+					<input type="password" name="password" placeholder="Пароль" class="" id="mod_password">
+					<button class="primary_btn" type="submit" id="mo_enter_btn">Вход</button>
+				</form>
 				<div class="notif_block_wrap">
 				<p class="notif_block">
 					<a href="#" class="auth_notif_emal hidden">Email не зарегистрирован!</a>
