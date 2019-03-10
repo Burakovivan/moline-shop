@@ -237,7 +237,10 @@ class ControllerCheckoutCart extends Controller {
 					}
 				}
 			}
-
+			$this->load->model('localisation/location');
+			$location_info = $this->model_localisation_location->getLocation(3);
+			$data['self_shipping_address'] = $location_info;
+			
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
 			$data['content_top'] = $this->load->controller('common/content_top');

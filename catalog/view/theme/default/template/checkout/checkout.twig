@@ -161,7 +161,7 @@
 							<label for="self">
 								<input type="radio" value="self" name="delivery" id="self">
 								<div class="name">Самовывоз</div>
-								<div class="sub_info">по адресу ул. Черксская 13, г.Киев</div>
+								<div class="sub_info">по адресу {{self_shipping_address|json_encode()}}</div>
 							</label>
 						</div>
 

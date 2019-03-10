@@ -1,6 +1,6 @@
 chekcout = {
     submitMobile: function () {
-        var phone
+        var phone = $('input[name=phone]').val();
         var formModel = {
             name: "Имя Фамилия???",
             phone: phone,
@@ -69,7 +69,8 @@ chekcout = {
             returnValue = false;
         }
         if (!validateShipping(model.shipping.type, model.shipping.city, model.shipping.dept)) {
-            $('#IF').addClass("invalid");
+            $('.'+model.shipping.type+'_details').find("#delivery_dept")
+            $('.'+model.shipping.type+'_details').find("#delivery_city")
             returnValue = false;
         }
         if (!returnValue) {

@@ -36,14 +36,14 @@ class ControllerCommonFooter extends Controller {
 				'title' => "Контакты",
 				'href'  => $this->url->link('information/contact')
 			),
-			array(
-				'left' => 1,
-				'right' => 0,
-				'center' => 0,
-				'id' => 0,
-				'title' => "Отзывы",
-				'href'  => $this->url->link('information/otzivy')
-			)
+			// array(
+			// 	'left' => 1,
+			// 	'right' => 0,
+			// 	'center' => 0,
+			// 	'id' => 0,
+			// 	'title' => "Отзывы",
+			// 	'href'  => $this->url->link('information/otzivy')
+			// )
 		);
 
 		$inmformations = array_filter($data['informations'] , function($e){return $e['left']==1;});

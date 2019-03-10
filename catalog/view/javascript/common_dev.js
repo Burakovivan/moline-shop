@@ -149,13 +149,17 @@ $(function () {
 
 	//--btn-buy-absent--//
 
-	function show_modal(modal_name, mode) {
+	function show_modal(modal_name, mode, product_id = -1) {
 		var tmp_popup = '<div class="popup-window"></div>';
 		var modal_name = modal_name;
 		var mode = mode;
 		// $(tmp_popup).insertAfter($('.overlay'));
 		if (mode === 'order') {
-			$(tmp_popup).insertBefore($('.s_product'));
+			var item = $('.s_product');
+			if (!item.length) {
+				item = $('#p_list');
+			}
+			$(tmp_popup).insertBefore(item);
 		} else {
 			$(tmp_popup).insertAfter($('.overlay'));
 		}
@@ -164,7 +168,7 @@ $(function () {
 			$('.popup-window').toggleClass('show_pop');
 		}, 200);
 		setTimeout(function () {
-			$(".popup-window").append("<div class='window-container'></div>");
+			$(".popup-window").append("<div class='window-container' data-product-id='" + product_id + "'></div>");
 			$(".window-container").append('<svg id="modal_exit" width="21px" height="21px" viewBox="0 0 21 21" version="1.1"><title>EBA93EB7-E714-432B-AF2F-5DA3BB321A8D</title><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="1.1.Produkt-ended---Large-desktop" transform="translate(-875.000000, -499.000000)" fill="#9E9E9E"><path d="M895.506534,517.102174 L893.102538,519.503833 C892.783237,519.823175 892.342548,520 891.899221,520 C891.458532,520 891.015205,519.823175 890.698542,519.503833 L885.5,514.307277 L880.304097,519.503833 C879.987434,519.823175 879.544107,520 879.103418,520 C878.66009,520 878.219402,519.823175 877.900101,519.503833 L875.496105,517.102174 C875.176803,516.782833 875,516.342089 875,515.898706 C875,515.457962 875.176803,515.014578 875.496105,514.697876 L880.694647,509.49868 L875.496105,504.299485 C875.176803,503.982782 875,503.539399 875,503.098655 C875,502.655272 875.176803,502.214528 875.496105,501.895187 L877.900101,499.493528 C878.219402,499.174186 878.66009,499 879.103418,499 C879.544107,499 879.987434,499.174186 880.304097,499.493528 L885.5,504.690084 L890.698542,499.493528 C891.015205,499.174186 891.458532,499 891.899221,499 C892.342548,499 892.783237,499.174186 893.102538,499.493528 L895.506534,501.895187 C895.825836,502.214528 896,502.655272 896,503.098655 C896,503.539399 895.825836,503.982782 895.506534,504.299485 L890.307992,509.49868 L895.506534,514.697876 C895.825836,515.014578 896,515.457962 896,515.898706 C896,516.342089 895.825836,516.782833 895.506534,517.102174" id="Fill-1"></path></g></g></svg>');
 			if (mode === 'order') {
 				$(".window-container").append('<div class="top_line">	<div class="modal_name ">' + modal_name + '</div><div class="modal_message hidden">Ваша заявка принята. Мы свяжемся с Вами как только этот товар появится на складе.</div></div>');
@@ -196,9 +200,10 @@ $(function () {
 		var modal_name = 'Введите номер телефона';
 		show_modal(modal_name, 'order');
 	});
-	$('.btn_absent').click(function () {
+	$('.btn_absent').click(function (e) {
 		var modal_name = 'Введите номер телефона';
-		show_modal(modal_name, 'order');
+		var product_id = $(e.currentTarget).parents('.item_wrap').data('product-id');
+		show_modal(modal_name, 'order',product_id);
 	});
 
 	function exit_popup() {
@@ -224,7 +229,10 @@ $(function () {
 
 	$(document).on('click', '#m_ord_btn', function (e) {
 		var phone = $('#mod_phone').val();
-		var product_id =  $("input[name=product_id]").val();
+		var product_id = $("input[name=product_id]").val();
+		if (!product_id) {
+			product_id = $(".window-container").data('product-id');
+		}
 		if (phone.length > 9 && phone.length < 14 && product_id) {
 			var formModel = {
 				shipping_address: {
@@ -243,11 +251,11 @@ $(function () {
 					country: "UA",
 				},
 				guest: {
-					firstname: $(".btn_order_prod").data('text'),
+					firstname: "",
 					email: "fake@fake.fake",
 					telephone: phone,
 				},
-				comment: "",
+				comment: $(".btn_order_prod").data('text'),
 				payment_method: {
 					title: "",
 				},
@@ -258,10 +266,11 @@ $(function () {
 
 			var body = $("html, body");
 			body.stop().animate({ scrollTop: 0 }, 500, 'swing');
-			// $('.cart').show();
-			// $(".wrap_cart_wrapper").show();
-			// $(".wrap_cart_wrapper").css("background", "rgba(50, 50, 50, 0.3) url(img/loader.svg) no-repeat center");
-			// $(".wrap_cart_wrapper").css("position", "absolute");
+			$('.cart').show();
+			$(".wrap_cart_wrapper").show();
+			$(".wrap_cart_wrapper").css("background", "rgba(50, 50, 50, 0.3) url(img/loader.svg) no-repeat center");
+			$(".wrap_cart_wrapper").css("position", "absolute");
+			var button = $(e.currentTarget);
 			$.ajax({
 				url: '/index.php?route=checkout/confirm',
 				method: 'POST',
@@ -277,11 +286,11 @@ $(function () {
 							$(".wrap_cart_wrapper").hide();
 							$('.cart').hide();
 						}, 500);
-						// $('#mod_phone').toggleClass("hidden");
-						// $('.modal_name').toggleClass("hidden");
-						// $('.modal_message').toggleClass("hidden");
-						// $('#m_ok_btn').toggleClass("hidden");
-						// $(this).toggleClass("hidden");
+						$('#mod_phone').toggleClass("hidden");
+						$('.modal_name').toggleClass("hidden");
+						$('.modal_message').toggleClass("hidden");
+						$('#m_ok_btn').toggleClass("hidden");
+						button.toggleClass("hidden");
 						// window.location = '/index.php?route=checkout/confirm&order_id='+data['order_id'];
 					}
 				}
@@ -338,19 +347,19 @@ $(function () {
 		}
 	});
 
-//--btn-buy-absent-end-//
-//--login-and-register--//
-$('#login_link').click(function(e){
-	e.preventDefault();
-	var modal_name = 'Вход, Регистрация';
-	show_modal(modal_name, 'authorization');
-});
-$('#register_link').click(function(e){
-	e.preventDefault();
-	var modal_name = 'Вход, Регистрация';
-	show_modal(modal_name, 'authorization');
-});
-//--login-and-register--end//
+	//--btn-buy-absent-end-//
+	//--login-and-register--//
+	$('#login_link').click(function (e) {
+		e.preventDefault();
+		var modal_name = 'Вход, Регистрация';
+		show_modal(modal_name, 'authorization');
+	});
+	$('#register_link').click(function (e) {
+		e.preventDefault();
+		var modal_name = 'Вход, Регистрация';
+		show_modal(modal_name, 'authorization');
+	});
+	//--login-and-register--end//
 
 	/*FAQ*/
 	$('dd').hide();

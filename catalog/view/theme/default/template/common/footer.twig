@@ -9,12 +9,16 @@
 								
 										<div class="detail closed">
 											<!-- closed_info -->
-											<form>
+											<form action="index.php?route=common/subscription" method="post" >
 												<div class="input-wrapper ">
 													<!-- <div class="header_slide_inside visible-xs">Подпишитесь на скидки:</div> -->
 													<div class="header_slide_inside call_to_action text-left">Подпишитесь на скидки:</div>
 													<!-- <div class="header_slide_inside visible-xs text-left">Moline:</div> -->
-														<input type="text" name="name" placeholder="Email"><input type="text" name="name" placeholder="Имя"><input type="text" name="phone" placeholder="Город">
+														<input type="text" name="email" placeholder="Email"><input type="text" name="firstname" placeholder="Имя"><input type="text" name="city" placeholder="Город">
+														<input hidden name='newsletter' value='1'>
+														<input hidden name='lastname' value='-'>
+														<input hidden name='telephone' value='-'>
+														<input hidden name='password' value='-'>
 														<button class="reverse_button button_form primary_btn" type="submit">Подписаться</button>
 														{# <button class="reverse_button button_form" type="submit">Подписаться</button> #}
 												</div>

@@ -6,7 +6,7 @@ define('HTTP_SERVER', 'http://m8line.com/');
 
 // HTTPS
 // define('HTTPS_SERVER', 'http://moline.com.ua/');
-define('HTTPS_SERVER', 'http://m8line.com/');
+define('HTTPS_SERVER', 'https://m8line.com/');
 // define('HTTPS_SERVER', 'http://localhost/');
  
 // DIR
