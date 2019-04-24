@@ -22,6 +22,9 @@ class Pagination {
 	public $text_next = '...';
 	public $text_prev = '...';
 	public $isRange;
+	private $admin;
+
+	 
 	
 	/**
 	 * 
@@ -58,13 +61,16 @@ class Pagination {
 		$num_links = $this->num_links;
 		$num_pages = ceil($total / $limit);
 		$this->text_last = $num_pages;
-
+		$admin = strpos($this->url, "/admin/") !== false;
 		$this->url = str_replace('%7Bpage%7D', '{page}', $this->url);
-
-		$output = '<ul>';
+		if($admin){
+			$output = '<ul class="pagination">';
+		}else{
+			$output = '<ul>';
+		}
 
 		if ($page > 2) {
-			$output .= '<li data-page=1 <a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
+			$output .= '<li data-page=1> <a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_first . '</a></li>';
 			
 			// if ($page - 1 === 1) {
 			// 	$output .= '<li><a href="' . str_replace(array('&amp;page={page}', '?page={page}', '&page={page}'), '', $this->url) . '">' . $this->text_prev . '</a></li>';
@@ -75,7 +81,11 @@ class Pagination {
 			if ($page - 1 === 2) {
 				// $output .= '<li class="dots">...</li>';
 			} else {
-				$output .= '<li class="dots">...</li>';
+				if($admin){
+					$output .= '<li class="dots disabled" ><a>...</a></li>';
+				}else{
+					$output .= '<li class="dots">...</li>';
+				}
 			}
 			
 		}
@@ -114,7 +124,11 @@ class Pagination {
 
 		if ($page < ($num_pages-1)) {
 			if($num_pages - $page > 2){
-				$output .= '<li class="dots">...</li>';
+				if($admin){
+					$output .= '<li class="dots disabled"><a>...</a></li>';
+				}else{
+					$output .= '<li class="dots">...</li>';
+				}
 			}
 			$output .= '<li data-page="' . $this->text_last . '"><a href="' . str_replace('{page}', $num_pages, $this->url) . '">' . $this->text_last . '</a></li>';
 		}

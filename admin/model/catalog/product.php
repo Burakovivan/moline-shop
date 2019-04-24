@@ -141,6 +141,25 @@ class ModelCatalogProduct extends Model {
 			$this->db->query("UPDATE " . DB_PREFIX . "product SET image = '" . $this->db->escape($data['image']) . "' WHERE product_id = '" . (int)$product_id . "'");
 		}
 
+
+		if (isset($data['text1p'])) {
+			$this->db->query("UPDATE " . DB_PREFIX . "product SET text1p = '" . $this->db->escape($data['text1p']) . "' WHERE product_id = '" . (int)$product_id . "'");
+		}
+
+		if (isset($data['text2p'])) {
+			$this->db->query("UPDATE " . DB_PREFIX . "product SET text2p = '" . $this->db->escape($data['text2p']) . "' WHERE product_id = '" . (int)$product_id . "'");
+		}
+
+		if (isset($data['texth1p'])) {
+			$this->db->query("UPDATE " . DB_PREFIX . "product SET texth1p = '" . $this->db->escape($data['texth1p']) . "' WHERE product_id = '" . (int)$product_id . "'");
+		}
+
+		if (isset($data['texth2p'])) {
+			$this->db->query("UPDATE " . DB_PREFIX . "product SET texth2p = '" . $this->db->escape($data['texth2p']) . "' WHERE product_id = '" . (int)$product_id . "'");
+		}
+
+
+
 		$this->db->query("DELETE FROM " . DB_PREFIX . "product_description WHERE product_id = '" . (int)$product_id . "'");
 
 		foreach ($data['product_description'] as $language_id => $value) {

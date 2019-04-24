@@ -52,7 +52,11 @@ class ModelCatalogProduct extends Model {
 				'status'           => $query->row['status'],
 				'date_added'       => $query->row['date_added'],
 				'date_modified'    => $query->row['date_modified'],
-				'viewed'           => $query->row['viewed']
+				'viewed'           => $query->row['viewed'],
+				'text1p'		       => $query->row['text1p'],
+				'texth1p'		   => $query->row['text2p'],
+				'text2p'		       => $query->row['text1p'],
+				'texth2p'		   => $query->row['texth2p'],
 			);
 		} else {
 			return false;
@@ -363,6 +367,12 @@ class ModelCatalogProduct extends Model {
 		}
 
 		return $product_data;
+	}
+
+	public function getProductSpecialsTimeBound($product_id, $customer_group_id){
+		$sql = "SELECT p.date_start , p.date_end FROM " . DB_PREFIX . "product_special as p WHERE product_id = " . $product_id . " AND customer_group_id = " . $customer_group_id;
+		$query = $this->db->query($sql);
+		return $query->row;
 	}
 
 	public function getProductSpecials($data = array()) {

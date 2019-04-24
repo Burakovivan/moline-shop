@@ -66,6 +66,31 @@ class ModelCatalogCategory extends Model {
 		if (isset($data['image'])) {
 			$this->db->query("UPDATE " . DB_PREFIX . "category SET image = '" . $this->db->escape($data['image']) . "' WHERE category_id = '" . (int)$category_id . "'");
 		}
+		if (isset($data['text1'])) {
+			$this->db->query("UPDATE " . DB_PREFIX . "category SET text1 = '" . $this->db->escape($data['text1']) . "' WHERE category_id = '" . (int)$category_id . "'");
+		}
+
+		if (isset($data['text2'])) {
+			$this->db->query("UPDATE " . DB_PREFIX . "category SET text2 = '" . $this->db->escape($data['text2']) . "' WHERE category_id = '" . (int)$category_id . "'");
+		}
+
+		if (isset($data['text3'])) {
+			$this->db->query("UPDATE " . DB_PREFIX . "category SET text3 = '" . $this->db->escape($data['text3']) . "' WHERE category_id = '" . (int)$category_id . "'");
+		}
+
+
+		if (isset($data['texth1'])) {
+			$this->db->query("UPDATE " . DB_PREFIX . "category SET texth1 = '" . $this->db->escape($data['texth1']) . "' WHERE category_id = '" . (int)$category_id . "'");
+		}
+
+		if (isset($data['texth2'])) {
+			$this->db->query("UPDATE " . DB_PREFIX . "category SET texth2 = '" . $this->db->escape($data['texth2']) . "' WHERE category_id = '" . (int)$category_id . "'");
+		}
+
+		if (isset($data['texth3'])) {
+			$this->db->query("UPDATE " . DB_PREFIX . "category SET texth3 = '" . $this->db->escape($data['texth3']) . "' WHERE category_id = '" . (int)$category_id . "'");
+		}
+		
 
 		$this->db->query("DELETE FROM " . DB_PREFIX . "category_description WHERE category_id = '" . (int)$category_id . "'");
 

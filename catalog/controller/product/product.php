@@ -1,14 +1,37 @@
 <?php
 class ControllerProductProduct extends Controller {
 	private $error = array();
+	
+	private function getNumEnding($number, $endingArray)
+	{
+	
+		$number = $number % 100;
+		if ($number>=11 && $number<=19) {
+			$ending=$endingArray[2];
+		}
+		else {
+			$i = $number % 10;
+			switch ($i)
+			{
+				case (1): $ending = $endingArray[0]; break;
+				case (2):
+				case (3):
+				case (4): $ending = $endingArray[1]; break;
+				default: $ending=$endingArray[2];
+			}
+		}
+		return $ending;
+	}
 
 	public function index() {
 		// var_dump($this->request->get);
-		$queryArray = explode('/',$this->request->get['_route_']);
-		if(count($queryArray) > 1){
-			header("HTTP/1.1 301 Moved Permanently"); 
-			header("Location: /".$queryArray[count($queryArray)-1]); 
-			exit(0);
+		if(isset($this->request->get['_route_'])){
+			$queryArray = explode('/',$this->request->get['_route_']);
+			if(count($queryArray) > 1){
+				header("HTTP/1.1 301 Moved Permanently"); 
+				header("Location: /".$queryArray[count($queryArray)-1]); 
+				exit(0);
+			}
 		}
 		$this->load->language('product/product');
 
@@ -166,10 +189,8 @@ class ControllerProductProduct extends Controller {
 			);
 		}
 
-		
 
 		$product_info = $this->model_catalog_product->getProduct($product_id);
-
 		if ($product_info) {
 			$url = '';
 
@@ -262,6 +283,22 @@ class ControllerProductProduct extends Controller {
 				$data['stock'] = $this->language->get('text_instock');
 			}
 
+			if($product_info['text1p']){
+				$data['text1p'] =  $product_info['text1p'];
+			}
+			if(isset( $product_info['text2p'])){
+				$data['text2p'] = $product_info['text2p'];
+			}
+		
+			
+			if($product_info['texth1p']){
+				$data['texth1p'] =  $product_info['texth1p'];
+			}
+			if(isset( $product_info['texth2p'])){
+				$data['texth2p'] = $product_info['texth2p'];
+			}
+		
+
 			$this->load->model('tool/image');
 
 			if ($product_info['image']) {
@@ -313,6 +350,24 @@ class ControllerProductProduct extends Controller {
 
 			if (is_numeric($product_info['special'])) {
 				$data['special'] = $this->currency->format($this->tax->calculate($product_info['special'], $product_info['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+				$raw_price = floatval($product_info['price']);
+				$raw_special = floatval($product_info['special']);
+				$discount_value = 1 - $raw_special / $raw_price;
+				$discount = $raw_price > 0 ? ceil($discount_value * 100) : 100;
+				$data['special_text'] = sprintf($this->language->get('special'), $discount);
+				
+				$specialTimeBound = $this->model_catalog_product->getProductSpecialsTimeBound($product_id, $this->config->get('config_customer_group_id'));
+				if(isset($specialTimeBound)){
+					$date = new DateTime($specialTimeBound['date_end']);
+					$now = new DateTime();
+					$interval = date_diff($now, $date);
+					$data['special_days'] = $interval->format("%d");
+					$data['special_hours'] = $interval->format("%h");
+					$daysEndingArray = array('ень', 'ня', 'ней');
+					$hoursEndingArray = array('', 'а', 'ов');
+					$data['special_days_desc'] = $this->getNumEnding(intval($data['special_days']), $daysEndingArray);
+					$data['special_hours_desc'] = $this->getNumEnding(intval($data['special_hours']), $hoursEndingArray);
+				}
 			} else {
 				$data['special'] = false;
 			}

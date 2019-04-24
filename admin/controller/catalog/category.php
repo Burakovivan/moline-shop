@@ -437,6 +437,56 @@ class ControllerCatalogCategory extends Controller {
 			$data['image'] = '';
 		}
 
+		if (isset($this->request->post['text1'])) {
+			$data['text1'] = $this->request->post['text1'];
+		} elseif (!empty($category_info)) {
+			$data['text1'] = $category_info['text1'];
+		} else {
+			$data['text1'] = '';
+		}
+
+		if (isset($this->request->post['text2'])) {
+			$data['text2'] = $this->request->post['text2'];
+		} elseif (!empty($category_info)) {
+			$data['text2'] = $category_info['text2'];
+		} else {
+			$data['text2'] = '';
+		}
+
+		if (isset($this->request->post['text3'])) {
+			$data['text3'] = $this->request->post['text3'];
+		} elseif (!empty($category_info)) {
+			$data['text3'] = $category_info['text3'];
+		} else {
+			$data['text3'] = '';
+		}
+
+
+		if (isset($this->request->post['texth1'])) {
+			$data['texth1'] = $this->request->post['texth1'];
+		} elseif (!empty($category_info)) {
+			$data['texth1'] = $category_info['texth1'];
+		} else {
+			$data['texth1'] = '';
+		}
+
+		if (isset($this->request->post['texth2'])) {
+			$data['texth2'] = $this->request->post['texth2'];
+		} elseif (!empty($category_info)) {
+			$data['texth2'] = $category_info['texth2'];
+		} else {
+			$data['texth2'] = '';
+		}
+
+		if (isset($this->request->post['texth3'])) {
+			$data['texth3'] = $this->request->post['texth3'];
+		} elseif (!empty($category_info)) {
+			$data['texth3'] = $category_info['texth3'];
+		} else {
+			$data['texth3'] = '';
+		}
+
+
 		$this->load->model('tool/image');
 
 		if (isset($this->request->post['image']) && is_file(DIR_IMAGE . $this->request->post['image'])) {

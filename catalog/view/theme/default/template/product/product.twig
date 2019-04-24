@@ -4,67 +4,76 @@
 		<div class="row">
 			<div class="col-md-12">
 				<ul class="bred_crambs_list">
-						{% for breadcrumb in breadcrumbs %}
-							<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><img src="img/arrow.svg" alt=""></li>
+					{% for breadcrumb in breadcrumbs %}
+					<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a><img src="img/arrow.svg" alt=""></li>
 					{% endfor %}
 				</ul>
 			</div>
 		</div>
 	</div>
 </div>
-<div id="product-product" >
+<div id="product-product">
 	<jsonDebug hidden>{{stock_status_id}}</jsonDebug>
-	<jsonDebug hidden>{{product_info|json_encode()}}</jsonDebug>
-	
-	
-	
+	<jsonDebug hidden>
+		<script>
+			var product = {{ product_info| json_encode()}};
+			var d = {{ s_days }};
+			var h = {{ s_hours }};
+		</script>
+	</jsonDebug>
+
+
+
 	<section class="s_product">
 		<div class="container">
 			<div class="row">
-					<h1 class="visible-xs visible-sm xs_header1">{{ heading_title }}</h1>
+				<h1 class="visible-xs visible-sm xs_header1">{{ heading_title }}</h1>
 			</div>
 			<div class="row">
 				<div class="col-md-6">
 					<div class="preview_wrap">
 						<div class="main_img">
-							<a href="{{popup}}"title="{{ heading_title }}" class="items_img">
-								<img src="{{popup}}" title="{{ heading_title }}" alt="{{ heading_title }} "  class="img-responsive"/>
+							<a href="{{popup}}" title="{{ heading_title }}" class="items_img">
+								<img src="{{popup}}" title="{{ heading_title }}" alt="{{ heading_title }} "
+									class="img-responsive" />
 							</a>
 						</div>
 						<div class="list_img">
 							<div class="row">
 								<div class="inner_list_img_wrap">
 									{% if videos %}
-										{% for video in videos %}
-											<div class="col-md-3">
-												<div class="video_p">
-													<img src="img/video_prew.svg" alt="">
-													<div class="call_to">
-														Смотреть обзор
-													</div>
-												</div>
+									{% for video in videos %}
+									<div class="col-md-3">
+										<div class="video_p">
+											<img src="img/video_prew.svg" alt="">
+											<div class="call_to">
+												Смотреть обзор
 											</div>
-										{% endfor %}
+										</div>
+									</div>
+									{% endfor %}
 									{% endif %}
 									{% if popup %}
 									<div class="col-md-3">
 										<a href="{{ popup }}" class="items_img">
-										<div class="small_img">
-											<img src="{{ popup }}" title="{{ heading_title }}" alt="{{ heading_title }}" >
-										</div>
+											<div class="small_img">
+												<img src="{{ popup }}" title="{{ heading_title }}"
+													alt="{{ heading_title }}">
+											</div>
 										</a>
 									</div>
 									{% endif %}
 									{% if images %}
-										{% for image in images %}
-											<div class="col-md-3">
-													<a href="{{ image.popup }}" class="items_img">
-													<div class="small_img">
-														<img src="{{ image.popup }}" title="{{ heading_title }}" alt="{{ heading_title }}" >
-													</div>
-													</a>
+									{% for image in images %}
+									<div class="col-md-3">
+										<a href="{{ image.popup }}" class="items_img">
+											<div class="small_img">
+												<img src="{{ image.popup }}" title="{{ heading_title }}"
+													alt="{{ heading_title }}">
 											</div>
-										{% endfor %}
+										</a>
+									</div>
+									{% endfor %}
 									{% endif %}
 								</div>
 							</div>
@@ -74,145 +83,180 @@
 				<div class="col-md-6">
 					<h1 class="hidden-xs hidden-sm">{{ heading_title }}</h1>
 					<div class="ml_center">
-					<div class="row">
-						{# {% set stock_status_id = 8 %} #}
-						{#pod zakaz#}
+						<div class="row">
+							{# {% set stock_status_id = 8 %} #}
+							{#pod zakaz#}
 							{% if stock_status_id == 8 %}
-								<div class="col-xs-12">
-									<div class="order_message_prod">Этот товар покупается персонально под заказ </div>
-									<div class="prod_ord_more"><span class="star">*</span>Цену и подробности уточняйте у оператора call -центра <a href="#" class="mess_link">уточнить</a></div>
-								</div>
+							<div class="col-xs-12">
+								<div class="order_message_prod">Этот товар покупается персонально под заказ </div>
+								<div class="prod_ord_more"><span class="star">*</span>Цену и подробности уточняйте у
+									оператора call
+									-центра <a href="#" class="mess_link">уточнить</a></div>
+							</div>
 							{% endif %}
 
 							{#skoro v prodazhe#}
 							{% if stock_status_id == 6 %}
-								<div class="col-xs-12 col-md-8">
-									<div class="order_message_prod coming_soon">Скоро в продаже </div>
-									<div class="prod_ord_more">Оставьте заявку, мы свяжемся с Вами как только этот товар появится на складе</div>
+							<div class="col-xs-12 col-md-8">
+								<div class="order_message_prod coming_soon">Скоро в продаже </div>
+								<div class="prod_ord_more">Оставьте заявку, мы свяжемся с Вами как только этот товар
+									появится на складе
 								</div>
+							</div>
 							{% endif %}
 
 							{#est v nalichii#}
 							{% if (stock_status_id == 7 or stock_status_id == 5) %}
 
-							{% if stock_status_id == 5 %}				
-								<div class="col-md-6 col-sm-6 green-text">
-							{% endif %}
-							{% if stock_status_id == 7 %}				
+							{% if stock_status_id == 5 %}
+							<div class="col-md-6 col-sm-6 green-text">
+								{% endif %}
+								{% if stock_status_id == 7 %}
 								<div class="col-md-6 col-sm-6">
-							{% endif %}
-							<div class="row">
-									<div class="simp_price"><strong>{{ price }}<span class="currency"></span></strong></div></div>
+									{% endif %}
+									<div class="row">
+										{% if special %}
+										<div class="special_text">{{ special_text }}</div>
+										<span class="simp_price simp_special">{{ special }}</span>
+										{% endif %}
+										<div class="simp_price"><strong>{{ price }}<span class="currency"></span></strong></div>
+									</div>
+
 									<div class="limit">{{ text_minimum }}</div>
+								</div>
+								<div class="col-md-6 col-sm-6">
+									{% if special %}
+									<div class="special_time">
+										<span>До конца акции</span>
+										<div class="s_days">
+											<div><span>{{special_days}}</span></div>
+											<span>д{{special_days_desc}}</span>
+										</div>
+										<div class="s_hours">
+											<div><span>{{special_hours}}</span></div>
+											<span>час{{special_hours_desc}}</span>
+										</div>
+									</div>
+									{% endif %}
+
+									<div class="retail_price">Рекомендуемая розничная цена<div class="price">
+											{{ recommended_wholesale_price }}<span class="currency"></span></div>
+									</div>
+								</div>
+								{% endif %}
 							</div>
-						<div class="col-md-6 col-sm-6">
-							<div class="retail_price">Рекомендуемая розничная цена<div class="price">{{ recommended_wholesale_price }}<span class="currency"></span></div></div>
-						</div>
-						{% endif %}
-					</div>			
-					<div class="row">
-							<div class="col-md-6">
-							
+							<div class="row">
+								<div class="col-md-6">
+
+									{#est v nalichii#}
+									{% if stock_status_id == 7 %}
+									<div class="legend">Выберите количество товара </div>
+									{% endif %}
+
+									{#pod zakaz#}
+									{% if stock_status_id == 8 %}
+									{#  #}
+									{% endif %}
+									{#net v nalichii#}
+									{% if stock_status_id == 5 %}
+									<div class="legend product_message">Товар закончился </div>
+									{% endif %}
+
+								</div>
+							</div>
+							<div class="row">
+
 								{#est v nalichii#}
 								{% if stock_status_id == 7 %}
-									<div class="legend">Выберите количество товара </div>
+								<div class="col-md-5 col-sm-4">
+									<div class="input_number_wrap">
+										<input hidden class="quantitiy_in_pack" value="{{quantity_in_pack}}">
+										<span class="input-number-decrement">–</span><input class="input-number"
+											name='quantity' type="text"
+											value="{{minimum > quantity_in_pack ? minimum : quantity_in_pack  }}"
+											min="{{minimum}}" max="{{maximum}}"><span
+											class="input-number-increment">+</span>
+									</div>
+								</div>
+
+								<div id='cart-result'></div>
+								<div class="col-md-7 col-sm-8">
+									<button class="primary_btn btn_buy main_btn_buy" id="button-cart">Купить
+										<div class="massage" id="cart-message">Вы купили 1 штуку, спасибо, смотри
+											корзину</div>
+									</button>
+								</div>
 								{% endif %}
 
 								{#pod zakaz#}
 								{% if stock_status_id == 8 %}
-									{#  #}
+								<div class="col-md-10 col-sm-8">
+									<button class="primary_btn btn_buy main_btn_buy btn_order_prod link_f_popup"
+										data-text="Под заказ">Заказать
+										<div class="massage" id="cart-message">Вы заказали 1 штуку, спасибо, смотри
+											корзину</div>
+									</button>
+									<div class="prod_ost">115 ед. остаток на складе</div>
+								</div>
 								{% endif %}
 								{#net v nalichii#}
 								{% if stock_status_id == 5 %}
-									<div class="legend product_message">Товар закончился </div>
+								<div class="col-md-10 col-sm-8">
+									<button class="primary_btn btn_buy main_btn_buy btn_absent btn_order_prod"
+										data-text="Сообщить (товар закончился)">Сообщить когда появится</button>
+								</div>
 								{% endif %}
-							
+
+								{#skoro v prodazhe#}
+								{% if stock_status_id == 6 %}
+								<div class="col-md-10 col-sm-8">
+									<button class="primary_btn btn_buy main_btn_buy btn_absent btn_order_prod"
+										data-text="Сообщить (скоро в продаже)">Сообщить когда появится</button>
+								</div>
+								{% endif %}
 							</div>
-						</div>
-					<div class="row">
-				
-						{#est v nalichii#}
-							{% if stock_status_id == 7 %}
-								<div class="col-md-5 col-sm-4">
-									<div class="input_number_wrap">
-													<input hidden class="quantitiy_in_pack" value = "{{quantity_in_pack}}" >	
-										<span class="input-number-decrement">–</span><input class="input-number" name='quantity' type="text" value="{{minimum > quantity_in_pack ? minimum : quantity_in_pack  }}" min="{{minimum}}" max="{{maximum}}"><span class="input-number-increment">+</span>
+							<input name='product_id' hidden value={{product_id}}></input>
+							<div class="row">
+								<div class="col-md-6 col-xs-12">
+									<div class="articul-wrap">
+										Артикул: {{ product_sku }}
 									</div>
 								</div>
-								
-								<div id='cart-result'></div>
-								<div class="col-md-7 col-sm-8">
-									<button class="primary_btn btn_buy main_btn_buy" id="button-cart">Купить
-										<div class="massage" id="cart-message">Вы купили 1 штуку, спасибо, смотри корзину</div>
-									</button>
-								</div>
-							{% endif %}
-
-							{#pod zakaz#}
-							{% if stock_status_id == 8 %}
-								<div class="col-md-10 col-sm-8">
-									<button class="primary_btn btn_buy main_btn_buy btn_order_prod link_f_popup" data-text="Под заказ">Заказать
-										<div class="massage" id="cart-message">Вы заказали 1 штуку, спасибо, смотри корзину</div>
-									</button>
-									<div class="prod_ost">115 ед. остаток на складе</div>
-								</div> 
-							{% endif %}
-							{#net v nalichii#}
-							{% if stock_status_id == 5 %}
-								<div class="col-md-10 col-sm-8" >
-									<button class="primary_btn btn_buy main_btn_buy btn_absent btn_order_prod" data-text="Сообщить (товар закончился)">Сообщить когда появится</button>
-								</div> 
-							{% endif %}
-
-							{#skoro v prodazhe#}
-							{% if stock_status_id == 6 %}
-								<div class="col-md-10 col-sm-8">
-									<button class="primary_btn btn_buy main_btn_buy btn_absent btn_order_prod"  data-text="Сообщить (скоро в продаже)">Сообщить когда появится</button>
-								</div> 
-							{% endif %}
-					</div>
-					<input name='product_id' hidden value={{product_id}}></input>
-					<div class="row">
-						<div class="col-md-6 col-xs-12">
-							<div class="articul-wrap">
-								Артикул: {{ product_sku }}
 							</div>
+							<div class="row">
+								<div class="servise_wrap">
+									<div class="col-md-2 col-xs-3">
+										<div class="img_wrap">
+											<img src="img/car.svg" alt="">
+										</div>
+									</div>
+									<div class="col-md-10 col-xs-9">
+										<h3>{{texth1p}}</h3>
+										<p class="s_descr">{{text1p}}</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="servise_wrap">
+									<div class="col-md-2 col-xs-3">
+										<div class="img_wrap">
+											<img src="img/card.svg" alt="">
+										</div>
+									</div>
+									<div class="col-md-10 col-xs-9">
+										<h3>{{texth2p}}</h3>
+										<p class="s_descr">{{text2p}}</p>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
-						<div class="row">
-								<div class="servise_wrap">
-										<div class="col-md-2 col-xs-3">
-											<div class="img_wrap">
-												<img src="img/car.svg" alt="">
-											</div>
-										</div>
-										<div class="col-md-10 col-xs-9">
-											<h3>Доставка</h3>
-											<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
-										</div>
-									</div>
-						</div>
-						<div class="row">
-								<div class="servise_wrap">
-										<div class="col-md-2 col-xs-3">
-											<div class="img_wrap">
-												<img src="img/card.svg" alt="">
-											</div>
-										</div>
-										<div class="col-md-10 col-xs-9">
-											<h3>Оплата</h3>
-											<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
-										</div>
-									</div>
-						</div>
-					
 				</div>
-			</div>
-		</div>
 	</section>
 
 	<section class="s_properties">
-	{# tab container #}
+		{# tab container #}
 		{# <div class="tab-container">
 			<div class="top_line">
 				<div class="container">
@@ -225,56 +269,58 @@
 			<div class="tab-content-wrap">
 				<div id="tab1" class="tab-content specifications">
 					 #}
-					<div class="container">
-						<div class="row">
-							<div class="s_header_wrap">
-								<h2>Характеристики</h2>
+		<div class="container">
+			<div class="row">
+				<div class="s_header_wrap">
+					<h2>Характеристики</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="clump">
+					<div class="card">
+						<div class="section">
+							<!-- open -->
+							<div class="col-md-6 col-sm-6">
+								<ul class="list_prop">
+									{% for attr in attributes %}
+									{% if loop.index is not divisible by(2) %}
+									<li><span class="s_left">{{attr.name}}</span><span
+											class="s_right">{{attr.text}}</span></li>
+									{% endif %}
+									{% endfor %}
+								</ul>
 							</div>
-						</div>
-						<div class="row">
-							<div class="clump">
-								<div class="card">
-									<div class="section">
-										<!-- open -->
-										<div class="col-md-6 col-sm-6">
-											<ul class="list_prop">
-												{% for attr in attributes %}
-													{% if loop.index is not divisible by(2) %}
-														<li><span class="s_left">{{attr.name}}</span><span class="s_right">{{attr.text}}</span></li>
-													{% endif %}
-												{% endfor %}
-											</ul>
-										</div>
-										<div class="detail closed">
-											<div class="col-md-6 col-sm-6 ">
-												<ul class="list_prop">
-													{% for attr in attributes %}
-														{% if loop.index is divisible by(2) %}
-															<li><span class="s_left">{{attr.name}}</span><span class="s_right">{{attr.text}}</span></li>
-														{% endif %}
-													{% endfor %}
-												</ul>
-											</div>
-										</div>
-									</div>
-									<div class="footer visible-xs">
-										<div class="slider_link more">Подробнее</div>
-										<div class="slider_link less hide_link">Скрыть</div>
-									</div>
-								</div>
-							</div>					
-						</div>
-						<div class="row">
-							<div class="col-md-6 ">
-								<div class="full_descr">
-									<h3>Подробное описание:</h3>
-									{{description}}
+							<div class="detail closed">
+								<div class="col-md-6 col-sm-6 ">
+									<ul class="list_prop">
+										{% for attr in attributes %}
+										{% if loop.index is divisible by(2) %}
+										<li><span class="s_left">{{attr.name}}</span><span
+												class="s_right">{{attr.text}}</span></li>
+										{% endif %}
+										{% endfor %}
+									</ul>
 								</div>
 							</div>
+						</div>
+						<div class="footer visible-xs">
+							<div class="slider_link more">Подробнее</div>
+							<div class="slider_link less hide_link">Скрыть</div>
 						</div>
 					</div>
-					
-				{# </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 ">
+					<div class="full_descr">
+						<h3>Подробное описание:</h3>
+						{{description}}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{# </div>
 				<div id="tab2" class="tab-content review">
 					<div class="container">
 						<div class="row">
@@ -291,7 +337,7 @@
 			</div>
 			{{featured_product_list}}
 		</div>
-		
+
 	</section>
 	<section class="s_white">
 		<div class="container pln prn">
@@ -307,8 +353,8 @@
 							</div>
 							<div class="col-md-10 pln">
 								<div class="text-wrap">
-									<h3>Отгрузка в день заказа</h3>
-									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+									<h3>{{texth1}}</h3>
+									<p class="s_descr">{{text1}}</p>
 								</div>
 							</div>
 						</div>
@@ -322,8 +368,8 @@
 							</div>
 							<div class="col-md-10 pln">
 								<div class="text-wrap">
-									<h3>Наличие собственного склада</h3>
-									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+									<h3>{{texth2}}</h3>
+									<p class="s_descr">{{text2}}</p>
 								</div>
 							</div>
 						</div>
@@ -337,8 +383,8 @@
 							</div>
 							<div class="col-md-10 pln">
 								<div class="text-wrap">
-									<h3>Только оригинальная продукция</h3>
-									<p class="s_descr">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.</p>
+									<h3>{{texth3}}</h3>
+									<p class="s_descr">{{text3}}</p>
 								</div>
 							</div>
 						</div>
@@ -352,293 +398,294 @@
 
 
 
-<script type="text/javascript"><!--
-$('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
-	$.ajax({
-		url: 'index.php?route=product/product/getRecurringDescription',
-		type: 'post',
-		data: $('input[name=\'product_id\'], input[name=\'quantity\'], select[name=\'recurring_id\']'),
-		dataType: 'json',
-		beforeSend: function() {
-			$('#recurring-description').html('');
-		},
-		success: function(json) {
-			$('.alert-dismissible, .text-danger').remove();
+<!--	<script type="text/javascript">
+			$('select[name=\'recurring_id\'], input[name="quantity"]').change(function () {
+				$.ajax({
+					url: 'index.php?route=product/product/getRecurringDescription',
+					type: 'post',
+					data: $('input[name=\'product_id\'], input[name=\'quantity\'], select[name=\'recurring_id\']'),
+					dataType: 'json',
+					beforeSend: function () {
+						$('#recurring-description').html('');
+					},
+					success: function (json) {
+						$('.alert-dismissible, .text-danger').remove();
 
-			if (json['success']) {
-				$('#recurring-description').html(json['success']);
-			}
-		}
-	});
-});
-//--></script> 
-<script type="text/javascript"><!--
-$('#button-cart').on('click', function() {
-	var product_id = $('input[name=product_id]').val();
-	var quantity = $('input[name=quantity]').val();
-	$.ajax({
-		url: 'index.php?route=checkout/cart/add',
-		type: 'post',
-		data: {product_id, quantity},
-		dataType: 'json',
-		beforeSend: function() {
-			//$('#button-cart').button('loading');
-		},
-		complete: function() {
-			//$('#button-cart').button('reset');
-		},
-		success: function(json) {
-			$('.alert-dismissible, .text-danger').remove();
-			$('.form-group').removeClass('has-error');
-
-			if (json['error']) {
-				if (json['error']['option']) {
-					for (i in json['error']['option']) {
-						var element = $('#input-option' + i.replace('_', '-'));
-
-						if (element.parent().hasClass('input-group')) {
-							element.parent().after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
-						} else {
-							element.after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+						if (json['success']) {
+							$('#recurring-description').html(json['success']);
 						}
 					}
-				}
+				});
+			});
+//</script>-->
+	<!--<script type="text/javascript">
+			$('#button-cart').on('click', function () {
+				var product_id = $('input[name=product_id]').val();
+				var quantity = $('input[name=quantity]').val();
+				$.ajax({
+					url: 'index.php?route=checkout/cart/add',
+					type: 'post',
+					data: { product_id, quantity },
+					dataType: 'json',
+					beforeSend: function () {
+						//$('#button-cart').button('loading');
+					},
+					complete: function () {
+						//$('#button-cart').button('reset');
+					},
+					success: function (json) {
+						$('.alert-dismissible, .text-danger').remove();
+						$('.form-group').removeClass('has-error');
 
-				if (json['error']['recurring']) {
-					$('select[name=\'recurring_id\']').after('<div class="text-danger">' + json['error']['recurring'] + '</div>');
-				}
+						if (json['error']) {
+							if (json['error']['option']) {
+								for (i in json['error']['option']) {
+									var element = $('#input-option' + i.replace('_', '-'));
 
-				// Highlight any found errors
-				$('.text-danger').parent().addClass('has-error');
+									if (element.parent().hasClass('input-group')) {
+										element.parent().after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+									} else {
+										element.after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+									}
+								}
+							}
+
+							if (json['error']['recurring']) {
+								$('select[name=\'recurring_id\']').after('<div class="text-danger">' + json['error']['recurring'] + '</div>');
+							}
+
+							// Highlight any found errors
+							$('.text-danger').parent().addClass('has-error');
+						}
+
+						if (json['success']) {
+							$('#cart-message').html(json['success']);
+							$('#cart-message').css('opacity', 1);
+							setTimeout(function () {
+								$('#cart-message').css('opacity', 0);
+							}, 3000);
+
+							$('.cart-total').html(json['total']);
+
+							$('html, body').animate({ scrollTop: 0 }, 'slow');
+
+							$('#cart > ul').load('index.php?route=common/cart/info ul li');
+						}
+					},
+					error: function (xhr, ajaxOptions, thrownError) {
+						alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+					}
+				});
+			});
+//</script>-->
+	<!--<script type="text/javascript">
+			$('.date').datetimepicker({
+				language: '{{ datepicker }}',
+				pickTime: false
+			});
+
+		$('.datetime').datetimepicker({
+			language: '{{ datepicker }}',
+			pickDate: true,
+			pickTime: true
+		});
+
+		$('.time').datetimepicker({
+			language: '{{ datepicker }}',
+			pickDate: false
+		});
+
+		$('button[id^=\'button-upload\']').on('click', function () {
+			var node = this;
+
+			$('#form-upload').remove();
+
+			$('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+
+			$('#form-upload input[name=\'file\']').trigger('click');
+
+			if (typeof timer != 'undefined') {
+				clearInterval(timer);
 			}
 
-			if (json['success']) {
-				$('#cart-message').html(json['success']);
-				$('#cart-message').css('opacity',1);
-				setTimeout(function(){
-					$('#cart-message').css('opacity',0);
-				},3000);
+			timer = setInterval(function () {
+				if ($('#form-upload input[name=\'file\']').val() != '') {
+					clearInterval(timer);
 
-				$('.cart-total').html(json['total']);
+					$.ajax({
+						url: 'index.php?route=tool/upload',
+						type: 'post',
+						dataType: 'json',
+						data: new FormData($('#form-upload')[0]),
+						cache: false,
+						contentType: false,
+						processData: false,
+						beforeSend: function () {
+							$(node).button('loading');
+						},
+						complete: function () {
+							$(node).button('reset');
+						},
+						success: function (json) {
+							$('.text-danger').remove();
 
-				$('html, body').animate({ scrollTop: 0 }, 'slow');
+							if (json['error']) {
+								$(node).parent().find('input').after('<div class="text-danger">' + json['error'] + '</div>');
+							}
 
-				$('#cart > ul').load('index.php?route=common/cart/info ul li');
-			}
-		},
-        error: function(xhr, ajaxOptions, thrownError) {
-            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-        }
-	});
-});
-//--></script> 
-<script type="text/javascript"><!--
-$('.date').datetimepicker({
-	language: '{{ datepicker }}',
-	pickTime: false
-});
+							if (json['success']) {
+								alert(json['success']);
 
-$('.datetime').datetimepicker({
-	language: '{{ datepicker }}',
-	pickDate: true,
-	pickTime: true
-});
+								$(node).parent().find('input').val(json['code']);
+							}
+						},
+						error: function (xhr, ajaxOptions, thrownError) {
+							alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+						}
+					});
+				}
+			}, 500);
+		});
+//</script>-->
+	<script type="text/javascript">
+			$('#review').delegate('.pagination a', 'click', function (e) {
+				e.preventDefault();
 
-$('.time').datetimepicker({
-	language: '{{ datepicker }}',
-	pickDate: false
-});
+				$('#review').fadeOut('slow');
 
-$('button[id^=\'button-upload\']').on('click', function() {
-	var node = this;
+				$('#review').load(this.href);
 
-	$('#form-upload').remove();
+				$('#review').fadeIn('slow');
+			});
 
-	$('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+		$('#review').load('index.php?route=product/product/review&product_id={{ product_id }}');
 
-	$('#form-upload input[name=\'file\']').trigger('click');
-
-	if (typeof timer != 'undefined') {
-    	clearInterval(timer);
-	}
-
-	timer = setInterval(function() {
-		if ($('#form-upload input[name=\'file\']').val() != '') {
-			clearInterval(timer);
-
+		$('#button-review').on('click', function () {
 			$.ajax({
-				url: 'index.php?route=tool/upload',
+				url: 'index.php?route=product/product/write&product_id={{ product_id }}',
 				type: 'post',
 				dataType: 'json',
-				data: new FormData($('#form-upload')[0]),
-				cache: false,
-				contentType: false,
-				processData: false,
-				beforeSend: function() {
-					$(node).button('loading');
+				data: $("#form-review").serialize(),
+				beforeSend: function () {
+					$('#button-review').button('loading');
 				},
-				complete: function() {
-					$(node).button('reset');
+				complete: function () {
+					$('#button-review').button('reset');
 				},
-				success: function(json) {
-					$('.text-danger').remove();
+				success: function (json) {
+					$('.alert-dismissible').remove();
 
 					if (json['error']) {
-						$(node).parent().find('input').after('<div class="text-danger">' + json['error'] + '</div>');
+						$('#review').after('<div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + '</div>');
 					}
 
 					if (json['success']) {
-						alert(json['success']);
+						$('#review').after('<div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> ' + json['success'] + '</div>');
 
-						$(node).parent().find('input').val(json['code']);
+						$('input[name=\'name\']').val('');
+						$('textarea[name=\'text\']').val('');
+						$('input[name=\'rating\']:checked').prop('checked', false);
 					}
-				},
-				error: function(xhr, ajaxOptions, thrownError) {
-					alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 				}
 			});
-		}
-	}, 500);
-});
-//--></script> 
-<script type="text/javascript"><!--
-$('#review').delegate('.pagination a', 'click', function(e) {
-    e.preventDefault();
+		});
 
-    $('#review').fadeOut('slow');
-
-    $('#review').load(this.href);
-
-    $('#review').fadeIn('slow');
-});
-
-$('#review').load('index.php?route=product/product/review&product_id={{ product_id }}');
-
-$('#button-review').on('click', function() {
-	$.ajax({
-		url: 'index.php?route=product/product/write&product_id={{ product_id }}',
-		type: 'post',
-		dataType: 'json',
-		data: $("#form-review").serialize(),
-		beforeSend: function() {
-			$('#button-review').button('loading');
-		},
-		complete: function() {
-			$('#button-review').button('reset');
-		},
-		success: function(json) {
-			$('.alert-dismissible').remove();
-
-			if (json['error']) {
-				$('#review').after('<div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + '</div>');
-			}
-
-			if (json['success']) {
-				$('#review').after('<div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> ' + json['success'] + '</div>');
-
-				$('input[name=\'name\']').val('');
-				$('textarea[name=\'text\']').val('');
-				$('input[name=\'rating\']:checked').prop('checked', false);
-			}
-		}
-	});
-});
-
-$(document).ready(function() {
-	if($.fn.magnificPopup){
-		$('.main_img, .video_p').magnificPopup({
-			type:'image',
-			gallery:{
-				enabled: true
-			},
-			items:[
-				{% if videos %}
+		$(document).ready(function () {
+			$(".s_product .input-number").inputNumber();
+			if ($.fn.magnificPopup) {
+				$('.main_img, .video_p').magnificPopup({
+					type: 'image',
+					gallery: {
+						enabled: true
+					},
+					items: [
+						{% if videos %}
 					{% for video in videos %}
-						{
-						type:'iframe',
-						title:'{{ heading_title }}',
+			{
+				type: 'iframe',
+					title: '{{ heading_title }}',
 						src: '{{ video.url }}',
 						},
-					{% endfor %}
-				{% endif %}
-				{% if popup %}
-					{
-						title:'{{ heading_title }}',
-						src: '{{ popup }}',
+			{% endfor %}
+			{% endif %}
+			{% if popup %}
+			{
+				title: '{{ heading_title }}',
+					src: '{{ popup }}',
 					},
-				{% endif %}
-				{% if images %}
-					{% for image in images %}
-						{
-						title:'{{ heading_title }}',
-						src: '{{ image.popup }}',
+			{% endif %}
+			{% if images %}
+			{% for image in images %}
+			{
+				title: '{{ heading_title }}',
+					src: '{{ image.popup }}',
 						},
-					{% endfor %}
-				{% endif %}
+			{% endfor %}
+			{% endif %}
 			],
 			type: 'image',
-			removalDelay: 300,
-			mainClass: 'mfp-fade',
-		  callbacks: {
-    		buildControls: function() {
-    		  // re-appends controls inside the main container
+				removalDelay: 300,
+					mainClass: 'mfp-fade',
+						callbacks: {
+				buildControls: function() {
+					// re-appends controls inside the main container
 					if ($(window).width() > 768) {
-    		  	this.contentContainer.append(this.arrowLeft.add(this.arrowRight));						
+						this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
 					}
-    		  //this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
-    		},
+					//this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+				},
 				elementParse: function(item) {
-		console.log(item.el[0].className);
-		if(item.el[0].className == 'video') {
-			item.type = 'iframe',
-			item.iframe = {
-				 patterns: {
-					 youtube: {
-						 index: 'youtube.com/', // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
+					console.log(item.el[0].className);
+					if (item.el[0].className == 'video') {
+						item.type = 'iframe',
+							item.iframe = {
+								patterns: {
+									youtube: {
+										index: 'youtube.com/', // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
 
-						 id: 'v=', // String that splits URL in a two parts, second part should be %id%
-							// Or null - full URL will be returned
-							// Or a function that should return %id%, for example:
-							// id: function(url) { return 'parsed id'; } 
+										id: 'v=', // String that splits URL in a two parts, second part should be %id%
+										// Or null - full URL will be returned
+										// Or a function that should return %id%, for example:
+										// id: function(url) { return 'parsed id'; } 
 
-						 src: '//www.youtube.com/embed/%id%?autoplay=1' // URL that will be set as a source for iframe. 
-					 },
-					 vimeo: {
-						 index: 'vimeo.com/',
-						 id: '/',
-						 src: '//player.vimeo.com/video/%id%?autoplay=1'
-					 },
-					 gmaps: {
-						 index: '//maps.google.',
-						 src: '%id%&output=embed'
-					 }
-				 }
-			}
-		} else {
-			 item.type = 'image',
-			 item.tLoading = 'Loading image #%curr%...',
-			 item.mainClass = 'mfp-img-mobile',
-			 item.image = {
-				 tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-			 }
-		}
+										src: '//www.youtube.com/embed/%id%?autoplay=1' // URL that will be set as a source for iframe. 
+									},
+									vimeo: {
+										index: 'vimeo.com/',
+										id: '/',
+										src: '//player.vimeo.com/video/%id%?autoplay=1'
+									},
+									gmaps: {
+										index: '//maps.google.',
+										src: '%id%&output=embed'
+									}
+								}
+							}
+					} else {
+						item.type = 'image',
+							item.tLoading = 'Loading image #%curr%...',
+							item.mainClass = 'mfp-img-mobile',
+							item.image = {
+								tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+							}
+					}
 
-	}
-    
-  		},
+				}
 
-		navigateByImgClick: true,
-	
- 		// arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
-		 
-		
-		//  closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close" id="mfp_btn_exit">×</button>'
-		// closeMarkup: '<svg id="exit_popup"  width="33px" height="33px" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="2.Cart---Desktop" transform="translate(-938.000000, -60.000000)" fill="#C4C0C0"><g id="Group-3-Copy" transform="translate(32.000000, 30.000000)"><path d="M938.224554,58.4462737 L934.446846,62.2203092 C933.945087,62.7221315 933.252576,63 932.555919,63 C931.863408,63 931.16675,62.7221315 930.669138,62.2203092 L922.5,54.0542918 L914.335009,62.2203092 C913.837396,62.7221315 913.140739,63 912.448228,63 C911.751571,63 911.05906,62.7221315 910.557301,62.2203092 L906.779593,58.4462737 C906.277834,57.9444514 906,57.2518537 906,56.5551087 C906,55.862511 906.277834,55.165766 906.779593,54.668091 L914.948731,46.4979264 L906.779593,38.3277617 C906.277834,37.8300867 906,37.1333417 906,36.440744 C906,35.743999 906.277834,35.0514013 906.779593,34.549579 L910.557301,30.7755435 C911.05906,30.2737213 911.751571,30 912.448228,30 C913.140739,30 913.837396,30.2737213 914.335009,30.7755435 L922.5,38.9415609 L930.669138,30.7755435 C931.16675,30.2737213 931.863408,30 932.555919,30 C933.252576,30 933.945087,30.2737213 934.446846,30.7755435 L938.224554,34.549579 C938.726313,35.0514013 939,35.743999 939,36.440744 C939,37.1333417 938.726313,37.8300867 938.224554,38.3277617 L930.055416,46.4979264 L938.224554,54.668091 C938.726313,55.165766 939,55.862511 939,56.5551087 C939,57.2518537 938.726313,57.9444514 938.224554,58.4462737" id="Fill-1"></path></g></g>	</g></svg>'
-		// closeMarkup:'<div class="wrap_exit mfp-close"><img src="img/cat_icon/exit_filters.svg" alt="" class="mfp-close"></div>'
-		closeMarkup:'<div class="wrap_exit mfp-close" id="mfp_btn_exit"><div class="inner_wrap_ex"><img id="mfp_exit_img" src="img/cat_icon/mfpexit.svg" alt="" class="mfp-close"></div></div>'
-		
+			},
+
+			navigateByImgClick: true,
+
+				// arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+
+
+				//  closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close" id="mfp_btn_exit">×</button>'
+				// closeMarkup: '<svg id="exit_popup"  width="33px" height="33px" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="2.Cart---Desktop" transform="translate(-938.000000, -60.000000)" fill="#C4C0C0"><g id="Group-3-Copy" transform="translate(32.000000, 30.000000)"><path d="M938.224554,58.4462737 L934.446846,62.2203092 C933.945087,62.7221315 933.252576,63 932.555919,63 C931.863408,63 931.16675,62.7221315 930.669138,62.2203092 L922.5,54.0542918 L914.335009,62.2203092 C913.837396,62.7221315 913.140739,63 912.448228,63 C911.751571,63 911.05906,62.7221315 910.557301,62.2203092 L906.779593,58.4462737 C906.277834,57.9444514 906,57.2518537 906,56.5551087 C906,55.862511 906.277834,55.165766 906.779593,54.668091 L914.948731,46.4979264 L906.779593,38.3277617 C906.277834,37.8300867 906,37.1333417 906,36.440744 C906,35.743999 906.277834,35.0514013 906.779593,34.549579 L910.557301,30.7755435 C911.05906,30.2737213 911.751571,30 912.448228,30 C913.140739,30 913.837396,30.2737213 914.335009,30.7755435 L922.5,38.9415609 L930.669138,30.7755435 C931.16675,30.2737213 931.863408,30 932.555919,30 C933.252576,30 933.945087,30.2737213 934.446846,30.7755435 L938.224554,34.549579 C938.726313,35.0514013 939,35.743999 939,36.440744 C939,37.1333417 938.726313,37.8300867 938.224554,38.3277617 L930.055416,46.4979264 L938.224554,54.668091 C938.726313,55.165766 939,55.862511 939,56.5551087 C939,57.2518537 938.726313,57.9444514 938.224554,58.4462737" id="Fill-1"></path></g></g>	</g></svg>'
+				// closeMarkup:'<div class="wrap_exit mfp-close"><img src="img/cat_icon/exit_filters.svg" alt="" class="mfp-close"></div>'
+				closeMarkup: '<div class="wrap_exit mfp-close" id="mfp_btn_exit"><div class="inner_wrap_ex"><img id="mfp_exit_img" src="img/cat_icon/mfpexit.svg" alt="" class="mfp-close"></div></div>'
+
 		});
 	}
 });
-//--></script> 
-{{ footer }} 
+//--></script>
+	{{ footer }}

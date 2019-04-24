@@ -1,178 +1,466 @@
 <footer>
-		<div class="f_subscribe">
-			<div class="container">
-				<div class="row">
-						<div class="clump">
-								<div class="card">
-									<div class="section">
-										<!-- open -->
-								
-										<div class="detail closed">
-											<!-- closed_info -->
-											<form action="index.php?route=common/subscription" method="post" >
-												<div class="input-wrapper ">
-													<!-- <div class="header_slide_inside visible-xs">Подпишитесь на скидки:</div> -->
-													<div class="header_slide_inside call_to_action text-left">Подпишитесь на скидки:</div>
-													<!-- <div class="header_slide_inside visible-xs text-left">Moline:</div> -->
-														<input type="text" name="email" placeholder="Email"><input type="text" name="firstname" placeholder="Имя"><input type="text" name="city" placeholder="Город">
-														<input hidden name='newsletter' value='1'>
-														<input hidden name='lastname' value='-'>
-														<input hidden name='telephone' value='-'>
-														<input hidden name='password' value='-'>
-														<button class="reverse_button button_form primary_btn" type="submit">Подписаться</button>
-														{# <button class="reverse_button button_form" type="submit">Подписаться</button> #}
-												</div>
-											</form>
-											<!-- closed_info end-->
+	<div class="f_subscribe">
+		<div class="container">
+			<div class="row">
+				<div class="clump">
+					<div class="card">
+						<div class="section">
+							<!-- open -->
+
+							<div class="detail closed">
+								<!-- closed_info -->
+								<form action="index.php?route=common/subscription" method="post">
+									<div class="input-wrapper ">
+										<!-- <div class="header_slide_inside visible-xs">Подпишитесь на скидки:</div> -->
+										<div class="header_slide_inside call_to_action text-left">Подпишитесь на скидки:
 										</div>
+										<!-- <div class="header_slide_inside visible-xs text-left">Moline:</div> -->
+										<input type="text" name="email" placeholder="Email"><input type="text"
+											name="firstname" placeholder="Имя"><input type="text" name="city"
+											placeholder="Город">
+										<input hidden name='newsletter' value='1'>
+										<input hidden name='lastname' value='-'>
+										<input hidden name='telephone' value='-'>
+										<input hidden name='password' value='-'>
+										<button class="reverse_button button_form primary_btn"
+											type="submit">Подписаться</button>
+										{# <button class="reverse_button button_form" type="submit">Подписаться</button> #}
 									</div>
-									<div class="footer visible-xs">
-										<div class="header_slide visible-xs">Подпишитесь на скидки:</div>
-										<div class="slider_link less hide_link">Скрыть</div>
-									</div>
-								</div>
+								</form>
+								<!-- closed_info end-->
 							</div>
-						<!-- <form>
+						</div>
+						<div class="footer visible-xs">
+							<div class="header_slide visible-xs">Подпишитесь на скидки:</div>
+							<div class="slider_link less hide_link">Скрыть</div>
+						</div>
+					</div>
+				</div>
+				<!-- <form>
 								<div class="input-wrapper ">
 										<div class="call_to_action">Подпишитесь на скидки:</div>
 										<input type="text" name="name" placeholder="Email"><input type="text" name="name" placeholder="Имя"><input type="text" name="phone" placeholder="Город">
 									<button class="reverse_button button_form" type="submit">Подписаться</button>
 								</div>
 							</form> -->
-				</div>
 			</div>
 		</div>
-		<div class="container">
-			<div class="f_bottom">
-					<div class="row">
-							<div class="clump">
-									<div class="card">
-										<div class="section">
-											<!-- open -->
-									
-											<div class="detail closed">
-												<!-- closed_info -->
-												<div class="header_slide_inside ">Контакты:</div>
-												<div class="col-md-3 col-sm-3">
-														<div class="logo_wrap">
-															<img src="img/footer_logo.svg" alt="logo">
-														</div>
-														
-														<ul class="phone_list">
-															<li><a href="tel:{{telephone_vodafone}}">{{ telephone_vodafone }}</a></li>
-															<li><a href="tel:{{telephone_kyivstar}}">{{ telephone_kyivstar }}</a></li>
-															<li><a href="tel:{{telephone_lifecell}}">{{ telephone_lifecell }}</a></li>
-														</ul>
-						
-														<div class="mail"><a href="mailto:{{shop_email}}">{{shop_email}}</a></div>
-														<div class="f_info">
-														
-															Мы работаем:<br>{{open}}
-														</div>
-														<div class="f_info">
-														{{address}}
-														</div>
-													</div>
-												<!-- closed_info end-->
-											</div>
-										</div>
-										<div class="footer ">
-											<div class="header_slide ">Контакты:</div>
-											<div class="slider_link less hide_link">Скрыть</div>
-										</div>
+	</div>
+	<div class="container">
+		<div class="f_bottom">
+			<div class="row">
+				<div class="clump">
+					<div class="card">
+						<div class="section">
+							<!-- open -->
+
+							<div class="detail closed">
+								<!-- closed_info -->
+								<div class="header_slide_inside ">Контакты:</div>
+								<div class="col-md-3 col-sm-3">
+									<div class="logo_wrap">
+										<img src="img/footer_logo.svg" alt="logo">
+									</div>
+
+									<ul class="phone_list">
+										<li><a href="tel:{{telephone_vodafone}}">{{ telephone_vodafone }}</a></li>
+										<li><a href="tel:{{telephone_kyivstar}}">{{ telephone_kyivstar }}</a></li>
+										<li><a href="tel:{{telephone_lifecell}}">{{ telephone_lifecell }}</a></li>
+									</ul>
+
+									<div class="mail"><a href="mailto:{{shop_email}}">{{shop_email}}</a></div>
+									<div class="f_info">
+
+										Мы работаем:<br>{{open}}
+									</div>
+									<div class="f_info">
+										{{address}}
 									</div>
 								</div>
-							<div class="clump">
-									<div class="card">
-										<div class="section">
-											<!-- open -->
-									
-											<div class="detail closed">
-												<!-- closed_info -->
-												<div class="header_slide_inside ">Moline:</div>
-												<div class="col-md-3 col-sm-3">
-													{% if informations %}
-														<ul class="f_menu_list">
-														<div hidden>{{informations|json_encode()}}</div>
-															{% for information in informations %}
-																{% if information.left == 1 %}
-																	<li><a href="{{ information.href }}">{{ information.title }}</a></li>
-																{% endif %}
-															{% endfor %}
-															{# <li><a href="#">О нас</a></li>
+								<!-- closed_info end-->
+							</div>
+						</div>
+						<div class="footer ">
+							<div class="header_slide ">Контакты:</div>
+							<div class="slider_link less hide_link">Скрыть</div>
+						</div>
+					</div>
+				</div>
+				<div class="clump">
+					<div class="card">
+						<div class="section">
+							<!-- open -->
+
+							<div class="detail closed">
+								<!-- closed_info -->
+								<div class="header_slide_inside ">Moline:</div>
+								<div class="col-md-3 col-sm-3">
+									{% if informations %}
+									<ul class="f_menu_list">
+										<div hidden>{{informations|json_encode()}}</div>
+										{% for information in informations %}
+										{% if information.left == 1 %}
+										<li><a href="{{ information.href }}">{{ information.title }}</a></li>
+										{% endif %}
+										{% endfor %}
+										{# <li><a href="#">О нас</a></li>
 															<li><a href="#">Статьи</a></li>
 															<li><a href="#">Контакты</a></li>
 															<li class="visible-lg"><a href="#">Отзывы</a></li>
 															<li class="visible-lg"><a href="#">Сотрудничество</a></li> #}
-														</ul>
-													{% endif %}
-														<div class="price_list"><a href="#"><img src="img/file.svg" alt="">Скачать прайс-лист</a></div>
-													</div>
-												<!-- closed_info end-->
-											</div>
-										</div>
-										<div class="footer ">
-											<div class="header_slide ">Moline:</div>
-											<div class="slider_link less hide_link">Скрыть</div>
-										</div>
-									</div>
+									</ul>
+									{% endif %}
+									<div class="price_list"><a
+											href="/index.php?route=common/download&name=price_m8line"><img
+												src="img/file.svg" alt="">Скачать прайс-лист</a></div>
 								</div>
-							<div class="clump">
-										<div class="card">
-											<div class="section">
-												<!-- open -->
-										
-												<div class="detail closed">
-													<!-- closed_info -->
-													<div class="header_slide_inside ">Услуги:</div>
-													<div class="col-md-3 col-sm-3">
-															<ul class="f_menu_list">
-																<li><a href="{{ bestseller }}">{{ text_bestseller }}</a></li>
-																<li><a href="{{ special }}">{{ text_special }}</a></li>
-																<li><a href="{{ latest }}">{{ text_latest }}</a></li>
-																	{# <li><a href="#">Лидеры продаж</a></li>
+								<!-- closed_info end-->
+							</div>
+						</div>
+						<div class="footer ">
+							<div class="header_slide ">Moline:</div>
+							<div class="slider_link less hide_link">Скрыть</div>
+						</div>
+					</div>
+				</div>
+				<div class="clump">
+					<div class="card">
+						<div class="section">
+							<!-- open -->
+
+							<div class="detail closed">
+								<!-- closed_info -->
+								<div class="header_slide_inside ">Услуги:</div>
+								<div class="col-md-3 col-sm-3">
+									<ul class="f_menu_list">
+										<li><a href="{{ bestseller }}">{{ text_bestseller }}</a></li>
+										<li><a href="{{ special }}">{{ text_special }}</a></li>
+										<li><a href="{{ latest }}">{{ text_latest }}</a></li>
+										{# <li><a href="#">Лидеры продаж</a></li>
 																	<li><a href="#">Акции</a></li>
 																	<li><a href="#">Новинки</a></li> #}
-															</ul>
-													</div>
-													<!-- closed_info end-->
-												</div>
-											</div>
-											<div class="footer ">
-												<div class="header_slide ">Услуги:</div>
-												<div class="slider_link less hide_link">Скрыть</div>
-											</div>
-										</div>
+									</ul>
 								</div>
-							<div class="clump">
-											<div class="card">
-												<div class="section">
-													<!-- open -->
-											
-													<div class="detail closed">
-														<!-- closed_info -->
-													<div class="header_slide_inside ">Помощь:</div>
-														<div class="col-md-3 col-sm-3">
-																<ul class="f_menu_list">
-																		<li><a href="{{ question }}">{{ text_question }}</a></li>
-																		{% for information in informations %}
-																			{% if information.right == 1 %}
-																				<li><a href="{{ information.href }}">{{ information.title }}</a></li>
-																			{% endif %}
-																		{% endfor %}
-																</ul>
-														</div>
-														<!-- closed_info end-->
-													</div>
-												</div>
-												<div class="footer ">
-													<div class="header_slide ">Помощь:</div>
-													<div class="slider_link less hide_link">Скрыть</div>
-												</div>
-											</div>
-								</div>
-				
+								<!-- closed_info end-->
+							</div>
 						</div>
+						<div class="footer ">
+							<div class="header_slide ">Услуги:</div>
+							<div class="slider_link less hide_link">Скрыть</div>
+						</div>
+					</div>
+				</div>
+				<div class="clump">
+					<div class="card">
+						<div class="section">
+							<!-- open -->
+
+							<div class="detail closed">
+								<!-- closed_info -->
+								<div class="header_slide_inside ">Помощь:</div>
+								<div class="col-md-3 col-sm-3">
+									<ul class="f_menu_list">
+										<li><a href="{{ question }}">{{ text_question }}</a></li>
+										{% for information in informations %}
+										{% if information.right == 1 %}
+										<li><a href="{{ information.href }}">{{ information.title }}</a></li>
+										{% endif %}
+										{% endfor %}
+									</ul>
+								</div>
+								<!-- closed_info end-->
+							</div>
+						</div>
+						<div class="footer ">
+							<div class="header_slide ">Помощь:</div>
+							<div class="slider_link less hide_link">Скрыть</div>
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
-	</footer>
+		<div class="copyright align-items--center flex" style="
+								display: flex;
+								float: right;
+								align-items: center;
+								/* margin-right: 10px; */
+							    margin-top: -88px;
+							">
+			<span class="creator" style="
+								margin-right: 10px;
+							">Made by </span>
+			<a href="http://kirko.co/" target="_blank" class="kirko" style="
+								
+								width: 55px;
+								height: 55px;
+								transition: .3s;
+								margin: 0;
+								padding: 0;
+								border: 0;
+								font-size: 100%;
+								font: inherit;
+								vertical-align: baseline;
+								bottom: 0;
+							">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Green_copy" x="0px" y="0px" viewBox="0 0 2834.6 2834.6" enable-background="new 0 0 2834.6 2834.6" xml:space="preserve">
+								<metadata><?xpacket begin="&#65279;" id="W5M0MpCehiHzreSzNTczkc9d"?>
+								<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c011 79.156289, 2014/03/31-23:39:12        ">
+								   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+									  <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpGImg="http://ns.adobe.com/xap/1.0/g/img/" xmlns:xmpTPg="http://ns.adobe.com/xap/1.0/t/pg/" xmlns:stDim="http://ns.adobe.com/xap/1.0/sType/Dimensions#" xmlns:xmpG="http://ns.adobe.com/xap/1.0/g/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#" rdf:about="">
+										 <xmp:CreatorTool>Adobe Illustrator CC 2014 (Macintosh)</xmp:CreatorTool>
+										 <xmp:CreateDate>2018-10-03T16:22:45+03:00</xmp:CreateDate>
+										 <xmp:Thumbnails>
+											<rdf:Alt>
+											   <rdf:li rdf:parseType="Resource">
+												  <xmpGImg:width>256</xmpGImg:width>
+												  <xmpGImg:height>232</xmpGImg:height>
+												  <xmpGImg:format>JPEG</xmpGImg:format>
+												  <xmpGImg:image>/9j/4AAQSkZJRgABAgEASABIAAD/7QAsUGhvdG9zaG9wIDMuMAA4QklNA+0AAAAAABAASAAAAAEA
+								AQBIAAAAAQAB/+4ADkFkb2JlAGTAAAAAAf/bAIQABgQEBAUEBgUFBgkGBQYJCwgGBggLDAoKCwoK
+								DBAMDAwMDAwQDA4PEA8ODBMTFBQTExwbGxscHx8fHx8fHx8fHwEHBwcNDA0YEBAYGhURFRofHx8f
+								Hx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8f/8AAEQgA6AEAAwER
+								AAIRAQMRAf/EAaIAAAAHAQEBAQEAAAAAAAAAAAQFAwIGAQAHCAkKCwEAAgIDAQEBAQEAAAAAAAAA
+								AQACAwQFBgcICQoLEAACAQMDAgQCBgcDBAIGAnMBAgMRBAAFIRIxQVEGE2EicYEUMpGhBxWxQiPB
+								UtHhMxZi8CRygvElQzRTkqKyY3PCNUQnk6OzNhdUZHTD0uIIJoMJChgZhJRFRqS0VtNVKBry4/PE
+								1OT0ZXWFlaW1xdXl9WZ2hpamtsbW5vY3R1dnd4eXp7fH1+f3OEhYaHiImKi4yNjo+Ck5SVlpeYmZ
+								qbnJ2en5KjpKWmp6ipqqusra6voRAAICAQIDBQUEBQYECAMDbQEAAhEDBCESMUEFURNhIgZxgZEy
+								obHwFMHR4SNCFVJicvEzJDRDghaSUyWiY7LCB3PSNeJEgxdUkwgJChgZJjZFGidkdFU38qOzwygp
+								0+PzhJSktMTU5PRldYWVpbXF1eX1RlZmdoaWprbG1ub2R1dnd4eXp7fH1+f3OEhYaHiImKi4yNjo
+								+DlJWWl5iZmpucnZ6fkqOkpaanqKmqq6ytrq+v/aAAwDAQACEQMRAD8A7izFiWY1J3JOePykZGzz
+								dU1gV2KuxVPvLLMVuFr8I4ED58q/qzsvZSRrIOnp/wB85el6p3nXuU4kAEk0A6nASALKsV1bUWu5
+								6Kf3CbIPH/KzzjtntM6nJQ/u48v1/jo6/Nk4j5IDNM1OxV2KuxVNNCspZbkT7rFEd28T4f1zofZ7
+								QTyZhl5Qh9p7v1t+CBJtkU5IhkI2IU0+7O71BrHI+R+5zZcmFdc8jJdW1irsVdirI/LbE2kgJ2D7
+								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</xmpGImg:image>
+											   </rdf:li>
+											</rdf:Alt>
+										 </xmp:Thumbnails>
+										 <xmp:MetadataDate>2018-10-03T16:22:45+03:00</xmp:MetadataDate>
+										 <xmp:ModifyDate>2018-10-03T16:22:45+03:00</xmp:ModifyDate>
+										 <xmpTPg:MaxPageSize rdf:parseType="Resource">
+											<stDim:w>1000.001493</stDim:w>
+											<stDim:h>1000.001493</stDim:h>
+											<stDim:unit>Millimeters</stDim:unit>
+										 </xmpTPg:MaxPageSize>
+										 <xmpTPg:NPages>1</xmpTPg:NPages>
+										 <xmpTPg:HasVisibleTransparency>False</xmpTPg:HasVisibleTransparency>
+										 <xmpTPg:HasVisibleOverprint>False</xmpTPg:HasVisibleOverprint>
+										 <xmpTPg:PlateNames>
+											<rdf:Seq>
+											   <rdf:li>Cyan</rdf:li>
+											   <rdf:li>Yellow</rdf:li>
+											</rdf:Seq>
+										 </xmpTPg:PlateNames>
+										 <xmpTPg:SwatchGroups>
+											<rdf:Seq>
+											   <rdf:li rdf:parseType="Resource">
+												  <xmpG:groupName>Группа образцов по умолчанию</xmpG:groupName>
+												  <xmpG:groupType>0</xmpG:groupType>
+											   </rdf:li>
+											</rdf:Seq>
+										 </xmpTPg:SwatchGroups>
+										 <dc:format>image/svg+xml</dc:format>
+										 <xmpMM:DerivedFrom rdf:parseType="Resource"/>
+										 <xmpMM:DocumentID>xmp.did:10f9d908-1236-41fc-9a69-c8d3894f6bf9</xmpMM:DocumentID>
+										 <xmpMM:InstanceID>xmp.iid:10f9d908-1236-41fc-9a69-c8d3894f6bf9</xmpMM:InstanceID>
+										 <xmpMM:OriginalDocumentID>xmp.did:10f9d908-1236-41fc-9a69-c8d3894f6bf9</xmpMM:OriginalDocumentID>
+										 <xmpMM:History>
+											<rdf:Seq>
+											   <rdf:li rdf:parseType="Resource">
+												  <stEvt:action>saved</stEvt:action>
+												  <stEvt:instanceID>xmp.iid:10f9d908-1236-41fc-9a69-c8d3894f6bf9</stEvt:instanceID>
+												  <stEvt:when>2018-10-03T16:22:45+03:00</stEvt:when>
+												  <stEvt:softwareAgent>Adobe Illustrator CC 2014 (Macintosh)</stEvt:softwareAgent>
+												  <stEvt:changed>/</stEvt:changed>
+											   </rdf:li>
+											</rdf:Seq>
+										 </xmpMM:History>
+									  </rdf:Description>
+								   </rdf:RDF>
+								</x:xmpmeta>
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+																																	
+														   
+								<?xpacket end="w"?>
+									</metadata>
+								<path id="KIR" fill="#737680" stroke="#737680" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="  M695.1,691.1l432.5-532.4H703.2L403.1,588V158.7H56v1145.7h347.1V986.7l63.7-85.9l257.6,403.6H1147L695.1,691.1z M1607.1,158.7H1260  v1145.7h347.1L1607.1,158.7L1607.1,158.7z M2575.7,899c56-27.6,104.4-70.1,145.1-127s61-130.6,61-219.7  c0-112.1-36.2-205.6-108.9-280.7c-72.8-75.5-174-113-303.3-113h-611.5v1145.7h347.1V943.7h125.2l158.2,360.7h395L2575.7,899z   M2105.2,641.4V461h211.1c32.1,0,58.8,7.7,80.9,23.1c21.7,15.4,32.5,37.5,32.5,66c0,29.8-10.8,52.4-32.5,67.8  c-21.7,15.4-48.8,23.1-80.9,23.1L2105.2,641.4L2105.2,641.4z"/>
+								<path id="KO." fill="#737680" stroke="#737680" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="  M694.2,1988.2l432.5-532.4H702.3l-300.6,429.4v-429.4H55.1v1145.7h347.1v-317.7l63.7-85.9l257.6,403.6h422.6L694.2,1988.2z   M2330.7,2029.3c0-174-59.7-316.4-179.4-426.7c-119.8-110.3-268.9-165.9-447.4-165.9s-327.7,55.1-447.4,165.9  c-119.8,110.7-179.4,252.6-179.4,426.7s59.7,316.4,179.4,426.7c119.8,110.3,268.9,165.9,447.4,165.9s327.7-55.1,447.4-165.9  C2271.1,2345.7,2330.7,2203.3,2330.7,2029.3z M1429.1,2029.3c0-81.4,25.3-149.6,76.4-204.3c51.1-54.7,117.1-82.3,198.4-82.3  c81.4,0,147.3,27.6,198.4,82.3c51.1,54.7,76.4,122.9,76.4,204.3c0,81.4-25.3,149.6-76.4,204.3s-117.1,82.3-198.4,82.3  c-81.4,0-147.3-27.6-198.4-82.3C1454.4,2178.5,1429.1,2110.7,1429.1,2029.3L1429.1,2029.3z M2770.5,2437.9  c0-49.3-18.5-92.2-55.1-128.8c-36.6-36.6-79.5-55.1-128.8-55.1s-92.2,18.5-128.8,55.1c-36.6,36.6-55.1,79.5-55.1,128.8  s18.5,92.2,55.1,128.8c36.6,36.6,79.5,55.1,128.8,55.1s92.2-18.5,128.8-55.1C2752,2530.1,2770.5,2487.2,2770.5,2437.9z"/>
+								</svg>
+			</a>
+		</div>
+	</div>
+</footer>

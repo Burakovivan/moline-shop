@@ -777,3 +777,86 @@ h2.price {
 .form_order .select {
 	width: unset !important;
 }
+
+
+
+.simp_special{
+	color:#b1b1b1;
+	font-size:24px !important;
+	position:relative;
+	padding-left: 0 !important;
+	margin-left: 15px;
+	font-weight: 400 !important;
+}
+.simp_special::after{
+    content: '';
+    border-bottom: 2px solid #b1b1b1;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+}
+
+.special_text{
+	color:#ff9801;
+	margin-left: 15px;
+	font-size: 18px;
+}
+@media(max-width:767px){
+	.special_time{
+		display: none;
+	}
+}
+.special_time{
+	width: 150px;
+    background: rgba(167,170,179, 0.09);
+    text-align: center;
+	height: 80px;
+    font-size: 12px;
+}
+.special_time .s_days{
+	width: 50%;
+    float: left;
+    display: inline-block;
+    color: #424242;
+    font-size: 36px;
+}
+.special_time .s_hours{
+	width: 50%;
+    display: inline-block;
+    color: #424242;
+    font-size: 36px;
+}
+.special_time .s_days, .special_time .s_hours {
+margin-top: -10px;
+}
+.special_time .s_days > span, .special_time .s_hours > span{
+	display: block;
+	font-size: 12px;
+	margin-top: -10px;
+}
+.special_time .s_days > div > span, .special_time .s_hours > div > span{
+	border-bottom: 1px dashed;
+	font-weight: bold;
+}
+.kirko svg path{
+	transition-duration: 0.3s;
+	transition-timing-function:steps(20);
+	transition-delay: 0s;
+}
+
+.kirko svg path:last-child{
+	transition-delay: 0.05s;
+}
+
+.kirko:hover svg path{
+	fill: #C0FF00;
+	stroke: #C0FF00;
+}
+/*
+//
+////
+/
+/
+//
+*/

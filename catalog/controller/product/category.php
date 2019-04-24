@@ -108,6 +108,27 @@ class ControllerProductCategory extends Controller {
 			$this->document->setKeywords($category_info['meta_keyword']);
 
 			$data['text_empty'] = $this->language->get('text_empty');
+
+			if($category_info['text1']){
+				$data['text1'] =  $category_info['text1'];
+			}
+			if( $category_info['text2']){
+				$data['text2'] = $category_info['text2'];
+			}
+			if($category_info['text3']){
+				$data['text3'] = $category_info['text3'];
+			}
+			
+			if($category_info['texth1']){
+				$data['texth1'] =  $category_info['texth1'];
+			}
+			if( $category_info['texth2']){
+				$data['texth2'] = $category_info['texth2'];
+				
+			}
+			if( $category_info['texth3']){
+				$data['texth3'] = $category_info['texth3'];
+			}
 		
 
 			$data['heading_title'] = $category_info['name'];
@@ -210,7 +231,10 @@ class ControllerProductCategory extends Controller {
 					$special = false;
 				}
 				if(is_numeric($result['special'])){
-					$discount = $price > 0 ? ceil((1 - $special/$price)*100) : 100;
+					$raw_price = floatval($result['price']);
+					$raw_special = floatval($result['special']);
+					$discount_value = 1 - $raw_special / $raw_price;
+					$discount = $raw_price > 0 ? ceil($discount_value * 100) : 100;
 				}else{
 					$discount = false;
 				}

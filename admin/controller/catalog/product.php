@@ -1059,6 +1059,42 @@ class ControllerCatalogProduct extends Controller {
 			$data['image'] = '';
 		}
 
+
+		if (isset($this->request->post['text1p'])) {
+			$data['text1p'] = $this->request->post['text1p'];
+		} elseif (!empty($product_info)) {
+			$data['text1p'] = $product_info['text1p'];
+		} else {
+			$data['text1p'] = '';
+		}
+
+		if (isset($this->request->post['text2p'])) {
+			$data['text2p'] = $this->request->post['text2p'];
+		} elseif (!empty($product_info)) {
+			$data['text2p'] = $product_info['text2p'];
+		} else {
+			$data['text2p'] = '';
+		}
+
+
+		if (isset($this->request->post['texth1p'])) {
+			$data['texth1p'] = $this->request->post['texth1p'];
+		} elseif (!empty($product_info)) {
+			$data['texth1p'] = $product_info['texth1p'];
+		} else {
+			$data['texth1p'] = '';
+		}
+
+		if (isset($this->request->post['texth2p'])) {
+			$data['texth2p'] = $this->request->post['texth2p'];
+		} elseif (!empty($product_info)) {
+			$data['texth2p'] = $product_info['texth2p'];
+		} else {
+			$data['texth2p'] = '';
+		}
+
+		
+
 		$this->load->model('tool/image');
 
 		if (isset($this->request->post['image']) && is_file(DIR_IMAGE . $this->request->post['image'])) {

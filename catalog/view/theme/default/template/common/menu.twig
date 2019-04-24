@@ -90,14 +90,21 @@
 														{% endfor %}
 													</ul>
 												</div>
-													{% endfor %}
+												{% endfor %}
+											{% else %}
+												<div class="inner-list-wrap">
+													<ul class="inner-list">
+														<li class="sub-item back_btn_mnu" ><a href="#" class="back_b"><p>Назад</p></a></li>
+													</ul>
+												</div>	
 											{% endif %}
+
 										</li>
 									{% endfor %}
 								</ul>
 									
 								<div class="bottom_link">
-									<a href="#" ><img src="img/cat_icon/file.svg" alt="">Скачать прайс-лист</a>
+									<a href="/index.php?route=common/download&name=price_m8line" ><img src="img/cat_icon/file.svg" alt="">Скачать прайс-лист</a>
 								</div>
 								{% endif %}
 							</div>
